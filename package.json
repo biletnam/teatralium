@@ -1,0 +1,31 @@
+{
+  "name": "teatralium",
+  "description": "Teatralium",
+  "version": "1.0.0",
+  "author": "Maxim Matyunin",
+  "dependencies": {
+    "gatsby": "^1.9.73",
+    "gatsby-link": "^1.6.22",
+    "gatsby-plugin-google-analytics": "^1.0.10",
+    "gatsby-plugin-react-helmet": "^1.0.5",
+    "gatsby-plugin-styled-components": "^1.0.5",
+    "react-lazyload": "^2.3.0",
+    "sanitize.css": "^5.0.0"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "main": "n/a",
+  "scripts": {
+    "build": "gatsby build && yarn deploy",
+    "develop": "gatsby develop",
+    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "patch": "sed -i -e 's/if(c\\.initial) return;/if(!c||c.initial) return;/g' ./node_modules/extract-text-webpack-plugin/index.js",
+    "deploy": "rsync -r public/ tr:/var/www/deploy_tr && ssh tr 'rm -rf /var/www/tr/*; mv /var/www/deploy_tr/* /var/www/tr'"
+  },
+  "devDependencies": {
+    "prettier": "^1.7.4"
+  }
+}
