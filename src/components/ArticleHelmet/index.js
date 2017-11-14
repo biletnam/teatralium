@@ -2,6 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 
 const ArticleHelmet = ({ title, description, url, image }) => <Helmet>
+  <title>{title}</title>
   <meta property="og:title" content={title} />
   <meta property="og:type" content="article" />
   <meta property="og:description" content={description} />

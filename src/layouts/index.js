@@ -12,14 +12,13 @@ const TemplateWrapper = ({ children }) => (
   <div>
     <Helmet
       title="Театралий"
-      meta={[
-        { name: 'keywords', content: 'театр, театралий, teatralium, современный театр, несовременный театр',
-          name: 'fb:app_id', content: '1528916173863908' },
-      ]}
     >
+      <html lang="ru" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="manifest" href="manifest.json" />
       <meta name="mobile-web-app-capable" content="yes" />
+      <meta name="keywords" content="театр, театралий, teatralium, современный театр, несовременный театр" />
+      <meta property="fb:app_id" content="1528916173863908" />
       <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />
       <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png" />
       <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png" />
@@ -41,6 +40,7 @@ const TemplateWrapper = ({ children }) => (
       <meta property="og:type" content="article" />
       <meta property="og:description" content="Театралии всех стран, соединяйтесь!" />
       <meta property="og:url" content="https://teatralium.com" />
+      <meta property="og:image" content="https://teatralium.com/ms-icon-310x310.png" />
     </Helmet>
     <Header />
     <div>

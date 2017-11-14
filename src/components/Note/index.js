@@ -10,7 +10,14 @@ const StyledNote = styled.div`
   padding: 2rem;
   font-size: 0.8rem;
   width: 250px;
-  ${phone('max-width: 95%;')}
+  ${phone(`
+    max-width: 95%;
+    position: relative;
+    right: auto;
+    top: auto;
+    padding: 1rem;
+    width: 100%;
+  `)}
 `;
 
 const Note = ({ children, ...props }) => <StyledNote {...props}>

@@ -1,8 +1,9 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
-import A from '../A';
-import H1 from '../H1';
+import A from '../A'
+import H1 from '../H1'
+import { phone } from '../../utils/media'
 
 export const titleStyles = `
   color: black;
@@ -16,12 +17,14 @@ export const titleStyles = `
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-style: italic;
+  ${phone(`font-size: 0.7em;`)}
   > span {
     vertical-align: middle;
     font-size: 0.6em;
+  ${phone(`font-size: 0.4em;`)}
 }`
 
-const Title = styled(H1)`
+export const Title = styled(H1)`
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.23em;

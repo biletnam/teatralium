@@ -11,7 +11,7 @@ function H3(props) {
 export default styled(H3)`
   font-weight: bold;
   font-size: 2.618rem;
-  font-style: italic;
+  font-style: ${p => p.fontStyle || 'italic'};
   > span {
     background-color: rgba(0,0,0,0.3);
     padding: 0.01em;

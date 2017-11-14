@@ -13,8 +13,8 @@ const buttonStyles = css`
   font-family: 'Bodoni', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 2rem;
   color: black;
-  -webkit-transition: all 0.4s ease-out;
-  transition: all 0.4s ease-out;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
   font-weight: bold;
   border: 2px solid black;
 

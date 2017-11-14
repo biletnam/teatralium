@@ -8,7 +8,6 @@ import bodoniBold from './fonts/bodoni-bold.woff2';
 injectGlobal`
   html,
   body {
-    height: 100%;
     width: 100%;
   }
 
@@ -17,6 +16,10 @@ injectGlobal`
     font-size: 18px;
     font-weight: 400;
     line-height: 1.75;
+  }
+
+  a {
+    color: black;
   }
 
   p {

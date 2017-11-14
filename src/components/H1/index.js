@@ -8,8 +8,6 @@ const H1 = styled.h1`
   font-size: 4.236em;
   line-height: 5.6rem;
   color: ${p => p.color || 'black'};
-  transition: all 1s ease-in;
-  -webkit-transition: all 6s ease-in; /* Safari */
   ${phone(`
     font-size: 1.3em;
     letter-spacing: 0.2em;

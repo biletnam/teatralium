@@ -1,12 +1,12 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled, { keyframes } from 'styled-components'
 
-import mask1 from './masks/1.png';
-import mask2 from './masks/2.png';
-import mask3 from './masks/3.png';
-import mask4 from './masks/4.png';
-import mask5 from './masks/5.png';
-import mask6 from './masks/6.png';
+import mask1 from './masks/1.png'
+import mask2 from './masks/2.png'
+import mask3 from './masks/3.png'
+import mask4 from './masks/4.png'
+import mask5 from './masks/5.png'
+import mask6 from './masks/6.png'
 
 const masks = {
   1: mask1,
@@ -15,7 +15,12 @@ const masks = {
   4: mask4,
   5: mask5,
   6: mask6,
-};
+}
+
+const hueRotate = (val) => keyframes`
+  0%, 100%  { filter: sepia(100%) hue-rotate(${val}deg); }
+  50% { filter: sepia(100%) hue-rotate(${val + 180}deg); }
+`;
 
 const rand = (to = 6) => Math.floor(Math.random() * to) + 1;
 
@@ -31,21 +36,18 @@ const Container = styled.div`
   visibility: visible; opacity: 1; transition: opacity 2s linear;
 `;
 
-const Mask = styled.img`
-  opacity: 0.3;
+const StyledMask = styled.img`
+  opacity: 0.8;
   height: 50px;
   padding-right: 2rem;
-  -webkit-filter: hue-rotate(${(p) => p.tint}deg);
-  transition: opacity filter 0.4s ease-in-out;
-  &:hover {
-    opacity: 1;
-    -webkit-filter: sepia(90%) hue-rotate(${(p) => p.tint}deg);
-  }
+  animation: ${hueRotate(rand(180))} 5s infinite;
 `;
 
-const Masks = (props) => (
+const ids = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+
+const Masks = () => (
   <Container>
-    {props.ids.map((x, i) => <Mask key={i} src={masks[rand()]} tint={rand(360)} alt="/" />)}
+    {ids.map((x, i) => <StyledMask key={i} src={masks[rand()]} alt="/" />)}
   </Container>
 );
 

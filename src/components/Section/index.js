@@ -14,16 +14,18 @@ const Section = styled.section`
   text-align: ${p => p.align || 'auto'};
 
   padding: ${p => p.padding || '2'}rem;
-  padding-top: 0;
+  padding-top: ${p => p.paddingTop || '0'};
   font-size: ${p => p.size || 'auto'};
   color: ${p => p.color || 'auto'};
   animation: ${fadein} 1s ease-out;
   > h1, h2, h3 {
     text-align: center;
   }
-  > h3 {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+
+  > blockquote {
+    background-color: #F7F7F9;
+    padding: 2rem;
+    margin-bottom: 1rem;
   }
 `;
 
