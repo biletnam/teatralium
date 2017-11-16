@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
@@ -8,7 +7,7 @@ import Social from '../components/Social'
 import 'sanitize.css/sanitize.css'
 import '../global-styles'
 
-const TemplateWrapper = ({ children }) => (
+const TemplateWrapper = ({ children, ...props }) => (
   <div>
     <Helmet
       title="Театралий"
@@ -42,7 +41,7 @@ const TemplateWrapper = ({ children }) => (
       <meta property="og:url" content="https://teatralium.com" />
       <meta property="og:image" content="https://teatralium.com/ms-icon-310x310.png" />
     </Helmet>
-    <Header />
+    <Header pathname={props.location.pathname}/>
     <div>
       {children()}
     </div>

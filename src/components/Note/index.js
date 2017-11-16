@@ -4,9 +4,10 @@ import { phone } from '../../utils/media';
 
 const StyledNote = styled.div`
   position: absolute;
-  right: -300px;
+  ${p => !p.left ? 'right: -300px;' : 'left: -300px;'}
   top: ${p => p.top || 'auto'};
-  background: lavender;
+  background: ${p => p.background || 'lavender'};
+  margin-bottom: 1rem;
   padding: 2rem;
   font-size: 0.8rem;
   width: 250px;
@@ -14,6 +15,7 @@ const StyledNote = styled.div`
     max-width: 95%;
     position: relative;
     right: auto;
+    left: auto;
     top: auto;
     padding: 1rem;
     width: 100%;

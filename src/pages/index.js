@@ -6,6 +6,7 @@ import { phone } from '../utils/media'
 import H1, { H1small } from '../components/H1'
 import Img from '../components/Img'
 import H3 from '../components/H3'
+import H2 from '../components/H2'
 import Button from '../components/Button/StyledButton'
 import Footer from '../components/Footer'
 import Social from '../components/Social';
@@ -15,6 +16,9 @@ import ezhen from './images/2.jpg'
 import mycene from './images/myc.jpg'
 import nadryv from './images/np1.jpg'
 import belomor from './images/belomor/1test.jpg'
+import annenkov from './images/annenkov/home.jpg'
+
+import { REVOLUTION } from '../utils/const'
 
 const StyledLink = styled(Link)`
   color: black;
@@ -57,7 +61,9 @@ const FillCover = styled.div`
   align-items: center;
   justify-content: center;
   ${p => p.bordered && `border: solid 9px ${p.borderColor || `#f2639e`};`}
-
+  ${p => p.pointer && `&:hover {
+    cursor: pointer;
+  }`}
   ${phone(`
     dispay: block;
     min-height: auto;
@@ -79,7 +85,7 @@ const Lead = styled.div`
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   font-family: 'Bodoni';
-  margin-bottom: 2rem;
+  margin-bottom: ${p => p.marginBottom || '2'}rem;
   ${phone(`
     font-size: 0.9em;
     letter-spacing: normal;
@@ -105,6 +111,30 @@ const YellowButton = styled(Button)`
   color: yellow;
   border: 3px solid yellow;
   background: rgba(0, 0, 0, 0.5)`;
+
+const Annenkov = () => <FillCover
+  pointer
+  color="#FDF06f"
+  onClick={() => navigateTo('/articles/ozhila_krasnaya_stsena')}
+  bordered
+  borderColor={REVOLUTION}
+>
+  <ArticlesSection padding="2" paddingTop="4">
+    <H2>Ожила красная сцена</H2>
+    <Lead marginBottom="2">Как художник Юрий Анненков стал «модельером» революции</Lead>
+    <Img
+      round
+      noBorder
+      src={annenkov}
+      width="300px"
+      customBorder={`
+        border-style: inset;
+        border-color: ${REVOLUTION};
+        border-width: 10px;
+      `}
+    />
+  </ArticlesSection>
+</FillCover>
 
 const Belomor = () => <FillCover bordered borderColor="yellow" bg={belomor} height="700px">
   <ArticlesSection padding="1" size="22px" align="left">
@@ -140,7 +170,7 @@ const NadryvSub = () => <FillCover
   </ArticlesSection>
 </FillCover>
 
-const Lyub = () => <FillCover color="#e6ceff" onClick={() => navigateTo('/articles/lyubimovka')}>
+const Lyub = () => <FillCover pointer color="#e6ceff" onClick={() => navigateTo('/articles/lyubimovka')}>
   <ArticlesSection padding="1">
     <H3><i>«Меня волнует вся х**ня»</i></H3>
     <Lead>Ридер «Любимовки» Анна Банасюкевич о стране, в которой мы живем</Lead>
@@ -172,6 +202,7 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
   render() {
     return (
       <div>
+        <Annenkov />
         <Belomor />
         <Bol />
         <Border>

@@ -2,10 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 
 import Section from '../Section'
-import { titleStyles } from '../Header'
+import { titleStyles, gradientColor } from '../Header'
 import { phone } from '../../utils/media'
 
 const A = styled.a`
+  background: ${p => gradientColor(p, 0)};
+  background: linear-gradient(to bottom, ${p => gradientColor(p, 0)}, ${p => gradientColor(p, 1)});
   ${titleStyles}
   font-size: 1.5rem;
   font-variant: small-caps;

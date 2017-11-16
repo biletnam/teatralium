@@ -9,7 +9,7 @@ const P = styled.p`
     font-weight: bold;
     padding: 1.2rem;
     padding-top: 1.8rem;
-    color: #ff93e8;
+    color: ${p => p.color || '#ff93e8'};
     padding-right: 1.2rem;
     float: left;
   }
