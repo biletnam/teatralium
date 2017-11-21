@@ -6,6 +6,7 @@ import { phone } from '../utils/media'
 import H1, { H1small } from '../components/H1'
 import Img from '../components/Img'
 import H3 from '../components/H3'
+import H4 from '../components/H4'
 import H2 from '../components/H2'
 import Button from '../components/Button/StyledButton'
 import Footer from '../components/Footer'
@@ -17,6 +18,7 @@ import mycene from './images/myc.jpg'
 import nadryv from './images/np1.jpg'
 import belomor from './images/belomor/1test.jpg'
 import annenkov from './images/annenkov/home.jpg'
+import iz_vseh_iskusstv from './images/iz_vseh_iskusstv/cover.jpg'
 
 import { REVOLUTION } from '../utils/const'
 
@@ -44,6 +46,7 @@ const ArticlesSection = styled(Section)`
   margin: ${p => p.margin || 'auto'};
   font-size: ${p => p.size || 'auto'};
   color: ${p => p.color || 'auto'};
+  background: ${p => p.background || 'none'};
 `;
 
 const NoImageCover = styled.div`
@@ -52,11 +55,14 @@ const NoImageCover = styled.div`
 `;
 
 const FillCover = styled.div`
+  position: relative;
   background: ${(p) => p.color};
+  color: ${(p) => p.fontColor};
   background-image: url(${(p) => p.bg || 'none'});
   background-size: cover;
   min-height: ${p => p.height || 'auto'};
   display: flex;
+  ${p => p.shadow && 'box-shadow: inset 1px 4px 90px -6px #000000;'}
 
   align-items: center;
   justify-content: center;
@@ -70,6 +76,14 @@ const FillCover = styled.div`
   `)}
 `;
 
+const TopCover = styled(FillCover)`
+  min-height: 650px;
+  height: calc(100vh - 92px - 2.8rem);
+  ${phone(`
+    height: calc(100vh - 30px);
+  `)}
+`
+
 const FillCoverMaxHeight = styled(FillCover)`
   ${phone(`max-height: 150px;`)}
 `;
@@ -80,8 +94,10 @@ const ImgWrapper = styled.div`
 `;
 
 const Lead = styled.div`
-  font-size: 1.2rem;
-  color: ${p => p.color || 'auto'};
+  font-size: ${p => p.size || '1.2rem'};
+  color: ${p => p.color || 'inherit'};
+  background: ${p => p.background || 'none'};
+  padding: ${p => p.padding || 'auto'};
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   font-family: 'Bodoni';
@@ -112,7 +128,7 @@ const YellowButton = styled(Button)`
   border: 3px solid yellow;
   background: rgba(0, 0, 0, 0.5)`;
 
-const Annenkov = () => <FillCover
+const Annenkov = () => <TopCover
   pointer
   color="#FDF06f"
   onClick={() => navigateTo('/articles/ozhila_krasnaya_stsena')}
@@ -126,13 +142,28 @@ const Annenkov = () => <FillCover
       round
       noBorder
       src={annenkov}
-      width="300px"
+      width="280px"
       customBorder={`
         border-style: inset;
         border-color: ${REVOLUTION};
         border-width: 10px;
       `}
     />
+  </ArticlesSection>
+</TopCover>
+
+const IzVsehIskusstv = () => <FillCover
+  shadow
+  pointer
+  color="black"
+  fontColor="#9bda9e"
+  onClick={() => navigateTo('/articles/iz_vseh_iskusstv')}
+  height="400px"
+  bg={iz_vseh_iskusstv}
+>
+  <ArticlesSection padding="1" background="rgba(97,59,123,0.6)">
+    <Lead padding="0.5rem" color="#9bda9e">Набоков, Хармс и другие классики рассуждают о театре</Lead>
+    <H1>Из всех искусств</H1>
   </ArticlesSection>
 </FillCover>
 
@@ -203,6 +234,7 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
     return (
       <div>
         <Annenkov />
+        <IzVsehIskusstv />
         <Belomor />
         <Bol />
         <Border>

@@ -7,8 +7,8 @@ const Small = styled.div`
   margin-top: ${p => p.marginTop || 'auto'};
   ${p => p.outside ? `
     max-width: calc(752px + 16px * 2);
-    padding-left: 3rem;
-    margin: 3em auto;` : ''}
+    padding-left: 2rem;
+    margin: 1em auto;` : ''}
 `;
 
 export default Small;

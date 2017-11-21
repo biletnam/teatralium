@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import play from './play.svg'
+import Small from '../Small'
+import Description from '../Img'
 
 const absolute = `
   position: absolute;
@@ -61,7 +63,7 @@ class Video extends React.Component {
       </Wrapper>
     }
 
-    return <Wrapper {...props} enabled={state.enabled} onClick={() => this.setState({ enabled: true })}>
+    return <div><Wrapper {...props} enabled={state.enabled} onClick={() => this.setState({ enabled: true })}>
       {state.enabled ?
         <iframe
           src={"https://www.youtube.com/embed/" + props.id + '?autoplay=1'}
@@ -74,6 +76,8 @@ class Video extends React.Component {
             <Button />
           </span>}
     </Wrapper>
+    {props.desc && <Description {...props} marginTop="0" />}
+    </div>
   }
 }
 

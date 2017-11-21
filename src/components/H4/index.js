@@ -4,6 +4,7 @@ const H4 = styled.h4`
   font-size: ${p => p.size || '1.618rem'};
   font-weight: bold;
   margin-bottom: 0.25em;
+  color: ${p => p.color || 'inherit'};
   ${p => p.center ? 'text-align: center;' : ''}
   ${p => p.marginTop ? `margin-top: ${p.marginTop};` : ''}
 `;

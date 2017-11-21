@@ -13,7 +13,7 @@ export function gradientColor({ pathname }, index) {
     return '#333399'
   }
 
-  return '#d43f34'
+  return '#ff93e8'
 }
 export const titleStyles = `
   color: black;
@@ -37,14 +37,17 @@ export const Title = styled(H1)`
   background: linear-gradient(to bottom, ${p => gradientColor(p, 0)}, ${p => gradientColor(p, 1)});
   ${titleStyles}
 `;
+
+const Wrapper = styled.div`
+`;
 class Header extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
-      <div>
+      <Wrapper>
         <A to="/">
           <Title pathname={this.props.pathname}><span>♦</span>Театралий<span>♦</span></Title>
         </A>
-      </div>
+      </Wrapper>
     );
   }
 }

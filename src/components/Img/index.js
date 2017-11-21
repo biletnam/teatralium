@@ -8,7 +8,7 @@ export const shadow = `
 
 const Wrapper = styled.div`
   margin: 0 auto;
-  margin-bottom: ${p => p.marginBottom || (p.desc ? '2rem' : '3rem')};
+  margin-bottom: ${p => p.marginBottom || (p.desc ? '0' : '3rem')};
   margin-top: ${p => p.marginTop || '1rem'};
   max-width: ${p => p.maxWidth || '780px'};
 `
@@ -28,9 +28,15 @@ const ImgStyled = styled.img`
   }`}
 `
 
+export const Description = (props) => <Small
+  marginTop={props.marginTop || "0.7rem"}
+  outside={props.outside}
+>{props.desc} {props.url && <a href={props.url}>{props.title}</a>}
+</Small>
+
 const Img = (props) => <Wrapper {...props}>
   <ImgStyled {...props} />
-  {props.desc && <Small marginTop="0.7rem">{props.desc} {props.url && <a href={props.url}>{props.title}</a>}</Small>}
+  {props.desc && <Description {...props} />}
 </Wrapper>
 
 export default Img

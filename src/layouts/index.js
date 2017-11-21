@@ -8,7 +8,7 @@ import 'sanitize.css/sanitize.css'
 import '../global-styles'
 
 const TemplateWrapper = ({ children, ...props }) => (
-  <div>
+  <div style={{ height: '100%' }}>
     <Helmet
       title="Театралий"
     >
@@ -42,9 +42,7 @@ const TemplateWrapper = ({ children, ...props }) => (
       <meta property="og:image" content="https://teatralium.com/ms-icon-310x310.png" />
     </Helmet>
     <Header pathname={props.location.pathname}/>
-    <div>
-      {children()}
-    </div>
+    {children()}
     <Footer />
   </div>
 )

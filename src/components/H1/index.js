@@ -7,7 +7,8 @@ const H1 = styled.h1`
   letter-spacing: 0.5rem;
   font-size: 4.236em;
   line-height: 5.6rem;
-  color: ${p => p.color || 'black'};
+  ${p => p.shadow && p.shadow}
+  color: ${p => p.color || 'inherit'};
   ${phone(`
     font-size: 1.3em;
     letter-spacing: 0.2em;
@@ -26,6 +27,7 @@ export const H1small = styled.h2`
     letter-spacing: normal;
     line-height: normal;
     text-transform: none;
+    font-weight: bold;
   `)}
 `;
 

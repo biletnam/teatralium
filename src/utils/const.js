@@ -2,6 +2,10 @@ const base = '/articles/'
 
 export const articles = [
   {
+    url: base + 'velikoe_raznoobrazie',
+    title: 'Великое разнообразие: Марина Давыдова о том, что нужно знать о современном театре',
+  },
+  {
     url: base + 'ozhila_krasnaya_stsena',
     title: 'Как художник Юрий Анненков стал «модельером» революции',
   },
