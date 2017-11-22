@@ -6,7 +6,7 @@ import H1 from '../H1'
 import { phone } from '../../utils/media'
 
 export function gradientColor({ pathname }, index) {
-  if (pathname === '/articles/ozhila_krasnaya_stsena' || pathname === '/') {
+  if (pathname === '/articles/ozhila_krasnaya_stsena') {
     return '#d43f34';
   }
   if (index === 0) {

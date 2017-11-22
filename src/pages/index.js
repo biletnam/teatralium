@@ -16,6 +16,7 @@ import rus from './images/ppp.gif'
 import ezhen from './images/2.jpg'
 import mycene from './images/myc.jpg'
 import nadryv from './images/np1.jpg'
+import mask from './images/davydova/mask.gif'
 import belomor from './images/belomor/1test.jpg'
 import annenkov from './images/annenkov/home.jpg'
 import iz_vseh_iskusstv from './images/iz_vseh_iskusstv/cover.jpg'
@@ -128,7 +129,20 @@ const YellowButton = styled(Button)`
   border: 3px solid yellow;
   background: rgba(0, 0, 0, 0.5)`;
 
-const Annenkov = () => <TopCover
+const Davydova = () => <TopCover
+  pointer
+  color="#FDF06f"
+  bg={mask}
+  onClick={() => navigateTo('/articles/velikoe_raznoobrazie')}
+  >
+  <ArticlesSection paddingTop="0">
+    <H1small>Марина Давыдова о том, что нужно знать о современном театре</H1small>
+    <H1>Великое разнообразие</H1>
+  </ArticlesSection>
+</TopCover>
+
+
+const Annenkov = () => <FillCover
   pointer
   color="#FDF06f"
   onClick={() => navigateTo('/articles/ozhila_krasnaya_stsena')}
@@ -150,7 +164,7 @@ const Annenkov = () => <TopCover
       `}
     />
   </ArticlesSection>
-</TopCover>
+</FillCover>
 
 const IzVsehIskusstv = () => <FillCover
   shadow
@@ -233,6 +247,7 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
   render() {
     return (
       <div>
+        <Davydova />
         <Annenkov />
         <IzVsehIskusstv />
         <Belomor />
