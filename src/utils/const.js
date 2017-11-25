@@ -2,6 +2,10 @@ const base = '/articles/'
 
 export const articles = [
   {
+    url: base + 'abbreviatura_ramt',
+    title: '«Аббревиатуру РАМТ мы не придумывали»: Алексей Бородин об истории своего театра в начале 90-х',
+  },
+  {
     url: base + 'velikoe_raznoobrazie',
     title: 'Великое разнообразие: Марина Давыдова о том, что нужно знать о современном театре',
   },

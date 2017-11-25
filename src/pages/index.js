@@ -8,6 +8,7 @@ import Img from '../components/Img'
 import H3 from '../components/H3'
 import H4 from '../components/H4'
 import H2 from '../components/H2'
+import FillCover from '../components/FillCover'
 import Button from '../components/Button/StyledButton'
 import Footer from '../components/Footer'
 import Social from '../components/Social';
@@ -15,6 +16,7 @@ import Social from '../components/Social';
 import rus from './images/ppp.gif'
 import ezhen from './images/2.jpg'
 import mycene from './images/myc.jpg'
+import borodin from './images/ramt/borodin.jpg'
 import nadryv from './images/np1.jpg'
 import mask from './images/davydova/mask.gif'
 import belomor from './images/belomor/1test.jpg'
@@ -45,6 +47,7 @@ const ArticlesSection = styled(Section)`
   padding-top: ${p => p.paddingTop || '2'}rem;
   text-align: ${p => p.align || 'center'};
   margin: ${p => p.margin || 'auto'};
+  margin-top: ${p => p.marginTop || 'auto'};
   font-size: ${p => p.size || 'auto'};
   color: ${p => p.color || 'auto'};
   background: ${p => p.background || 'none'};
@@ -55,32 +58,12 @@ const NoImageCover = styled.div`
   padding-bottom: 2rem;
 `;
 
-const FillCover = styled.div`
-  position: relative;
-  background: ${(p) => p.color};
-  color: ${(p) => p.fontColor};
-  background-image: url(${(p) => p.bg || 'none'});
-  background-size: cover;
-  min-height: ${p => p.height || 'auto'};
-  display: flex;
-  ${p => p.shadow && 'box-shadow: inset 1px 4px 90px -6px #000000;'}
-
-  align-items: center;
-  justify-content: center;
-  ${p => p.bordered && `border: solid 9px ${p.borderColor || `#f2639e`};`}
-  ${p => p.pointer && `&:hover {
-    cursor: pointer;
-  }`}
-  ${phone(`
-    dispay: block;
-    min-height: auto;
-  `)}
-`;
-
 const TopCover = styled(FillCover)`
   min-height: 650px;
-  height: calc(100vh - 92px - 2.8rem);
+  height: calc(100vh - 70px - 2.8rem);
+  max-height: 800px;
   ${phone(`
+    min-height: auto;
     height: calc(100vh - 30px);
   `)}
 `
@@ -129,17 +112,25 @@ const YellowButton = styled(Button)`
   border: 3px solid yellow;
   background: rgba(0, 0, 0, 0.5)`;
 
-const Davydova = () => <TopCover
+const Borodin = () => <TopCover bg={borodin} height="1000px">
+  <ArticlesSection padding="1" size="22px" align="right">
+    <H1 color="#ec71c8">«Аббревиатуру РАМТ мы не придумывали»</H1>
+    <Lead color="lavender">Алексей Бородин об истории своего театра в начале 90-х</Lead>
+    <Button hover="black" color="lavender" float="right" to="/articles/abbreviatura_ramt">Читать</Button>
+  </ArticlesSection>
+</TopCover>
+
+const Davydova = () => <FillCover
   pointer
   color="#FDF06f"
   bg={mask}
   onClick={() => navigateTo('/articles/velikoe_raznoobrazie')}
   >
-  <ArticlesSection paddingTop="0">
-    <H1small>Марина Давыдова о том, что нужно знать о современном театре</H1small>
+  <ArticlesSection paddingTop="0" marginTop="4rem">
+    <H1small marginTop="0">Марина Давыдова о том, что нужно знать о современном театре</H1small>
     <H1>Великое разнообразие</H1>
   </ArticlesSection>
-</TopCover>
+</FillCover>
 
 
 const Annenkov = () => <FillCover
@@ -247,6 +238,7 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
   render() {
     return (
       <div>
+        <Borodin />
         <Davydova />
         <Annenkov />
         <IzVsehIskusstv />

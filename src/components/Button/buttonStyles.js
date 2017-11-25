@@ -10,17 +10,18 @@ const buttonStyles = css`
   user-select: none;
   cursor: pointer;
   outline: 0;
+  float: ${p => p.float || 'auto'};
   font-family: 'Bodoni', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 2rem;
-  color: black;
+  color: ${p => p.color || 'black'};
   -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
   font-weight: bold;
-  border: 2px solid black;
+  border: 2px solid ${p => p.color || 'black'};
 
   &:hover {
-    background: black;
-    color: #fff;
+    background: ${p => p.color || 'black'};
+    color: ${p => p.hover || '#fff'};
     -webkit-box-shadow: 1px -4px 45px -5px rgba(0,0,0,0.67);
     -moz-box-shadow: 1px -4px 45px -5px rgba(0,0,0,0.67);
     box-shadow: 1px -4px 45px -5px rgba(0,0,0,0.67);

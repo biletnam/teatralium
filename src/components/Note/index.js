@@ -5,7 +5,7 @@ import { phone } from '../../utils/media';
 const StyledNote = styled.div`
   position: absolute;
   ${p => !p.left ? 'right: -300px;' : 'left: -300px;'}
-  top: ${p => p.top || 'auto'};
+  top: ${p => p.top || '0'};
   background: ${p => p.background || 'lavender'};
   margin-bottom: 1rem;
   padding: 2rem;

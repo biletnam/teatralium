@@ -18,7 +18,6 @@ export function gradientColor({ pathname }, index) {
 export const titleStyles = `
   color: black;
   font-size: 2em;
-  margin-top: 0.6em;
   font-weight: 100;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -26,7 +25,10 @@ export const titleStyles = `
   > span {
     vertical-align: middle;
     font-size: 0.6em;
-  ${phone(`font-size: 0.4em;`)}
+  }
+  ${phone(`
+    margin-top: 1rem;
+    font-size: 1rem;`)}
 }`
 
 export const Title = styled(H1)`

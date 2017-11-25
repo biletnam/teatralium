@@ -18,6 +18,7 @@ import Share from '../../components/Share'
 import Video from '../../components/Video'
 import Rest from '../../components/Rest'
 import Other from '../../components/Other'
+import Poem from '../../components/Poem'
 
 import lead from '../images/belomor/1.jpg'
 
@@ -167,16 +168,6 @@ const flicker = keyframes`
 const url = 'https://teatralium.com/articles/morskoy_tsar_belomor'
 const title = '«Морской царь Беломор»: как и кем создавались театры ГУЛАГа'
 
-const Poem = styled.p`
-  color: #a669c8;
-  padding-left: 2rem;
-  font-family: 'Courier New';
-  font-size: 1.2rem;
-  > span {
-    display: block;
-    line-height: 2rem;
-  }
-`
 const H2Styled = styled(H2)`
   font-size: 1.713em;
   margin-top: 4rem;
