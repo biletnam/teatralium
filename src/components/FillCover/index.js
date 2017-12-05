@@ -6,7 +6,7 @@ const FillCover = styled.div`
   background: ${(p) => p.color};
   color: ${(p) => p.fontColor};
   background-image: url(${(p) => p.bg || 'none'});
-  background-size: cover;
+  ${p => p.repeat ? 'background-repeat: repeat' : 'background-size: cover'};
   min-height: ${p => p.height || 'auto'};
   display: flex;
   ${p => p.shadow && 'box-shadow: inset 1px 4px 90px -6px #000000;'}

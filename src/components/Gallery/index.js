@@ -14,7 +14,6 @@ const StyledGallery = styled.div`
   justify-content: center;
   > div {
     padding: 14px;
-    max-width: 50%;
     max-width: ${p => p.maxWidth || '600px'};
     padding-bottom: 0;
     padding-right: 0;
@@ -22,7 +21,7 @@ const StyledGallery = styled.div`
   > div img {
     max-width: ${p => p.maxWidth || '600px'};
     max-height: ${p => p.maxHeight || 'auto'};
-    ${phone('max-width: 95%;')}
+    ${phone('max-width: 100%;')}
   }
 `
 

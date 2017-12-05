@@ -42,13 +42,15 @@ export const Title = styled(H1)`
 
 const Wrapper = styled.div`
 `;
+
+const H = ({pathname}) => <Title pathname={pathname}><span>♦</span>Театралий<span>♦</span></Title>
+
 class Header extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
+    const { pathname } = this.props
     return (
       <Wrapper>
-        <A to="/">
-          <Title pathname={this.props.pathname}><span>♦</span>Театралий<span>♦</span></Title>
-        </A>
+        {pathname === '/' ? <H /> : <A to="/"><H pathname={pathname} /></A>}
       </Wrapper>
     );
   }

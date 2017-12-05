@@ -1,4 +1,5 @@
-import { css } from 'styled-components';
+import { css } from 'styled-components'
+import { phone } from '../../utils/media'
 
 const buttonStyles = css`
   display: inline-block;
@@ -26,6 +27,11 @@ const buttonStyles = css`
     -moz-box-shadow: 1px -4px 45px -5px rgba(0,0,0,0.67);
     box-shadow: 1px -4px 45px -5px rgba(0,0,0,0.67);
   }
-`;
 
-export default buttonStyles;
+  ${phone(`
+    font-size: 1.2rem;
+    padding: 0.125em 1em;
+  `)}
+`
+
+export default buttonStyles

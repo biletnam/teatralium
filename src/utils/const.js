@@ -2,6 +2,14 @@ const base = '/articles/'
 
 export const articles = [
   {
+    url: base + 'pomosh_zala',
+    title: 'Помощь зала: социальный театр от Боба Уилсона до Бориса Павловича',
+  },
+  {
+    url: base + 'playlist_komissara_vsevoloda_lisovskogo',
+    title: 'Миражи — это наша жизнь?: плейлист комиссара Всеволода Лисовского',
+  },
+  {
     url: base + 'abbreviatura_ramt',
     title: '«Аббревиатуру РАМТ мы не придумывали»: Алексей Бородин об истории своего театра в начале 90-х',
   },

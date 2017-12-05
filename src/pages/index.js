@@ -22,6 +22,8 @@ import mask from './images/davydova/mask.gif'
 import belomor from './images/belomor/1test.jpg'
 import annenkov from './images/annenkov/home.jpg'
 import iz_vseh_iskusstv from './images/iz_vseh_iskusstv/cover.jpg'
+import lisovsky from './images/otvechaet/lisovsky.png'
+import pomosh from './images/pomosh_zala/cover_main.jpg'
 
 import { REVOLUTION } from '../utils/const'
 
@@ -112,13 +114,39 @@ const YellowButton = styled(Button)`
   border: 3px solid yellow;
   background: rgba(0, 0, 0, 0.5)`;
 
-const Borodin = () => <TopCover bg={borodin} height="1000px">
+const Pomosh = () => <TopCover
+  bg={pomosh}
+  pointer
+  height="600px"
+  onClick={() => navigateTo('/articles/pomosh_zala')}
+  >
+  <ArticlesSection padding="1" size="22px" align="center">
+    <H1 color="white">Помощь зала</H1>
+    <Lead color="white">социальный театр от Боба Уилсона до Бориса Павловича</Lead>
+  </ArticlesSection>
+</TopCover>
+
+const Lisovski = () => <FillCover
+  pointer
+  onClick={() => navigateTo('/articles/playlist_komissara_vsevoloda_lisovskogo')}
+  bg={lisovsky}
+  repeat
+  bordered
+  borderColor="yellow"
+  >
+  <ArticlesSection padding="1" size="22px" background="rgba(118,189,187,0.67)">
+    <H1 color="yellow">Миражи — это наша жизнь?</H1>
+    <Lead color="black">плейлист комиссара Всеволода Лисовского</Lead>
+  </ArticlesSection>
+</FillCover>
+
+const Borodin = () => <FillCover bg={borodin} height="600px">
   <ArticlesSection padding="1" size="22px" align="right">
     <H1 color="#ec71c8">«Аббревиатуру РАМТ мы не придумывали»</H1>
     <Lead color="lavender">Алексей Бородин об истории своего театра в начале 90-х</Lead>
     <Button hover="black" color="lavender" float="right" to="/articles/abbreviatura_ramt">Читать</Button>
   </ArticlesSection>
-</TopCover>
+</FillCover>
 
 const Davydova = () => <FillCover
   pointer
@@ -238,6 +266,8 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
   render() {
     return (
       <div>
+        <Pomosh />
+        <Lisovski />
         <Borodin />
         <Davydova />
         <Annenkov />
