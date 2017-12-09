@@ -20,7 +20,6 @@ injectGlobal`
 
   a {
     color: black;
-    text-decoration-skip: ink;
   }
 
   p {
