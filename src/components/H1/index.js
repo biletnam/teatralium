@@ -5,7 +5,7 @@ const H1 = styled.h1`
   margin-top: 0;
   text-transform: uppercase;
   letter-spacing: 0.5rem;
-  font-size: 4.236em;
+  font-size: ${p => p.size || '4.236em'};
   line-height: 5.6rem;
   text-align: ${p => p.align || 'inherit'};
   ${p => p.shadow && p.shadow}

@@ -16,7 +16,7 @@ const Section = styled.section`
   padding: ${p => p.padding || '2'}rem;
   padding-top: ${p => p.paddingTop || '0'};
   font-size: ${p => p.size || 'auto'};
-  color: ${p => p.color || 'auto'};
+  color: ${p => p.color || 'inherit'};
   animation: ${fadein} 1s ease-out;
   > h1, h2, h3 {
     text-align: center;

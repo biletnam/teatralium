@@ -2,6 +2,10 @@ const base = '/articles/'
 
 export const articles = [
   {
+    url: base + 'ivan_vyrypaev_protiv_kritikov',
+    title: '«Я абсолютно против критиков сегодня»: Иван Вырыпаев о театре без микрофонов и рецензий',
+  },
+  {
     url: base + 'pomosh_zala',
     title: 'Помощь зала: социальный театр от Боба Уилсона до Бориса Павловича',
   },

@@ -15,7 +15,6 @@ import Social from '../components/Social';
 
 import rus from './images/ppp.gif'
 import ezhen from './images/2.jpg'
-import mycene from './images/myc.jpg'
 import borodin from './images/ramt/borodin.jpg'
 import nadryv from './images/np1.jpg'
 import mask from './images/davydova/mask.gif'
@@ -23,6 +22,7 @@ import belomor from './images/belomor/1test.jpg'
 import annenkov from './images/annenkov/home.jpg'
 import iz_vseh_iskusstv from './images/iz_vseh_iskusstv/cover.jpg'
 import lisovsky from './images/otvechaet/lisovsky.png'
+import vyrypaev from './images/vyrypaev/1.jpg'
 import pomosh from './images/pomosh_zala/cover_main.jpg'
 
 import { REVOLUTION } from '../utils/const'
@@ -114,17 +114,29 @@ const YellowButton = styled(Button)`
   border: 3px solid yellow;
   background: rgba(0, 0, 0, 0.5)`;
 
-const Pomosh = () => <TopCover
-  bg={pomosh}
+const Vyrypaev = () => <TopCover
+  bg={vyrypaev}
   pointer
   height="600px"
+  onClick={() => navigateTo('/articles/ivan_vyrypaev_protiv_kritikov')}
+  >
+  <ArticlesSection padding="1" size="22px" align="center">
+    <H1 size="3rem" color="white">«Я абсолютно против критиков сегодня»</H1>
+    <Lead color="white">Иван Вырыпаев о театре без микрофонов и рецензий</Lead>
+  </ArticlesSection>
+</TopCover>
+
+const Pomosh = () => <FillCover
+  bg={pomosh}
+  pointer
+  height="400px"
   onClick={() => navigateTo('/articles/pomosh_zala')}
   >
   <ArticlesSection padding="1" size="22px" align="center">
     <H1 color="white">Помощь зала</H1>
-    <Lead color="white">социальный театр от Боба Уилсона до Бориса Павловича</Lead>
+    <Lead color="white">Социальный театр от Боба Уилсона до Бориса Павловича</Lead>
   </ArticlesSection>
-</TopCover>
+</FillCover>
 
 const Lisovski = () => <FillCover
   pointer
@@ -254,18 +266,11 @@ const Ezhen = () => <FillCover color="white">
     </ImgWrapper>
 </FillCover>
 
-const Svet = () => <FillCover bordered color="`ellow" bg={mycene} height="600px">
-  <ArticlesSection padding="3">
-    <H1 color="white">Свет далеких планет</H1>
-    <Lead color="white">Обзор европейских премьер нового сезона</Lead>
-    <PurpleButton to="/articles/svet_dalyokih_planet">Читать</PurpleButton>
-  </ArticlesSection>
-</FillCover>
-
 export class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
       <div>
+        <Vyrypaev />
         <Pomosh />
         <Lisovski />
         <Borodin />
@@ -282,7 +287,6 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
         </Border>
         <Lyub />
         <Ezhen />
-        <Svet />
         <Social />
       </div>
     );

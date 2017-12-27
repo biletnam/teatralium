@@ -9,7 +9,7 @@ export const shadow = `
 const Wrapper = styled.div`
   margin: 0 auto;
   margin-bottom: ${p => p.marginBottom || '4rem'};
-  margin-top: ${p => p.marginTop || '1rem'};
+  margin-top: ${p => p.marginTop || '4rem'};
   max-width: ${p => p.maxWidth || '780px'};
 `
 
