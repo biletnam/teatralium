@@ -66,7 +66,7 @@ class Video extends React.Component {
     return <div><Wrapper {...props} enabled={state.enabled} onClick={() => this.setState({ enabled: true })}>
       {state.enabled ?
         <iframe
-          src={"https://www.youtube.com/embed/" + props.id + '?autoplay=1'}
+          src={"https://www.youtube.com/embed/" + props.id + '?autoplay=1&start=' + props.start || 0}
           frameBorder="0"
           allowFullScreen>
         </iframe>

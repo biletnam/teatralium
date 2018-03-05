@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "author": "Maxim Matyunin",
   "dependencies": {
-    "gatsby": "^1.9.112",
+    "gatsby": "^1.9.214",
     "gatsby-link": "^1.6.22",
     "gatsby-plugin-google-analytics": "^1.0.10",
     "gatsby-plugin-react-helmet": "^1.0.5",
@@ -17,7 +17,7 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
-    "build": "gatsby build && yarn deploy",
+    "build": "rm -rf ./public/* && gatsby build && yarn deploy",
     "develop": "gatsby develop",
     "start": "gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'",
@@ -26,6 +26,6 @@
     "deploy": "rsync -r public/ tr:/var/www/deploy_tr && ssh tr 'rm -rf /var/www/tr/*; mv /var/www/deploy_tr/* /var/www/tr'"
   },
   "devDependencies": {
-    "prettier": "^1.7.4"
+    "prettier": "1.10.2"
   }
 }

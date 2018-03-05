@@ -1,31 +1,36 @@
-import React from 'react'
-import styled from 'styled-components'
-import Link, { navigateTo } from 'gatsby-link'
+import React from "react";
+import styled from "styled-components";
+import Link, { navigateTo } from "gatsby-link";
 
-import { phone } from '../utils/media'
-import H1, { H1small } from '../components/H1'
-import Img from '../components/Img'
-import H3 from '../components/H3'
-import H4 from '../components/H4'
-import H2 from '../components/H2'
-import FillCover from '../components/FillCover'
-import Button from '../components/Button/StyledButton'
-import Footer from '../components/Footer'
-import Social from '../components/Social';
+import { phone } from "../utils/media";
+import H1, { H1small } from "../components/H1";
+import Img from "../components/Img";
+import H3 from "../components/H3";
+import H4 from "../components/H4";
+import H2 from "../components/H2";
+import FillCover, { TopCover } from "../components/FillCover";
+import Button from "../components/Button/StyledButton";
+import Footer from "../components/Footer";
+import Social from "../components/Social";
 
-import rus from './images/ppp.gif'
-import ezhen from './images/2.jpg'
-import borodin from './images/ramt/borodin.jpg'
-import nadryv from './images/np1.jpg'
-import mask from './images/davydova/mask.gif'
-import belomor from './images/belomor/1test.jpg'
-import annenkov from './images/annenkov/home.jpg'
-import iz_vseh_iskusstv from './images/iz_vseh_iskusstv/cover.jpg'
-import lisovsky from './images/otvechaet/lisovsky.png'
-import vyrypaev from './images/vyrypaev/1.jpg'
-import pomosh from './images/pomosh_zala/cover_main.jpg'
-
-import { REVOLUTION } from '../utils/const'
+import rus from "./images/ppp.gif";
+import ezhen from "./images/2.jpg";
+import borodin from "./images/ramt/borodin.jpg";
+import nadryv from "./images/np1.jpg";
+import mask from "./images/davydova/mask.gif";
+import belomor from "./images/belomor/1test.jpg";
+import annenkov from "./images/annenkov/home.jpg";
+import iz_vseh_iskusstv from "./images/iz_vseh_iskusstv/cover.jpg";
+import lisovsky from "./images/otvechaet/lisovsky.png";
+import avdeev from "./images/otvechaet/avdeev_cover.jpg";
+import vyrypaev from "./images/vyrypaev/1.jpg";
+import pomosh from "./images/pomosh_zala/cover_main.jpg";
+import abuse from "./images/abuse/cover.jpg";
+import naryady from "./images/naryady/044.jpg";
+import mycene from "./images/myc.jpg";
+import rostov from "./images/naprimer/cover.jpg";
+import sonet from "./images/sonet/4.jpg";
+import { REVOLUTION } from "../utils/const";
 
 const StyledLink = styled(Link)`
   color: black;
@@ -33,26 +38,27 @@ const StyledLink = styled(Link)`
   &:hover {
     cursor: hand;
   }
-`
+`;
 
 const Section = styled.section`
   max-width: calc(768px + 16px * 2);
-  margin: 3em auto;
+  margin: ${p => p.margin || "3em auto"};
+  text-align: ${p => p.align || "auto"};
   margin-bottom: 0;
   padding: 0.3rem;
 
-  ${phone('margin: 0.5em auto;')}
+  ${phone("margin: 0.5em auto;")};
 `;
 
 const ArticlesSection = styled(Section)`
-  padding: ${p => p.padding || '2'}rem;
-  padding-top: ${p => p.paddingTop || '2'}rem;
-  text-align: ${p => p.align || 'center'};
-  margin: ${p => p.margin || 'auto'};
-  margin-top: ${p => p.marginTop || 'auto'};
-  font-size: ${p => p.size || 'auto'};
-  color: ${p => p.color || 'auto'};
-  background: ${p => p.background || 'none'};
+  padding: ${p => p.padding || "2"}rem;
+  padding-top: ${p => p.paddingTop || "2"}rem;
+  text-align: ${p => p.align || "center"};
+  margin: ${p => p.margin || "auto"};
+  margin-top: ${p => p.marginTop || "auto"};
+  font-size: ${p => p.size || "auto"};
+  color: ${p => p.color || "auto"};
+  background: ${p => p.background || "none"};
 `;
 
 const NoImageCover = styled.div`
@@ -60,40 +66,29 @@ const NoImageCover = styled.div`
   padding-bottom: 2rem;
 `;
 
-const TopCover = styled(FillCover)`
-  min-height: 650px;
-  height: calc(100vh - 70px - 2.8rem);
-  max-height: 800px;
-  ${phone(`
-    min-height: auto;
-    height: calc(100vh - 30px);
-  `)}
-`
-
 const FillCoverMaxHeight = styled(FillCover)`
-  ${phone(`max-height: 150px;`)}
+  ${phone(`max-height: 150px;`)};
 `;
 
 const ImgWrapper = styled.div`
-  ${phone('display: none;')}
-  padding: 2rem;
+  ${phone("display: none;")} padding: 2rem;
 `;
 
 const Lead = styled.div`
-  font-size: ${p => p.size || '1.2rem'};
-  color: ${p => p.color || 'inherit'};
-  background: ${p => p.background || 'none'};
-  padding: ${p => p.padding || 'auto'};
+  font-size: ${p => p.size || "1.2rem"};
+  color: ${p => p.color || "inherit"};
+  background: ${p => p.background || "none"};
+  padding: ${p => p.padding || "auto"};
   text-transform: uppercase;
   letter-spacing: 0.1rem;
-  font-family: 'Bodoni';
-  margin-bottom: ${p => p.marginBottom || '2'}rem;
+  font-family: "Bodoni";
+  margin-bottom: ${p => p.marginBottom || "2"}rem;
   ${phone(`
     font-size: 0.9em;
     letter-spacing: normal;
     line-height: normal;
     text-transform: none;
-  `)}
+  `)};
 `;
 
 const Border = styled.div`
@@ -107,169 +102,345 @@ const PurpleButton = styled(Button)`
 
   &:hover {
     background: #f2639e;
-  }`;
+  }
+`;
 
 const YellowButton = styled(Button)`
   color: yellow;
   border: 3px solid yellow;
-  background: rgba(0, 0, 0, 0.5)`;
+  background: rgba(0, 0, 0, 0.5);
+`;
 
-const Vyrypaev = () => <TopCover
-  bg={vyrypaev}
-  pointer
-  height="600px"
-  onClick={() => navigateTo('/articles/ivan_vyrypaev_protiv_kritikov')}
+const Sonet = () => (
+  <TopCover
+    pointer
+    onClick={() => navigateTo("/articles/net_amnezii")}
+    bg={sonet}
   >
-  <ArticlesSection padding="1" size="22px" align="center">
-    <H1 size="3rem" color="white">«Я абсолютно против критиков сегодня»</H1>
-    <Lead color="white">Иван Вырыпаев о театре без микрофонов и рецензий</Lead>
-  </ArticlesSection>
-</TopCover>
+    <ArticlesSection
+      margin="0"
+      marginTop="0"
+    >
+      <H1 center size="3.2124em">
+        Нет амнезии
+      </H1>
+      <H1small center>
+        Вспоминаем спектакль «Наизусть» Тьяго Родригеса и заучиваем
+        тридцатый сонет Шекспира
+      </H1small>
+    </ArticlesSection>
+  </TopCover>
+);
 
-const Pomosh = () => <FillCover
-  bg={pomosh}
-  pointer
-  height="400px"
-  onClick={() => navigateTo('/articles/pomosh_zala')}
+const Rostov = () => (
+  <FillCover
+    pointer
+    onClick={() => navigateTo("/articles/v_moskve_naprimer_analogov_net")}
+    bg={rostov}
   >
-  <ArticlesSection padding="1" size="22px" align="center">
-    <H1 color="white">Помощь зала</H1>
-    <Lead color="white">Социальный театр от Боба Уилсона до Бориса Павловича</Lead>
-  </ArticlesSection>
-</FillCover>
+    <Section align="center" margin="0 3rem">
+      <H1 center size="3.2124em" color="white">
+        В Москве, например, аналогов нет
+      </H1>
+      <H1small center color="white">
+        Пять лет ростовскому «Театру 18+» с современными пьесами и казачим
+        рэпом, но без государственных денег
+      </H1small>
+    </Section>
+  </FillCover>
+);
 
-const Lisovski = () => <FillCover
-  pointer
-  onClick={() => navigateTo('/articles/playlist_komissara_vsevoloda_lisovskogo')}
-  bg={lisovsky}
-  repeat
-  bordered
-  borderColor="yellow"
+const Sebastian = () => (
+  <FillCover
+    pointer
+    onClick={() => navigateTo("/articles/poobshatsa_s_gospodinom_oblomovym")}
   >
-  <ArticlesSection padding="1" size="22px" background="rgba(118,189,187,0.67)">
-    <H1 color="yellow">Миражи — это наша жизнь?</H1>
-    <Lead color="black">плейлист комиссара Всеволода Лисовского</Lead>
-  </ArticlesSection>
-</FillCover>
+    <Section align="center" margin="0">
+      <H1small>Себастьян Кайзер:</H1small>
+      <H1 size="3.2124em">
+        «Нам всем нужно пообщаться с&nbsp;господином Обломовым»
+      </H1>
+    </Section>
+  </FillCover>
+);
 
-const Borodin = () => <FillCover bg={borodin} height="600px">
-  <ArticlesSection padding="1" size="22px" align="right">
-    <H1 color="#ec71c8">«Аббревиатуру РАМТ мы не придумывали»</H1>
-    <Lead color="lavender">Алексей Бородин об истории своего театра в начале 90-х</Lead>
-    <Button hover="black" color="lavender" float="right" to="/articles/abbreviatura_ramt">Читать</Button>
-  </ArticlesSection>
-</FillCover>
-
-const Davydova = () => <FillCover
-  pointer
-  color="#FDF06f"
-  bg={mask}
-  onClick={() => navigateTo('/articles/velikoe_raznoobrazie')}
+const Naryady = () => (
+  <FillCover
+    bg={naryady}
+    bordered
+    borderColor="black"
+    borderSize="7"
+    pointer
+    onClick={() => navigateTo("/articles/teatr_mody_v_sovetskoy_rossii")}
   >
-  <ArticlesSection paddingTop="0" marginTop="4rem">
-    <H1small marginTop="0">Марина Давыдова о том, что нужно знать о современном театре</H1small>
-    <H1>Великое разнообразие</H1>
-  </ArticlesSection>
-</FillCover>
+    <Section margin="1rem">
+      <H1 size="3.8124em" align="left">
+        Иммерсивный фэшн 20-х,<br />
+        <small>или</small> театр моды в советской России
+      </H1>
+    </Section>
+  </FillCover>
+);
 
+const Avdeev = () => (
+  <FillCover
+    pointer
+    onClick={() => navigateTo("/articles/ya_posadil_derevo")}
+    bg={avdeev}
+    repeat
+    bordered
+    borderColor="#d54051"
+  >
+    <ArticlesSection padding="1" size="22px" background="rgba(255,255,255,0.8)">
+      <H1 color="#d54051">Я посадил дерево</H1>
+      <Lead color="#d54051">плейлист актера Филиппа Авдеева</Lead>
+    </ArticlesSection>
+  </FillCover>
+);
 
-const Annenkov = () => <FillCover
-  pointer
-  color="#FDF06f"
-  onClick={() => navigateTo('/articles/ozhila_krasnaya_stsena')}
-  bordered
-  borderColor={REVOLUTION}
->
-  <ArticlesSection padding="2" paddingTop="4">
-    <H2>Ожила красная сцена</H2>
-    <Lead marginBottom="2">Как художник Юрий Анненков стал «модельером» революции</Lead>
-    <Img
-      round
-      noBorder
-      src={annenkov}
-      width="280px"
-      customBorder={`
+const Abuse = () => (
+  <FillCover
+    bg={abuse}
+    pointer
+    height="600px"
+    onClick={() => navigateTo("/articles/abyuz_nelzya_pomilovat")}
+  >
+    <ArticlesSection padding="3" align="right" background="rgba(97,59,123,0.6)">
+      <H1 color="white">Абьюз нельзя помиловать</H1>
+    </ArticlesSection>
+  </FillCover>
+);
+
+const Vyrypaev = () => (
+  <FillCover
+    bg={vyrypaev}
+    pointer
+    height="600px"
+    onClick={() => navigateTo("/articles/ivan_vyrypaev_protiv_kritikov")}
+  >
+    <ArticlesSection padding="1" size="22px" align="center">
+      <H1 size="3rem" color="white">
+        «Я абсолютно против критиков сегодня»
+      </H1>
+      <Lead color="white">
+        Иван Вырыпаев о театре без микрофонов и рецензий
+      </Lead>
+    </ArticlesSection>
+  </FillCover>
+);
+
+const Pomosh = () => (
+  <FillCover
+    bg={pomosh}
+    pointer
+    height="400px"
+    onClick={() => navigateTo("/articles/pomosh_zala")}
+  >
+    <ArticlesSection padding="1" size="22px" align="center">
+      <H1 color="white">Помощь зала</H1>
+      <Lead color="white">
+        Социальный театр от Боба Уилсона до Бориса Павловича
+      </Lead>
+    </ArticlesSection>
+  </FillCover>
+);
+
+const Lisovski = () => (
+  <FillCover
+    pointer
+    onClick={() =>
+      navigateTo("/articles/playlist_komissara_vsevoloda_lisovskogo")
+    }
+    bg={lisovsky}
+    repeat
+    bordered
+    borderColor="yellow"
+  >
+    <ArticlesSection
+      padding="1"
+      size="22px"
+      background="rgba(118,189,187,0.67)"
+    >
+      <H1 color="yellow">Миражи — это наша жизнь?</H1>
+      <Lead color="black">плейлист комиссара Всеволода Лисовского</Lead>
+    </ArticlesSection>
+  </FillCover>
+);
+
+const Borodin = () => (
+  <FillCover
+    bg={borodin}
+    height="600px"
+    onClick={() => navigateTo("/articles/abbreviatura_ramt")}
+  >
+    <ArticlesSection padding="1" align="right">
+      <H1 size="3.2124em" color="#ec71c8">
+        «Аббревиатуру РАМТ мы не придумывали»
+      </H1>
+      <Lead color="lavender">
+        Алексей Бородин об истории своего театра в начале 90-х
+      </Lead>
+    </ArticlesSection>
+  </FillCover>
+);
+
+const Davydova = () => (
+  <FillCover
+    pointer
+    color="#FDF06f"
+    bg={mask}
+    onClick={() => navigateTo("/articles/velikoe_raznoobrazie")}
+  >
+    <ArticlesSection paddingTop="0" marginTop="4rem">
+      <H1small marginTop="0">
+        Марина Давыдова о том, что нужно знать о современном театре
+      </H1small>
+      <H1>Великое разнообразие</H1>
+    </ArticlesSection>
+  </FillCover>
+);
+
+const Annenkov = () => (
+  <FillCover
+    pointer
+    color="#FDF06f"
+    onClick={() => navigateTo("/articles/ozhila_krasnaya_stsena")}
+    bordered
+    borderColor={REVOLUTION}
+  >
+    <ArticlesSection padding="2" paddingTop="4">
+      <H2>Ожила красная сцена</H2>
+      <Lead marginBottom="2">
+        Как художник Юрий Анненков стал «модельером» революции
+      </Lead>
+      <Img
+        round
+        noBorder
+        src={annenkov}
+        width="280px"
+        customBorder={`
         border-style: inset;
         border-color: ${REVOLUTION};
         border-width: 10px;
       `}
-    />
+      />
+    </ArticlesSection>
+  </FillCover>
+);
+
+const IzVsehIskusstv = () => (
+  <FillCover
+    shadow
+    pointer
+    color="black"
+    fontColor="#9bda9e"
+    onClick={() => navigateTo("/articles/iz_vseh_iskusstv")}
+    height="400px"
+    bg={iz_vseh_iskusstv}
+  >
+    <ArticlesSection padding="1" background="rgba(97,59,123,0.6)">
+      <Lead padding="0.5rem" color="#9bda9e">
+        Набоков, Хармс и другие классики рассуждают о театре
+      </Lead>
+      <H1>Из всех искусств</H1>
+    </ArticlesSection>
+  </FillCover>
+);
+
+const Belomor = () => (
+  <FillCover bordered borderColor="yellow" bg={belomor} height="700px">
+    <ArticlesSection padding="1" size="22px" align="left">
+      <Lead color="yellow">Как и кем создавались театры ГУЛАГа</Lead>
+      <H1 color="yellow">«Морской царь Беломор»</H1>
+      <YellowButton to="/articles/morskoy_tsar_belomor">Читать</YellowButton>
+    </ArticlesSection>
+  </FillCover>
+);
+
+const Bol = () => (
+  <ArticlesSection>
+    <NoImageCover>
+      <H1small>«МНЕ ПЛОХО, МНЕ СКУЧНО»</H1small>
+      <H1>почему люди не ходят в театр</H1>
+      <Button to="/articles/mne_ploho_mne_skuchno">Читать</Button>
+    </NoImageCover>
   </ArticlesSection>
-</FillCover>
+);
 
-const IzVsehIskusstv = () => <FillCover
-  shadow
-  pointer
-  color="black"
-  fontColor="#9bda9e"
-  onClick={() => navigateTo('/articles/iz_vseh_iskusstv')}
-  height="400px"
-  bg={iz_vseh_iskusstv}
->
-  <ArticlesSection padding="1" background="rgba(97,59,123,0.6)">
-    <Lead padding="0.5rem" color="#9bda9e">Набоков, Хармс и другие классики рассуждают о театре</Lead>
-    <H1>Из всех искусств</H1>
-  </ArticlesSection>
-</FillCover>
+const Nadryv = () => (
+  <FillCoverMaxHeight
+    color="black"
+    bg={nadryv}
+    height="400px"
+    onClick={() => navigateTo("/articles/neperevodimiy_russkiy_nadryv")}
+  >
+    <ArticlesSection padding="3" paddingTop="14" size="14px" />
+  </FillCoverMaxHeight>
+);
 
-const Belomor = () => <FillCover bordered borderColor="yellow" bg={belomor} height="700px">
-  <ArticlesSection padding="1" size="22px" align="left">
-    <Lead color="yellow">Как и кем создавались театры ГУЛАГа</Lead>
-    <H1 color="yellow">«Морской царь Беломор»</H1>
-    <YellowButton to="/articles/morskoy_tsar_belomor">Читать</YellowButton>
-  </ArticlesSection>
-</FillCover>
+const NadryvSub = () => (
+  <FillCover color="white">
+    <ArticlesSection align="right" margin="1rem" paddingTop="0">
+      <H3 fontStyle="normal">Непереводимый русский надрыв</H3>
+      <H1small>Юрий Муравицкий и Валерий Печейкин о любви и хаосе</H1small>
+    </ArticlesSection>
+  </FillCover>
+);
 
-const Bol = () => <ArticlesSection>
-  <NoImageCover>
-    <H1small>«МНЕ ПЛОХО, МНЕ СКУЧНО»</H1small>
-    <H1>почему люди не ходят в театр</H1>
-    <Button to="/articles/mne_ploho_mne_skuchno">Читать</Button>
-  </NoImageCover>
-</ArticlesSection>
+const Lyub = () => (
+  <FillCover
+    pointer
+    color="#e6ceff"
+    onClick={() => navigateTo("/articles/lyubimovka")}
+  >
+    <ArticlesSection padding="1">
+      <H3>
+        <i>«Меня волнует вся х**ня»</i>
+      </H3>
+      <Lead>
+        Ридер «Любимовки» Анна Банасюкевич о стране, в которой мы живем
+      </Lead>
+      <Img src={rus} width="300px" round />
+    </ArticlesSection>
+  </FillCover>
+);
 
-const Nadryv = () => <FillCoverMaxHeight
-  color="black"
-  bg={nadryv}
-  height="400px"
-  onClick={() => navigateTo('/articles/neperevodimiy_russkiy_nadryv')}
->
-  <ArticlesSection padding="3" paddingTop="14" size="14px" />
-</FillCoverMaxHeight>
-
-const NadryvSub = () => <FillCover
-  color="white"
->
-  <ArticlesSection align="right" margin="1rem" paddingTop="0">
-    <H3 fontStyle="normal">Непереводимый русский надрыв</H3>
-    <H1small>Юрий Муравицкий и Валерий Печейкин о любви и хаосе</H1small>
-  </ArticlesSection>
-</FillCover>
-
-const Lyub = () => <FillCover pointer color="#e6ceff" onClick={() => navigateTo('/articles/lyubimovka')}>
-  <ArticlesSection padding="1">
-    <H3><i>«Меня волнует вся х**ня»</i></H3>
-    <Lead>Ридер «Любимовки» Анна Банасюкевич о стране, в которой мы живем</Lead>
-    <Img src={rus} width="300px" round />
-  </ArticlesSection>
-</FillCover>
-
-const Ezhen = () => <FillCover color="white">
+const Ezhen = () => (
+  <FillCover color="white">
     <ArticlesSection align="right" margin="1rem">
-      <StyledLink to={'/articles/ezhen'}>
-      <H1>Что хотел сказать автор?</H1>
-      <H1small>Отвечает Эжен Ионеско</H1small>
+      <StyledLink to={"/articles/ezhen"}>
+        <H1>Что хотел сказать автор?</H1>
+        <H1small>Отвечает Эжен Ионеско</H1small>
       </StyledLink>
     </ArticlesSection>
     <ImgWrapper>
       <Img src={ezhen} />
     </ImgWrapper>
-</FillCover>
+  </FillCover>
+);
 
-export class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+const Svet = () => (
+  <FillCover bordered bg={mycene} height="600px">
+    <ArticlesSection padding="3">
+      <H1 color="white">Свет далеких планет</H1>
+      <Lead color="white">Обзор европейских премьер нового сезона</Lead>
+      <PurpleButton to="/articles/svet_dalyokih_planet">Читать</PurpleButton>
+    </ArticlesSection>
+  </FillCover>
+);
+
+export class HomePage extends React.PureComponent {
+  // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
       <div>
+        <Sonet />
+        <Rostov />
+        <Sebastian />
+        <Naryady />
+        <Avdeev />
+        <Abuse />
+        <Social />
         <Vyrypaev />
         <Pomosh />
         <Lisovski />
@@ -280,17 +451,17 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
         <Belomor />
         <Bol />
         <Border>
-          <StyledLink to={'/articles/neperevodimiy_russkiy_nadryv'}>
+          <StyledLink to={"/articles/neperevodimiy_russkiy_nadryv"}>
             <Nadryv />
             <NadryvSub />
           </StyledLink>
         </Border>
         <Lyub />
         <Ezhen />
-        <Social />
+        <Svet />
       </div>
     );
   }
 }
 
-export default HomePage
+export default HomePage;
