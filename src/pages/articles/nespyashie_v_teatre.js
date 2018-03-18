@@ -6,7 +6,8 @@ import styled, { keyframes } from 'styled-components'
 import { phone } from '../../utils/media'
 import H1, { H1small } from '../../components/H1'
 import ArticleHelmet from '../../components/ArticleHelmet'
-import Img from '../../components/Img'
+import Img from '../../components/ImgG'
+import ImgOld from '../../components/Img'
 import H2 from '../../components/H2'
 import Gallery from '../../components/Gallery'
 import Video from '../../components/Video'
@@ -18,34 +19,15 @@ import P from '../../components/P'
 import Date from '../../components/Date'
 import Share from '../../components/Share'
 import Other from '../../components/Other'
-import Poem from '../../components/Poem'
+
+import kiss from '../images/kiss.gif'
 
 import FillCover, { TopCover } from '../../components/FillCover'
 
-import zritel1 from '../images/nespyashie/zriteli/zritel-1.jpg'
-import zritel2 from '../images/nespyashie/zriteli/zritel-2.jpg'
-import zritel3 from '../images/nespyashie/zriteli/zritel-3.jpg'
-import zritel4 from '../images/nespyashie/zriteli/zritel-4.jpg'
-import zritel5 from '../images/nespyashie/zriteli/zritel-5.jpg'
-import zritel6 from '../images/nespyashie/zriteli/zritel-6.jpg'
-import zritel7 from '../images/nespyashie/zriteli/zritel-7.jpg'
-import zritel8 from '../images/nespyashie/zriteli/zritel-8.jpg'
-import zritel9 from '../images/nespyashie/zriteli/zritel-9.jpg'
-import zritel10 from '../images/nespyashie/zriteli/zritel-10.jpg'
-
-import foto1 from '../images/nespyashie/1.jpg'
-import foto2 from '../images/nespyashie/2.jpg'
-import foto3 from '../images/nespyashie/3.jpg'
-import foto4 from '../images/nespyashie/4.jpg'
-import foto5 from '../images/nespyashie/5.jpg'
-import foto6 from '../images/nespyashie/6.jpg'
-import foto7 from '../images/nespyashie/7.jpg'
-import foto8 from '../images/nespyashie/8.jpg'
-import foto9 from '../images/nespyashie/9.jpg'
-import foto10 from '../images/nespyashie/10.png'
-
 const url = 'https://teatralium.com/articles/nespyashie_v_teatre/'
 const title = 'Неспящие в театре: типы зрителей на основе индуистской философии'
+
+const ImgKiss = () => <ImgOld src={kiss} noBorder width="70px" marginTop="5rem" />
 
 const StyledDate = styled(Date)`
   ${phone(`
@@ -53,22 +35,43 @@ const StyledDate = styled(Date)`
   `)};
 `
 
+const H1Styled = styled(H1)`
+  padding: 6rem 2rem 0;
+`
+
+const H1smallStyled = styled(H1small)`
+  padding: 3rem 1rem 0;
+`
+
+const ImgStyled = styled(Img)`
+  max-width: 100%;
+`
+
 const H1Shadow = styled(H1)`
   text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
     1px 1px 0 #fff;
 `
+
+const List = styled.ul`
+  max-width: 400px;
+  margin: 0 auto;
+  color: purple;
+  font-size: 1.2rem;
+  line-height: 2;
+`
 export class Article extends React.PureComponent {
   // eslint-disable-line react/prefer-stateless-function
   render() {
+    const { data } = this.props;
     return (
       <div>
         <ArticleHelmet
           url={url}
-          image={zritel8}
+          image={data.zritel8.sizes.src}
           description="Дмитрий Лисин проецирует древнеиндийские варны на зрительный зал."
           title={`${title} | Театралий`}
         />
-        <TopCover bg={zritel8} bgSize="300px" bgPosition="bottom right">
+        <TopCover bg={data.zritel8.sizes.src} bgSize="300px" bgPosition="80% 70%" noBgMobile>
           <Section margin="0">
             <H1Shadow center size="3.2124em">
               Неспящие в театре
@@ -77,7 +80,7 @@ export class Article extends React.PureComponent {
               типы зрителей на основе индуистской философии
             </H1small>
             <StyledDate>
-              13 марта 2018, текст:&nbsp;<b>Дмитрий Лисин</b>,
+              18 марта 2018, текст:&nbsp;<b>Дмитрий Лисин</b>,
               иллюстрации:&nbsp;<b>Софья Боровская</b>
             </StyledDate>
           </Section>
@@ -154,7 +157,8 @@ export class Article extends React.PureComponent {
             Кстати, думание — недумание абсолютно совпадает с главной
             двойственностью сон — бодрствование.
           </p>
-          <ul style={{ color: 'purple' }}>
+
+          <List>
             <li>
               <b>Думающие</b>
             </li>
@@ -175,6 +179,7 @@ export class Article extends React.PureComponent {
                 </ul>
               </li>
             </ul>
+            <br />
             <li>
               <b>Недумающие</b>
               <ul>
@@ -185,10 +190,13 @@ export class Article extends React.PureComponent {
                 <li>спящие</li>
               </ul>
             </li>
-          </ul>
-          <H1>Думающие</H1>
-          <H1small>Думающие иррациональные интуитивисты</H1small>
-          <Img src={zritel1} />
+          </List>
+
+          <ImgKiss />
+
+          <H1Styled>Думающие</H1Styled>
+          <H1smallStyled>Думающие иррациональные интуитивисты</H1smallStyled>
+          <Img noBorder sizes={data.zritel1.sizes} />
           <p>
             Смотрят только артхаус, эксперимент, андерграунд и все выходящее за
             рамки даже постдраматического театра. Например, это весь
@@ -215,8 +223,8 @@ export class Article extends React.PureComponent {
             лет.
           </p>
 
-          <H1small>Думающие иррациональные интуитивисты</H1small>
-          <Img src={zritel2} />
+          <H1smallStyled>Думающие иррациональные интуитивисты</H1smallStyled>
+          <Img noBorder sizes={data.zritel2.sizes} />
           <p>
             Это лучшие театроведы, большинство экспертов «Золотой маски». А
             также писатели, архитекторы и люди науки: не только гуманитарии, но
@@ -231,8 +239,8 @@ export class Article extends React.PureComponent {
             Мейерхольда, «Гоголь-центре», «Театре.doc», МХТ и БДТ.
           </p>
 
-          <H1small>Думающие дискурсивно-сюжетные рассудочники</H1small>
-          <Img src={zritel3} />
+          <H1smallStyled>Думающие дискурсивно-сюжетные рассудочники</H1smallStyled>
+          <Img noBorder sizes={data.zritel3.sizes} />
           <p>
             За вычетом думающих рациональных интуитивистов — примерно 98 %
             населения (иррациональные интуитивисты (ИИ) не поддаются подсчету
@@ -267,8 +275,8 @@ export class Article extends React.PureComponent {
             семи.
           </p>
 
-          <H1small>Думающие фрактальные рассудочники</H1small>
-          <Img src={zritel5} />
+          <H1smallStyled>Думающие фрактальные рассудочники</H1smallStyled>
+          <Img noBorder sizes={data.zritel5.sizes} />
           <p>
             Способны рассматривать мизансцены одновременно во всех плоскостях,
             цветах, формах и видеть целое. Их восприятийный аппарат
@@ -278,8 +286,8 @@ export class Article extends React.PureComponent {
             иммерсивность.
           </p>
 
-          <H1small>Думающие стохастические рассудочники</H1small>
-          <Img src={zritel4} />
+          <H1smallStyled>Думающие стохастические рассудочники</H1smallStyled>
+          <Img noBorder sizes={data.zritel4.sizes} />
           <p>
             Воспринимают все на слух, поэтому их намного меньше. Живут скорее в
             процессе, во времени, в памяти, нежели в пространстве. Именно они
@@ -293,7 +301,7 @@ export class Article extends React.PureComponent {
             интуитивностью.
           </p>
 
-          <H1>Недумающие</H1>
+          <H1Styled>Недумающие</H1Styled>
           <p>
             Осталось записать приметы мучающихся и мучительных для продвинутых
             театров недумающих зрителей. Стоит нам устать, огорчиться, заболеть,
@@ -306,8 +314,8 @@ export class Article extends React.PureComponent {
             соотносим с нашей классификацией.
           </p>
 
-          <H1small>Недумающие ощущательные</H1small>
-          <Img src={zritel6} />
+          <H1smallStyled>Недумающие ощущательные</H1smallStyled>
+          <Img noBorder sizes={data.zritel6.sizes} />
           <p>
             Нулевой уровень присутствия — элементарное ощущение «без признаков
             качества стихий», присущее недумающему ощущательному зрителю. Пришел
@@ -315,8 +323,8 @@ export class Article extends React.PureComponent {
             сознания.
           </p>
 
-          <H1small>Недумающие восприятийные</H1small>
-          <Img src={zritel7} />
+          <H1smallStyled>Недумающие восприятийные</H1smallStyled>
+          <Img noBorder sizes={data.zritel7.sizes} />
           <p>
             Когда в дело вступает внутреннее осознание, инициированное внешним
             воздействием сцены, элементарное ощущение превращается в
@@ -326,24 +334,24 @@ export class Article extends React.PureComponent {
             все: когда рядом кашляют или зевают, мы тоже так делаем.
           </p>
 
-          <H1small>Недумающие эмоциональные</H1small>
-          <Img src={zritel8} />
+          <H1smallStyled>Недумающие эмоциональные</H1smallStyled>
+          <Img noBorder sizes={data.zritel8.sizes} />
           <p>
             При более сильном импульсе зритель просыпается и начинает
             эмоционировать. А эмоция — это уже осознание восприятия звука,
             образа, смысла.
           </p>
 
-          <H1small>Недумающие чувствующие</H1small>
-          <Img src={zritel9} />
+          <H1smallStyled>Недумающие чувствующие</H1smallStyled>
+          <Img noBorder sizes={data.zritel9.sizes} />
           <p>
             При осознании эмоции возникает чувство. То есть внимание к
             собственной эмоции может вызвать сильнейшее переживание, неожиданное
             воспоминание или отождествление себя с персонажем.
           </p>
 
-          <H1small>Недумающие спящие</H1small>
-          <Img src={zritel10} />
+          <H1smallStyled>Недумающие спящие</H1smallStyled>
+          <Img noBorder sizes={data.zritel10.sizes} />
           <p>
             Полнота присутствия зрителя на спектакле возникает при вспыхивании
             мысли. А вот осознание самой мысли — состояние сверхмысли, манаса,
@@ -365,8 +373,6 @@ export class Article extends React.PureComponent {
             схема, скопированная из книжки или телепередачки.{' '}
           </p>
 
-          <Img src={foto10} />
-
           <p>
             Интересно, что Лосев вывел схему сознания, медитируя над текстами
             Плотина, ведь она совпадает с тибетским буддийским учением Дзогчен,
@@ -380,11 +386,11 @@ export class Article extends React.PureComponent {
             последовательных и конкретных наблюдений автора.
           </p>
 
-          <Video url="https://media.giphy.com/media/4GXNu0MhFAyBtpxImk/giphy.gif" />
+          <Img sizes={data.foto10.sizes} maxWidth="90%" noBorder />
 
-          <H1 size="3.2124em">
-            Наблюдения.<br />От абстрактного к конкретному
-          </H1>
+          <H1Styled size="3.2124em">
+            Наблюдения.<br />От&nbsp;абстрактного к&nbsp;конкретному
+          </H1Styled>
           <p>
             Вот важные мутации, замеченные на личном опыте, которые произошли со
             зрителями за последние 30 лет. Некоторые из нижеперечисленных
@@ -400,7 +406,7 @@ export class Article extends React.PureComponent {
             отсутствия» Хайнера Геббельса.
           </p>
 
-          <H1small>Наблюдение № 1</H1small>
+          <H1smallStyled>Наблюдение № 1</H1smallStyled>
           <p>
             Нулевой позицией будем считать состояние зрителей советского театра
             1980-х годов, когда я начал регулярно посещать лучшие (по слухам)
@@ -433,9 +439,9 @@ export class Article extends React.PureComponent {
             Гончаровой и Ларионова.
           </p>
 
-          <Img src={foto2} desc="«Второе видение», фото: Дмитрий Лисин" />
+          <ImgKiss />
 
-          <H1small>Наблюдение № 2</H1small>
+          <H1smallStyled>Наблюдение № 2</H1smallStyled>
           <p>
             Примером мгновенного изменения, психологического переноса, слияния
             зрителей с персонажами может быть вещь «Ленкома», виденная всеми
@@ -461,11 +467,14 @@ export class Article extends React.PureComponent {
             революции, а не только важным пунктом развития театра.
           </p>
           <Img
-            src="https://www.e-reading.club/illustrations/147/147571-i_012.jpg"
+            sizes={data.abd.sizes}
+            maxWidth="500px"
+            noBorder
             desc="«Жестокие игры»"
           />
+          <ImgKiss />
 
-          <H1small>Наблюдение № 3</H1small>
+          <H1smallStyled>Наблюдение № 3</H1smallStyled>
 
           <p>
             Лучший, на мой взгляд, спектакль Владимира Мирзоева «Хлестаков»
@@ -487,9 +496,10 @@ export class Article extends React.PureComponent {
             зрительского восприятия.
           </p>
 
-          <Video id="KJHLYcegCeU" desc="«Хлестаков»" />
+          <Video id="KJHLYcegCeU" desc="«Хлестаков»" start="101" />
+          <ImgKiss />
 
-          <H1small>Наблюдение № 4</H1small>
+          <H1smallStyled>Наблюдение № 4</H1smallStyled>
 
           <p>
             В том же Театре им. Станиславского параллельно с «Хлестаковым» шло
@@ -514,7 +524,8 @@ export class Article extends React.PureComponent {
             классической музыки присутствует все та же театральная публика.
           </p>
 
-          <H1small>Наблюдение № 5</H1small>
+          <ImgKiss />
+          <H1smallStyled>Наблюдение № 5</H1smallStyled>
 
           <p>
             Владимир Агеев поставил лучший свой спектакль «Пленные духи» в 2003
@@ -539,12 +550,8 @@ export class Article extends React.PureComponent {
             саркастической дистанции».
           </p>
 
-          <Img
-            src="http://www.officemagazine.ru/upload/medialibrary/cce/cce9c26d8a4aff57825d779cb03d3c00.jpg"
-            desc="«Пленные духи»"
-          />
-
-          <H1small>Наблюдение № 6</H1small>
+          <ImgKiss />
+          <H1smallStyled>Наблюдение № 6</H1smallStyled>
 
           <NoteWrapper>
             <p>
@@ -599,11 +606,8 @@ export class Article extends React.PureComponent {
             </Note>
           </NoteWrapper>
 
-          <Img src={foto7} />
-          <Img src={foto8} />
-          <Img src={foto9} desc="«Неявные воздействия», фото: Дмитрий Лисин" />
-
-          <H1small>Наблюдение № 7</H1small>
+          <ImgKiss />
+          <H1smallStyled>Наблюдение № 7</H1smallStyled>
 
           <p>
             Чистым опытом, экспериментом и проверкой наличия новых зрительских
@@ -629,7 +633,8 @@ export class Article extends React.PureComponent {
             классификации слились воедино.
           </p>
 
-          <H1small>Наблюдение № 8</H1small>
+          <ImgKiss />
+          <H1smallStyled>Наблюдение № 8</H1smallStyled>
 
           <NoteWrapper>
             <p>
@@ -663,16 +668,14 @@ export class Article extends React.PureComponent {
               во время состязания, то есть состояние на грани (выхода из тела),
               — вот что такое постдионисийский агон.
             </p>
-            <Img
-              src={foto3}
-              desc="«Бельгийские правила», фото: Дмитрий Дубинский"
-            />
+
             <Note>
-              <Video url="https://media.giphy.com/media/wWue0rCDOphOE/giphy.gif" />
+              <Img sizes={data.tyotya.sizes} round noBorder marginTop="0" marginBottom="0" />
             </Note>
           </NoteWrapper>
 
-          <H1small>Наблюдение № 9</H1small>
+          <ImgKiss />
+          <H1smallStyled>Наблюдение № 9</H1smallStyled>
 
           <p>
             На наших глазах театр превращается в гностическое учреждение,
@@ -705,11 +708,8 @@ export class Article extends React.PureComponent {
             этом роль зрителя в мировой культуре заканчивается».
           </p>
 
-          <Img src={foto4} />
-          <Img src={foto5} />
-          <Img src={foto6} desc="«Золотой осел», фото: Дмитрий Лисин" />
-
-          <H1small>Наблюдение № 10</H1small>
+          <ImgKiss />
+          <H1smallStyled>Наблюдение № 10</H1smallStyled>
 
           <p>
             Свежайший иммерсивный спектакль «Зеркало Карлоса Сантоса» оказался
@@ -726,11 +726,6 @@ export class Article extends React.PureComponent {
             как ассоциативная память вбрасывает образы фильма Питера Гринуэя
             «Повар, вор, его жена и ее любовник»?
           </p>
-
-          <Img
-            src={foto1}
-            desc="«Зеркало Карлоса Сантоса», фото: Анна Шмитько"
-          />
 
           <p>
             Зрители заходят с черного хода в подъезд, занимаемый солидной фирмой
@@ -762,3 +757,74 @@ export class Article extends React.PureComponent {
 }
 
 export default Article
+
+export const pageQuery = graphql`
+  query ImageQuery {
+    zritel1: imageSharp(id: { regex: "/nespyashie\/zriteli\/zritel-1.jpg/" }) {
+      sizes(maxWidth: 1280) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    zritel2: imageSharp(id: { regex: "/nespyashie\/zriteli\/zritel-2.jpg/" }) {
+      sizes(maxWidth: 1280) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    zritel3: imageSharp(id: { regex: "/nespyashie\/zriteli\/zritel-3.jpg/" }) {
+      sizes(maxWidth: 1280) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    zritel4: imageSharp(id: { regex: "/nespyashie\/zriteli\/zritel-4.jpg/" }) {
+      sizes(maxWidth: 1280) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    zritel5: imageSharp(id: { regex: "/nespyashie\/zriteli\/zritel-5.jpg/" }) {
+      sizes(maxWidth: 1280) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    zritel6: imageSharp(id: { regex: "/nespyashie\/zriteli\/zritel-6.jpg/" }) {
+      sizes(maxWidth: 1280) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    zritel7: imageSharp(id: { regex: "/nespyashie\/zriteli\/zritel-7.jpg/" }) {
+      sizes(maxWidth: 1280) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    zritel8: imageSharp(id: { regex: "/nespyashie\/zriteli\/zritel-8.jpg/" }) {
+      sizes(maxWidth: 1280) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    zritel9: imageSharp(id: { regex: "/nespyashie\/zriteli\/zritel-9.jpg/" }) {
+      sizes(maxWidth: 1280) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    zritel10: imageSharp(id: { regex: "/nespyashie\/zriteli\/zritel-10.jpg/" }) {
+      sizes(maxWidth: 1280) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    tyotya: imageSharp(id: { regex: "/nespyashie\/tyotya.jpg/" }) {
+      sizes(maxWidth: 300) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    abd: imageSharp(id: { regex: "/nespyashie\/abd.jpg/" }) {
+      sizes(maxWidth: 600) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    foto10: imageSharp(id: { regex: "/nespyashie\/10.png/" }) {
+      sizes(maxWidth: 1280) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+  }
+`
+

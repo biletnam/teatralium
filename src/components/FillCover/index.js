@@ -31,9 +31,11 @@ const FillCover = styled.div`
     cursor: pointer;
   }`}
   ${phone(`
-    dispay: block;
     min-height: auto;
   `)}
+  ${p => `${phone(`
+    ${p.noBgMobile && `background-image: none;`}
+  `)}`};
 `
 
 const Bg = styled(Img)`
@@ -45,7 +47,7 @@ const Bg = styled(Img)`
 
   & > img {
     object-fit: ${props => props.fit || 'cover'} !important;
-    object-position: ${props => props.position || 'top'} !important;
+    object-position: ${props => props.bgPosition || 'top'} !important;
     font-family: 'object-fit: ${props =>
       props.fit || 'cover'} !important; object-position: ${props =>
   props.position || '50% 50%'} !important;'
@@ -60,10 +62,11 @@ const Wrapper = styled.div`
   height: 100%;
   z-index: -1;
   overflow: hidden;
-  ${phone(`
+  ${p => `${phone(`
+    ${p.noBgMobile && `display: none;`}
     width: 200%;
     min-height: auto;
-  `)};
+  `)}`};
 `
 
 const FillCoverWithBg = props => {

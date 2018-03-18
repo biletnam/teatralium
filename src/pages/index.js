@@ -42,7 +42,7 @@ const ArticlesSection = styled(Section)`
   padding: ${p => p.padding || '2'}rem;
   text-align: ${p => p.align || 'center'};
   margin: ${p => p.margin || 'auto'};
-  margin-top: ${p => p.marginTop || 'auto'};
+  margin-top: ${p => p.marginTop || 'none'};
   font-size: ${p => p.size || 'auto'};
   color: ${p => p.color || 'auto'};
   background: ${p => p.background || 'none'};
@@ -91,6 +91,21 @@ const PurpleButton = styled(Button)`
     background: #f2639e;
   }
 `
+
+const Nespyashie = ({ sizes }) => (
+  <StyledLink to="/articles/nespyashie_v_teatre/">
+    <TopCover bg={sizes.src} bgSize="300px" bgPosition="80% 70%" noBgMobile>
+      <ArticlesSection margin="1rem">
+        <H1 center size="3.2124em">
+          Неспящие в театре
+        </H1>
+        <H1small center>
+          типы зрителей на основе индуистской философии
+        </H1small>
+      </ArticlesSection>
+    </TopCover>
+  </StyledLink>
+)
 
 const Elutin = ({ sizes }) => (
   <StyledLink to="/articles/i_bratva_za_slova_otvechaet/">
@@ -399,34 +414,36 @@ const Svet = ({ sizes }) => (
 export class HomePage extends React.PureComponent {
   // eslint-disable-line react/prefer-stateless-function
   render() {
+    const { data } = this.props;
     return (
       <div>
-        <Elutin sizes={this.props.data.elutin.sizes} />
-        <Sonet sizes={this.props.data.sonet.sizes} />
-        <Rostov sizes={this.props.data.rostov.sizes} />
+        <Nespyashie sizes={data.zritel8.sizes} />
+        <Elutin sizes={data.elutin.sizes} />
+        <Sonet sizes={data.sonet.sizes} />
+        <Rostov sizes={data.rostov.sizes} />
         <Sebastian />
-        <Naryady sizes={this.props.data.naryady.sizes} />
-        <Avdeev sizes={this.props.data.avdeev.sizes} />
-        <Abuse sizes={this.props.data.abuse.sizes} />
+        <Naryady sizes={data.naryady.sizes} />
+        <Avdeev sizes={data.avdeev.sizes} />
+        <Abuse sizes={data.abuse.sizes} />
         <Social />
-        <Vyrypaev sizes={this.props.data.vyrypaev.sizes} />
-        <Pomosh sizes={this.props.data.pomosh.sizes} />
-        <Lisovsky sizes={this.props.data.lisovsky.sizes} />
-        <Borodin sizes={this.props.data.borodin.sizes} />
-        <Annenkov sizes={this.props.data.annenkov.sizes} />
-        <IzVsehIskusstv sizes={this.props.data.iz_vseh_iskusstv.sizes} />
+        <Vyrypaev sizes={data.vyrypaev.sizes} />
+        <Pomosh sizes={data.pomosh.sizes} />
+        <Lisovsky sizes={data.lisovsky.sizes} />
+        <Borodin sizes={data.borodin.sizes} />
+        <Annenkov sizes={data.annenkov.sizes} />
+        <IzVsehIskusstv sizes={data.iz_vseh_iskusstv.sizes} />
         <Davydova />
-        <Belomor sizes={this.props.data.belomor.sizes} />
+        <Belomor sizes={data.belomor.sizes} />
         <Bol />
         <Border>
           <StyledLink to="/articles/neperevodimiy_russkiy_nadryv/">
-            <Nadryv sizes={this.props.data.nadryv.sizes} />
+            <Nadryv sizes={data.nadryv.sizes} />
             <NadryvSub />
           </StyledLink>
         </Border>
         <Lyub />
-        <Ezhen sizes={this.props.data.ezhen.sizes} />
-        <Svet sizes={this.props.data.mycene.sizes} />
+        <Ezhen sizes={data.ezhen.sizes} />
+        <Svet sizes={data.mycene.sizes} />
       </div>
     )
   }
@@ -514,6 +531,11 @@ export const pageQuery = graphql`
       }
     }
     sonet: imageSharp(id: { regex: "/sonet/4.jpg/" }) {
+      sizes(maxWidth: 1280) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    zritel8: imageSharp(id: { regex: "/nespyashie\/zriteli\/zritel-8.jpg/" }) {
       sizes(maxWidth: 1280) {
         ...GatsbyImageSharpSizes
       }

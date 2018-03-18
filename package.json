@@ -10,6 +10,7 @@
     "gatsby-plugin-google-analytics": "^1.0.10",
     "gatsby-plugin-react-helmet": "^1.0.5",
     "gatsby-plugin-sharp": "^1.6.41",
+    "gatsby-plugin-sitemap": "^1.2.18",
     "gatsby-plugin-styled-components": "^1.0.5",
     "gatsby-remark-images": "^1.5.56",
     "gatsby-transformer-remark": "^1.7.37",
@@ -29,7 +30,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "patch": "sed -i -e 's/if(c\\.initial) return;/if(!c||c.initial) return;/g' ./node_modules/extract-text-webpack-plugin/index.js",
     "deploy:prod": "ssh trr 'cp -r /var/www/admin/* /var/www/tr/'",
-    "deploy:dev": "gatsby build && rsync -r public/ tr:/var/www/deploy_tr && ssh trr 'rm -rf /var/www/admin/*; mv /var/www/deploy_tr/* /var/www/admin'",
+    "deploy:dev": "gatsby build && rsync -r public/ tr:/var/www/deploy_tr && ssh trr 'rm -rf /var/www/admin/*; mv /var/www/deploy_tr/* /var/www/admin'"
   },
   "devDependencies": {
     "eslint-config-airbnb": "^16.1.0",

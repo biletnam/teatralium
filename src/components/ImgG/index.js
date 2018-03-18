@@ -42,7 +42,7 @@ export const Description = props => (
 
 const Image = props => (
   <Wrapper {...props}>
-    <ImgStyled {...props} fadeIn backgroundColor />
+    <ImgStyled {...props} fadeIn backgroundColor="rgba(102,51,153,.30)" />
     {props.desc && <Description {...props} />}
   </Wrapper>
 )
