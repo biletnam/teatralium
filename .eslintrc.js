@@ -1,3 +1,10 @@
 module.exports = {
-    "extends": "prettier"
+    "extends": "prettier",
+    "parser": "babel-eslint",
+    "parserOptions": {
+    "ecmaFeatures": {
+        "jsx": true,
+        "modules": true
+      }
+    }
 };

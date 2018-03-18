@@ -1,12 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: `Teatralium`,
+    title: "Teatralium",
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-styled-components`,
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-styled-components",
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: "gatsby-plugin-google-analytics",
       options: {
         trackingId: 'UA-56018864-6',
       },

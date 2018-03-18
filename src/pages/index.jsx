@@ -52,7 +52,6 @@ const Section = styled.section`
 
 const ArticlesSection = styled(Section)`
   padding: ${p => p.padding || "2"}rem;
-  padding-top: ${p => p.paddingTop || "2"}rem;
   text-align: ${p => p.align || "center"};
   margin: ${p => p.margin || "auto"};
   margin-top: ${p => p.marginTop || "auto"};
@@ -139,7 +138,7 @@ const Sonet = () => (
 const Rostov = () => (
   <StyledLink to="/articles/v_moskve_naprimer_analogov_net/">
     <FillCover pointer bg={rostov}>
-      <Section align="center" margin="0 3rem">
+      <ArticlesSection align="center" padding="6rem 0">
         <H1 center size="3.2124em" color="white">
           В Москве, например, аналогов нет
         </H1>
@@ -147,7 +146,7 @@ const Rostov = () => (
           Пять лет ростовскому «Театру 18+» с современными пьесами и казачим
           рэпом, но без государственных денег
         </H1small>
-      </Section>
+      </ArticlesSection>
     </FillCover>
   </StyledLink>
 );
@@ -155,12 +154,12 @@ const Rostov = () => (
 const Sebastian = () => (
   <StyledLink to="/articles/poobshatsa_s_gospodinom_oblomovym/">
     <FillCover pointer>
-      <Section align="center" margin="0">
+      <ArticlesSection align="center" margin="0">
         <H1small>Себастьян Кайзер:</H1small>
         <H1 size="3.2124em">
           «Нам всем нужно пообщаться с&nbsp;господином Обломовым»
         </H1>
-      </Section>
+      </ArticlesSection>
     </FillCover>
   </StyledLink>
 );
@@ -168,12 +167,12 @@ const Sebastian = () => (
 const Naryady = () => (
   <StyledLink to="/articles/teatr_mody_v_sovetskoy_rossii/">
     <FillCover bg={naryady} bordered borderColor="black" borderSize="7" pointer>
-      <Section margin="1rem">
+      <ArticlesSection margin="1rem">
         <H1 size="3.8124em" align="left">
           Иммерсивный фэшн 20-х,<br />
           <small>или</small> театр моды в советской России
         </H1>
-      </Section>
+      </ArticlesSection>
     </FillCover>
   </StyledLink>
 );
@@ -265,7 +264,6 @@ const Lisovski = () => (
   </StyledLink>
 );
 
-
 const Borodin = () => (
   <StyledLink to="/articles/abbreviatura_ramt/">
   <FillCover
@@ -291,7 +289,7 @@ const Davydova = () => (
     color="#FDF06f"
     bg={mask}
   >
-    <ArticlesSection paddingTop="0" marginTop="4rem">
+    <ArticlesSection marginTop="4rem">
       <H1small marginTop="0">
         Марина Давыдова о том, что нужно знать о современном театре
       </H1small>
@@ -309,7 +307,7 @@ const Annenkov = () => (
     bordered
     borderColor={REVOLUTION}
   >
-    <ArticlesSection padding="2" paddingTop="4">
+    <ArticlesSection padding="2">
       <H2>Ожила красная сцена</H2>
       <Lead marginBottom="2">
         Как художник Юрий Анненков стал «модельером» революции
@@ -382,13 +380,13 @@ const Nadryv = () => (
     bg={nadryv}
     height="400px"
   >
-    <ArticlesSection padding="3" paddingTop="14" size="14px" />
+    <ArticlesSection padding="3" size="14px" />
   </FillCoverMaxHeight>
 );
 
 const NadryvSub = () => (
   <FillCover color="white">
-    <ArticlesSection align="right" margin="1rem" paddingTop="0">
+    <ArticlesSection align="right" margin="1rem">
       <H3 fontStyle="normal">Непереводимый русский надрыв</H3>
       <H1small>Юрий Муравицкий и Валерий Печейкин о любви и хаосе</H1small>
     </ArticlesSection>
