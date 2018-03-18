@@ -12,7 +12,8 @@ const Wrapper = styled.div`
   margin: 0 auto;
   margin-bottom: ${p => p.marginBottom || '4rem'};
   margin-top: ${p => p.marginTop || '4rem'};
-  max-width: ${p => p.maxWidth || '780px'};
+  max-width: ${p => p.maxWidth || '450px'};
+  width: 100%;
 `
 
 const ImgStyled = styled(Img)`
@@ -41,7 +42,7 @@ export const Description = props => (
 
 const Image = props => (
   <Wrapper {...props}>
-    <ImgStyled {...props} fadeIn />
+    <ImgStyled {...props} fadeIn backgroundColor />
     {props.desc && <Description {...props} />}
   </Wrapper>
 )

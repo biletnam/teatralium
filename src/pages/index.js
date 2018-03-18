@@ -6,6 +6,8 @@ import { phone } from '../utils/media'
 import H1, { H1small } from '../components/H1'
 import Img from '../components/Img'
 import ImgG from '../components/ImgG'
+import Image from 'gatsby-image'
+
 import H3 from '../components/H3'
 import H4 from '../components/H4'
 import H2 from '../components/H2'
@@ -90,9 +92,9 @@ const PurpleButton = styled(Button)`
   }
 `
 
-const Elutin = ({ bg }) => (
+const Elutin = ({ sizes }) => (
   <StyledLink to="/articles/i_bratva_za_slova_otvechaet/">
-    <TopCover bg={bg} repeat bordered borderColor="#f300f3">
+    <TopCover bg={sizes.src} repeat bordered borderColor="#f300f3">
       <ArticlesSection background="rgba(255,255,255,0.6)">
         <H1 size="3.4124em" center color="purple">
           И братва за&nbsp;слова отвечает как в&nbsp;лучшие дни
@@ -105,9 +107,9 @@ const Elutin = ({ bg }) => (
   </StyledLink>
 )
 
-const Sonet = ({ bg }) => (
+const Sonet = ({ sizes }) => (
   <StyledLink to="/articles/net_amnezii/">
-    <FillCover height="600px" pointer bg={bg}>
+    <FillCover height="600px" pointer sizes={sizes}>
       <ArticlesSection margin="0" marginTop="0">
         <H1 center size="3.2124em">
           Нет амнезии
@@ -121,9 +123,9 @@ const Sonet = ({ bg }) => (
   </StyledLink>
 )
 
-const Rostov = ({ bg }) => (
+const Rostov = ({ sizes }) => (
   <StyledLink to="/articles/v_moskve_naprimer_analogov_net/">
-    <FillCover pointer bg={bg}>
+    <FillCover pointer sizes={sizes}>
       <ArticlesSection align="center" padding="6rem 0">
         <H1 center size="3.2124em" color="white">
           В Москве, например, аналогов нет
@@ -150,9 +152,9 @@ const Sebastian = () => (
   </StyledLink>
 )
 
-const Naryady = ({ bg }) => (
+const Naryady = ({ sizes }) => (
   <StyledLink to="/articles/teatr_mody_v_sovetskoy_rossii/">
-    <FillCover bg={bg} bordered borderColor="black" borderSize="7" pointer>
+    <FillCover sizes={sizes} bordered borderColor="black" borderSize="7" pointer>
       <ArticlesSection margin="1rem">
         <H1 size="3.8124em" align="left">
           Иммерсивный фэшн 20-х,<br />
@@ -163,9 +165,9 @@ const Naryady = ({ bg }) => (
   </StyledLink>
 )
 
-const Avdeev = ({ bg }) => (
+const Avdeev = ({ sizes }) => (
   <StyledLink to="/articles/ya_posadil_derevo/">
-    <FillCover pointer bg={bg} repeat bordered borderColor="#d54051">
+    <FillCover pointer bg={sizes.src} repeat bordered borderColor="#d54051">
       <ArticlesSection
         padding="1"
         size="22px"
@@ -178,9 +180,9 @@ const Avdeev = ({ bg }) => (
   </StyledLink>
 )
 
-const Abuse = ({ bg }) => (
+const Abuse = ({ sizes }) => (
   <StyledLink to="/articles/abyuz_nelzya_pomilovat/">
-    <FillCover bg={bg} pointer height="600px" test={console.log(bg)}>
+    <FillCover sizes={sizes} pointer height="600px">
       <ArticlesSection
         padding="3"
         align="right"
@@ -192,9 +194,9 @@ const Abuse = ({ bg }) => (
   </StyledLink>
 )
 
-const Vyrypaev = ({ bg }) => (
+const Vyrypaev = ({ sizes }) => (
   <StyledLink to="/articles/ivan_vyrypaev_protiv_kritikov/">
-    <FillCover bg={bg} pointer height="600px">
+    <FillCover sizes={sizes} pointer height="600px">
       <ArticlesSection padding="1" size="22px" align="center">
         <H1 size="3rem" color="white">
           «Я абсолютно против критиков сегодня»
@@ -207,9 +209,9 @@ const Vyrypaev = ({ bg }) => (
   </StyledLink>
 )
 
-const Pomosh = ({ bg }) => (
+const Pomosh = ({ sizes }) => (
   <StyledLink to="/articles/pomosh_zala/">
-    <FillCover bg={bg} pointer height="400px">
+    <FillCover sizes={sizes} pointer height="400px">
       <ArticlesSection padding="1" size="22px" align="center">
         <H1 color="white">Помощь зала</H1>
         <Lead color="white">
@@ -220,9 +222,9 @@ const Pomosh = ({ bg }) => (
   </StyledLink>
 )
 
-const Lisovsky = ({ bg }) => (
+const Lisovsky = ({ sizes }) => (
   <StyledLink to="/articles/playlist_komissara_vsevoloda_lisovskogo/">
-    <FillCover pointer bg={bg} repeat bordered borderColor="yellow">
+    <FillCover pointer bg={sizes.src} repeat bordered borderColor="yellow">
       <ArticlesSection
         padding="1"
         size="22px"
@@ -235,9 +237,9 @@ const Lisovsky = ({ bg }) => (
   </StyledLink>
 )
 
-const Borodin = ({ bg }) => (
+const Borodin = ({ sizes }) => (
   <StyledLink to="/articles/abbreviatura_ramt/">
-    <FillCover bg={bg} height="600px">
+    <FillCover sizes={sizes} height="600px">
       <ArticlesSection padding="1" align="right">
         <H1 size="3.2124em" color="#ec71c8">
           «Аббревиатуру РАМТ мы не придумывали»
@@ -250,9 +252,9 @@ const Borodin = ({ bg }) => (
   </StyledLink>
 )
 
-const Davydova = ({ bg }) => (
+const Davydova = () => (
   <StyledLink to="/articles/velikoe_raznoobrazie/">
-    <FillCover pointer color="#FDF06f" bg={bg}>
+    <FillCover pointer color="#FDF06f" bg={mask}>
       <ArticlesSection marginTop="4rem">
         <H1small marginTop="0">
           Марина Давыдова о том, что нужно знать о современном театре
@@ -263,7 +265,7 @@ const Davydova = ({ bg }) => (
   </StyledLink>
 )
 
-const Annenkov = ({ bg }) => (
+const Annenkov = ({ sizes }) => (
   <StyledLink to="/articles/ozhila_krasnaya_stsena/">
     <FillCover pointer color="#FDF06f" bordered borderColor={REVOLUTION}>
       <ArticlesSection padding="2">
@@ -271,10 +273,10 @@ const Annenkov = ({ bg }) => (
         <Lead marginBottom="2">
           Как художник Юрий Анненков стал «модельером» революции
         </Lead>
-        <Img
+        <ImgG
           round
           noBorder
-          src={bg}
+          sizes={sizes}
           width="280px"
           customBorder={`
         border-style: inset;
@@ -287,7 +289,7 @@ const Annenkov = ({ bg }) => (
   </StyledLink>
 )
 
-const IzVsehIskusstv = ({ bg }) => (
+const IzVsehIskusstv = ({ sizes }) => (
   <StyledLink to="/articles/iz_vseh_iskusstv/">
     <FillCover
       shadow
@@ -295,7 +297,7 @@ const IzVsehIskusstv = ({ bg }) => (
       color="black"
       fontColor="#9bda9e"
       height="400px"
-      bg={bg}
+      sizes={sizes}
     >
       <ArticlesSection padding="1" background="rgba(97,59,123,0.6)">
         <Lead padding="0.5rem" color="#9bda9e">
@@ -313,8 +315,8 @@ const YellowButton = styled(Button)`
   background: rgba(0, 0, 0, 0.5);
 `
 
-const Belomor = ({ bg }) => (
-  <FillCover bordered borderColor="yellow" bg={bg} height="700px">
+const Belomor = ({ sizes }) => (
+  <FillCover bordered borderColor="yellow" sizes={sizes} height="700px">
     <ArticlesSection padding="1" size="22px" align="left">
       <Lead color="yellow">Как и кем создавались театры ГУЛАГа</Lead>
       <H1 color="yellow">«Морской царь Беломор»</H1>
@@ -323,7 +325,7 @@ const Belomor = ({ bg }) => (
   </FillCover>
 )
 
-const Bol = ({ bg }) => (
+const Bol = ({ sizes }) => (
   <ArticlesSection>
     <NoImageCover>
       <H1small>«МНЕ ПЛОХО, МНЕ СКУЧНО»</H1small>
@@ -333,13 +335,13 @@ const Bol = ({ bg }) => (
   </ArticlesSection>
 )
 
-const Nadryv = ({ bg }) => (
-  <FillCoverMaxHeight color="black" bg={bg} height="400px">
+const Nadryv = ({ sizes }) => (
+  <FillCoverMaxHeight sizes={sizes} height="400px">
     <ArticlesSection padding="3" size="14px" />
   </FillCoverMaxHeight>
 )
 
-const NadryvSub = ({ bg }) => (
+const NadryvSub = () => (
   <FillCover color="white">
     <ArticlesSection align="right" margin="1rem">
       <H3 fontStyle="normal">Непереводимый русский надрыв</H3>
@@ -348,7 +350,7 @@ const NadryvSub = ({ bg }) => (
   </FillCover>
 )
 
-const Lyub = ({ bg }) => (
+const Lyub = ({ sizes }) => (
   <StyledLink to="/articles/lyubimovka/">
     <FillCover pointer color="#e6ceff">
       <ArticlesSection padding="1">
@@ -364,7 +366,7 @@ const Lyub = ({ bg }) => (
   </StyledLink>
 )
 
-const Ezhen = ({ bg }) => (
+const Ezhen = ({ sizes }) => (
   <FillCover color="white">
     <ArticlesSection align="right" margin="1rem">
       <StyledLink to="/articles/ezhen/">
@@ -372,14 +374,12 @@ const Ezhen = ({ bg }) => (
         <H1small>Отвечает Эжен Ионеско</H1small>
       </StyledLink>
     </ArticlesSection>
-    <ImgWrapper>
-      <Img src={bg} />
-    </ImgWrapper>
+    <ImgG sizes={sizes} />
   </FillCover>
 )
 
-const Svet = ({ bg }) => (
-  <FillCover bordered bg={bg} height="600px">
+const Svet = ({ sizes }) => (
+  <FillCover bordered sizes={sizes} height="600px">
     <ArticlesSection padding="3">
       <H1 color="white">Свет далеких планет</H1>
       <Lead color="white">Обзор европейских премьер нового сезона</Lead>
@@ -391,35 +391,34 @@ const Svet = ({ bg }) => (
 export class HomePage extends React.PureComponent {
   // eslint-disable-line react/prefer-stateless-function
   render() {
-    console.log(this.props)
     return (
       <div>
-        <Elutin bg={this.props.data.elutin.sizes.src}  />
-        <Sonet bg={this.props.data.sonet.sizes.src}  />
-        <Rostov bg={this.props.data.rostov.sizes.src}  />
+        <Elutin sizes={this.props.data.elutin.sizes}  />
+        <Sonet sizes={this.props.data.sonet.sizes}  />
+        <Rostov sizes={this.props.data.rostov.sizes}  />
         <Sebastian />
-        <Naryady bg={this.props.data.naryady.sizes.src}  />
-        <Avdeev bg={this.props.data.avdeev.sizes.src}  />
-        <Abuse bg={this.props.data.abuse.sizes.src} />
+        <Naryady sizes={this.props.data.naryady.sizes}  />
+        <Avdeev sizes={this.props.data.avdeev.sizes}  />
+        <Abuse sizes={this.props.data.abuse.sizes} />
         <Social />
-        <Vyrypaev bg={this.props.data.vyrypaev.sizes.src} />
-        <Pomosh bg={this.props.data.pomosh.sizes.src} />
-        <Lisovsky bg={this.props.data.lisovsky.sizes.src} />
-        <Borodin bg={this.props.data.borodin.sizes.src} />
-        <Davydova bg={mask} />
-        <Annenkov bg={this.props.data.annenkov.sizes.src} />
-        <IzVsehIskusstv bg={this.props.data.iz_vseh_iskusstv.sizes.src} />
-        <Belomor bg={this.props.data.belomor.sizes.src} />
+        <Vyrypaev sizes={this.props.data.vyrypaev.sizes} />
+        <Pomosh sizes={this.props.data.pomosh.sizes} />
+        <Lisovsky sizes={this.props.data.lisovsky.sizes} />
+        <Borodin sizes={this.props.data.borodin.sizes} />
+        <Annenkov sizes={this.props.data.annenkov.sizes} />
+        <IzVsehIskusstv sizes={this.props.data.iz_vseh_iskusstv.sizes} />
+        <Davydova />
+        <Belomor sizes={this.props.data.belomor.sizes} />
         <Bol />
         <Border>
           <StyledLink to="/articles/neperevodimiy_russkiy_nadryv/">
-            <Nadryv bg={this.props.data.nadryv.sizes.src} />
+            <Nadryv sizes={this.props.data.nadryv.sizes} />
             <NadryvSub />
           </StyledLink>
         </Border>
         <Lyub />
-        <Ezhen bg={this.props.data.ezhen.sizes.src} />
-        <Svet bg={this.props.data.mycene.sizes.src} />
+        <Ezhen sizes={this.props.data.ezhen.sizes} />
+        <Svet sizes={this.props.data.mycene.sizes} />
       </div>
     )
   }
@@ -430,37 +429,37 @@ export default HomePage
 export const pageQuery = graphql`
   query TestImageQuery {
     abuse: imageSharp(id: { regex: "/abuse\/cover.jpg/" }) {
-      sizes(maxWidth: 1000 ) {
+      sizes(maxWidth: 1280 ) {
         ...GatsbyImageSharpSizes
       }
     }
     ezhen: imageSharp(id: { regex: "/ezhen/" }) {
-      sizes(maxWidth: 1000 ) {
+      sizes(maxWidth: 400 ) {
         ...GatsbyImageSharpSizes
       }
     }
     borodin: imageSharp(id: { regex: "/ramt\/borodin.jpg/" }) {
-      sizes(maxWidth: 1000 ) {
+      sizes(maxWidth: 1280 ) {
         ...GatsbyImageSharpSizes
       }
     }
     nadryv: imageSharp(id: { regex: "/np1.jpg/" }) {
-      sizes(maxWidth: 1000 ) {
+      sizes(maxWidth: 1280 ) {
         ...GatsbyImageSharpSizes
       }
     }
     belomor: imageSharp(id: { regex: "/belomor\/1test.jpg/" }) {
-      sizes(maxWidth: 1000 ) {
+      sizes(maxWidth: 1280 ) {
         ...GatsbyImageSharpSizes
       }
     }
     annenkov: imageSharp(id: { regex: "/annenkov\/home.jpg/" }) {
-      sizes(maxWidth: 1000 ) {
+      sizes(maxWidth: 500 ) {
         ...GatsbyImageSharpSizes
       }
     }
     iz_vseh_iskusstv: imageSharp(id: { regex: "/iz_vseh_iskusstv\/cover.jpg/" }) {
-      sizes(maxWidth: 1000 ) {
+      sizes(maxWidth: 1280 ) {
         ...GatsbyImageSharpSizes
       }
     }
@@ -480,32 +479,32 @@ export const pageQuery = graphql`
       }
     }
     vyrypaev: imageSharp(id: { regex: "/vyrypaev\/1.jpg/" }) {
-      sizes(maxWidth: 1000 ) {
+      sizes(maxWidth: 1280 ) {
         ...GatsbyImageSharpSizes
       }
     }
     pomosh: imageSharp(id: { regex: "/pomosh_zala\/cover_main.jpg/" }) {
-      sizes(maxWidth: 1000 ) {
+      sizes(maxWidth: 1280 ) {
         ...GatsbyImageSharpSizes
       }
     }
     naryady: imageSharp(id: { regex: "/naryady\/044.jpg/" }) {
-      sizes(maxWidth: 1000 ) {
+      sizes(maxWidth: 1280 ) {
         ...GatsbyImageSharpSizes
       }
     }
     mycene: imageSharp(id: { regex: "/myc.jpg/" }) {
-      sizes(maxWidth: 1000 ) {
+      sizes(maxWidth: 1280 ) {
         ...GatsbyImageSharpSizes
       }
     }
     rostov: imageSharp(id: { regex: "/naprimer\/cover.jpg/" }) {
-      sizes(maxWidth: 1000 ) {
+      sizes(maxWidth: 1280 ) {
         ...GatsbyImageSharpSizes
       }
     }
     sonet: imageSharp(id: { regex: "/sonet\/4.jpg/" }) {
-      sizes(maxWidth: 1000 ) {
+      sizes(maxWidth: 1280 ) {
         ...GatsbyImageSharpSizes
       }
     }

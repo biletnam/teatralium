@@ -1,12 +1,17 @@
+import React from 'react'
 import styled from 'styled-components'
 import { phone } from '../../utils/media'
+import Img from 'gatsby-image'
 
 const FillCover = styled.div`
-  background: ${p => p.color};
   color: ${p => p.fontColor};
+  ${p => !p.sizes && p.color && `background-color: ${p.color};`}
   background-image: url(${p => p.bg || 'none'});
   ${p => (p.repeat ? 'background-repeat: repeat' : 'background-size: cover')};
   min-height: ${p => p.height || '400px'};
+  height: auto;
+  width: 100%;
+  overflow: hidden;
   position: relative;
   display: flex;
   align-items: center;
@@ -31,9 +36,46 @@ const FillCover = styled.div`
   `)}
 `
 
-export default FillCover
+const Bg = styled(Img)`
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: ${props => props.height || 'auto'};
 
-export const TopCover = styled(FillCover)`
+  & > img {
+    object-fit: ${props => props.fit || 'cover'} !important;
+    object-position: ${props => props.position || 'top'} !important;
+    font-family: 'object-fit: ${props => props.fit || 'cover'} !important; object-position: ${props => props.position || '50% 50%'} !important;'
+  }
+`
+
+const Wrapper = styled.div`
+  position: absolute;
+  width: 100%;
+  min-height: ${p => p.height || '400px'};
+  height: auto;
+  z-index: -1;
+  overflow: hidden;
+`;
+
+const FillCoverWithBg = (props) => {
+  return (
+    <FillCover {...props}>
+    {props.sizes && props.sizes.src &&
+      <Wrapper {...props}><Bg
+        fadeIn
+        backgroundColor={props.color || "lavender"}
+        sizes={props.sizes}
+      /></Wrapper>}
+    {props.children}
+    </FillCover>
+    )
+}
+
+export default FillCoverWithBg
+
+export const TopCover = styled(FillCoverWithBg)`
   min-height: 650px;
   height: calc(100vh - 70px - 2.8rem);
   ${phone(`
