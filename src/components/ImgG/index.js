@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import React from 'react'
+import Img from 'gatsby-image'
 
 import Small from '../Small'
 
@@ -14,7 +15,7 @@ const Wrapper = styled.div`
   max-width: ${p => p.maxWidth || '780px'};
 `
 
-const ImgStyled = styled.img`
+const ImgStyled = styled(Img)`
   display: block;
   margin: 0 auto;
   width: 100%;
@@ -40,7 +41,7 @@ export const Description = props => (
 
 const Image = props => (
   <Wrapper {...props}>
-    <ImgStyled {...props} />
+    <ImgStyled {...props} fadeIn />
     {props.desc && <Description {...props} />}
   </Wrapper>
 )

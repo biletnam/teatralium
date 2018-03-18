@@ -5,10 +5,13 @@
   "author": "Maxim Matyunin",
   "dependencies": {
     "gatsby": "^1.9.214",
+    "gatsby-image": "^1.0.42",
     "gatsby-link": "^1.6.22",
     "gatsby-plugin-google-analytics": "^1.0.10",
     "gatsby-plugin-react-helmet": "^1.0.5",
+    "gatsby-plugin-sharp": "^1.6.41",
     "gatsby-plugin-styled-components": "^1.0.5",
+    "gatsby-transformer-sharp": "^1.6.22",
     "sanitize.css": "^5.0.0"
   },
   "keywords": [
@@ -31,6 +34,7 @@
     "eslint-plugin-import": "^2.9.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
+    "gatsby-source-filesystem": "^1.5.27",
     "prettier": "1.10.2"
   }
 }
