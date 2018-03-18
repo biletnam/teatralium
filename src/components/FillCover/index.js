@@ -46,7 +46,9 @@ const Bg = styled(Img)`
   & > img {
     object-fit: ${props => props.fit || 'cover'} !important;
     object-position: ${props => props.position || 'top'} !important;
-    font-family: 'object-fit: ${props => props.fit || 'cover'} !important; object-position: ${props => props.position || '50% 50%'} !important;'
+    font-family: 'object-fit: ${props =>
+      props.fit || 'cover'} !important; object-position: ${props =>
+  props.position || '50% 50%'} !important;'
   }
 `
 
@@ -61,21 +63,25 @@ const Wrapper = styled.div`
   ${phone(`
     width: 200%;
     min-height: auto;
-  `)}
-`;
+  `)};
+`
 
-const FillCoverWithBg = (props) => {
+const FillCoverWithBg = props => {
   return (
     <FillCover {...props}>
-    {props.sizes && props.sizes.src &&
-      <Wrapper {...props}><Bg
-        fadeIn
-        backgroundColor={props.color || "lavender"}
-        sizes={props.sizes}
-      /></Wrapper>}
-    {props.children}
+      {props.sizes &&
+        props.sizes.src && (
+          <Wrapper {...props}>
+            <Bg
+              fadeIn
+              backgroundColor={props.color || 'lavender'}
+              sizes={props.sizes}
+            />
+          </Wrapper>
+        )}
+      {props.children}
     </FillCover>
-    )
+  )
 }
 
 export default FillCoverWithBg

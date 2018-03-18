@@ -154,7 +154,13 @@ const Sebastian = () => (
 
 const Naryady = ({ sizes }) => (
   <StyledLink to="/articles/teatr_mody_v_sovetskoy_rossii/">
-    <FillCover sizes={sizes} bordered borderColor="black" borderSize="7" pointer>
+    <FillCover
+      sizes={sizes}
+      bordered
+      borderColor="black"
+      borderSize="7"
+      pointer
+    >
       <ArticlesSection margin="1rem">
         <H1 size="3.8124em" align="left">
           Иммерсивный фэшн 20-х,<br />
@@ -344,7 +350,9 @@ const Nadryv = ({ sizes }) => (
 const NadryvSub = () => (
   <FillCover color="white" height="300px">
     <ArticlesSection align="right" margin="1rem">
-      <H3 align="right" fontStyle="normal">Непереводимый русский надрыв</H3>
+      <H3 align="right" fontStyle="normal">
+        Непереводимый русский надрыв
+      </H3>
       <H1small>Юрий Муравицкий и Валерий Печейкин о любви и хаосе</H1small>
     </ArticlesSection>
   </FillCover>
@@ -393,12 +401,12 @@ export class HomePage extends React.PureComponent {
   render() {
     return (
       <div>
-        <Elutin sizes={this.props.data.elutin.sizes}  />
-        <Sonet sizes={this.props.data.sonet.sizes}  />
-        <Rostov sizes={this.props.data.rostov.sizes}  />
+        <Elutin sizes={this.props.data.elutin.sizes} />
+        <Sonet sizes={this.props.data.sonet.sizes} />
+        <Rostov sizes={this.props.data.rostov.sizes} />
         <Sebastian />
-        <Naryady sizes={this.props.data.naryady.sizes}  />
-        <Avdeev sizes={this.props.data.avdeev.sizes}  />
+        <Naryady sizes={this.props.data.naryady.sizes} />
+        <Avdeev sizes={this.props.data.avdeev.sizes} />
         <Abuse sizes={this.props.data.abuse.sizes} />
         <Social />
         <Vyrypaev sizes={this.props.data.vyrypaev.sizes} />
@@ -428,83 +436,85 @@ export default HomePage
 
 export const pageQuery = graphql`
   query TestImageQuery {
-    abuse: imageSharp(id: { regex: "/abuse\/cover.jpg/" }) {
-      sizes(maxWidth: 1280 ) {
+    abuse: imageSharp(id: { regex: "/abuse/cover.jpg/" }) {
+      sizes(maxWidth: 1280) {
         ...GatsbyImageSharpSizes
       }
     }
     ezhen: imageSharp(id: { regex: "/ezhen/" }) {
-      sizes(maxWidth: 400 ) {
+      sizes(maxWidth: 400) {
         ...GatsbyImageSharpSizes
       }
     }
-    borodin: imageSharp(id: { regex: "/ramt\/borodin.jpg/" }) {
-      sizes(maxWidth: 1280 ) {
+    borodin: imageSharp(id: { regex: "/ramt/borodin.jpg/" }) {
+      sizes(maxWidth: 1280) {
         ...GatsbyImageSharpSizes
       }
     }
     nadryv: imageSharp(id: { regex: "/np1.jpg/" }) {
-      sizes(maxWidth: 1280 ) {
+      sizes(maxWidth: 1280) {
         ...GatsbyImageSharpSizes
       }
     }
-    belomor: imageSharp(id: { regex: "/belomor\/1test.jpg/" }) {
-      sizes(maxWidth: 1280 ) {
+    belomor: imageSharp(id: { regex: "/belomor/1test.jpg/" }) {
+      sizes(maxWidth: 1280) {
         ...GatsbyImageSharpSizes
       }
     }
-    annenkov: imageSharp(id: { regex: "/annenkov\/home.jpg/" }) {
-      sizes(maxWidth: 500 ) {
+    annenkov: imageSharp(id: { regex: "/annenkov/home.jpg/" }) {
+      sizes(maxWidth: 500) {
         ...GatsbyImageSharpSizes
       }
     }
-    iz_vseh_iskusstv: imageSharp(id: { regex: "/iz_vseh_iskusstv\/cover.jpg/" }) {
-      sizes(maxWidth: 1280 ) {
+    iz_vseh_iskusstv: imageSharp(
+      id: { regex: "/iz_vseh_iskusstv/cover.jpg/" }
+    ) {
+      sizes(maxWidth: 1280) {
         ...GatsbyImageSharpSizes
       }
     }
-    lisovsky: imageSharp(id: { regex: "/otvechaet\/lisovsky.png/" }) {
-      sizes(maxWidth: 100 ) {
+    lisovsky: imageSharp(id: { regex: "/otvechaet/lisovsky.png/" }) {
+      sizes(maxWidth: 100) {
         ...GatsbyImageSharpSizes
       }
     }
-    elutin: imageSharp(id: { regex: "/otvechaet\/elutin.jpg/" }) {
-      sizes(maxWidth: 100 ) {
+    elutin: imageSharp(id: { regex: "/otvechaet/elutin.jpg/" }) {
+      sizes(maxWidth: 100) {
         ...GatsbyImageSharpSizes
       }
     }
-    avdeev: imageSharp(id: { regex: "/otvechaet\/avdeev_cover.jpg/" }) {
-      sizes(maxWidth: 100 ) {
+    avdeev: imageSharp(id: { regex: "/otvechaet/avdeev_cover.jpg/" }) {
+      sizes(maxWidth: 100) {
         ...GatsbyImageSharpSizes
       }
     }
-    vyrypaev: imageSharp(id: { regex: "/vyrypaev\/1.jpg/" }) {
-      sizes(maxWidth: 1280 ) {
+    vyrypaev: imageSharp(id: { regex: "/vyrypaev/1.jpg/" }) {
+      sizes(maxWidth: 1280) {
         ...GatsbyImageSharpSizes
       }
     }
-    pomosh: imageSharp(id: { regex: "/pomosh_zala\/cover_main.jpg/" }) {
-      sizes(maxWidth: 1280 ) {
+    pomosh: imageSharp(id: { regex: "/pomosh_zala/cover_main.jpg/" }) {
+      sizes(maxWidth: 1280) {
         ...GatsbyImageSharpSizes
       }
     }
-    naryady: imageSharp(id: { regex: "/naryady\/044.jpg/" }) {
-      sizes(maxWidth: 1280 ) {
+    naryady: imageSharp(id: { regex: "/naryady/044.jpg/" }) {
+      sizes(maxWidth: 1280) {
         ...GatsbyImageSharpSizes
       }
     }
     mycene: imageSharp(id: { regex: "/myc.jpg/" }) {
-      sizes(maxWidth: 1280 ) {
+      sizes(maxWidth: 1280) {
         ...GatsbyImageSharpSizes
       }
     }
-    rostov: imageSharp(id: { regex: "/naprimer\/cover.jpg/" }) {
-      sizes(maxWidth: 1280 ) {
+    rostov: imageSharp(id: { regex: "/naprimer/cover.jpg/" }) {
+      sizes(maxWidth: 1280) {
         ...GatsbyImageSharpSizes
       }
     }
-    sonet: imageSharp(id: { regex: "/sonet\/4.jpg/" }) {
-      sizes(maxWidth: 1280 ) {
+    sonet: imageSharp(id: { regex: "/sonet/4.jpg/" }) {
+      sizes(maxWidth: 1280) {
         ...GatsbyImageSharpSizes
       }
     }

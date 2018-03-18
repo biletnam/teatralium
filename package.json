@@ -30,7 +30,6 @@
     "patch": "sed -i -e 's/if(c\\.initial) return;/if(!c||c.initial) return;/g' ./node_modules/extract-text-webpack-plugin/index.js",
     "deploy:prod": "ssh trr 'cp -r /var/www/admin/* /var/www/tr/'",
     "deploy:dev": "gatsby build && rsync -r public/ tr:/var/www/deploy_tr && ssh trr 'rm -rf /var/www/admin/*; mv /var/www/deploy_tr/* /var/www/admin'",
-    "precommit": "yarn format"
   },
   "devDependencies": {
     "eslint-config-airbnb": "^16.1.0",
