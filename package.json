@@ -22,14 +22,14 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
-    "build": "rm -rf ./public/* && gatsby build && yarn deploy",
+    "build": "gatsby build && yarn deploy",
     "local": "gatsby build && gatsby serve",
     "start": "gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1",
     "patch": "sed -i -e 's/if(c\\.initial) return;/if(!c||c.initial) return;/g' ./node_modules/extract-text-webpack-plugin/index.js",
-    "deploy": "rsync -r public/ tr:/var/www/deploy_tr && ssh tr 'rm -rf /var/www/tr/*; mv /var/www/deploy_tr/* /var/www/tr'",
-    "deploy:dev": "rm -rf ./public/* && gatsby build && rsync -r public/ tr:/var/www/deploy_tr && ssh tr 'rm -rf /var/www/admin/*; mv /var/www/deploy_tr/* /var/www/admin'",
+    "deploy:prod": "ssh trr 'cp -r /var/www/admin/* /var/www/tr/'",
+    "deploy:dev": "gatsby build && rsync -r public/ tr:/var/www/deploy_tr && ssh trr 'rm -rf /var/www/admin/*; mv /var/www/deploy_tr/* /var/www/admin'",
     "precommit": "yarn format"
   },
   "devDependencies": {

@@ -54,7 +54,7 @@ const NoImageCover = styled.div`
 `
 
 const FillCoverMaxHeight = styled(FillCover)`
-  ${phone(`max-height: 150px;`)};
+  ${phone(`height: 300px !important;`)};
 `
 
 const ImgWrapper = styled.div`
@@ -100,7 +100,7 @@ const Elutin = ({ sizes }) => (
           И братва за&nbsp;слова отвечает как в&nbsp;лучшие дни
         </H1>
         <H1small center color="black">
-          плейлист импрессарио Федора Елютина
+          плейлист импресарио Федора Елютина
         </H1small>
       </ArticlesSection>
     </TopCover>
@@ -342,9 +342,9 @@ const Nadryv = ({ sizes }) => (
 )
 
 const NadryvSub = () => (
-  <FillCover color="white">
+  <FillCover color="white" height="300px">
     <ArticlesSection align="right" margin="1rem">
-      <H3 fontStyle="normal">Непереводимый русский надрыв</H3>
+      <H3 align="right" fontStyle="normal">Непереводимый русский надрыв</H3>
       <H1small>Юрий Муравицкий и Валерий Печейкин о любви и хаосе</H1small>
     </ArticlesSection>
   </FillCover>

@@ -52,11 +52,16 @@ const Bg = styled(Img)`
 
 const Wrapper = styled.div`
   position: absolute;
+  top: 0;
   width: 100%;
   min-height: ${p => p.height || '400px'};
-  height: auto;
+  height: 100%;
   z-index: -1;
   overflow: hidden;
+  ${phone(`
+    width: 200%;
+    min-height: auto;
+  `)}
 `;
 
 const FillCoverWithBg = (props) => {
