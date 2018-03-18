@@ -20,7 +20,7 @@ import Share from "../../components/Share";
 import Other from "../../components/Other";
 import Poem from "../../components/Poem";
 
-import { TopCover } from "../../components/FillCover";
+import FillCover, { TopCover } from "../../components/FillCover";
 
 import img1 from "../images/sonet/1.jpg";
 import img2 from "../images/sonet/2.jpg";
@@ -181,7 +181,7 @@ export class Article extends React.PureComponent {
               тридцатый сонет Шекспира
             </H1small>
             <Date>
-              25 февраля 2018, текст:&nbsp;<b>Настя Николаева</b>
+              5 марта 2018, текст:&nbsp;<b>Настя Николаева</b>
             </Date>
           </Section>
         </TopCover>
@@ -343,7 +343,7 @@ export class Article extends React.PureComponent {
           </Section>
         </TopCover>
 
-        <TopCover>
+        <FillCover>
           <Section margin="0">
             <H1small>Повторим весь сонет:</H1small>
             <StyledPoem size="1.8rem">
@@ -366,9 +366,8 @@ export class Article extends React.PureComponent {
               <Line>И все готов простить своей судьбе.</Line>
             </StyledPoem>
           </Section>
-        </TopCover>
-
-        <Section paddingTop="5rem">
+        </FillCover>
+        <Section>
           <Video id="RIxEZTIA9bQ" desc="«Наизусть», трейлер спектакля" />
         </Section>
         <Share url={url} />

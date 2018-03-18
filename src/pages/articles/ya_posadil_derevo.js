@@ -71,7 +71,7 @@ export class Derevo extends React.PureComponent {
             этим «Театралий» призывает разных людей, причастных к театральному
             делу, буквально ответить за музыку в соответствующей рубрике «За
             музыку отвечает». В прошлом выпуске мы слушали{" "}
-            <Link to="/articles/playlist_komissara_vsevoloda_lisovskogo">
+            <Link to="/articles/playlist_komissara_vsevoloda_lisovskogo/">
               духоподъемный микс комиссара Театра.doc Всеволода Лисовского
             </Link>, а сегодня наш гость — актер Гоголь-центра Филипп Авдеев,
             выбор которого лучше всего подходит для каникул в жарких странах.
@@ -93,6 +93,7 @@ export class Derevo extends React.PureComponent {
             мопеде».
           </p>
           <iframe
+            scrolling="no"
             width="100%"
             height="60"
             src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&light=1&hide_artwork=1&feed=%2FTeatralium%2Fderevo-avdeev%2F"

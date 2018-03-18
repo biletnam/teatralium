@@ -22,6 +22,7 @@ import belomor from "./images/belomor/1test.jpg";
 import annenkov from "./images/annenkov/home.jpg";
 import iz_vseh_iskusstv from "./images/iz_vseh_iskusstv/cover.jpg";
 import lisovsky from "./images/otvechaet/lisovsky.png";
+import elutin from "./images/otvechaet/elutin.jpg";
 import avdeev from "./images/otvechaet/avdeev_cover.jpg";
 import vyrypaev from "./images/vyrypaev/1.jpg";
 import pomosh from "./images/pomosh_zala/cover_main.jpg";
@@ -33,7 +34,6 @@ import sonet from "./images/sonet/4.jpg";
 import { REVOLUTION } from "../utils/const";
 
 const StyledLink = styled(Link)`
-  color: black;
   text-decoration: none;
   &:hover {
     cursor: hand;
@@ -105,118 +105,114 @@ const PurpleButton = styled(Button)`
   }
 `;
 
-const YellowButton = styled(Button)`
-  color: yellow;
-  border: 3px solid yellow;
-  background: rgba(0, 0, 0, 0.5);
-`;
+const Elutin = () => (
+  <StyledLink to="/articles/i_bratva_za_slova_otvechaet/">
+    <TopCover bg={elutin} repeat bordered borderColor="#f300f3">
+      <ArticlesSection background="rgba(255,255,255,0.6)">
+        <H1 size="3.4124em" center color="purple">
+          И братва за&nbsp;слова отвечает как в&nbsp;лучшие дни
+        </H1>
+        <H1small center color="black">
+          плейлист импрессарио Федора Елютина
+        </H1small>
+      </ArticlesSection>
+    </TopCover>
+  </StyledLink>
+);
 
 const Sonet = () => (
-  <TopCover
-    pointer
-    onClick={() => navigateTo("/articles/net_amnezii")}
-    bg={sonet}
-  >
-    <ArticlesSection
-      margin="0"
-      marginTop="0"
-    >
-      <H1 center size="3.2124em">
-        Нет амнезии
-      </H1>
-      <H1small center>
-        Вспоминаем спектакль «Наизусть» Тьяго Родригеса и заучиваем
-        тридцатый сонет Шекспира
-      </H1small>
-    </ArticlesSection>
-  </TopCover>
+  <StyledLink to="/articles/net_amnezii/">
+    <FillCover height="600px" pointer bg={sonet}>
+      <ArticlesSection margin="0" marginTop="0">
+        <H1 center size="3.2124em">
+          Нет амнезии
+        </H1>
+        <H1small center>
+          Вспоминаем спектакль «Наизусть» Тьяго Родригеса и заучиваем тридцатый
+          сонет Шекспира
+        </H1small>
+      </ArticlesSection>
+    </FillCover>
+  </StyledLink>
 );
 
 const Rostov = () => (
-  <FillCover
-    pointer
-    onClick={() => navigateTo("/articles/v_moskve_naprimer_analogov_net")}
-    bg={rostov}
-  >
-    <Section align="center" margin="0 3rem">
-      <H1 center size="3.2124em" color="white">
-        В Москве, например, аналогов нет
-      </H1>
-      <H1small center color="white">
-        Пять лет ростовскому «Театру 18+» с современными пьесами и казачим
-        рэпом, но без государственных денег
-      </H1small>
-    </Section>
-  </FillCover>
+  <StyledLink to="/articles/v_moskve_naprimer_analogov_net/">
+    <FillCover pointer bg={rostov}>
+      <Section align="center" margin="0 3rem">
+        <H1 center size="3.2124em" color="white">
+          В Москве, например, аналогов нет
+        </H1>
+        <H1small center color="white">
+          Пять лет ростовскому «Театру 18+» с современными пьесами и казачим
+          рэпом, но без государственных денег
+        </H1small>
+      </Section>
+    </FillCover>
+  </StyledLink>
 );
 
 const Sebastian = () => (
-  <FillCover
-    pointer
-    onClick={() => navigateTo("/articles/poobshatsa_s_gospodinom_oblomovym")}
-  >
-    <Section align="center" margin="0">
-      <H1small>Себастьян Кайзер:</H1small>
-      <H1 size="3.2124em">
-        «Нам всем нужно пообщаться с&nbsp;господином Обломовым»
-      </H1>
-    </Section>
-  </FillCover>
+  <StyledLink to="/articles/poobshatsa_s_gospodinom_oblomovym/">
+    <FillCover pointer>
+      <Section align="center" margin="0">
+        <H1small>Себастьян Кайзер:</H1small>
+        <H1 size="3.2124em">
+          «Нам всем нужно пообщаться с&nbsp;господином Обломовым»
+        </H1>
+      </Section>
+    </FillCover>
+  </StyledLink>
 );
 
 const Naryady = () => (
-  <FillCover
-    bg={naryady}
-    bordered
-    borderColor="black"
-    borderSize="7"
-    pointer
-    onClick={() => navigateTo("/articles/teatr_mody_v_sovetskoy_rossii")}
-  >
-    <Section margin="1rem">
-      <H1 size="3.8124em" align="left">
-        Иммерсивный фэшн 20-х,<br />
-        <small>или</small> театр моды в советской России
-      </H1>
-    </Section>
-  </FillCover>
+  <StyledLink to="/articles/teatr_mody_v_sovetskoy_rossii/">
+    <FillCover bg={naryady} bordered borderColor="black" borderSize="7" pointer>
+      <Section margin="1rem">
+        <H1 size="3.8124em" align="left">
+          Иммерсивный фэшн 20-х,<br />
+          <small>или</small> театр моды в советской России
+        </H1>
+      </Section>
+    </FillCover>
+  </StyledLink>
 );
 
 const Avdeev = () => (
-  <FillCover
-    pointer
-    onClick={() => navigateTo("/articles/ya_posadil_derevo")}
-    bg={avdeev}
-    repeat
-    bordered
-    borderColor="#d54051"
-  >
-    <ArticlesSection padding="1" size="22px" background="rgba(255,255,255,0.8)">
-      <H1 color="#d54051">Я посадил дерево</H1>
-      <Lead color="#d54051">плейлист актера Филиппа Авдеева</Lead>
-    </ArticlesSection>
-  </FillCover>
+  <StyledLink to="/articles/ya_posadil_derevo/">
+    <FillCover pointer bg={avdeev} repeat bordered borderColor="#d54051">
+      <ArticlesSection
+        padding="1"
+        size="22px"
+        background="rgba(255,255,255,0.8)"
+      >
+        <H1 color="#d54051">Я посадил дерево</H1>
+        <Lead color="#d54051">плейлист актера Филиппа Авдеева</Lead>
+      </ArticlesSection>
+    </FillCover>
+  </StyledLink>
 );
 
 const Abuse = () => (
+  <StyledLink to="/articles/abyuz_nelzya_pomilovat/">
   <FillCover
     bg={abuse}
     pointer
     height="600px"
-    onClick={() => navigateTo("/articles/abyuz_nelzya_pomilovat")}
   >
     <ArticlesSection padding="3" align="right" background="rgba(97,59,123,0.6)">
       <H1 color="white">Абьюз нельзя помиловать</H1>
     </ArticlesSection>
   </FillCover>
+  </StyledLink>
 );
 
 const Vyrypaev = () => (
+  <StyledLink to="/articles/ivan_vyrypaev_protiv_kritikov/">
   <FillCover
     bg={vyrypaev}
     pointer
     height="600px"
-    onClick={() => navigateTo("/articles/ivan_vyrypaev_protiv_kritikov")}
   >
     <ArticlesSection padding="1" size="22px" align="center">
       <H1 size="3rem" color="white">
@@ -227,14 +223,15 @@ const Vyrypaev = () => (
       </Lead>
     </ArticlesSection>
   </FillCover>
+  </StyledLink>
 );
 
 const Pomosh = () => (
+  <StyledLink to="/articles/pomosh_zala/">
   <FillCover
     bg={pomosh}
     pointer
     height="400px"
-    onClick={() => navigateTo("/articles/pomosh_zala")}
   >
     <ArticlesSection padding="1" size="22px" align="center">
       <H1 color="white">Помощь зала</H1>
@@ -243,14 +240,14 @@ const Pomosh = () => (
       </Lead>
     </ArticlesSection>
   </FillCover>
+  </StyledLink>
 );
 
+
 const Lisovski = () => (
+  <StyledLink to="/articles/playlist_komissara_vsevoloda_lisovskogo/">
   <FillCover
     pointer
-    onClick={() =>
-      navigateTo("/articles/playlist_komissara_vsevoloda_lisovskogo")
-    }
     bg={lisovsky}
     repeat
     bordered
@@ -265,13 +262,15 @@ const Lisovski = () => (
       <Lead color="black">плейлист комиссара Всеволода Лисовского</Lead>
     </ArticlesSection>
   </FillCover>
+  </StyledLink>
 );
 
+
 const Borodin = () => (
+  <StyledLink to="/articles/abbreviatura_ramt/">
   <FillCover
     bg={borodin}
     height="600px"
-    onClick={() => navigateTo("/articles/abbreviatura_ramt")}
   >
     <ArticlesSection padding="1" align="right">
       <H1 size="3.2124em" color="#ec71c8">
@@ -282,14 +281,15 @@ const Borodin = () => (
       </Lead>
     </ArticlesSection>
   </FillCover>
+  </StyledLink>
 );
 
 const Davydova = () => (
+  <StyledLink to="/articles/velikoe_raznoobrazie/">
   <FillCover
     pointer
     color="#FDF06f"
     bg={mask}
-    onClick={() => navigateTo("/articles/velikoe_raznoobrazie")}
   >
     <ArticlesSection paddingTop="0" marginTop="4rem">
       <H1small marginTop="0">
@@ -298,13 +298,14 @@ const Davydova = () => (
       <H1>Великое разнообразие</H1>
     </ArticlesSection>
   </FillCover>
+  </StyledLink>
 );
 
 const Annenkov = () => (
+  <StyledLink to="/articles/ozhila_krasnaya_stsena/">
   <FillCover
     pointer
     color="#FDF06f"
-    onClick={() => navigateTo("/articles/ozhila_krasnaya_stsena")}
     bordered
     borderColor={REVOLUTION}
   >
@@ -326,15 +327,16 @@ const Annenkov = () => (
       />
     </ArticlesSection>
   </FillCover>
+</StyledLink>
 );
 
 const IzVsehIskusstv = () => (
+  <StyledLink to="/articles/iz_vseh_iskusstv/">
   <FillCover
     shadow
     pointer
     color="black"
     fontColor="#9bda9e"
-    onClick={() => navigateTo("/articles/iz_vseh_iskusstv")}
     height="400px"
     bg={iz_vseh_iskusstv}
   >
@@ -345,7 +347,14 @@ const IzVsehIskusstv = () => (
       <H1>Из всех искусств</H1>
     </ArticlesSection>
   </FillCover>
+  </StyledLink>
 );
+
+const YellowButton = styled(Button)`
+  color: yellow;
+  border: 3px solid yellow;
+  background: rgba(0, 0, 0, 0.5);
+`;
 
 const Belomor = () => (
   <FillCover bordered borderColor="yellow" bg={belomor} height="700px">
@@ -362,7 +371,7 @@ const Bol = () => (
     <NoImageCover>
       <H1small>«МНЕ ПЛОХО, МНЕ СКУЧНО»</H1small>
       <H1>почему люди не ходят в театр</H1>
-      <Button to="/articles/mne_ploho_mne_skuchno">Читать</Button>
+      <Button to="/articles/mne_ploho_mne_skuchno/">Читать</Button>
     </NoImageCover>
   </ArticlesSection>
 );
@@ -372,7 +381,6 @@ const Nadryv = () => (
     color="black"
     bg={nadryv}
     height="400px"
-    onClick={() => navigateTo("/articles/neperevodimiy_russkiy_nadryv")}
   >
     <ArticlesSection padding="3" paddingTop="14" size="14px" />
   </FillCoverMaxHeight>
@@ -388,10 +396,10 @@ const NadryvSub = () => (
 );
 
 const Lyub = () => (
+  <StyledLink to="/articles/lyubimovka/">
   <FillCover
     pointer
     color="#e6ceff"
-    onClick={() => navigateTo("/articles/lyubimovka")}
   >
     <ArticlesSection padding="1">
       <H3>
@@ -403,12 +411,13 @@ const Lyub = () => (
       <Img src={rus} width="300px" round />
     </ArticlesSection>
   </FillCover>
+  </StyledLink>
 );
 
 const Ezhen = () => (
   <FillCover color="white">
     <ArticlesSection align="right" margin="1rem">
-      <StyledLink to={"/articles/ezhen"}>
+      <StyledLink to="/articles/ezhen/">
         <H1>Что хотел сказать автор?</H1>
         <H1small>Отвечает Эжен Ионеско</H1small>
       </StyledLink>
@@ -424,7 +433,7 @@ const Svet = () => (
     <ArticlesSection padding="3">
       <H1 color="white">Свет далеких планет</H1>
       <Lead color="white">Обзор европейских премьер нового сезона</Lead>
-      <PurpleButton to="/articles/svet_dalyokih_planet">Читать</PurpleButton>
+      <PurpleButton to="/articles/svet_dalyokih_planet/">Читать</PurpleButton>
     </ArticlesSection>
   </FillCover>
 );
@@ -434,6 +443,7 @@ export class HomePage extends React.PureComponent {
   render() {
     return (
       <div>
+        <Elutin />
         <Sonet />
         <Rostov />
         <Sebastian />
@@ -451,7 +461,7 @@ export class HomePage extends React.PureComponent {
         <Belomor />
         <Bol />
         <Border>
-          <StyledLink to={"/articles/neperevodimiy_russkiy_nadryv"}>
+          <StyledLink to="/articles/neperevodimiy_russkiy_nadryv/">
             <Nadryv />
             <NadryvSub />
           </StyledLink>

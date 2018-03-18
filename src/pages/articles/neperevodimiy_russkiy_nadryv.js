@@ -137,7 +137,7 @@ export class Bol extends React.PureComponent {
           </p>
           <p>
             <b>НН</b>: Он нам как раз{" "}
-            <Link to="/articles/mne_ploho_mne_skuchno">рассказывал</Link>, что
+            <Link to="/articles/mne_ploho_mne_skuchno/">рассказывал</Link>, что
             ненавидит театр.
           </p>
           <p>

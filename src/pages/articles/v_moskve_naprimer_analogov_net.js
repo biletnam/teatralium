@@ -24,6 +24,7 @@ import { TopCover } from "../../components/FillCover";
 
 import mazo1 from "../images/naprimer/1.jpg";
 import mazo2 from "../images/naprimer/2.jpg";
+import sam from "../images/naprimer/sam.jpg";
 import zal from "../images/naprimer/zal.jpg";
 import foye from "../images/naprimer/foye.jpg";
 import cover from "../images/naprimer/cover.jpg";
@@ -125,7 +126,7 @@ export class Article extends React.PureComponent {
             </p>
             <Note>
               <Img
-                src="https://teatr18.ru/assets/cache_image/assets/components/phpthumbof/cache/Wold_1_Web.a28f8ae7a23535077dbefb072e5fa599_500x0_8a4.jpg"
+                src={sam}
                 noBorder
                 marginBottom="1rem"
                 marginTop="0"
@@ -290,7 +291,7 @@ export class Article extends React.PureComponent {
             На гастроли сюда приезжают не только спектакли Театра.doc, но и
             «Questioning / Кто ты?» «Гоголь-центра», российско-германская
             постановка{" "}
-            <Link to="/articles/neperevodimiy_russkiy_nadryv">
+            <Link to="/articles/neperevodimiy_russkiy_nadryv/">
               «Вижу тебя, знаю тебя»
             </Link>, международный проект «Où?» француженки Луизы Левек. Но с
             гастролями есть проблема: это очень затратно и никогда не окупается.

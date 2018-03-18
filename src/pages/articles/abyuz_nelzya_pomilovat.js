@@ -1,63 +1,41 @@
-import React from "react";
-import Helmet from "react-helmet";
-import Link from "gatsby-link";
-import styled from "styled-components";
+import React from 'react';
+import Helmet from 'react-helmet';
+import Link from 'gatsby-link';
+import styled from 'styled-components';
 
-import { phone } from "../../utils/media";
-import H1, { H1small } from "../../components/H1";
-import ArticleHelmet from "../../components/ArticleHelmet";
-import Img from "../../components/Img";
-import H2 from "../../components/H2";
-import H3 from "../../components/H3";
-import Gallery from "../../components/Gallery";
-import Video from "../../components/Video";
+import H1 from '../../components/H1';
+import ArticleHelmet from '../../components/ArticleHelmet';
+import Img from '../../components/Img';
+import H3 from '../../components/H3';
+import Gallery from '../../components/Gallery';
+import Video from '../../components/Video';
 
-import Small from "../../components/Small";
-import Note, { NoteWrapper, NotedWord } from "../../components/Note";
-import Section from "../../components/Section";
-import P from "../../components/P";
-import Date from "../../components/Date";
-import Share from "../../components/Share";
-import Other from "../../components/Other";
+import Note, { NoteWrapper, NotedWord } from '../../components/Note';
+import Section from '../../components/Section';
+import P from '../../components/P';
+import Date from '../../components/Date';
+import Share from '../../components/Share';
+import Other from '../../components/Other';
 
-import img1 from "../images/abuse/1.jpg";
-import img2 from "../images/abuse/2.jpg";
-import img3 from "../images/abuse/3.jpg";
-import img4 from "../images/abuse/4.jpg";
-import img5 from "../images/abuse/5.jpg";
-import img6 from "../images/abuse/6.jpg";
-import img7 from "../images/abuse/7.jpg";
+import img1 from '../images/abuse/1.jpg';
+import img2 from '../images/abuse/2.jpg';
+import img3 from '../images/abuse/3.jpg';
+import img4 from '../images/abuse/4.jpg';
+import img5 from '../images/abuse/5.jpg';
+import img6 from '../images/abuse/6.jpg';
+import img7 from '../images/abuse/7.jpg';
 
-import cover from "../images/abuse/cover.jpg";
-import natasha from "../images/abuse/natasha.jpg";
-import nika from "../images/abuse/nika.jpg";
+import cover from '../images/abuse/cover.jpg';
+import natasha from '../images/abuse/natasha.jpg';
+import nika from '../images/abuse/nika.jpg';
 
-const url = "https://teatralium.com/articles/abyuz_nelzya_pomilovat";
-const title = "Абьюз нельзя помиловать";
-
-const H2Styled = styled(H2)`
-  font-size: 1.713em;
-  margin-bottom: 3rem;
-`;
-
-const H1Styled = styled(H1small)`
-  margin-top: 7rem;
-`;
-
-const ImgStyled = styled(Img)`
-  margin-top: 5rem;
-  margin-bottom: 5rem;
-`;
-
-const H3Styled = styled(H3)`
-  margin-top: 5rem;
-  margin-bottom: 5rem;
-`;
+const url = 'https://teatralium.com/articles/abyuz_nelzya_pomilovat';
+const title = 'Абьюз нельзя помиловать';
 
 const Q = styled.p`
   font-weight: bold;
   &::before {
-    content: "Театралий: ";
+    content: 'Театралий: ';
   }
 `;
 
@@ -72,7 +50,7 @@ export class Abuse extends React.PureComponent {
         <ArticleHelmet
           url={url}
           image={cover}
-          description="Почему надо смотреть спектакль «Абьюз» в ЦИМе."
+          description='Почему надо смотреть спектакль «Абьюз» в ЦИМе.'
           title={`${title} | Театралий`}
         />
         <Section>
@@ -88,14 +66,14 @@ export class Abuse extends React.PureComponent {
             партнерами мужского пола. Несмотря на эту статистику, в России в
             2017 году был принят закон о декриминализации семейного насилия, а
             РПЦ советует жертвам молчать, так как разговор о насилии
-            пропагандирует грех. Тем ценнее недавно вышедший в ЦИМе{" "}
-            <a href="http://meyerhold.ru/abyuz/">«Абьюз»</a> — редкая постановка
+            пропагандирует грех. Тем ценнее недавно вышедший в ЦИМе{' '}
+            <a href='http://meyerhold.ru/abyuz/'>«Абьюз»</a> — редкая постановка
             на эту сложную тему, для обсуждения которой еще даже не
             сформировался словарный запас. «Театралий» пригласил иллюстраторку и
-            создательницу{" "}
-            <a href="https://www.youtube.com/channel/UC2GQig8tlmGFq2Wp2tj_Jbw">
+            создательницу{' '}
+            <a href='https://www.youtube.com/channel/UC2GQig8tlmGFq2Wp2tj_Jbw'>
               ютьюб-канала о феминизме и жизни
-            </a>{" "}
+            </a>{' '}
             Нику Водвуд посмотреть спектакль, чтобы потом обсудить его с
             Натальей Зайцевой, которая написала к нему текст.
           </P>
@@ -117,7 +95,7 @@ export class Abuse extends React.PureComponent {
               бла-бла-бла. Постоянно хочется оправдываться, почему все
               получилось так, а не иначе.
             </p>
-            <Note left background="white" top="-90px">
+            <Note left background='white' top='-90px'>
               <Img round src={natasha} />
             </Note>
           </NoteWrapper>
@@ -139,7 +117,7 @@ export class Abuse extends React.PureComponent {
               <b>Ника Водвуд:</b> Никаких атак, no hard stuff. Мы понимаем, что
               не только ты ответственна за то, что получилось.
             </p>
-            <Note left background="white" top="-120px">
+            <Note left background='white' top='-120px'>
               <Img round src={nika} />
             </Note>
           </NoteWrapper>
@@ -147,9 +125,9 @@ export class Abuse extends React.PureComponent {
             <Z /> Спасибо, я чувствую вашу поддержку.
           </p>
           <Video
-            id="DAcW0ZcessU"
-            start="1270"
-            desc="Для читателей, не смотревших телевизор в 90-е, как, например, Ника, объясняем, что образ трикстера в спектакле заимствован из рубрики «Маска откровения» культовой передачи «Моя семья»."
+            id='DAcW0ZcessU'
+            start='1270'
+            desc='Для читателей, не смотревших телевизор в 90-е, как, например, Ника, объясняем, что образ трикстера в спектакле заимствован из рубрики «Маска откровения» культовой передачи «Моя семья».'
           />
           <Q>С чего все началось?</Q>
           <p>
@@ -196,7 +174,7 @@ export class Abuse extends React.PureComponent {
         </Section>
         <Gallery images={[img1, img2]} />
         <Section>
-          <Img src={img3} marginTop="1rem" desc="Фото: Екатерина Краева" />
+          <Img src={img3} marginTop='1rem' desc='Фото: Екатерина Краева' />
           <p>
             <N /> Как раз про это я хотела спросить. Несколько раз мне
             показалось, что происходит именно это. Например, во время выпускного
@@ -245,9 +223,9 @@ export class Abuse extends React.PureComponent {
               <N /> <NotedWord>Мэйл гейз.</NotedWord>
             </p>
             <Note>
-              <a href="https://vk.com/album-57529824_215027486">
+              <a href='https://vk.com/album-57529824_215027486'>
                 Мужской взгляд
-              </a>{" "}
+              </a>{' '}
               (мэйл гейз/male gaze) — социокультурная практика отображения мира
               с позиции гетеросексуального мужчины и с целью его ублажения,
               развлечения, возбуждения и удовлетворения.
@@ -318,7 +296,7 @@ export class Abuse extends React.PureComponent {
             участвовать в этом.
           </p>
           <Img src={img4} />
-          <Img src={img6} desc="Фото: Екатерина Краева" />
+          <Img src={img6} desc='Фото: Екатерина Краева' />
           <p>
             Я не приходила на первые репетиции, потому что боялась: думала,
             сейчас войду в комнату с восемью взрослыми людьми, а они будут
@@ -368,7 +346,7 @@ export class Abuse extends React.PureComponent {
           <p>
             <Z /> На самом деле можно самоорганизовываться и делать какие-то
             DIY-проекты. Но в тот момент я уже работала в театре и уже отдала
-            свою первую пьесу на растерзание привилегированному мужчине.{" "}
+            свою первую пьесу на растерзание привилегированному мужчине.{' '}
             <i>(Смеется.)</i> Но ты видишь человека, он живой, ты испытываешь к
             нему симпатию и так далее. К чести Вани будет сказано, что он очень
             много меня слушал и с самого начала относился ко мне как к эксперту
@@ -429,8 +407,8 @@ export class Abuse extends React.PureComponent {
               здесь?»
             </p>
             <Note>
-              Следующие показы спектакля «Абьюз»{" "}
-              <a href="http://meyerhold.ru/abyuz/">пройдут в ЦИМе</a> 23, 24
+              Следующие показы спектакля «Абьюз»{' '}
+              <a href='http://meyerhold.ru/abyuz/'>пройдут в ЦИМе</a> 23, 24
               января и 6 февраля.
             </Note>
           </NoteWrapper>
@@ -540,7 +518,7 @@ export class Abuse extends React.PureComponent {
             теперь знают о проблеме. Моя боязнь в том, что многие это
             испытывали.
           </p>
-          <Img src={img5} desc="Фото: Екатерина Краева" />
+          <Img src={img5} desc='Фото: Екатерина Краева' />
           <p>
             <Z /> Да, но это как фильм, который ты можешь выключить. Ведь это
             происходит на сцене, все равно есть отстранение.
@@ -708,8 +686,8 @@ export class Abuse extends React.PureComponent {
           </p>
           <Q>А что пишут люди к твоему видео про абьюз?</Q>
           <Video
-            id="z1FoGJvdgAE"
-            desc="Видео Ники про абьюзивные отношения посмотрели более 670 тысяч человек"
+            id='z1FoGJvdgAE'
+            desc='Видео Ники про абьюзивные отношения посмотрели более 670 тысяч человек'
           />
           <p>
             <N /> У всех все похоже, но в разных градациях. «Узнаю своего парня!
@@ -741,8 +719,8 @@ export class Abuse extends React.PureComponent {
             отличное видео моего друга.
           </p>
           <Video
-            id="lG7tNErSVkQ"
-            desc="Мира Тай рассказывает о последствиях публичного активизма"
+            id='lG7tNErSVkQ'
+            desc='Мира Тай рассказывает о последствиях публичного активизма'
           />
           <p>
             Я хочу, чтобы люди обсуждали спектакль, как обсуждаем его сегодня
@@ -807,21 +785,21 @@ export class Abuse extends React.PureComponent {
           <Q>Оскорбление чувств немцев.</Q>
           <NoteWrapper>
             <p>
-              <Z /> Но при этом в книге Урсулы Виртц{" "}
+              <Z /> Но при этом в книге Урсулы Виртц{' '}
               <NotedWord>«Убийство души. Инцест и терапия»</NotedWord> сказано,
               что жертвы холокоста и жертвы сексуальных травм в детстве
               испытывают одинаковые симптомы и транслируют их в своих семьях.
             </p>
-            <Note top="-40px">
+            <Note top='-40px'>
               <Img
-                marginBottom="1rem"
-                marginTop="1rem"
-                src="https://cv9.litres.ru/static/bookimages/12/63/43/12634394.bin.dir/12634394.cover_330.jpg"
+                marginBottom='1rem'
+                marginTop='1rem'
+                src='https://cv9.litres.ru/static/bookimages/12/63/43/12634394.bin.dir/12634394.cover_330.jpg'
               />
-              В книге{" "}
-              <a href="https://bookz.ru/authors/ursula-virtc/ubiistvo_975/1-ubiistvo_975.html">
+              В книге{' '}
+              <a href='https://bookz.ru/authors/ursula-virtc/ubiistvo_975/1-ubiistvo_975.html'>
                 «Убийство души. Инцест и терапия»
-              </a>{" "}
+              </a>{' '}
               психотерапевт Урсула Виртц описывает терапию травмы инцеста и
               исследует причины, по которым жертвы часто снова оказываются в
               условиях эксплуатации.
@@ -857,10 +835,10 @@ export class Abuse extends React.PureComponent {
           </Q>
           <p>
             <Z /> Кстати, у моего знакомого Вани Соловья, который учится в
-            Берлине на гендерных исследованиях, есть{" "}
-            <a href="https://www.youtube.com/watch?v=2Spiz_bc7Hk&feature=youtu.be">
+            Берлине на гендерных исследованиях, есть{' '}
+            <a href='https://www.youtube.com/watch?v=2Spiz_bc7Hk&feature=youtu.be'>
               работа
-            </a>{" "}
+            </a>{' '}
             о том, как российские феминистки воспринимают Запад. В частности,
             они считают, что там-то уже все обговорено, а мы в России отсталые.
             Это такая колониальная проблематика, которая напоминает то, как
@@ -895,10 +873,10 @@ export class Abuse extends React.PureComponent {
             Видела в Японии в супермаркетах полки с брошюрами о том, как
             распознать домашнее насилие и куда обратиться за помощью.
           </Q>
-          <Img src="http://mmr.ua/uploaded/materials/b5b0e6775b.jpg" />
+          <Img src='http://mmr.ua/uploaded/materials/b5b0e6775b.jpg' />
           <Img
             src={img7}
-            desc="Плакат «Так выглядит сексизм» в Киеве и японская брошюра о домашнем насилии"
+            desc='Плакат «Так выглядит сексизм» в Киеве и японская брошюра о домашнем насилии'
           />
           <p>
             <Z /> Когда я в 2005 году читала сообщество «Феминистки» в ЖЖ, я
@@ -915,7 +893,7 @@ export class Abuse extends React.PureComponent {
           </p>
           <br />
           <H3>Бонус! Выпуск «Моей семьи» с Олегом Куликом</H3>
-          <Video id="TA_jtuqhqgE" />
+          <Video id='TA_jtuqhqgE' />
         </Section>
         <Share url={url} />
         <Other url={url} />

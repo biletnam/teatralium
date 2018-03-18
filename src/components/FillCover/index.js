@@ -13,6 +13,8 @@ const FillCover = styled.div`
   justify-content: center;
   ${p => p.contain && "background-size: contain;"}
   ${p => p.contain && p.center && "background-position: center;"}
+  ${p => p.bgPosition && `background-position: ${p.bgPosition};`}
+  ${p => p.bgSize && `background-size: ${p.bgSize};`}
 
   ${p => p.shadow && "box-shadow: inset 1px 4px 90px -6px #000000;"}
   ${p =>
@@ -34,7 +36,6 @@ export default FillCover;
 export const TopCover = styled(FillCover)`
   min-height: 650px;
   height: calc(100vh - 70px - 2.8rem);
-  max-height: 1000px;
   ${phone(`
     min-height: auto;
     height: calc(100vh - 30px);

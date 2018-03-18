@@ -2,6 +2,10 @@ const base = "/articles/";
 
 export const articles = [
   {
+    url: base + "i_bratva_za_slova_otvechaet",
+    title: "И братва за слова отвечает как в лучшие дни: плейлист импрессарио Федора Елютина"
+  },
+  {
     url: base + "net_amnezii",
     title: "Нет амнезии: Вспоминаем спектакль «Наизусть» Тьяго Родригеса и заучиваем тридцатый сонет Шекспира"
   },
