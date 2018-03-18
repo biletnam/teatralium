@@ -1,42 +1,42 @@
-import React from "react";
-import Helmet from "react-helmet";
-import Link from "gatsby-link";
-import styled from "styled-components";
+import React from 'react'
+import Helmet from 'react-helmet'
+import Link from 'gatsby-link'
+import styled from 'styled-components'
 
-import { phone } from "../../utils/media";
-import H1, { H1small } from "../../components/H1";
-import ArticleHelmet from "../../components/ArticleHelmet";
-import Img from "../../components/Img";
-import H2 from "../../components/H2";
-import H3 from "../../components/H3";
-import Video from "../../components/Video";
+import { phone } from '../../utils/media'
+import H1, { H1small } from '../../components/H1'
+import ArticleHelmet from '../../components/ArticleHelmet'
+import Img from '../../components/Img'
+import H2 from '../../components/H2'
+import H3 from '../../components/H3'
+import Video from '../../components/Video'
 // import H4 from '../../components/H4'
-import Small from "../../components/Small";
-import Note, { NoteWrapper, NotedWord } from "../../components/Note";
-import Section from "../../components/Section";
-import P from "../../components/P";
-import Date from "../../components/Date";
-import Share from "../../components/Share";
-import Other from "../../components/Other";
-import Attention from "../../components/Attention";
+import Small from '../../components/Small'
+import Note, { NoteWrapper, NotedWord } from '../../components/Note'
+import Section from '../../components/Section'
+import P from '../../components/P'
+import Date from '../../components/Date'
+import Share from '../../components/Share'
+import Other from '../../components/Other'
+import Attention from '../../components/Attention'
 
-import { Playlist } from "../../components/Poem";
+import { Playlist } from '../../components/Poem'
 
-import cover from "../images/otvechaet/lisovsky.gif";
+import cover from '../images/otvechaet/lisovsky.gif'
 
 const url =
-  "https://teatralium.com/articles/playlist_komissara_vsevoloda_lisovskogo";
+  'https://teatralium.com/articles/playlist_komissara_vsevoloda_lisovskogo'
 const title =
-  "Миражи — это наша жизнь?: плейлист комиссара Всеволода Лисовского";
+  'Миражи — это наша жизнь?: плейлист комиссара Всеволода Лисовского'
 
 const List = styled.ul`
   list-style-type: square;
-`;
+`
 
 const Wrapper = styled.div`
   width: 400px;
   margin: 0 auto;
-`;
+`
 
 export class Raznoobrazie extends React.PureComponent {
   // eslint-disable-line react/prefer-stateless-function
@@ -140,8 +140,8 @@ export class Raznoobrazie extends React.PureComponent {
         <Share url={url} />
         <Other url={url} />
       </div>
-    );
+    )
   }
 }
 
-export default Raznoobrazie;
+export default Raznoobrazie

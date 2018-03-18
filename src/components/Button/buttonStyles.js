@@ -23,15 +23,15 @@ const buttonStyles = css`
   &:hover {
     background: ${p => p.color || 'black'};
     color: ${p => p.hover || '#fff'};
-    -webkit-box-shadow: 1px -4px 45px -5px rgba(0,0,0,0.67);
-    -moz-box-shadow: 1px -4px 45px -5px rgba(0,0,0,0.67);
-    box-shadow: 1px -4px 45px -5px rgba(0,0,0,0.67);
+    -webkit-box-shadow: 1px -4px 45px -5px rgba(0, 0, 0, 0.67);
+    -moz-box-shadow: 1px -4px 45px -5px rgba(0, 0, 0, 0.67);
+    box-shadow: 1px -4px 45px -5px rgba(0, 0, 0, 0.67);
   }
 
   ${phone(`
     font-size: 1.2rem;
     padding: 0.125em 1em;
-  `)}
+  `)};
 `
 
 export default buttonStyles

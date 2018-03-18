@@ -1,26 +1,26 @@
-import React from "react";
-import Helmet from "react-helmet";
+import React from 'react'
+import Helmet from 'react-helmet'
 
-import H1, { H1small } from "../../components/H1";
-import ArticleHelmet from "../../components/ArticleHelmet";
-import Img from "../../components/Img";
-import H4 from "../../components/H4";
-import Section from "../../components/Section";
-import P from "../../components/P";
-import Date from "../../components/Date";
-import Share from "../../components/Share";
-import Masks from "../../components/Masks";
-import Other from "../../components/Other";
+import H1, { H1small } from '../../components/H1'
+import ArticleHelmet from '../../components/ArticleHelmet'
+import Img from '../../components/Img'
+import H4 from '../../components/H4'
+import Section from '../../components/Section'
+import P from '../../components/P'
+import Date from '../../components/Date'
+import Share from '../../components/Share'
+import Masks from '../../components/Masks'
+import Other from '../../components/Other'
 
-import gorb from "../images/bolevoy_sindrom/1.jpg";
-import kiri from "../images/bolevoy_sindrom/2.jpg";
-import fil from "../images/bolevoy_sindrom/3.jpg";
-import bor from "../images/bolevoy_sindrom/4.jpg";
-import anna from "../images/bolevoy_sindrom/5.jpg";
-import log from "../images/bolevoy_sindrom/6.jpg";
+import gorb from '../images/bolevoy_sindrom/1.jpg'
+import kiri from '../images/bolevoy_sindrom/2.jpg'
+import fil from '../images/bolevoy_sindrom/3.jpg'
+import bor from '../images/bolevoy_sindrom/4.jpg'
+import anna from '../images/bolevoy_sindrom/5.jpg'
+import log from '../images/bolevoy_sindrom/6.jpg'
 
-const url = "https://teatralium.com/articles/mne_ploho_mne_skuchno";
-const title = "«Мне плохо, мне скучно»: почему люди не ходят в театр";
+const url = 'https://teatralium.com/articles/mne_ploho_mne_skuchno'
+const title = '«Мне плохо, мне скучно»: почему люди не ходят в театр'
 
 export class Bol extends React.PureComponent {
   // eslint-disable-line react/prefer-stateless-function
@@ -35,7 +35,7 @@ export class Bol extends React.PureComponent {
         />
         <Section>
           <Date>
-            23 октября 2017, текст:&nbsp;<b>Настя Николаева</b>, иллюстрации:{" "}
+            23 октября 2017, текст:&nbsp;<b>Настя Николаева</b>, иллюстрации:{' '}
             <b>Алексей Сухов</b>
           </Date>
           <H1 center>«Мне плохо, мне скучно»</H1>
@@ -149,7 +149,7 @@ export class Bol extends React.PureComponent {
             совершенно нормальная история, но сквозь нее сложно и лень
             продираться к чему-то ценному.
           </p>
-          <p style={{ marginBottom: "4rem" }}>
+          <p style={{ marginBottom: '4rem' }}>
             Я думаю, правильное современное решение подскажет нам опера, где за
             интонацию отвечает композитор, а за действие — режиссер, хореограф и
             (иногда в равной степени с режиссером) сценограф, то есть актера
@@ -371,10 +371,10 @@ export class Bol extends React.PureComponent {
             свойства: мне стало казаться, что сложноустроенное представление с
             обилием действующих лиц и пышным антуражем — слишком нелепое и
             трудозатратное средство для высказывания каких-то совершенно
-            примитивных идей. В общем, я стал разделять{" "}
+            примитивных идей. В общем, я стал разделять{' '}
             <a href="https://cyberleninka.ru/article/n/vozzreniya-l-n-tolstogo-na-teatr-v-kontekste-kultury">
               точку зрения Льва Толстого
-            </a>{" "}
+            </a>{' '}
             на все на это.
           </p>
           <p>
@@ -400,8 +400,8 @@ export class Bol extends React.PureComponent {
         <Share url={url} />
         <Other url={url} />
       </div>
-    );
+    )
   }
 }
 
-export default Bol;
+export default Bol

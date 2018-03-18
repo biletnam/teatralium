@@ -6,11 +6,11 @@
  * otherwise it'll render a link with an onclick
  */
 
-import React, { Children } from 'react';
+import React, { Children } from 'react'
 
-import A from './A';
-import StyledButton from './StyledButton';
-import Wrapper from './Wrapper';
+import A from './A'
+import StyledButton from './StyledButton'
+import Wrapper from './Wrapper'
 
 function Button(props) {
   // Render an anchor tag
@@ -18,7 +18,7 @@ function Button(props) {
     <A href={props.href} onClick={props.onClick}>
       {Children.toArray(props.children)}
     </A>
-  );
+  )
 
   // If the Button has a handleRoute prop, we want to render a button
   if (props.handleRoute) {
@@ -26,14 +26,10 @@ function Button(props) {
       <StyledButton onClick={props.handleRoute}>
         {Children.toArray(props.children)}
       </StyledButton>
-    );
+    )
   }
 
-  return (
-    <Wrapper>
-      {button}
-    </Wrapper>
-  );
+  return <Wrapper>{button}</Wrapper>
 }
 
-export default Button;
+export default Button

@@ -17,12 +17,12 @@ const masks = {
   6: mask6,
 }
 
-const hueRotate = (val) => keyframes`
+const hueRotate = val => keyframes`
   0%, 100%  { filter: sepia(100%) hue-rotate(${val}deg); }
   50% { filter: sepia(100%) hue-rotate(${val + 180}deg); }
-`;
+`
 
-const rand = (to = 6) => Math.floor(Math.random() * to) + 1;
+const rand = (to = 6) => Math.floor(Math.random() * to) + 1
 
 const Container = styled.div`
   z-index: 1;
@@ -33,22 +33,24 @@ const Container = styled.div`
   width: 120%;
   margin-left: -10%;
   overflow: hidden;
-  visibility: visible; opacity: 1; transition: opacity 2s linear;
-`;
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 2s linear;
+`
 
 const StyledMask = styled.img`
   opacity: 0.8;
   height: 50px;
   padding-right: 2rem;
   animation: ${hueRotate(rand(180))} 5s infinite;
-`;
+`
 
-const ids = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+const ids = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 
 const Masks = () => (
   <Container>
     {ids.map((x, i) => <StyledMask key={i} src={masks[rand()]} alt="/" />)}
   </Container>
-);
+)
 
-export default Masks;
+export default Masks

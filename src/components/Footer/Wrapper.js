@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const Wrapper = styled.div`
   width: 100%;
@@ -9,6 +9,6 @@ const Wrapper = styled.div`
   background: black;
   padding: 2rem;
   font-size: 1.4rem;
-`;
+`
 
-export default Wrapper;
+export default Wrapper

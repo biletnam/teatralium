@@ -1,8 +1,8 @@
-import { injectGlobal } from 'styled-components';
+import { injectGlobal } from 'styled-components'
 
-import bodoniItalic from './fonts/bodoni-italic.woff2';
-import bodoniRegular from './fonts/bodoni-regular.woff2';
-import bodoniBold from './fonts/bodoni-bold.woff2';
+import bodoniItalic from './fonts/bodoni-italic.woff2'
+import bodoniRegular from './fonts/bodoni-regular.woff2'
+import bodoniBold from './fonts/bodoni-bold.woff2'
 
 /* eslint no-unused-expressions: 0 */
 injectGlobal`
@@ -91,4 +91,4 @@ injectGlobal`
               transform: rotate(360deg);
     }
   }
-`;
+`

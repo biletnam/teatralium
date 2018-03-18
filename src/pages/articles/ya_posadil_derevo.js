@@ -1,41 +1,41 @@
-import React from "react";
-import Helmet from "react-helmet";
-import Link from "gatsby-link";
-import styled from "styled-components";
+import React from 'react'
+import Helmet from 'react-helmet'
+import Link from 'gatsby-link'
+import styled from 'styled-components'
 
-import { phone } from "../../utils/media";
-import H1, { H1small } from "../../components/H1";
-import ArticleHelmet from "../../components/ArticleHelmet";
-import Img from "../../components/Img";
-import H2 from "../../components/H2";
-import H3 from "../../components/H3";
+import { phone } from '../../utils/media'
+import H1, { H1small } from '../../components/H1'
+import ArticleHelmet from '../../components/ArticleHelmet'
+import Img from '../../components/Img'
+import H2 from '../../components/H2'
+import H3 from '../../components/H3'
 // import H4 from '../../components/H4'
-import Small from "../../components/Small";
-import Section from "../../components/Section";
-import P from "../../components/P";
-import Date from "../../components/Date";
-import Share from "../../components/Share";
-import Other from "../../components/Other";
-import Attention from "../../components/Attention";
+import Small from '../../components/Small'
+import Section from '../../components/Section'
+import P from '../../components/P'
+import Date from '../../components/Date'
+import Share from '../../components/Share'
+import Other from '../../components/Other'
+import Attention from '../../components/Attention'
 
-import { TopCover } from "../../components/FillCover";
+import { TopCover } from '../../components/FillCover'
 
-import { Playlist } from "../../components/Poem";
+import { Playlist } from '../../components/Poem'
 
-import avdeev from "../images/otvechaet/avdeev.jpg";
-import cover from "../images/otvechaet/avdeev_cover.jpg";
+import avdeev from '../images/otvechaet/avdeev.jpg'
+import cover from '../images/otvechaet/avdeev_cover.jpg'
 
-const url = "https://teatralium.com/articles/ya_posadil_derevo";
-const title = "Я посадил дерево: плейлист актера Филиппа Авдеева";
+const url = 'https://teatralium.com/articles/ya_posadil_derevo'
+const title = 'Я посадил дерево: плейлист актера Филиппа Авдеева'
 
 const List = styled.ul`
   list-style-type: square;
-`;
+`
 
 const Wrapper = styled.div`
   width: 400px;
   margin: 0 auto;
-`;
+`
 
 export class Derevo extends React.PureComponent {
   // eslint-disable-line react/prefer-stateless-function
@@ -70,7 +70,7 @@ export class Derevo extends React.PureComponent {
             случается либо уныние, либо приступ желания уничтожать. В связи с
             этим «Театралий» призывает разных людей, причастных к театральному
             делу, буквально ответить за музыку в соответствующей рубрике «За
-            музыку отвечает». В прошлом выпуске мы слушали{" "}
+            музыку отвечает». В прошлом выпуске мы слушали{' '}
             <Link to="/articles/playlist_komissara_vsevoloda_lisovskogo/">
               духоподъемный микс комиссара Театра.doc Всеволода Лисовского
             </Link>, а сегодня наш гость — актер Гоголь-центра Филипп Авдеев,
@@ -117,8 +117,8 @@ export class Derevo extends React.PureComponent {
         <Share url={url} />
         <Other url={url} />
       </div>
-    );
+    )
   }
 }
 
-export default Derevo;
+export default Derevo

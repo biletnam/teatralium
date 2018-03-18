@@ -1,87 +1,87 @@
-import React from "react";
-import Helmet from "react-helmet";
-import Link from "gatsby-link";
-import styled, { keyframes } from "styled-components";
+import React from 'react'
+import Helmet from 'react-helmet'
+import Link from 'gatsby-link'
+import styled, { keyframes } from 'styled-components'
 
-import { phone } from "../../utils/media";
-import { REVOLUTION } from "../../utils/const";
-import H1, { H1small } from "../../components/H1";
-import ArticleHelmet from "../../components/ArticleHelmet";
-import Img from "../../components/Img";
-import H2 from "../../components/H2";
-import H3 from "../../components/H3";
-import H4 from "../../components/H4";
-import Gallery from "../../components/Gallery";
-import Small from "../../components/Small";
-import Note, { NoteWrapper, NotedWord } from "../../components/Note";
-import Section from "../../components/Section";
-import P from "../../components/P";
-import Date from "../../components/Date";
-import Share from "../../components/Share";
-import Video from "../../components/Video";
-import Rest from "../../components/Rest";
-import Other from "../../components/Other";
+import { phone } from '../../utils/media'
+import { REVOLUTION } from '../../utils/const'
+import H1, { H1small } from '../../components/H1'
+import ArticleHelmet from '../../components/ArticleHelmet'
+import Img from '../../components/Img'
+import H2 from '../../components/H2'
+import H3 from '../../components/H3'
+import H4 from '../../components/H4'
+import Gallery from '../../components/Gallery'
+import Small from '../../components/Small'
+import Note, { NoteWrapper, NotedWord } from '../../components/Note'
+import Section from '../../components/Section'
+import P from '../../components/P'
+import Date from '../../components/Date'
+import Share from '../../components/Share'
+import Video from '../../components/Video'
+import Rest from '../../components/Rest'
+import Other from '../../components/Other'
 
-import img2 from "../images/annenkov/02.jpg";
-import img3 from "../images/annenkov/03.jpg";
-import img4 from "../images/annenkov/04.jpg";
-import img5 from "../images/annenkov/05.jpg";
-import img6 from "../images/annenkov/06.jpg";
-import img7 from "../images/annenkov/07.jpg";
-import img8 from "../images/annenkov/08.jpg";
-import img10 from "../images/annenkov/010.jpg";
-import img11 from "../images/annenkov/011.jpg";
-import img12 from "../images/annenkov/012.jpg";
-import img13 from "../images/annenkov/013.jpg";
-import img14 from "../images/annenkov/014.jpg";
-import img15 from "../images/annenkov/015.jpg";
+import img2 from '../images/annenkov/02.jpg'
+import img3 from '../images/annenkov/03.jpg'
+import img4 from '../images/annenkov/04.jpg'
+import img5 from '../images/annenkov/05.jpg'
+import img6 from '../images/annenkov/06.jpg'
+import img7 from '../images/annenkov/07.jpg'
+import img8 from '../images/annenkov/08.jpg'
+import img10 from '../images/annenkov/010.jpg'
+import img11 from '../images/annenkov/011.jpg'
+import img12 from '../images/annenkov/012.jpg'
+import img13 from '../images/annenkov/013.jpg'
+import img14 from '../images/annenkov/014.jpg'
+import img15 from '../images/annenkov/015.jpg'
 
-import portrait from "../images/annenkov/portrait.gif";
+import portrait from '../images/annenkov/portrait.gif'
 
-import ann from "../images/annenkov/ann.jpg";
-import cuirass from "../images/annenkov/cuirass.jpg";
-import brula from "../images/annenkov/brula.jpg";
+import ann from '../images/annenkov/ann.jpg'
+import cuirass from '../images/annenkov/cuirass.jpg'
+import brula from '../images/annenkov/brula.jpg'
 
-const gallery1 = [img2, img3, img4];
-const gallery2 = [img5, img6, img7, img8];
-const gallery3 = [img10, img11, img12, img13];
-const gallery4 = [img14, img15];
+const gallery1 = [img2, img3, img4]
+const gallery2 = [img5, img6, img7, img8]
+const gallery3 = [img10, img11, img12, img13]
+const gallery4 = [img14, img15]
 
-const shadow = `0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25)`;
-const shadow2 = `0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35)`;
-const shadow3 = `0 0 100px rgba(255, 255, 255, 0.1)`;
-const noShadow = `text-shadow: none;`;
-const op = (val = "1") => `opacity: ${val};`;
+const shadow = `0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25)`
+const shadow2 = `0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35)`
+const shadow3 = `0 0 100px rgba(255, 255, 255, 0.1)`
+const noShadow = `text-shadow: none;`
+const op = (val = '1') => `opacity: ${val};`
 
-const url = "https://teatralium.com/articles/ozhila_krasnaya_stsena";
-const title = "Как художник Юрий Анненков стал «модельером» революции";
+const url = 'https://teatralium.com/articles/ozhila_krasnaya_stsena'
+const title = 'Как художник Юрий Анненков стал «модельером» революции'
 
 const H2Styled = styled(H2)`
   font-size: 1.713em;
   margin-top: 4rem;
   margin-bottom: 2rem;
-`;
+`
 
 const revolutionBorder = `
   box-shadow: 1px -4px 45px -5px ${REVOLUTION};
-`;
+`
 const ImgStyled = props => (
   <Img {...props} noBorder customBorder={revolutionBorder} />
-);
+)
 
 const H4Styled = styled(H4)`
   color: ${REVOLUTION};
-`;
+`
 
 const StyledGallery = props => (
   <Gallery
     {...props}
     imgProps={{
       customBorder: revolutionBorder,
-      noBorder: true
+      noBorder: true,
     }}
   />
-);
+)
 
 export class Annenkov extends React.PureComponent {
   // eslint-disable-line react/prefer-stateless-function
@@ -252,8 +252,8 @@ export class Annenkov extends React.PureComponent {
         <StyledGallery
           images={[img6, img7]}
           descs={[
-            "Проект сценографии постановки «Взятие Зимнего дворца». 1920 год",
-            "Статисты «белой» платформы, изображающие царских министров. Костюмы Юрия Анненкова. 1920 год"
+            'Проект сценографии постановки «Взятие Зимнего дворца». 1920 год',
+            'Статисты «белой» платформы, изображающие царских министров. Костюмы Юрия Анненкова. 1920 год',
           ]}
         />
         <Section>
@@ -273,7 +273,7 @@ export class Annenkov extends React.PureComponent {
               по сцене в черных фраках, пальто и цилиндрах — их подобрали из
               революционного реквизита, кое-что вытребовали из театров. Со
               статистами, изображавшими армию, было проще: шинелями,
-              гимнастерками, погонами и папахами были завалены петроградские{" "}
+              гимнастерками, погонами и папахами были завалены петроградские{' '}
               <NotedWord>цейхгаузы</NotedWord>. На старых кадрах постановки
               видны замечательные детали времени. К примеру, актеры,
               изображавшие генералов на «белой» платформе, играли в подлинных
@@ -326,7 +326,7 @@ export class Annenkov extends React.PureComponent {
             </p>
             <Note background="#fdd6d3" top="200px">
               Подробнее об истории создания костюма для Троцкого можно почитать
-              в{" "}
+              в{' '}
               <a href="https://rg.ru/2017/10/31/rodina-kostum-trotskij.html">
                 этой статье Ольги Хорошиловой
               </a>.
@@ -337,8 +337,8 @@ export class Annenkov extends React.PureComponent {
         <StyledGallery
           images={[img10, img11]}
           descs={[
-            "Юрий Анненков. Графический портрет Льва Троцкого, 1923 год. Подготовка для масштабного портрета. Опубликован в альбоме Ю. Анненкова «Портреты» 1926 года.",
-            "Юрий Анненков и Лев Троцкий в костюме, придуманном художником специально для будущего портрета, 1923 год. Коллекция Ольги Хорошиловой."
+            'Юрий Анненков. Графический портрет Льва Троцкого, 1923 год. Подготовка для масштабного портрета. Опубликован в альбоме Ю. Анненкова «Портреты» 1926 года.',
+            'Юрий Анненков и Лев Троцкий в костюме, придуманном художником специально для будущего портрета, 1923 год. Коллекция Ольги Хорошиловой.',
           ]}
         />
         <Section>
@@ -428,8 +428,8 @@ export class Annenkov extends React.PureComponent {
         <Share url={url} />
         <Other url={url} />
       </div>
-    );
+    )
   }
 }
 
-export default Annenkov;
+export default Annenkov

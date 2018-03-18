@@ -1,14 +1,14 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Helmet from "react-helmet";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import Social from "../components/Social";
-import "sanitize.css/sanitize.css";
-import "../global-styles";
+import React from 'react'
+import PropTypes from 'prop-types'
+import Helmet from 'react-helmet'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
+import Social from '../components/Social'
+import 'sanitize.css/sanitize.css'
+import '../global-styles'
 
 const TemplateWrapper = ({ children, ...props }) => (
-  <div style={{ height: "100%" }}>
+  <div style={{ height: '100%' }}>
     <Helmet title="Театралий">
       <html lang="ru" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -92,10 +92,10 @@ const TemplateWrapper = ({ children, ...props }) => (
     {children()}
     <Footer />
   </div>
-);
+)
 
 TemplateWrapper.propTypes = {
-  children: PropTypes.func
-};
+  children: PropTypes.func,
+}
 
-export default TemplateWrapper;
+export default TemplateWrapper

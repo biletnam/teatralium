@@ -1,33 +1,33 @@
-import React from "react";
+import React from 'react'
 
-import H1, { H1small } from "../../components/H1";
-import H4 from "../../components/H4";
-import Img from "../../components/Img";
-import Section from "../../components/Section";
-import P from "../../components/P";
-import Date from "../../components/Date";
-import Share from "../../components/Share";
-import Gallery from "../../components/Gallery";
-import Small from "../../components/Small";
-import Video from "../../components/Video";
-import ArticleHelmet from "../../components/ArticleHelmet";
-import Other from "../../components/Other";
+import H1, { H1small } from '../../components/H1'
+import H4 from '../../components/H4'
+import Img from '../../components/Img'
+import Section from '../../components/Section'
+import P from '../../components/P'
+import Date from '../../components/Date'
+import Share from '../../components/Share'
+import Gallery from '../../components/Gallery'
+import Small from '../../components/Small'
+import Video from '../../components/Video'
+import ArticleHelmet from '../../components/ArticleHelmet'
+import Other from '../../components/Other'
 
-import lub from "../images/lyubimovka/lub.jpg";
+import lub from '../images/lyubimovka/lub.jpg'
 
-import img1 from "../images/lyubimovka/1.jpg";
-import img2 from "../images/lyubimovka/2.jpg";
-import img3 from "../images/lyubimovka/3.jpg";
-import img4 from "../images/lyubimovka/4.jpg";
-import img5 from "../images/lyubimovka/5.jpg";
-import img6 from "../images/lyubimovka/6.jpg";
-import ppp from "../images/ppp.gif";
+import img1 from '../images/lyubimovka/1.jpg'
+import img2 from '../images/lyubimovka/2.jpg'
+import img3 from '../images/lyubimovka/3.jpg'
+import img4 from '../images/lyubimovka/4.jpg'
+import img5 from '../images/lyubimovka/5.jpg'
+import img6 from '../images/lyubimovka/6.jpg'
+import ppp from '../images/ppp.gif'
 
-const images = [img1, img2, img3, img4, img5, img6];
+const images = [img1, img2, img3, img4, img5, img6]
 
-const url = "https://teatralium.com/articles/lyubimovka";
+const url = 'https://teatralium.com/articles/lyubimovka'
 const title =
-  "«Меня волнует вся х**ня»: организатор любимовки Анна Банасюкевич о стране, в которой мы живем";
+  '«Меня волнует вся х**ня»: организатор любимовки Анна Банасюкевич о стране, в которой мы живем'
 
 export class Lyubimovka extends React.PureComponent {
   // eslint-disable-line react/prefer-stateless-function
@@ -49,7 +49,7 @@ export class Lyubimovka extends React.PureComponent {
             23 октября 2017, текст:&nbsp;<b>Анна Банасюкевич</b>
           </Date>
           <P>
-            На фестиваль молодой драматургии{" "}
+            На фестиваль молодой драматургии{' '}
             <a href="http://lubimovka.ru/">«Любимовка»</a> в этом году прислали
             544 пьесы. «Театралий» попросил его соорганизатора, театрального
             критика Анну Банасюкевич рассказать, о чем эти пьесы и чего нового
@@ -243,8 +243,8 @@ export class Lyubimovka extends React.PureComponent {
         <Share url={url} />
         <Other url={url} />
       </div>
-    );
+    )
   }
 }
 
-export default Lyubimovka;
+export default Lyubimovka

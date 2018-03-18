@@ -1,25 +1,25 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
 
-import H1, { H1small } from "../../components/H1";
-import Img from "../../components/Img";
-import H3 from "../../components/H3";
-import H4 from "../../components/H4";
-import Small from "../../components/Small";
-import ezhen from "../images/2.jpg";
-import Section from "../../components/Section";
-import Rest from "../../components/Rest";
-import Other from "../../components/Other";
-import P from "../../components/P";
-import Date from "../../components/Date";
-import Share from "../../components/Share";
-import ArticleHelmet from "../../components/ArticleHelmet";
+import H1, { H1small } from '../../components/H1'
+import Img from '../../components/Img'
+import H3 from '../../components/H3'
+import H4 from '../../components/H4'
+import Small from '../../components/Small'
+import ezhen from '../images/2.jpg'
+import Section from '../../components/Section'
+import Rest from '../../components/Rest'
+import Other from '../../components/Other'
+import P from '../../components/P'
+import Date from '../../components/Date'
+import Share from '../../components/Share'
+import ArticleHelmet from '../../components/ArticleHelmet'
 
-import ezh from "../images/ezh.jpg";
-import ezh1 from "../images/ezh1.jpg";
+import ezh from '../images/ezh.jpg'
+import ezh1 from '../images/ezh1.jpg'
 
-const url = "https://teatralium.com/articles/ezhen";
-const title = "Что хотел сказать автор? Отвечает Эжен Ионеско.";
+const url = 'https://teatralium.com/articles/ezhen'
+const title = 'Что хотел сказать автор? Отвечает Эжен Ионеско.'
 
 export class Ezhen extends React.PureComponent {
   // eslint-disable-line react/prefer-stateless-function
@@ -44,10 +44,10 @@ export class Ezhen extends React.PureComponent {
             автор песни или трагедии думает о социализме, о капитализме, о
             добре, о зле, о математике, об астронавтике, о квантовой теории, о
             любви, о футболе, о главе государства». «Театралий» публикует
-            отрывок эссе{" "}
+            отрывок эссе{' '}
             <a href="https://profilib.com/chtenie/11687/ezhen-ionesko-protivoyadiya-2.php">
               «Автор и его задачи»
-            </a>{" "}
+            </a>{' '}
             писателя и драматурга Эжена Ионеско о том, зачем люди пишут тексты и
             ставят спектакли и кто им вообще позволил это делать.
           </P>
@@ -305,8 +305,8 @@ export class Ezhen extends React.PureComponent {
         <Share url={url} />
         <Other url={url} />
       </div>
-    );
+    )
   }
 }
 
-export default Ezhen;
+export default Ezhen

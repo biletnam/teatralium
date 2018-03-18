@@ -1,65 +1,61 @@
-import React from "react";
-import Helmet from "react-helmet";
-import Link from "gatsby-link";
-import styled, { keyframes } from "styled-components";
+import React from 'react'
+import Helmet from 'react-helmet'
+import Link from 'gatsby-link'
+import styled, { keyframes } from 'styled-components'
 
-import { phone } from "../../utils/media";
-import H1, { H1small } from "../../components/H1";
-import ArticleHelmet from "../../components/ArticleHelmet";
-import Img from "../../components/Img";
-import H2 from "../../components/H2";
-import Gallery from "../../components/Gallery";
-import Video from "../../components/Video";
+import { phone } from '../../utils/media'
+import H1, { H1small } from '../../components/H1'
+import ArticleHelmet from '../../components/ArticleHelmet'
+import Img from '../../components/Img'
+import H2 from '../../components/H2'
+import Gallery from '../../components/Gallery'
+import Video from '../../components/Video'
 
-import Small from "../../components/Small";
-import Note, { NoteWrapper, NotedWord } from "../../components/Note";
-import Section from "../../components/Section";
-import P from "../../components/P";
-import Date from "../../components/Date";
-import Share from "../../components/Share";
-import Other from "../../components/Other";
-import Poem from "../../components/Poem";
+import Small from '../../components/Small'
+import Note, { NoteWrapper, NotedWord } from '../../components/Note'
+import Section from '../../components/Section'
+import P from '../../components/P'
+import Date from '../../components/Date'
+import Share from '../../components/Share'
+import Other from '../../components/Other'
+import Poem from '../../components/Poem'
 
-import FillCover, { TopCover } from "../../components/FillCover";
+import FillCover, { TopCover } from '../../components/FillCover'
 
-import zritel1 from "../images/nespyashie/zriteli/zritel-1.jpg";
-import zritel2 from "../images/nespyashie/zriteli/zritel-2.jpg";
-import zritel3 from "../images/nespyashie/zriteli/zritel-3.jpg";
-import zritel4 from "../images/nespyashie/zriteli/zritel-4.jpg";
-import zritel5 from "../images/nespyashie/zriteli/zritel-5.jpg";
-import zritel6 from "../images/nespyashie/zriteli/zritel-6.jpg";
-import zritel7 from "../images/nespyashie/zriteli/zritel-7.jpg";
-import zritel8 from "../images/nespyashie/zriteli/zritel-8.jpg";
-import zritel9 from "../images/nespyashie/zriteli/zritel-9.jpg";
-import zritel10 from "../images/nespyashie/zriteli/zritel-10.jpg";
+import zritel1 from '../images/nespyashie/zriteli/zritel-1.jpg'
+import zritel2 from '../images/nespyashie/zriteli/zritel-2.jpg'
+import zritel3 from '../images/nespyashie/zriteli/zritel-3.jpg'
+import zritel4 from '../images/nespyashie/zriteli/zritel-4.jpg'
+import zritel5 from '../images/nespyashie/zriteli/zritel-5.jpg'
+import zritel6 from '../images/nespyashie/zriteli/zritel-6.jpg'
+import zritel7 from '../images/nespyashie/zriteli/zritel-7.jpg'
+import zritel8 from '../images/nespyashie/zriteli/zritel-8.jpg'
+import zritel9 from '../images/nespyashie/zriteli/zritel-9.jpg'
+import zritel10 from '../images/nespyashie/zriteli/zritel-10.jpg'
 
-import foto1 from "../images/nespyashie/1.jpg";
-import foto2 from "../images/nespyashie/2.jpg";
-import foto3 from "../images/nespyashie/3.jpg";
-import foto4 from "../images/nespyashie/4.jpg";
-import foto5 from "../images/nespyashie/5.jpg";
-import foto6 from "../images/nespyashie/6.jpg";
-import foto7 from "../images/nespyashie/7.jpg";
-import foto8 from "../images/nespyashie/8.jpg";
-import foto9 from "../images/nespyashie/9.jpg";
-import foto10 from "../images/nespyashie/10.png";
+import foto1 from '../images/nespyashie/1.jpg'
+import foto2 from '../images/nespyashie/2.jpg'
+import foto3 from '../images/nespyashie/3.jpg'
+import foto4 from '../images/nespyashie/4.jpg'
+import foto5 from '../images/nespyashie/5.jpg'
+import foto6 from '../images/nespyashie/6.jpg'
+import foto7 from '../images/nespyashie/7.jpg'
+import foto8 from '../images/nespyashie/8.jpg'
+import foto9 from '../images/nespyashie/9.jpg'
+import foto10 from '../images/nespyashie/10.png'
 
-const url = "https://teatralium.com/articles/nespyashie_v_teatre/";
-const title =
-  "Неспящие в театре: типы зрителей на основе индуистской философии";
+const url = 'https://teatralium.com/articles/nespyashie_v_teatre/'
+const title = 'Неспящие в театре: типы зрителей на основе индуистской философии'
 
 const StyledDate = styled(Date)`
   ${phone(`
     color: grey;
-  `)}
+  `)};
 `
 
 const H1Shadow = styled(H1)`
-  text-shadow:
-     -1px -1px 0 #fff,  
-      1px -1px 0 #fff,
-      -1px 1px 0 #fff,
-       1px 1px 0 #fff;
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
+    1px 1px 0 #fff;
 `
 export class Article extends React.PureComponent {
   // eslint-disable-line react/prefer-stateless-function
@@ -73,9 +69,7 @@ export class Article extends React.PureComponent {
           title={`${title} | Театралий`}
         />
         <TopCover bg={zritel8} bgSize="300px" bgPosition="bottom right">
-          <Section
-            margin="0"
-          >
+          <Section margin="0">
             <H1Shadow center size="3.2124em">
               Неспящие в театре
             </H1Shadow>
@@ -83,10 +77,8 @@ export class Article extends React.PureComponent {
               типы зрителей на основе индуистской философии
             </H1small>
             <StyledDate>
-              13 марта 2018, текст:&nbsp;<b>Дмитрий Лисин</b>, иллюстрации:&nbsp;<b
-              >
-                Софья Боровская
-              </b>
+              13 марта 2018, текст:&nbsp;<b>Дмитрий Лисин</b>,
+              иллюстрации:&nbsp;<b>Софья Боровская</b>
             </StyledDate>
           </Section>
         </TopCover>
@@ -126,8 +118,9 @@ export class Article extends React.PureComponent {
               Кстати, с точки зрения классических «Йога-сутр» Патанджали
               невозможно понять методы концентрации и сосредоточения, то есть
               самадхи, если прежде не уяснить тройную природу «материала»
-              психики. Наверное, мы и зрителей распределили в три особых <NotedWord>варны</NotedWord>,
-              чтобы соответствовать трем <NotedWord>гунам</NotedWord>. Если человек спокоен,
+              психики. Наверное, мы и зрителей распределили в три особых{' '}
+              <NotedWord>варны</NotedWord>, чтобы соответствовать трем{' '}
+              <NotedWord>гунам</NotedWord>. Если человек спокоен,
               доброжелателен, сосредоточен, живет мыслью, терпим, пребывает в
               равновесии и мире со всеми, то он находится в состоянии саттвы.
               Если же человек страстный, стихийный, алчный, продуманно и
@@ -136,9 +129,17 @@ export class Article extends React.PureComponent {
               лень, хроническая усталость, равнодушие, убегание от проблем,
               лживость — состояние тамаса.
             </p>
-            <Note top="140px">Варна — основное сословие древнеиндийского общества. Их четыре: брахманы (жрецы, ученые, подвижники), кшатрии (воины, правители), вайшьи (земледельцы, ремесленники, торговцы) и шудры (слуги, наемные рабочие).</Note>
-            <Note left top="160px">Гуна — категория индуистской философии санкхья. Описаны три гуны материальной природы: саттва-гуна («гуна благости»), раджо-гуна («гуна страсти») и тамо-гуна («гуна невежества»).</Note>
-
+            <Note top="140px">
+              Варна — основное сословие древнеиндийского общества. Их четыре:
+              брахманы (жрецы, ученые, подвижники), кшатрии (воины, правители),
+              вайшьи (земледельцы, ремесленники, торговцы) и шудры (слуги,
+              наемные рабочие).
+            </Note>
+            <Note left top="160px">
+              Гуна — категория индуистской философии санкхья. Описаны три гуны
+              материальной природы: саттва-гуна («гуна благости»), раджо-гуна
+              («гуна страсти») и тамо-гуна («гуна невежества»).
+            </Note>
           </NoteWrapper>
           <p>
             Понятно, что это не свойства ума, а натура, комплекс чувств и
@@ -153,7 +154,7 @@ export class Article extends React.PureComponent {
             Кстати, думание — недумание абсолютно совпадает с главной
             двойственностью сон — бодрствование.
           </p>
-          <ul style={{color: "purple"}}>
+          <ul style={{ color: 'purple' }}>
             <li>
               <b>Думающие</b>
             </li>
@@ -361,7 +362,7 @@ export class Article extends React.PureComponent {
             учению Патанджали и примкнувшего к нему Гротовского, невозможно
             думать, не выйдя из состояний тамас и раджас. А то, что мы обычно
             называем мыслью, — лишь ассоциативная эмоция или готовая рассудочная
-            схема, скопированная из книжки или телепередачки.{" "}
+            схема, скопированная из книжки или телепередачки.{' '}
           </p>
 
           <Img src={foto10} />
@@ -381,7 +382,9 @@ export class Article extends React.PureComponent {
 
           <Video url="https://media.giphy.com/media/4GXNu0MhFAyBtpxImk/giphy.gif" />
 
-          <H1 size="3.2124em">Наблюдения.<br />От абстрактного к конкретному</H1>
+          <H1 size="3.2124em">
+            Наблюдения.<br />От абстрактного к конкретному
+          </H1>
           <p>
             Вот важные мутации, замеченные на личном опыте, которые произошли со
             зрителями за последние 30 лет. Некоторые из нижеперечисленных
@@ -492,10 +495,10 @@ export class Article extends React.PureComponent {
             В том же Театре им. Станиславского параллельно с «Хлестаковым» шло
             не менее странное действо, впервые включившее московских любителей
             рок-концертов в страту театральных зрителей. Петр Мамонов сделал
-            это, сыграв череду спектаклей-концертов в течение 13 лет:{" "}
+            это, сыграв череду спектаклей-концертов в течение 13 лет:{' '}
             <a href="https://www.youtube.com/watch?v=SIHXkKj_13A">
               «Лысый брюнет»
-            </a>{" "}
+            </a>{' '}
             (1992) и «Полковнику никто не пишет» (1994) у режиссера Олега
             Бабицкого, в собственных постановках «Есть ли жизнь на Марсе?»
             (1997–2001), «Шоколадный Пушкин» (2001–2004) и «Мыши, мальчик Кай и
@@ -550,9 +553,12 @@ export class Article extends React.PureComponent {
               гносеологического подхода Эрики Фишер-Лихте. В «Эстетике
               перформативности» она изначально исходит из неявной, но
               главенствующей роли зрителей. Основными терминами этой ее работы
-              являются <NotedWord>автопоэтическая петля ответной реакции, эмерджентность и
-              ситуация лиминальности</NotedWord>. Если бы не было зрителей на спектакле (к
-              чему стремился Гротовский), не было бы этих плохо переводящихся на
+              являются{' '}
+              <NotedWord>
+                автопоэтическая петля ответной реакции, эмерджентность и
+                ситуация лиминальности
+              </NotedWord>. Если бы не было зрителей на спектакле (к чему
+              стремился Гротовский), не было бы этих плохо переводящихся на
               русский терминов! Но мы добавим своих. Например, здесь необходим
               ситуационистский термин «психогеография», практиком которой стал
               Лисовский. К психогеографии, введенной сподвижниками Ги Дебора,
@@ -566,11 +572,31 @@ export class Article extends React.PureComponent {
               спектакль, но и город, и самих себя, через включение телесной
               памяти движений, зрители воспринимают по-новому.
             </p>
-            <Note>Три понятия, которые, по Фишер-Лихте, делают зрителей полноправными участниками любого представления.
-<p>Автопоэтическая петля ответной реакции говорит о невозможности автономного субъекта на сцене и в зрительном зале, то есть не существует марионеток, манипулируемых некими силами, — режиссером, драматургом, художником, зрителями.</p>
-<p>Эмерджентность — иррациональный выход за пределы причинно-следственных связей, несводимость свойств системы к свойствам ее элементов, возможность превращения количественных характеристик в качественные. Эмерджентность определяет экономику внимания, экстатическое состояние на сцене, зависящее, в свою очередь, от состояния зрителей.</p>
-<p>Пороговое состояние лиминальности — это начало трансформации и метаморфоза в сознании артистов и аудитории, которая часто бывает невыносимой для зрителей, неготовых к потере опоры. Термин впервые применил Виктор Тёрнер в книге «Ритуальный процесс. Структура и антиструктура».</p></Note>
-
+            <Note>
+              Три понятия, которые, по Фишер-Лихте, делают зрителей
+              полноправными участниками любого представления.
+              <p>
+                Автопоэтическая петля ответной реакции говорит о невозможности
+                автономного субъекта на сцене и в зрительном зале, то есть не
+                существует марионеток, манипулируемых некими силами, —
+                режиссером, драматургом, художником, зрителями.
+              </p>
+              <p>
+                Эмерджентность — иррациональный выход за пределы
+                причинно-следственных связей, несводимость свойств системы к
+                свойствам ее элементов, возможность превращения количественных
+                характеристик в качественные. Эмерджентность определяет
+                экономику внимания, экстатическое состояние на сцене, зависящее,
+                в свою очередь, от состояния зрителей.
+              </p>
+              <p>
+                Пороговое состояние лиминальности — это начало трансформации и
+                метаморфоза в сознании артистов и аудитории, которая часто
+                бывает невыносимой для зрителей, неготовых к потере опоры.
+                Термин впервые применил Виктор Тёрнер в книге «Ритуальный
+                процесс. Структура и антиструктура».
+              </p>
+            </Note>
           </NoteWrapper>
 
           <Img src={foto7} />
@@ -609,33 +635,41 @@ export class Article extends React.PureComponent {
             <p>
               Невозможно обойти стороной Яна Фабра и его влияние на зрителей.
               Когда была возможность посмотреть непрерывную запись суточного шоу
-              «Гора Олимп», <NotedWord>театроведы, наверное, объелись, сидя за экранами
-              гаджетов.</NotedWord> В кинотеатре можно лопнуть от попкорна, а дома —
-              по-разному, по-дионисийски. Допустим, некоторые занялись сексом,
-              некоторые — спортом. Но это типичный бодрийяровский симулякр, вещи
-              Фабра надо воспринимать вживую, энергетически. Кстати, у
-              Фишер-Лихте в «Эстетике перформативности» самый частый и
-              неопределенный термин — «энергия». Уточним это понятие на примере
-              кампании Фабра, устраивающей суточные вакхические олимпийские
-              игры, предлагая зрителям психогеографию какого-нибудь красивого
-              города Европы, где в данный момент идет «Гора Олимп». Пожить 24
-              часа в зрительном зале и поспать на раскладушке или в собственной
-              палатке во дворе театра — это цветочки. Ягодки у Фабра на сцене,
-              откуда идет такая мощная энергия, что зрители меняют представление
-              о мире. Во время осеннего показа четырехчасового спектакля Фабра
-              «Бельгийские правила» на фестивале «Территория» тоже был
-              осуществлен полный захват зрителя. В чем дело, что будит и
-              включает зрителя? Отстраненность, антипсихологичность, эротичность
-              и олимпийская выносливость артистов. Причем марафонская
-              тренированность труппы важнее всего. Как будто зритель реально
-              попадает в поздний древнегреческий миф, не записанный классиками
-              театра, кстати. Это миф о превращении орфических и элевсинских
-              мистерий в Олимпийские игры, где правит Агон. Агония, присущая
-              сверхнапряжению олимпийцев во время состязания, то есть состояние
-              на грани (выхода из тела), — вот что такое постдионисийский агон.
+              «Гора Олимп»,{' '}
+              <NotedWord>
+                театроведы, наверное, объелись, сидя за экранами гаджетов.
+              </NotedWord>{' '}
+              В кинотеатре можно лопнуть от попкорна, а дома — по-разному,
+              по-дионисийски. Допустим, некоторые занялись сексом, некоторые —
+              спортом. Но это типичный бодрийяровский симулякр, вещи Фабра надо
+              воспринимать вживую, энергетически. Кстати, у Фишер-Лихте в
+              «Эстетике перформативности» самый частый и неопределенный термин —
+              «энергия». Уточним это понятие на примере кампании Фабра,
+              устраивающей суточные вакхические олимпийские игры, предлагая
+              зрителям психогеографию какого-нибудь красивого города Европы, где
+              в данный момент идет «Гора Олимп». Пожить 24 часа в зрительном
+              зале и поспать на раскладушке или в собственной палатке во дворе
+              театра — это цветочки. Ягодки у Фабра на сцене, откуда идет такая
+              мощная энергия, что зрители меняют представление о мире. Во время
+              осеннего показа четырехчасового спектакля Фабра «Бельгийские
+              правила» на фестивале «Территория» тоже был осуществлен полный
+              захват зрителя. В чем дело, что будит и включает зрителя?
+              Отстраненность, антипсихологичность, эротичность и олимпийская
+              выносливость артистов. Причем марафонская тренированность труппы
+              важнее всего. Как будто зритель реально попадает в поздний
+              древнегреческий миф, не записанный классиками театра, кстати. Это
+              миф о превращении орфических и элевсинских мистерий в Олимпийские
+              игры, где правит Агон. Агония, присущая сверхнапряжению олимпийцев
+              во время состязания, то есть состояние на грани (выхода из тела),
+              — вот что такое постдионисийский агон.
             </p>
-            <Img src={foto3} desc="«Бельгийские правила», фото: Дмитрий Дубинский" />
-            <Note><Video url="https://media.giphy.com/media/wWue0rCDOphOE/giphy.gif" /></Note>
+            <Img
+              src={foto3}
+              desc="«Бельгийские правила», фото: Дмитрий Дубинский"
+            />
+            <Note>
+              <Video url="https://media.giphy.com/media/wWue0rCDOphOE/giphy.gif" />
+            </Note>
           </NoteWrapper>
 
           <H1small>Наблюдение № 9</H1small>
@@ -693,7 +727,10 @@ export class Article extends React.PureComponent {
             «Повар, вор, его жена и ее любовник»?
           </p>
 
-          <Img src={foto1} desc="«Зеркало Карлоса Сантоса», фото: Анна Шмитько" />
+          <Img
+            src={foto1}
+            desc="«Зеркало Карлоса Сантоса», фото: Анна Шмитько"
+          />
 
           <p>
             Зрители заходят с черного хода в подъезд, занимаемый солидной фирмой
@@ -720,8 +757,8 @@ export class Article extends React.PureComponent {
         <Share url={url} />
         <Other url={url} />
       </div>
-    );
+    )
   }
 }
 
-export default Article;
+export default Article

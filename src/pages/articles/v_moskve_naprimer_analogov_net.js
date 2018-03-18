@@ -1,65 +1,65 @@
-import React from "react";
-import Helmet from "react-helmet";
-import Link from "gatsby-link";
-import styled from "styled-components";
+import React from 'react'
+import Helmet from 'react-helmet'
+import Link from 'gatsby-link'
+import styled from 'styled-components'
 
-import { phone } from "../../utils/media";
-import H1, { H1small } from "../../components/H1";
-import ArticleHelmet from "../../components/ArticleHelmet";
-import Img from "../../components/Img";
-import H2 from "../../components/H2";
-import H3 from "../../components/H3";
-import Gallery from "../../components/Gallery";
-import Video from "../../components/Video";
+import { phone } from '../../utils/media'
+import H1, { H1small } from '../../components/H1'
+import ArticleHelmet from '../../components/ArticleHelmet'
+import Img from '../../components/Img'
+import H2 from '../../components/H2'
+import H3 from '../../components/H3'
+import Gallery from '../../components/Gallery'
+import Video from '../../components/Video'
 
-import Small from "../../components/Small";
-import Note, { NoteWrapper, NotedWord } from "../../components/Note";
-import Section from "../../components/Section";
-import P from "../../components/P";
-import Date from "../../components/Date";
-import Share from "../../components/Share";
-import Other from "../../components/Other";
+import Small from '../../components/Small'
+import Note, { NoteWrapper, NotedWord } from '../../components/Note'
+import Section from '../../components/Section'
+import P from '../../components/P'
+import Date from '../../components/Date'
+import Share from '../../components/Share'
+import Other from '../../components/Other'
 
-import { TopCover } from "../../components/FillCover";
+import { TopCover } from '../../components/FillCover'
 
-import mazo1 from "../images/naprimer/1.jpg";
-import mazo2 from "../images/naprimer/2.jpg";
-import sam from "../images/naprimer/sam.jpg";
-import zal from "../images/naprimer/zal.jpg";
-import foye from "../images/naprimer/foye.jpg";
-import cover from "../images/naprimer/cover.jpg";
+import mazo1 from '../images/naprimer/1.jpg'
+import mazo2 from '../images/naprimer/2.jpg'
+import sam from '../images/naprimer/sam.jpg'
+import zal from '../images/naprimer/zal.jpg'
+import foye from '../images/naprimer/foye.jpg'
+import cover from '../images/naprimer/cover.jpg'
 
-const url = "https://teatralium.com/articles/v_moskve_naprimer_analogov_net";
-const title = "В Москве, например, аналогов нет";
+const url = 'https://teatralium.com/articles/v_moskve_naprimer_analogov_net'
+const title = 'В Москве, например, аналогов нет'
 
 const H2Styled = styled(H2)`
   font-size: 1.713em;
   margin-bottom: 3rem;
-`;
+`
 
 const H1Styled = styled(H1small)`
   margin-top: 7rem;
-`;
+`
 
 const ImgStyled = styled(Img)`
   margin-top: 5rem;
   margin-bottom: 5rem;
-`;
+`
 
 const H3Styled = styled(H3)`
   margin-top: 5rem;
   margin-bottom: 5rem;
-`;
+`
 
 const Q = styled.p`
   font-weight: bold;
   &::before {
-    content: "— ";
+    content: '— ';
   }
   &:first-of-type {
     margin-top: 5rem;
   }
-`;
+`
 
 export class Article extends React.PureComponent {
   // eslint-disable-line react/prefer-stateless-function
@@ -125,12 +125,7 @@ export class Article extends React.PureComponent {
               Питера».
             </p>
             <Note>
-              <Img
-                src={sam}
-                noBorder
-                marginBottom="1rem"
-                marginTop="0"
-              />
+              <Img src={sam} noBorder marginBottom="1rem" marginTop="0" />
               В 2005 году Евгений Самойлов защитил докторскую диссертацию на
               тему «Культурные запреты как фактор экономического развития».
             </Note>
@@ -141,7 +136,7 @@ export class Article extends React.PureComponent {
             основала в городе фестиваль «Ростовские чтения» — аналог московской
             «Любимовки». В 2012-м она включила в программу пьесу Муравицкого
             «Порнография» и предложила ему самому поставить читку. Все проходило
-            в частной галерее современного искусства «16th Line»{" "}
+            в частной галерее современного искусства «16th Line»{' '}
             <NotedWord>Евгения Самойлова</NotedWord>, бизнесмена, главы холдинга
             «Юг-Мет», перерабатывающего цветные и черные металлы. Потом был
             проект Калашниковой «Арт-амнистия» про социализацию заключенных: под
@@ -168,7 +163,7 @@ export class Article extends React.PureComponent {
 
           <p>
             Ничего бы не случилось, если бы в городе одновременно не нашлись
-            несколько сумасшедших людей. «Женя <i>(Самойлов. — Прим. ред.)</i>{" "}
+            несколько сумасшедших людей. «Женя <i>(Самойлов. — Прим. ред.)</i>{' '}
             ведь не только театр сделал, он открыл галерею, изучив арт-рынок,
             контекст, стал ездить на выставки в Европу, на биеннале, — говорит
             Муравицкий. — У него бизнес, семья и куча своих забот, но он тратит
@@ -235,7 +230,7 @@ export class Article extends React.PureComponent {
               Греков, все остальные в команде — ростовчане. Претензий к театру
               нет даже у казаков, хотя его постановки можно назвать весьма
               радикальными. «18+» с момента основания был внимателен к
-              особенностям города и его субкультурам. В первый спектакль{" "}
+              особенностям города и его субкультурам. В первый спектакль{' '}
               <NotedWord>«Папа»</NotedWord> позвали местных героев музыкальной
               сцены: электронщика Папу Срапу, группу «Атаманский дворец»,
               читающую православный казачий рэп, и Дениса Третьякова с группой
@@ -290,7 +285,7 @@ export class Article extends React.PureComponent {
           <p>
             На гастроли сюда приезжают не только спектакли Театра.doc, но и
             «Questioning / Кто ты?» «Гоголь-центра», российско-германская
-            постановка{" "}
+            постановка{' '}
             <Link to="/articles/neperevodimiy_russkiy_nadryv/">
               «Вижу тебя, знаю тебя»
             </Link>, международный проект «Où?» француженки Луизы Левек. Но с
@@ -304,7 +299,7 @@ export class Article extends React.PureComponent {
             <p>
               «Театр 18+» позиционирует себя именно как пространство современной
               драматургии, в котором люди пытаются осмыслить себя в контексте
-              страны. Новая{" "}
+              страны. Новая{' '}
               <a href="https://teatr18.ru/shows/hanana/">«Ханана»</a>, например,
               напоминает о народном низовом творчестве и смеховой культуре. «Это
               художественное переосмысление хтони в жанре „русского гиньоля“.
@@ -355,7 +350,7 @@ export class Article extends React.PureComponent {
               культурой уже достигла фазы, когда сохранить статус-кво
               невозможно. Обществу активно навязывают определенное отношение:
               режиссеры воруют и за государственные деньги занимаются
-              непотребщиной — показывают голые жопы и{" "}
+              непотребщиной — показывают голые жопы и{' '}
               <NotedWord>коверкают классику</NotedWord>. «Последнее время я живу
               с ощущением, будто где-то в моем подземном гараже стоит автомобиль
               как у Бэтмена, в который при наступлении полного ***еца [конца] я
@@ -378,8 +373,8 @@ export class Article extends React.PureComponent {
         <Share url={url} />
         <Other url={url} />
       </div>
-    );
+    )
   }
 }
 
-export default Article;
+export default Article

@@ -6,26 +6,24 @@ import { phone } from '../../utils/media'
 const a = keyframes`
   0%   { transform: translate(100%, 0); }
   100% { transform: translate(-140%, 0); }
-`;
+`
 const Running = styled.div`
-  height: 50px; 
+  height: 50px;
   overflow: hidden;
   position: relative;
-`;
+`
 
 const Marquee = styled.div`
- position: absolute;
- width: 100%;
- height: 100%;
- margin: 0;
- line-height: 50px;
- text-align: center;
- white-space: nowrap;
- ${phone(`font-size: 0.8rem;`)}
- transform:translateX(100%);
- animation: ${a} 23s linear infinite;
-`;
-
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  line-height: 50px;
+  text-align: center;
+  white-space: nowrap;
+  ${phone(`font-size: 0.8rem;`)} transform:translateX(100%);
+  animation: ${a} 23s linear infinite;
+`
 
 const reviews = [
   '«УЖАС!!! Хуже спектакля в своей жизни я не видела» (Нина о спектакле «Юбилей ювелира» в МХТ)',
@@ -72,42 +70,42 @@ const reviews = [
   '«Случилось то, что происходит иногда с каждым большим художником - ПРОВАЛ» (Александр о спектакле «Война и мир. Начало романа» в театре Фоменко)',
   '«Спектакль больше, чем проблема с голубыми» (Зоя о спектакле «Все оттенки голубого» в «Сатириконе»)',
   '«Очень хотелось уйти, но было жалко денег за билеты» (Alice о спектакле «Пигмалион» в «Современнике»)',
-];
+]
 
 function getRandomInt(min, max) {
-  return Math.floor(Math.random() * ((max - min) + 1)) + min;
+  return Math.floor(Math.random() * (max - min + 1)) + min
 }
-
-
 
 class Footer extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       review: reviews[getRandomInt(0, reviews.length - 1)].padEnd(164, ' '),
-    };
-    this.refresh = setInterval((r) => {
-      this.setState({
-        review: r[getRandomInt(0, r.length - 1)].padEnd(164, ' '),
-      });
-    }, 23000, reviews);
+    }
+    this.refresh = setInterval(
+      r => {
+        this.setState({
+          review: r[getRandomInt(0, r.length - 1)].padEnd(164, ' '),
+        })
+      },
+      23000,
+      reviews
+    )
   }
   componentWillUnmount() {
-    clearInterval(this.refresh);
+    clearInterval(this.refresh)
   }
   render() {
     return (
       <div style={{ width: '100%', background: 'black' }}>
         <Wrapper>
           <Running>
-            <Marquee>
-              {this.state.review}
-            </Marquee>
+            <Marquee>{this.state.review}</Marquee>
           </Running>
         </Wrapper>
       </div>
-    );
+    )
   }
 }
 
-export default Footer;
+export default Footer

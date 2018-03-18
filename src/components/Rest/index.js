@@ -1,3 +1,3 @@
-import React from 'react';
+import React from 'react'
 
-export default () => <small style={{ display: 'inline-block' }}>{'<…>'}</small>;
+export default () => <small style={{ display: 'inline-block' }}>{'<…>'}</small>

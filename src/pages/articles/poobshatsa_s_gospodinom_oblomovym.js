@@ -1,63 +1,63 @@
-import React from "react";
-import Helmet from "react-helmet";
-import Link from "gatsby-link";
-import styled from "styled-components";
+import React from 'react'
+import Helmet from 'react-helmet'
+import Link from 'gatsby-link'
+import styled from 'styled-components'
 
-import { phone } from "../../utils/media";
-import H1, { H1small } from "../../components/H1";
-import ArticleHelmet from "../../components/ArticleHelmet";
-import Img from "../../components/Img";
-import H2 from "../../components/H2";
-import H3 from "../../components/H3";
-import Gallery from "../../components/Gallery";
-import Video from "../../components/Video";
+import { phone } from '../../utils/media'
+import H1, { H1small } from '../../components/H1'
+import ArticleHelmet from '../../components/ArticleHelmet'
+import Img from '../../components/Img'
+import H2 from '../../components/H2'
+import H3 from '../../components/H3'
+import Gallery from '../../components/Gallery'
+import Video from '../../components/Video'
 
-import Small from "../../components/Small";
-import Note, { NoteWrapper, NotedWord } from "../../components/Note";
-import Section from "../../components/Section";
-import P from "../../components/P";
-import Date from "../../components/Date";
-import Share from "../../components/Share";
-import Other from "../../components/Other";
+import Small from '../../components/Small'
+import Note, { NoteWrapper, NotedWord } from '../../components/Note'
+import Section from '../../components/Section'
+import P from '../../components/P'
+import Date from '../../components/Date'
+import Share from '../../components/Share'
+import Other from '../../components/Other'
 
-import { TopCover } from "../../components/FillCover";
+import { TopCover } from '../../components/FillCover'
 
-import building from "../images/sebastian/1.jpg";
-import portrait from "../images/sebastian/3.jpg";
-import cover from "../images/sebastian/cover.jpg";
+import building from '../images/sebastian/1.jpg'
+import portrait from '../images/sebastian/3.jpg'
+import cover from '../images/sebastian/cover.jpg'
 
-const url = "https://teatralium.com/articles/poobshatsa_s_gospodinom_oblomovym";
+const url = 'https://teatralium.com/articles/poobshatsa_s_gospodinom_oblomovym'
 const title =
-  "Себастьян Кайзер: «Нам всем нужно пообщаться с господином Обломовым»";
+  'Себастьян Кайзер: «Нам всем нужно пообщаться с господином Обломовым»'
 
 const H2Styled = styled(H2)`
   font-size: 1.713em;
   margin-bottom: 3rem;
-`;
+`
 
 const H1Styled = styled(H1small)`
   margin-top: 7rem;
-`;
+`
 
 const ImgStyled = styled(Img)`
   margin-top: 5rem;
   margin-bottom: 5rem;
-`;
+`
 
 const H3Styled = styled(H3)`
   margin-top: 5rem;
   margin-bottom: 5rem;
-`;
+`
 
 const Q = styled.p`
   font-weight: bold;
   &::before {
-    content: "— ";
+    content: '— ';
   }
   &:first-of-type {
     margin-top: 5rem;
   }
-`;
+`
 
 export class Abuse extends React.PureComponent {
   // eslint-disable-line react/prefer-stateless-function
@@ -105,7 +105,7 @@ export class Abuse extends React.PureComponent {
             <Note>
               Себастьян Кайзер приезжал на московский фестиваль «Нового
               европейского театра» (NET) для участия в кинопоказах и дискуссиях
-              программы{" "}
+              программы{' '}
               <a href="http://netfest.ru/festival/film-program/poslednij-god-folksbyune">
                 «Последний год „Фольксбюне“ / Уходящая эпоха Франка Касторфа».
               </a>
@@ -195,7 +195,7 @@ export class Abuse extends React.PureComponent {
             день. Там шли спектакли — сильные художественные высказывания
             Касторфа, Марталера, Шлингензифа, плюс показывали кино, играли
             рок-концерты, организовывали философские дискуссии, лекции про конец
-            капитализма. Жижек был там в 1993 году во время акции NSK{" "}
+            капитализма. Жижек был там в 1993 году во время акции NSK{' '}
             <i>
               (нем. Neue Slowenische Kunst, Новое словенское искусство. — Прим.
               ред.)
@@ -256,7 +256,7 @@ export class Abuse extends React.PureComponent {
             под вопрос — так действует механизм вытеснения и исключения, города
             структурируются не по социальному запросу, а денежными потоками.
             Там, где я родился, коренные берлинцы практически не живут. Они
-            просто не могут себе этого позволить.{" "}
+            просто не могут себе этого позволить.{' '}
           </p>
           <Q>
             Возвращаясь к альтернативе: когда мы в России слышим разговоры
@@ -373,8 +373,8 @@ export class Abuse extends React.PureComponent {
         <Share url={url} />
         <Other url={url} />
       </div>
-    );
+    )
   }
 }
 
-export default Abuse;
+export default Abuse

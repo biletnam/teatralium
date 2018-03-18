@@ -21,7 +21,7 @@ const StyledGallery = styled.div`
   > div img {
     max-width: ${p => p.maxWidth || '600px'};
     max-height: ${p => p.maxHeight || 'auto'};
-    ${phone('max-width: 100%;')}
+    ${phone('max-width: 100%;')};
   }
 `
 
@@ -30,13 +30,23 @@ const Wrapper = styled.div`
   margin-bottom: ${p => p.margin || '0'};
 `
 
-const Gallery = ({ images, alt, desc, margin, imgProps, ...props }) => <Wrapper margin={margin}>
-  <StyledGallery {...props}>
-    {images.length && images.map((url, i) => <div key={`gal` + i}>
-      <Img {...imgProps} src={url} alt={`${alt} ${i}`} desc={props.descs ? props.descs[i] : null} />
-    </div>)}
-  </StyledGallery>
-  {desc && <StyledSmall>{desc}</StyledSmall>}
-</Wrapper>
+const Gallery = ({ images, alt, desc, margin, imgProps, ...props }) => (
+  <Wrapper margin={margin}>
+    <StyledGallery {...props}>
+      {images.length &&
+        images.map((url, i) => (
+          <div key={`gal` + i}>
+            <Img
+              {...imgProps}
+              src={url}
+              alt={`${alt} ${i}`}
+              desc={props.descs ? props.descs[i] : null}
+            />
+          </div>
+        ))}
+    </StyledGallery>
+    {desc && <StyledSmall>{desc}</StyledSmall>}
+  </Wrapper>
+)
 
 export default Gallery

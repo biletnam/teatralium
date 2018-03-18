@@ -1,57 +1,57 @@
-import React from "react";
-import Helmet from "react-helmet";
-import Link from "gatsby-link";
-import styled from "styled-components";
+import React from 'react'
+import Helmet from 'react-helmet'
+import Link from 'gatsby-link'
+import styled from 'styled-components'
 
-import { phone } from "../../utils/media";
-import H1, { H1small } from "../../components/H1";
-import ArticleHelmet from "../../components/ArticleHelmet";
-import Img from "../../components/Img";
-import H2 from "../../components/H2";
-import H3 from "../../components/H3";
+import { phone } from '../../utils/media'
+import H1, { H1small } from '../../components/H1'
+import ArticleHelmet from '../../components/ArticleHelmet'
+import Img from '../../components/Img'
+import H2 from '../../components/H2'
+import H3 from '../../components/H3'
 // import H4 from '../../components/H4'
-import Small from "../../components/Small";
-import Note, { NoteWrapper, NotedWord } from "../../components/Note";
-import Section from "../../components/Section";
-import P from "../../components/P";
-import Date from "../../components/Date";
-import Share from "../../components/Share";
-import Rest from "../../components/Rest";
-import Other from "../../components/Other";
+import Small from '../../components/Small'
+import Note, { NoteWrapper, NotedWord } from '../../components/Note'
+import Section from '../../components/Section'
+import P from '../../components/P'
+import Date from '../../components/Date'
+import Share from '../../components/Share'
+import Rest from '../../components/Rest'
+import Other from '../../components/Other'
 
-import annenskiy from "../images/iz_vseh_iskusstv/annenski.jpg";
-import belinsky from "../images/iz_vseh_iskusstv/belinski.jpg";
-import harms from "../images/iz_vseh_iskusstv/harms.jpg";
-import hodasevich from "../images/iz_vseh_iskusstv/hodasevich.jpg";
-import ivanov from "../images/iz_vseh_iskusstv/ivanov.jpg";
-import nabokov from "../images/iz_vseh_iskusstv/nabokov.jpg";
-import shalamov from "../images/iz_vseh_iskusstv/shalamov.jpg";
-import cover from "../images/iz_vseh_iskusstv/cover.jpg";
+import annenskiy from '../images/iz_vseh_iskusstv/annenski.jpg'
+import belinsky from '../images/iz_vseh_iskusstv/belinski.jpg'
+import harms from '../images/iz_vseh_iskusstv/harms.jpg'
+import hodasevich from '../images/iz_vseh_iskusstv/hodasevich.jpg'
+import ivanov from '../images/iz_vseh_iskusstv/ivanov.jpg'
+import nabokov from '../images/iz_vseh_iskusstv/nabokov.jpg'
+import shalamov from '../images/iz_vseh_iskusstv/shalamov.jpg'
+import cover from '../images/iz_vseh_iskusstv/cover.jpg'
 
-import kiss from "../images/kiss.gif";
+import kiss from '../images/kiss.gif'
 
-const url = "https://teatralium.com/articles/iz_vseh_iskusstv";
+const url = 'https://teatralium.com/articles/iz_vseh_iskusstv'
 const title =
-  "Из всех искусств: Набоков, Хармс и другие классики рассуждают о театре";
+  'Из всех искусств: Набоков, Хармс и другие классики рассуждают о театре'
 
 const H2Styled = styled(H2)`
   font-size: 1.713em;
   margin-bottom: 3rem;
-`;
+`
 
 const H1Styled = styled(H1small)`
   margin-top: 7rem;
-`;
+`
 
 const ImgStyled = styled(Img)`
   margin-top: 5rem;
   margin-bottom: 5rem;
-`;
+`
 
 const H3Styled = styled(H3)`
   margin-top: 5rem;
   margin-bottom: 5rem;
-`;
+`
 
 export class Bol extends React.PureComponent {
   // eslint-disable-line react/prefer-stateless-function
@@ -151,7 +151,7 @@ export class Bol extends React.PureComponent {
               показать в каких ему угодно масках. «Ромео и Джульетта» никогда не
               будут чем-то вроде исторической драмы. Не будут ею и «Гамлет», и
               «Отелло», и «Король Лир». Я вспоминаю Вахтанговскую, т. е. Театра
-              им. Вахтангова,{" "}
+              им. Вахтангова,{' '}
               <NotedWord>акимовскую интерпретацию «Гамлета»</NotedWord>.
               Зритель, читавший Шекспира, глядел этот спектакль с недоумением.
               Зрителю, не читавшему Шекспира, было просто скучно, ибо он
@@ -239,11 +239,11 @@ export class Bol extends React.PureComponent {
 
           <p>
             Пока не созданы новые образцы в этих трех искусствах, лучшими
-            остаются старые пути. И я, на Вашем{" "}
+            остаются старые пути. И я, на Вашем{' '}
             <i>
               [письмо адресовано молодой актрисе Клавдии Пугачевой —
               «Театралий».]
-            </i>{" "}
+            </i>{' '}
             бы месте, либо постарался сам создать новый театр, если бы
             чувствовал в себе достаточно величия для такого дела, либо
             придерживался театра наиболее архаических форм.
@@ -312,8 +312,8 @@ export class Bol extends React.PureComponent {
               что они знали только ремесло, одни находя его более, другие менее
               тяжким и скучным… Все это я узнал уже после, расставшись с
               губернским балаганом, который я добродушно принимал за театр, и
-              познакомившись с столичными… театрами, с вашего позволения…{" "}
-              <Rest />{" "}
+              познакомившись с столичными… театрами, с вашего позволения…{' '}
+              <Rest />{' '}
             </p>
             <Note top="320px">
               В Древней Спарте илот — представитель побежденного племени,
@@ -343,8 +343,8 @@ export class Bol extends React.PureComponent {
             бессознательны, и что те же самые рукоплескания готовы у ней и на
             молниеносные проблески истинного вдохновения, и на гаерские выходки
             посредственности, смелой на эффекты и умеющей приноровляться к
-            вульгарным требованиям толпы… Мне стало и досадно и больно…»{" "}
-            <Rest />{" "}
+            вульгарным требованиям толпы… Мне стало и досадно и больно…»{' '}
+            <Rest />{' '}
           </p>
 
           <a href="http://az.lib.ru/b/belinskij_w_g/text_3240.shtml">
@@ -363,7 +363,7 @@ export class Bol extends React.PureComponent {
             обстоятельствах человеческой жизни даже самый потаенный из
             подсматривающих или подслушивающих не может уберечься от возможности
             разоблачения теми, за кем он следит, — не какими-то конкретными
-            людьми, но миром в целом. <Rest />{" "}
+            людьми, но миром в целом. <Rest />{' '}
           </p>
 
           <p>
@@ -435,7 +435,7 @@ export class Bol extends React.PureComponent {
             — словом, происходящее в театре сводится к тому, что происходит в
             стране диктатора, где общественная жизнь представляет собой
             непрерывную и всеобщую игру в том жутком фарсе, который сочинил
-            охочий до театра Отец Народов». <Rest />{" "}
+            охочий до театра Отец Народов». <Rest />{' '}
           </p>
 
           <a href="http://ec-dejavu.ru/t-2/Nabokov_lectures_about_theatre.html">
@@ -465,7 +465,7 @@ export class Bol extends React.PureComponent {
             прелесть!” Все было обыкновенно, просто, почти уютно. И я, который в
             трагедиях испытывал только ужас и потрясение, на этот раз понял все,
             что происходило между этими людьми. Но трагедии не было: она
-            осталась в Малом театре. <Rest />{" "}
+            осталась в Малом театре. <Rest />{' '}
           </p>
           <ImgStyled noBorder width="500px" src={hodasevich} />
           <p>
@@ -473,7 +473,7 @@ export class Bol extends React.PureComponent {
             играть трагедию, потому что трагедия не умещалась в их мироощущении.
             Не только отдельным актерам, но и всему театру в целом трагедия
             всегда была не по плечу, не по голосу, не по размаху. Чем более
-            трагедийного элемента было в пьесе, тем слабее она удавалась.{" "}
+            трагедийного элемента было в пьесе, тем слабее она удавалась.{' '}
             <Rest /> Если, как признавал сам Станиславский, театру оказывались
             не по плечу слишком высокие театральные жанры, то в этом было
             повинно не отсутствие и не пороки индивидуальных дарований, а общее
@@ -511,7 +511,7 @@ export class Bol extends React.PureComponent {
             обнаружилось в чеховских постановках Станиславского. Вот почему эти
             постановки и останутся навсегда лучшим лавром в венке
             Художественного театра и поистине незабвенным воспоминанием для
-            всех, кому посчастливилось их видеть». <Rest />{" "}
+            всех, кому посчастливилось их видеть». <Rest />{' '}
           </p>
 
           <a href="http://az.lib.ru/h/hodasewich_w_f/text_0930.shtml">
@@ -619,7 +619,7 @@ export class Bol extends React.PureComponent {
           <p>
             <a href="http://annensky.lib.ru/publ/antitrag-1.htm">
               Из публичной лекции «Античная трагедия», 1902 год
-            </a>{" "}
+            </a>{' '}
             Источник текста: Драматические произведения: Меланиппа-философ. Царь
             Иксион. Лаодамия. Фамира-кифарэд / Сост., подг. текста и коммент. Г.
             Н. Шелогуровой. М.: "Лабиринт", 2000. (Античное наследие). С. 5-46.
@@ -628,8 +628,8 @@ export class Bol extends React.PureComponent {
         <Share url={url} />
         <Other url={url} />
       </div>
-    );
+    )
   }
 }
 
-export default Bol;
+export default Bol
