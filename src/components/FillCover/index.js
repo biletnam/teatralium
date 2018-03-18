@@ -6,7 +6,7 @@ const FillCover = styled.div`
   color: ${p => p.fontColor};
   background-image: url(${p => p.bg || 'none'});
   ${p => (p.repeat ? 'background-repeat: repeat' : 'background-size: cover')};
-  min-height: ${p => p.height || 'auto'};
+  min-height: ${p => p.height || '400px'};
   position: relative;
   display: flex;
   align-items: center;

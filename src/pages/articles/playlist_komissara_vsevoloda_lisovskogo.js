@@ -88,7 +88,7 @@ export class Raznoobrazie extends React.PureComponent {
             width="100%"
             height="60"
             src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&light=1&hide_artwork=1&feed=%2FTeatralium%2Fmiracles-lisovskiy%2F"
-            frameborder="0"
+            frameBorder="0"
           />
           <Playlist>
             <List>
