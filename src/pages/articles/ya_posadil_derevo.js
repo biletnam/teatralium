@@ -59,7 +59,7 @@ export class Derevo extends React.PureComponent {
               Я посадил дерево
             </H1>
             <H1small center color="#d54051">
-              плейлист актера Филиппа Авдеева
+              Плейлист актера Филиппа Авдеева
             </H1small>
           </Section>
         </TopCover>

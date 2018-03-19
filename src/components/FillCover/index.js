@@ -33,7 +33,8 @@ const FillCover = styled.div`
   ${phone(`
     min-height: auto;
   `)}
-  ${p => `${phone(`
+  ${p =>
+    `${phone(`
     ${p.noBgMobile && `background-image: none;`}
   `)}`};
 `
@@ -62,10 +63,12 @@ const Wrapper = styled.div`
   height: 100%;
   z-index: -1;
   overflow: hidden;
-  ${p => `${phone(`
-    ${p.noBgMobile && `display: none;`}
+  ${phone(`
     width: 200%;
     min-height: auto;
+  `)} ${p =>
+      `${phone(`
+    ${p.noBgMobile && `display: none;`}
   `)}`};
 `
 

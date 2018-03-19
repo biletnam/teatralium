@@ -59,7 +59,7 @@ export class Derevo extends React.PureComponent {
               И братва за&nbsp;слова отвечает как в&nbsp;лучшие дни
             </H1>
             <H1small center color="black">
-              плейлист импресарио Федора Елютина
+              Плейлист импресарио Федора Елютина
             </H1small>
           </Section>
         </TopCover>

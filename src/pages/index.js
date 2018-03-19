@@ -42,7 +42,7 @@ const ArticlesSection = styled(Section)`
   padding: ${p => p.padding || '2'}rem;
   text-align: ${p => p.align || 'center'};
   margin: ${p => p.margin || 'auto'};
-  margin-top: ${p => p.marginTop || 'none'};
+  margin-top: ${p => p.marginTop || 'auto'};
   font-size: ${p => p.size || 'auto'};
   color: ${p => p.color || 'auto'};
   background: ${p => p.background || 'none'};
@@ -94,14 +94,12 @@ const PurpleButton = styled(Button)`
 
 const Nespyashie = ({ sizes }) => (
   <StyledLink to="/articles/nespyashie_v_teatre/">
-    <TopCover bg={sizes.src} bgSize="300px" bgPosition="80% 70%" noBgMobile>
-      <ArticlesSection margin="1rem">
+    <TopCover bg={sizes.src} bgSize="300px" bgPosition="90% 70%" noBgMobile>
+      <ArticlesSection margin="1rem" marginTop="2rem">
         <H1 center size="3.2124em">
           Неспящие в театре
         </H1>
-        <H1small center>
-          типы зрителей на основе индуистской философии
-        </H1small>
+        <H1small center>Типы зрителей на основе индуистской философии</H1small>
       </ArticlesSection>
     </TopCover>
   </StyledLink>
@@ -109,16 +107,16 @@ const Nespyashie = ({ sizes }) => (
 
 const Elutin = ({ sizes }) => (
   <StyledLink to="/articles/i_bratva_za_slova_otvechaet/">
-    <TopCover bg={sizes.src} repeat bordered borderColor="#f300f3">
+    <FillCover bg={sizes.src} repeat bordered borderColor="#f300f3">
       <ArticlesSection background="rgba(255,255,255,0.6)">
         <H1 size="3.4124em" center color="purple">
           И братва за&nbsp;слова отвечает как в&nbsp;лучшие дни
         </H1>
         <H1small center color="black">
-          плейлист импресарио Федора Елютина
+          Плейлист импресарио Федора Елютина
         </H1small>
       </ArticlesSection>
-    </TopCover>
+    </FillCover>
   </StyledLink>
 )
 
@@ -252,7 +250,7 @@ const Lisovsky = ({ sizes }) => (
         background="rgba(118,189,187,0.67)"
       >
         <H1 color="yellow">Миражи — это наша жизнь?</H1>
-        <Lead color="black">плейлист комиссара Всеволода Лисовского</Lead>
+        <Lead color="black">Плейлист комиссара Всеволода Лисовского</Lead>
       </ArticlesSection>
     </FillCover>
   </StyledLink>
@@ -414,7 +412,7 @@ const Svet = ({ sizes }) => (
 export class HomePage extends React.PureComponent {
   // eslint-disable-line react/prefer-stateless-function
   render() {
-    const { data } = this.props;
+    const { data } = this.props
     return (
       <div>
         <Nespyashie sizes={data.zritel8.sizes} />
@@ -535,7 +533,7 @@ export const pageQuery = graphql`
         ...GatsbyImageSharpSizes
       }
     }
-    zritel8: imageSharp(id: { regex: "/nespyashie\/zriteli\/zritel-8.jpg/" }) {
+    zritel8: imageSharp(id: { regex: "/nespyashie/zriteli/zritel-8.jpg/" }) {
       sizes(maxWidth: 1280) {
         ...GatsbyImageSharpSizes
       }

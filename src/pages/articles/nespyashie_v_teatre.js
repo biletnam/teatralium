@@ -27,7 +27,9 @@ import FillCover, { TopCover } from '../../components/FillCover'
 const url = 'https://teatralium.com/articles/nespyashie_v_teatre/'
 const title = 'Неспящие в театре: типы зрителей на основе индуистской философии'
 
-const ImgKiss = () => <ImgOld src={kiss} noBorder width="70px" marginTop="5rem" />
+const ImgKiss = () => (
+  <ImgOld src={kiss} noBorder width="70px" marginTop="5rem" />
+)
 
 const StyledDate = styled(Date)`
   ${phone(`
@@ -37,6 +39,10 @@ const StyledDate = styled(Date)`
 
 const H1Styled = styled(H1)`
   padding: 6rem 2rem 0;
+  ${phone(`
+    font-size: 1em;
+    line-height: normal;
+  `)};
 `
 
 const H1smallStyled = styled(H1small)`
@@ -62,7 +68,7 @@ const List = styled.ul`
 export class Article extends React.PureComponent {
   // eslint-disable-line react/prefer-stateless-function
   render() {
-    const { data } = this.props;
+    const { data } = this.props
     return (
       <div>
         <ArticleHelmet
@@ -71,13 +77,18 @@ export class Article extends React.PureComponent {
           description="Дмитрий Лисин проецирует древнеиндийские варны на зрительный зал."
           title={`${title} | Театралий`}
         />
-        <TopCover bg={data.zritel8.sizes.src} bgSize="300px" bgPosition="80% 70%" noBgMobile>
+        <TopCover
+          bg={data.zritel8.sizes.src}
+          bgSize="300px"
+          bgPosition="90% 70%"
+          noBgMobile
+        >
           <Section margin="0">
             <H1Shadow center size="3.2124em">
               Неспящие в театре
             </H1Shadow>
             <H1small center>
-              типы зрителей на основе индуистской философии
+              Типы зрителей на основе индуистской философии
             </H1small>
             <StyledDate>
               18 марта 2018, текст:&nbsp;<b>Дмитрий Лисин</b>,
@@ -223,7 +234,7 @@ export class Article extends React.PureComponent {
             лет.
           </p>
 
-          <H1smallStyled>Думающие иррациональные интуитивисты</H1smallStyled>
+          <H1smallStyled>Думающие рациональные интуитивисты</H1smallStyled>
           <Img noBorder sizes={data.zritel2.sizes} />
           <p>
             Это лучшие театроведы, большинство экспертов «Золотой маски». А
@@ -239,7 +250,9 @@ export class Article extends React.PureComponent {
             Мейерхольда, «Гоголь-центре», «Театре.doc», МХТ и БДТ.
           </p>
 
-          <H1smallStyled>Думающие дискурсивно-сюжетные рассудочники</H1smallStyled>
+          <H1smallStyled>
+            Думающие дискурсивно-сюжетные рассудочники
+          </H1smallStyled>
           <Img noBorder sizes={data.zritel3.sizes} />
           <p>
             За вычетом думающих рациональных интуитивистов — примерно 98 %
@@ -387,6 +400,8 @@ export class Article extends React.PureComponent {
           </p>
 
           <Img sizes={data.foto10.sizes} maxWidth="90%" noBorder />
+
+          <ImgKiss />
 
           <H1Styled size="3.2124em">
             Наблюдения.<br />От&nbsp;абстрактного к&nbsp;конкретному
@@ -670,7 +685,13 @@ export class Article extends React.PureComponent {
             </p>
 
             <Note>
-              <Img sizes={data.tyotya.sizes} round noBorder marginTop="0" marginBottom="0" />
+              <Img
+                sizes={data.tyotya.sizes}
+                round
+                noBorder
+                marginTop="0"
+                marginBottom="0"
+              />
             </Note>
           </NoteWrapper>
 
@@ -760,71 +781,70 @@ export default Article
 
 export const pageQuery = graphql`
   query ImageQuery {
-    zritel1: imageSharp(id: { regex: "/nespyashie\/zriteli\/zritel-1.jpg/" }) {
+    zritel1: imageSharp(id: { regex: "/nespyashie/zriteli/zritel-1.jpg/" }) {
       sizes(maxWidth: 1280) {
         ...GatsbyImageSharpSizes
       }
     }
-    zritel2: imageSharp(id: { regex: "/nespyashie\/zriteli\/zritel-2.jpg/" }) {
+    zritel2: imageSharp(id: { regex: "/nespyashie/zriteli/zritel-2.jpg/" }) {
       sizes(maxWidth: 1280) {
         ...GatsbyImageSharpSizes
       }
     }
-    zritel3: imageSharp(id: { regex: "/nespyashie\/zriteli\/zritel-3.jpg/" }) {
+    zritel3: imageSharp(id: { regex: "/nespyashie/zriteli/zritel-3.jpg/" }) {
       sizes(maxWidth: 1280) {
         ...GatsbyImageSharpSizes
       }
     }
-    zritel4: imageSharp(id: { regex: "/nespyashie\/zriteli\/zritel-4.jpg/" }) {
+    zritel4: imageSharp(id: { regex: "/nespyashie/zriteli/zritel-4.jpg/" }) {
       sizes(maxWidth: 1280) {
         ...GatsbyImageSharpSizes
       }
     }
-    zritel5: imageSharp(id: { regex: "/nespyashie\/zriteli\/zritel-5.jpg/" }) {
+    zritel5: imageSharp(id: { regex: "/nespyashie/zriteli/zritel-5.jpg/" }) {
       sizes(maxWidth: 1280) {
         ...GatsbyImageSharpSizes
       }
     }
-    zritel6: imageSharp(id: { regex: "/nespyashie\/zriteli\/zritel-6.jpg/" }) {
+    zritel6: imageSharp(id: { regex: "/nespyashie/zriteli/zritel-6.jpg/" }) {
       sizes(maxWidth: 1280) {
         ...GatsbyImageSharpSizes
       }
     }
-    zritel7: imageSharp(id: { regex: "/nespyashie\/zriteli\/zritel-7.jpg/" }) {
+    zritel7: imageSharp(id: { regex: "/nespyashie/zriteli/zritel-7.jpg/" }) {
       sizes(maxWidth: 1280) {
         ...GatsbyImageSharpSizes
       }
     }
-    zritel8: imageSharp(id: { regex: "/nespyashie\/zriteli\/zritel-8.jpg/" }) {
+    zritel8: imageSharp(id: { regex: "/nespyashie/zriteli/zritel-8.jpg/" }) {
       sizes(maxWidth: 1280) {
         ...GatsbyImageSharpSizes
       }
     }
-    zritel9: imageSharp(id: { regex: "/nespyashie\/zriteli\/zritel-9.jpg/" }) {
+    zritel9: imageSharp(id: { regex: "/nespyashie/zriteli/zritel-9.jpg/" }) {
       sizes(maxWidth: 1280) {
         ...GatsbyImageSharpSizes
       }
     }
-    zritel10: imageSharp(id: { regex: "/nespyashie\/zriteli\/zritel-10.jpg/" }) {
+    zritel10: imageSharp(id: { regex: "/nespyashie/zriteli/zritel-10.jpg/" }) {
       sizes(maxWidth: 1280) {
         ...GatsbyImageSharpSizes
       }
     }
-    tyotya: imageSharp(id: { regex: "/nespyashie\/tyotya.jpg/" }) {
+    tyotya: imageSharp(id: { regex: "/nespyashie/tyotya.jpg/" }) {
       sizes(maxWidth: 300) {
         ...GatsbyImageSharpSizes
       }
     }
-    abd: imageSharp(id: { regex: "/nespyashie\/abd.jpg/" }) {
+    abd: imageSharp(id: { regex: "/nespyashie/abd.jpg/" }) {
       sizes(maxWidth: 600) {
         ...GatsbyImageSharpSizes
       }
     }
-    foto10: imageSharp(id: { regex: "/nespyashie\/10.png/" }) {
+    foto10: imageSharp(id: { regex: "/nespyashie/10.png/" }) {
       sizes(maxWidth: 1280) {
         ...GatsbyImageSharpSizes
       }
     }
   }
 `
-

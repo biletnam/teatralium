@@ -3,8 +3,7 @@ const base = '/articles/'
 export const articles = [
   {
     url: base + 'nespyashie_v_teatre/',
-    title:
-      'Неспящие в театре: типы зрителей на основе индуистской философии',
+    title: 'Неспящие в театре: типы зрителей на основе индуистской философии',
   },
   {
     url: base + 'i_bratva_za_slova_otvechaet/',
