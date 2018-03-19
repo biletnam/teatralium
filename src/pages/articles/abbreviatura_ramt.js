@@ -1,52 +1,53 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import Link from 'gatsby-link'
-import styled from 'styled-components'
+import React from "react";
+import Helmet from "react-helmet";
+import Link from "gatsby-link";
+import styled from "styled-components";
 
-import { phone } from '../../utils/media'
-import H1, { H1small } from '../../components/H1'
-import ArticleHelmet from '../../components/ArticleHelmet'
-import Img from '../../components/Img'
-import H2 from '../../components/H2'
-import H3 from '../../components/H3'
-import Small from '../../components/Small'
-import Note, { NoteWrapper, NotedWord } from '../../components/Note'
-import Section from '../../components/Section'
-import P from '../../components/P'
-import Date from '../../components/Date'
-import Share from '../../components/Share'
-import Other from '../../components/Other'
-import Attention from '../../components/Attention'
+import { phone } from "../../utils/media";
+import H1, { H1small } from "../../components/H1";
+import ArticleHelmet from "../../components/ArticleHelmet";
+import Img from "../../components/Img";
+import H2 from "../../components/H2";
+import H3 from "../../components/H3";
+import Small from "../../components/Small";
+import Note, { NoteWrapper, NotedWord } from "../../components/Note";
+import Section from "../../components/Section";
+import P from "../../components/P";
+import Date from "../../components/Date";
+import Share from "../../components/Share";
+import Other from "../../components/Other";
+import Attention from "../../components/Attention";
+import { TopCover } from "../../components/FillCover";
 
-import cover from '../images/ramt/cover.jpg'
-import borodin from '../images/ramt/borodin.jpg'
+import cover from "../images/ramt/cover.jpg";
+import borodin from "../images/ramt/borodin.jpg";
 
-import Poem from '../../components/Poem'
+import Poem from "../../components/Poem";
 
-import mask from '../images/davydova/mask.gif'
+import mask from "../images/davydova/mask.gif";
 
-const url = 'https://teatralium.com/articles/abbreviatura_ramt'
+const url = "https://teatralium.com/articles/abbreviatura_ramt";
 const title =
-  '«Аббревиатуру РАМТ мы не придумывали»: Алексей Бородин об истории своего театра в начале 90-х'
+  "«Аббревиатуру РАМТ мы не придумывали»: Алексей Бородин об истории своего театра в начале 90-х";
 
 const H2Styled = styled(H2)`
   font-size: 1.713em;
   margin-bottom: 3rem;
-`
+`;
 
 const H1Styled = styled(H1small)`
   margin-top: 7rem;
-`
+`;
 
 const ImgStyled = styled(Img)`
   margin-top: 5rem;
   margin-bottom: 5rem;
-`
+`;
 
 const H3Styled = styled(H3)`
   margin-top: 5rem;
   margin-bottom: 5rem;
-`
+`;
 
 export class Raznoobrazie extends React.PureComponent {
   // eslint-disable-line react/prefer-stateless-function
@@ -61,21 +62,25 @@ export class Raznoobrazie extends React.PureComponent {
           description="«Кто не репетирует, идите к Белому дому»."
           title={`${title} | Театралий`}
         />
-        <Section margin="0">
-          <Date>
-            25 ноября 2017, текст:&nbsp;<b>Театралий</b>
-          </Date>
-          <H1 center>«Аббревиатуру РАМТ мы не придумывали»</H1>
-          <H1small center>
-            Алексей Бородин об истории своего театра в начале 90-х
-          </H1small>
+        <TopCover>
+          <Section margin="0" paddingTop="0rem">
+            <Date>
+              25 ноября 2017, текст:&nbsp;<b>Театралий</b>
+            </Date>
+            <H1 center>«Аббревиатуру РАМТ мы не придумывали»</H1>
+            <H1small center>
+              Алексей Бородин об истории своего театра в начале 90-х
+            </H1small>
+          </Section>
+        </TopCover>
+        <Section>
           <P>
             Режиссер и педагог Алексей Бородин руководит Российским
             академическим молодежным театром уже 37 лет: школьные спектакли в
             Шанхае, годы учебы в ГИТИСе у Юрия Завадского, лаборатория тюзовских
             режиссеров под руководством Марии Кнебель в Кирове, приглашение в
             московский Центральный детский театр Наталии Сац и работу над его
-            главными постановками он{' '}
+            главными постановками он{" "}
             <a href="https://www.corpus.ru/products/aleksej-borodin-na-beregah-utopij.htm">
               описал в книге «На берегах утопий»
             </a>, которая вышла в издательстве Corpus. «Театралий» публикует из
@@ -121,7 +126,7 @@ export class Raznoobrazie extends React.PureComponent {
               Я собрал труппу: «Все восстановится и будет так, как следует, а мы
               должны отвечать своим делом. Мы должны работать. Кто не
               репетирует, идите к Белому дому». Все актеры, свободные от
-              репетиций, отправились туда под флагом, который сделал{' '}
+              репетиций, отправились туда под флагом, который сделал{" "}
               <NotedWord>Бенедиктов</NotedWord>. На двери висело объявление
               красной краской: «Коллектив ушел на защиту Белого дома». Мы,
               наверное, люди наивные, но для нас это было органично.
@@ -134,7 +139,7 @@ export class Raznoobrazie extends React.PureComponent {
             <p>
               К семидесятилетию театра Стасик (Станислав Бенедиктов. — Прим.
               ред.) сделал оформление вечера, взяв части декораций разных
-              спектаклей. Труппа сидела на сцене за столиками. Стасик пел,{' '}
+              спектаклей. Труппа сидела на сцене за столиками. Стасик пел,{" "}
               <NotedWord>Лена Долгина</NotedWord> плясала, Веселкин и Шувалов
               изображали нас с Ремизовым на руинах театра — будто крыша
               обвалилась и все окончательно рухнуло. В ложе собрались все наши
@@ -205,10 +210,10 @@ export class Raznoobrazie extends React.PureComponent {
                 marginBottom="1rem"
                 noBorder
               />
-              Алексей Бородин{' '}
+              Алексей Бородин{" "}
               <a href="https://www.facebook.com/events/369138970192608/">
                 представит свою книгу 2 декабря в 18:00
-              </a>{' '}
+              </a>{" "}
               на Международной ярмарке интеллектуальной литературы Non/fictio№19
               в ЦДХ.
             </Note>
@@ -218,7 +223,7 @@ export class Raznoobrazie extends React.PureComponent {
             знак». Но я упрямый. Когда еще только начинал работать в Центральном
             детском, понимал, что даже в девять лет никакой ребенок сам себя
             ребенком не считает. Мне нравится определение словаря Даля:
-            «Молодость, младость — от младенчества до срединных лет».{' '}
+            «Молодость, младость — от младенчества до срединных лет».{" "}
           </p>
           <p>
             Не могу сказать, что день и ночь думал о переименовании театра, но
@@ -235,7 +240,7 @@ export class Raznoobrazie extends React.PureComponent {
           </p>
           <p>
             Только один человек проголосовал против. Потому что переименование
-            было логичным. На тот момент — восстановление справедливости.{' '}
+            было логичным. На тот момент — восстановление справедливости.{" "}
           </p>
           <NoteWrapper>
             <p>
@@ -251,7 +256,7 @@ export class Raznoobrazie extends React.PureComponent {
           <NoteWrapper>
             <p>
               Я перед собранием «стариков» расспрашивал. Возражала только
-              замечательная актриса Галина Дмитриевна Степанова. А молодежь —{' '}
+              замечательная актриса Галина Дмитриевна Степанова. А молодежь —{" "}
               <NotedWord>Дворжецкий</NotedWord> и Веселкин — ликовала, что театр
               перестал быть «ведомственным». Не хотелось, конечно, отказываться
               от слова «центральный», но мы заменили его на «российский». Титул
@@ -281,21 +286,21 @@ export class Raznoobrazie extends React.PureComponent {
           <p>
             Тем временем на творчество наступали социально-экономические
             процессы. Но испытания иногда выводят на совершенно новый уровень.
-            По себе знаю: чем страшнее кризис, тем активнее нужно работать.{' '}
+            По себе знаю: чем страшнее кризис, тем активнее нужно работать.{" "}
           </p>
           <p>
             Психологически мне очень помог курс, с которым мы в ГИТИСе выпустили
-            «Наш городок» Торнтона Уайлдера.{' '}
+            «Наш городок» Торнтона Уайлдера.{" "}
           </p>
           <p>
             Играли его на малой сцене, которую потом у РАМТа отобрали и
-            отрезали: снесли, когда строили новую сцену Большого театра.{' '}
+            отрезали: снесли, когда строили новую сцену Большого театра.{" "}
           </p>
           <p>
             Яновицкий любил этот курс и добыл для него (просто невероятно!)
             десять мест в штатном расписании театра. Лена Галибина, Таня
             Матюхова, Наташа Чернявская, Олег Зима, Вера Зотова работают в
-            театре до сих пор, стали отличными актерами.{' '}
+            театре до сих пор, стали отличными актерами.{" "}
           </p>
           <NoteWrapper>
             <p>
@@ -343,11 +348,11 @@ export class Raznoobrazie extends React.PureComponent {
           <p>
             За студенческим, гитисовским спектаклем «Наш городок» я поставил
             оперу «Отелло» в Московском музыкальном театре имени Станиславского
-            и Немировича-Данченко.{' '}
+            и Немировича-Данченко.{" "}
           </p>
           <NoteWrapper>
             <p>
-              Туда только что пришел директором{' '}
+              Туда только что пришел директором{" "}
               <NotedWord>Владимир Урин</NotedWord>, и они с художественным
               руководителем Александром Тителем строили репертуар. Я с РАМТом
               собирался в Ростов, прямо к поезду подъехал Урин и предложил мне
@@ -355,7 +360,7 @@ export class Raznoobrazie extends React.PureComponent {
               Кстати, по-моему, лучший учебник по режиссуре — режиссерский
               экземпляр «Отелло». Когда-то Станиславский из Италии пересылал
               сюда свои записи. Спектакля не вышло, зато остался фантастический
-              разбор.{' '}
+              разбор.{" "}
             </p>
             <Note>
               Владимир Урин возглавил Кировский ТЮЗ, когда Алексей Бородин стал
@@ -367,7 +372,7 @@ export class Raznoobrazie extends React.PureComponent {
             себе, если откажусь. И не жалею, что согласился.
           </p>
           <Attention fontColor="#a669c8">
-            <div style={{ minWidth: 200, display: 'block' }}>
+            <div style={{ minWidth: 200, display: "block" }}>
               <H1 align="center">♦</H1>
             </div>
             С октября директор РАМТа Софья Апфельбаум находится под арестом
@@ -383,8 +388,8 @@ export class Raznoobrazie extends React.PureComponent {
         <Share url={url} />
         <Other url={url} />
       </div>
-    )
+    );
   }
 }
 
-export default Raznoobrazie
+export default Raznoobrazie;
