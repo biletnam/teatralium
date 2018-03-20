@@ -1,12 +1,10 @@
-import React from 'react'
-import HomePage from '../../pages/HomePage'
-import Footer from '../Footer'
+import React from "react";
+import HomePage from "../../pages/HomePage";
 
 const PostArticle = () => (
   <div>
-    <Footer />
     <HomePage />
   </div>
-)
+);
 
-export default PostArticle
+export default PostArticle;

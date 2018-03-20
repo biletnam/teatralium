@@ -1,87 +1,86 @@
-import React from 'react'
-import styled from 'styled-components'
-import Link, { navigateTo } from 'gatsby-link'
+import React from "react";
+import styled from "styled-components";
+import Link, { navigateTo } from "gatsby-link";
 
-import { phone } from '../utils/media'
-import H1, { H1small } from '../components/H1'
-import Img from '../components/Img'
-import ImgG from '../components/ImgG'
-import Image from 'gatsby-image'
+import { phone } from "../utils/media";
+import H1, { H1small } from "../components/H1";
+import Img from "../components/Img";
+import ImgG from "../components/ImgG";
+import Image from "gatsby-image";
 
-import H3 from '../components/H3'
-import H4 from '../components/H4'
-import H2 from '../components/H2'
-import FillCover, { TopCover } from '../components/FillCover'
-import Button from '../components/Button/StyledButton'
-import Footer from '../components/Footer'
-import Social from '../components/Social'
+import H3 from "../components/H3";
+import H4 from "../components/H4";
+import H2 from "../components/H2";
+import FillCover, { TopCover } from "../components/FillCover";
+import Button from "../components/Button/StyledButton";
+import Social from "../components/Social";
 
-import mask from './images/davydova/mask.gif'
-import rus from './images/ppp.gif'
+import mask from "./images/davydova/mask.gif";
+import rus from "./images/ppp.gif";
 
-import { REVOLUTION } from '../utils/const'
+import { REVOLUTION } from "../utils/const";
 
 const StyledLink = styled(Link)`
   text-decoration: none;
   &:hover {
     cursor: hand;
   }
-`
+`;
 
 const Section = styled.section`
   max-width: calc(768px + 16px * 2);
-  margin: ${p => p.margin || '3em auto'};
-  text-align: ${p => p.align || 'auto'};
+  margin: ${p => p.margin || "3em auto"};
+  text-align: ${p => p.align || "auto"};
   margin-bottom: 0;
   padding: 0.3rem;
 
-  ${phone('margin: 0.5em auto;')};
-`
+  ${phone("margin: 0.5em auto;")};
+`;
 
 const ArticlesSection = styled(Section)`
-  padding: ${p => p.padding || '2'}rem;
-  text-align: ${p => p.align || 'center'};
-  margin: ${p => p.margin || 'auto'};
-  margin-top: ${p => p.marginTop || 'auto'};
-  font-size: ${p => p.size || 'auto'};
-  color: ${p => p.color || 'auto'};
-  background: ${p => p.background || 'none'};
-`
+  padding: ${p => p.padding || "2"}rem;
+  text-align: ${p => p.align || "center"};
+  margin: ${p => p.margin || "auto"};
+  margin-top: ${p => p.marginTop || "auto"};
+  font-size: ${p => p.size || "auto"};
+  color: ${p => p.color || "auto"};
+  background: ${p => p.background || "none"};
+`;
 
 const NoImageCover = styled.div`
   text-align: center;
   padding-bottom: 2rem;
-`
+`;
 
 const FillCoverMaxHeight = styled(FillCover)`
   ${phone(`height: 300px !important;`)};
-`
+`;
 
 const ImgWrapper = styled.div`
-  ${phone('display: none;')} padding: 2rem;
-`
+  ${phone("display: none;")} padding: 2rem;
+`;
 
 const Lead = styled.div`
-  font-size: ${p => p.size || '1.2rem'};
-  color: ${p => p.color || 'inherit'};
-  background: ${p => p.background || 'none'};
-  padding: ${p => p.padding || 'auto'};
+  font-size: ${p => p.size || "1.2rem"};
+  color: ${p => p.color || "inherit"};
+  background: ${p => p.background || "none"};
+  padding: ${p => p.padding || "auto"};
   text-transform: uppercase;
   letter-spacing: 0.1rem;
-  font-family: 'Bodoni';
-  margin-bottom: ${p => p.marginBottom || '2'}rem;
+  font-family: "Bodoni";
+  margin-bottom: ${p => p.marginBottom || "2"}rem;
   ${phone(`
     font-size: 0.9em;
     letter-spacing: normal;
     line-height: normal;
     text-transform: none;
   `)};
-`
+`;
 
 const Border = styled.div`
   border-top: solid 14px black;
   border-bottom: solid 14px black;
-`
+`;
 
 const PurpleButton = styled(Button)`
   color: white;
@@ -90,7 +89,7 @@ const PurpleButton = styled(Button)`
   &:hover {
     background: #f2639e;
   }
-`
+`;
 
 const Nespyashie = ({ sizes }) => (
   <StyledLink to="/articles/nespyashie_v_teatre/">
@@ -103,7 +102,7 @@ const Nespyashie = ({ sizes }) => (
       </ArticlesSection>
     </TopCover>
   </StyledLink>
-)
+);
 
 const Elutin = ({ sizes }) => (
   <StyledLink to="/articles/i_bratva_za_slova_otvechaet/">
@@ -118,7 +117,7 @@ const Elutin = ({ sizes }) => (
       </ArticlesSection>
     </FillCover>
   </StyledLink>
-)
+);
 
 const Sonet = ({ sizes }) => (
   <StyledLink to="/articles/net_amnezii/">
@@ -134,7 +133,7 @@ const Sonet = ({ sizes }) => (
       </ArticlesSection>
     </FillCover>
   </StyledLink>
-)
+);
 
 const Rostov = ({ sizes }) => (
   <StyledLink to="/articles/v_moskve_naprimer_analogov_net/">
@@ -150,7 +149,7 @@ const Rostov = ({ sizes }) => (
       </ArticlesSection>
     </FillCover>
   </StyledLink>
-)
+);
 
 const Sebastian = () => (
   <StyledLink to="/articles/poobshatsa_s_gospodinom_oblomovym/">
@@ -163,7 +162,7 @@ const Sebastian = () => (
       </ArticlesSection>
     </FillCover>
   </StyledLink>
-)
+);
 
 const Naryady = ({ sizes }) => (
   <StyledLink to="/articles/teatr_mody_v_sovetskoy_rossii/">
@@ -182,7 +181,7 @@ const Naryady = ({ sizes }) => (
       </ArticlesSection>
     </FillCover>
   </StyledLink>
-)
+);
 
 const Avdeev = ({ sizes }) => (
   <StyledLink to="/articles/ya_posadil_derevo/">
@@ -197,7 +196,7 @@ const Avdeev = ({ sizes }) => (
       </ArticlesSection>
     </FillCover>
   </StyledLink>
-)
+);
 
 const Abuse = ({ sizes }) => (
   <StyledLink to="/articles/abyuz_nelzya_pomilovat/">
@@ -211,7 +210,7 @@ const Abuse = ({ sizes }) => (
       </ArticlesSection>
     </FillCover>
   </StyledLink>
-)
+);
 
 const Vyrypaev = ({ sizes }) => (
   <StyledLink to="/articles/ivan_vyrypaev_protiv_kritikov/">
@@ -226,7 +225,7 @@ const Vyrypaev = ({ sizes }) => (
       </ArticlesSection>
     </FillCover>
   </StyledLink>
-)
+);
 
 const Pomosh = ({ sizes }) => (
   <StyledLink to="/articles/pomosh_zala/">
@@ -239,7 +238,7 @@ const Pomosh = ({ sizes }) => (
       </ArticlesSection>
     </FillCover>
   </StyledLink>
-)
+);
 
 const Lisovsky = ({ sizes }) => (
   <StyledLink to="/articles/playlist_komissara_vsevoloda_lisovskogo/">
@@ -254,7 +253,7 @@ const Lisovsky = ({ sizes }) => (
       </ArticlesSection>
     </FillCover>
   </StyledLink>
-)
+);
 
 const Borodin = ({ sizes }) => (
   <StyledLink to="/articles/abbreviatura_ramt/">
@@ -269,7 +268,7 @@ const Borodin = ({ sizes }) => (
       </ArticlesSection>
     </FillCover>
   </StyledLink>
-)
+);
 
 const Davydova = () => (
   <StyledLink to="/articles/velikoe_raznoobrazie/">
@@ -282,7 +281,7 @@ const Davydova = () => (
       </ArticlesSection>
     </FillCover>
   </StyledLink>
-)
+);
 
 const Annenkov = ({ sizes }) => (
   <StyledLink to="/articles/ozhila_krasnaya_stsena/">
@@ -306,7 +305,7 @@ const Annenkov = ({ sizes }) => (
       </ArticlesSection>
     </FillCover>
   </StyledLink>
-)
+);
 
 const IzVsehIskusstv = ({ sizes }) => (
   <StyledLink to="/articles/iz_vseh_iskusstv/">
@@ -326,13 +325,13 @@ const IzVsehIskusstv = ({ sizes }) => (
       </ArticlesSection>
     </FillCover>
   </StyledLink>
-)
+);
 
 const YellowButton = styled(Button)`
   color: yellow;
   border: 3px solid yellow;
   background: rgba(0, 0, 0, 0.5);
-`
+`;
 
 const Belomor = ({ sizes }) => (
   <FillCover bordered borderColor="yellow" sizes={sizes} height="700px">
@@ -342,7 +341,7 @@ const Belomor = ({ sizes }) => (
       <YellowButton to="/articles/morskoy_tsar_belomor">Читать</YellowButton>
     </ArticlesSection>
   </FillCover>
-)
+);
 
 const Bol = ({ sizes }) => (
   <ArticlesSection>
@@ -352,13 +351,13 @@ const Bol = ({ sizes }) => (
       <Button to="/articles/mne_ploho_mne_skuchno/">Читать</Button>
     </NoImageCover>
   </ArticlesSection>
-)
+);
 
 const Nadryv = ({ sizes }) => (
   <FillCoverMaxHeight sizes={sizes} height="400px">
     <ArticlesSection padding="3" size="14px" />
   </FillCoverMaxHeight>
-)
+);
 
 const NadryvSub = () => (
   <FillCover color="white" height="300px">
@@ -369,7 +368,7 @@ const NadryvSub = () => (
       <H1small>Юрий Муравицкий и Валерий Печейкин о любви и хаосе</H1small>
     </ArticlesSection>
   </FillCover>
-)
+);
 
 const Lyub = ({ sizes }) => (
   <StyledLink to="/articles/lyubimovka/">
@@ -385,7 +384,7 @@ const Lyub = ({ sizes }) => (
       </ArticlesSection>
     </FillCover>
   </StyledLink>
-)
+);
 
 const Ezhen = ({ sizes }) => (
   <FillCover color="white">
@@ -397,7 +396,7 @@ const Ezhen = ({ sizes }) => (
     </ArticlesSection>
     <ImgG sizes={sizes} />
   </FillCover>
-)
+);
 
 const Svet = ({ sizes }) => (
   <FillCover bordered sizes={sizes} height="600px">
@@ -407,12 +406,12 @@ const Svet = ({ sizes }) => (
       <PurpleButton to="/articles/svet_dalyokih_planet/">Читать</PurpleButton>
     </ArticlesSection>
   </FillCover>
-)
+);
 
 export class HomePage extends React.PureComponent {
   // eslint-disable-line react/prefer-stateless-function
   render() {
-    const { data } = this.props
+    const { data } = this.props;
     return (
       <div>
         <Nespyashie sizes={data.zritel8.sizes} />
@@ -443,11 +442,11 @@ export class HomePage extends React.PureComponent {
         <Ezhen sizes={data.ezhen.sizes} />
         <Svet sizes={data.mycene.sizes} />
       </div>
-    )
+    );
   }
 }
 
-export default HomePage
+export default HomePage;
 
 export const pageQuery = graphql`
   query TestImageQuery {
@@ -539,4 +538,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
