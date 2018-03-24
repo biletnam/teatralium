@@ -1,18 +1,18 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
-import A from '../A'
-import H1 from '../H1'
-import { phone } from '../../utils/media'
+import A from "../A";
+import H1 from "../H1";
+import { phone } from "../../utils/media";
 
 export function gradientColor({ pathname }, index) {
-  if (pathname === '/articles/ozhila_krasnaya_stsena') {
-    return '#d43f34'
+  if (pathname === "/articles/ozhila_krasnaya_stsena") {
+    return "#d43f34";
   }
   if (index === 0) {
-    return '#333399'
+    return "#333399";
   }
-  return '#ff93e8'
+  return "#ff93e8";
 }
 export const titleStyles = `
   color: black;
@@ -28,7 +28,7 @@ export const titleStyles = `
   ${phone(`
     margin-top: 1rem;
     font-size: 1rem;`)}
-}`
+}`;
 
 export const Title = styled(H1)`
   text-align: center;
@@ -41,32 +41,30 @@ export const Title = styled(H1)`
     ${p => gradientColor(p, 1)}
   );
   ${titleStyles};
-`
-
-const Wrapper = styled.div``
+`;
 
 const H = ({ pathname }) => (
   <Title pathname={pathname}>
     <span>♦</span>Театралий<span>♦</span>
   </Title>
-)
+);
 
 class Header extends React.Component {
   // eslint-disable-line react/prefer-stateless-function
   render() {
-    const { pathname } = this.props
+    const { pathname } = this.props;
     return (
-      <Wrapper>
-        {pathname === '/' ? (
+      <div>
+        {pathname === "/" ? (
           <H />
         ) : (
           <A to="/">
             <H pathname={pathname} />
           </A>
         )}
-      </Wrapper>
-    )
+      </div>
+    );
   }
 }
 
-export default Header
+export default Header;
