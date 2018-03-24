@@ -1,37 +1,37 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import Link from 'gatsby-link'
-import styled from 'styled-components'
+import React from "react";
+import Helmet from "react-helmet";
+import Link from "gatsby-link";
+import styled from "styled-components";
 
-import { phone } from '../../utils/media'
-import H1, { H1small } from '../../components/H1'
-import ArticleHelmet from '../../components/ArticleHelmet'
-import Img from '../../components/Img'
-import H4 from '../../components/H4'
-import Small from '../../components/Small'
-import Gallery from '../../components/Gallery'
-import Note, { NoteWrapper, NotedWord } from '../../components/Note'
-import Section from '../../components/Section'
-import P from '../../components/P'
-import Date from '../../components/Date'
-import Share from '../../components/Share'
-import Masks from '../../components/Masks'
-import Rest from '../../components/Rest'
-import Video from '../../components/Video'
-import Other from '../../components/Other'
+import { phone } from "../../utils/media";
+import H1, { H1small } from "../../components/H1";
+import ArticleHelmet from "../../components/ArticleHelmet";
+import Img from "../../components/Img";
+import H4 from "../../components/H4";
+import Small from "../../components/Small";
+import Gallery from "../../components/Gallery";
+import Note, { NoteWrapper, NotedWord } from "../../components/Note";
+import Section from "../../components/Section";
+import P from "../../components/P";
+import Date from "../../components/Date";
+import Share from "../../components/Share";
+import Masks from "../../components/Masks";
+import Rest from "../../components/Rest";
+import Video from "../../components/Video";
+import Other from "../../components/Other";
 
-import lead from '../images/np1.jpg'
+import lead from "../images/np1.jpg";
 
-import i2 from '../images/np2.jpg'
-import i3 from '../images/np3.jpg'
-import schwanz from '../images/schwanz.jpg'
-import collage1 from '../images/collage1.jpg'
+import i2 from "../images/np2.jpg";
+import i3 from "../images/np3.jpg";
+import schwanz from "../images/schwanz.jpg";
+import collage1 from "../images/collage1.jpg";
 
-const images = [i2, i3]
+const images = [i2, i3];
 
-const url = 'https://teatralium.com/articles/neperevodimiy_russkiy_nadryv'
+const url = "https://teatralium.com/articles/neperevodimiy_russkiy_nadryv";
 const title =
-  'Непереводимый русский надрыв: Юрий Муравицкий и Валерий Печейкин о любви и хаосе'
+  "Непереводимый русский надрыв: Юрий Муравицкий и Валерий Печейкин о любви и хаосе";
 
 const Smaller = styled.span`
   font-size: 3rem;
@@ -43,8 +43,8 @@ const Smaller = styled.span`
   padding-left: 3rem;
   text-align: left;
   display: block;
-  ${phone('font-size: 1rem;')};
-`
+  ${phone("font-size: 1rem;")};
+`;
 
 const Red = styled.span`
   background-color: dodgerBlue;
@@ -55,7 +55,7 @@ const Red = styled.span`
   padding-left: 3rem;
   text-align: left;
   display: block;
-`
+`;
 
 const Orange = styled.span`
   background-color: red;
@@ -67,7 +67,7 @@ const Orange = styled.span`
   padding-left: 3rem;
   text-align: left;
   display: block;
-`
+`;
 
 export class Bol extends React.PureComponent {
   // eslint-disable-line react/prefer-stateless-function
@@ -95,7 +95,7 @@ export class Bol extends React.PureComponent {
           <P>
             В московском Центре им. Мейерхольда, казанской лаборатории «Угол» и
             театре «18+» в Ростове-на-Дону состоялись показы русско-германской
-            постановки{' '}
+            постановки{" "}
             <a
               href="http://meyerhold.ru/vizhu-tebya-znayu-tebya-ich-sehe-dich-ich-kenne-dich/"
               target="_blank"
@@ -114,7 +114,7 @@ export class Bol extends React.PureComponent {
         </Section>
         <Img maxWidth="100%" src={lead} />
         <Section>
-          <p style={{ paddingTop: '7rem' }}>
+          <p style={{ paddingTop: "7rem" }}>
             <b>Настя Николаева</b>: Во-первых, спасибо за то, что не забыли про
             айн цвай полицай. Во-вторых, расскажите про процесс сборки тучи
             исторической информации и современных интервью в готовый спектакль.
@@ -136,7 +136,7 @@ export class Bol extends React.PureComponent {
             прочих, которые дал наш научный консультант Игорь Чубаров.
           </p>
           <p>
-            <b>НН</b>: Он нам как раз{' '}
+            <b>НН</b>: Он нам как раз{" "}
             <Link to="/articles/mne_ploho_mne_skuchno/">рассказывал</Link>, что
             ненавидит театр.
           </p>
@@ -156,7 +156,7 @@ export class Bol extends React.PureComponent {
               показался мне чрезвычайно конкретным и энциклопедичным, что для
               меня как драматурга было проблемой и могло стать в дальнейшем
               проблемой для режиссера и актеров. Нужно было с этим что-то
-              делать, поэтому наша работа в{' '}
+              делать, поэтому наша работа в{" "}
               <NotedWord>Schloß Bröllin</NotedWord> и заключалась в том, что мы
               разминали эту глину, добавляли туда воду, Аллу Пугачеву, другие
               темы и обстоятельства, взгляды.
@@ -179,7 +179,7 @@ export class Bol extends React.PureComponent {
           <Small>
             VII. Гибель Фауста из кантаты Альфреда Шнитке «История доктора
             Иоганна Фауста». Композитор пригласил Аллу Пугачеву исполнить как
-            раз это танго Мефистофеля, но не сложилось, помешала{' '}
+            раз это танго Мефистофеля, но не сложилось, помешала{" "}
             <a
               href="https://www.youtube.com/watch?v=wARES8zN0Dg"
               target="_blank"
@@ -818,8 +818,8 @@ export class Bol extends React.PureComponent {
         <Share url={url} />
         <Other url={url} />
       </div>
-    )
+    );
   }
 }
 
-export default Bol
+export default Bol;

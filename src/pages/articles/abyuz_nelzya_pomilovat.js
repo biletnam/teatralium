@@ -1,46 +1,46 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import Link from 'gatsby-link'
-import styled from 'styled-components'
+import React from "react";
+import Helmet from "react-helmet";
+import Link from "gatsby-link";
+import styled from "styled-components";
 
-import H1 from '../../components/H1'
-import ArticleHelmet from '../../components/ArticleHelmet'
-import Img from '../../components/Img'
-import H3 from '../../components/H3'
-import Gallery from '../../components/Gallery'
-import Video from '../../components/Video'
+import H1 from "../../components/H1";
+import ArticleHelmet from "../../components/ArticleHelmet";
+import Img from "../../components/Img";
+import H3 from "../../components/H3";
+import Gallery from "../../components/Gallery";
+import Video from "../../components/Video";
 
-import Note, { NoteWrapper, NotedWord } from '../../components/Note'
-import Section from '../../components/Section'
-import P from '../../components/P'
-import Date from '../../components/Date'
-import Share from '../../components/Share'
-import Other from '../../components/Other'
+import Note, { NoteWrapper, NotedWord } from "../../components/Note";
+import Section from "../../components/Section";
+import P from "../../components/P";
+import Date from "../../components/Date";
+import Share from "../../components/Share";
+import Other from "../../components/Other";
 
-import img1 from '../images/abuse/1.jpg'
-import img2 from '../images/abuse/2.jpg'
-import img3 from '../images/abuse/3.jpg'
-import img4 from '../images/abuse/4.jpg'
-import img5 from '../images/abuse/5.jpg'
-import img6 from '../images/abuse/6.jpg'
-import img7 from '../images/abuse/7.jpg'
+import img1 from "../images/abuse/1.jpg";
+import img2 from "../images/abuse/2.jpg";
+import img3 from "../images/abuse/3.jpg";
+import img4 from "../images/abuse/4.jpg";
+import img5 from "../images/abuse/5.jpg";
+import img6 from "../images/abuse/6.jpg";
+import img7 from "../images/abuse/7.jpg";
 
-import cover from '../images/abuse/cover.jpg'
-import natasha from '../images/abuse/natasha.jpg'
-import nika from '../images/abuse/nika.jpg'
+import cover from "../images/abuse/cover.jpg";
+import natasha from "../images/abuse/natasha.jpg";
+import nika from "../images/abuse/nika.jpg";
 
-const url = 'https://teatralium.com/articles/abyuz_nelzya_pomilovat'
-const title = 'Абьюз нельзя помиловать'
+const url = "https://teatralium.com/articles/abyuz_nelzya_pomilovat";
+const title = "Абьюз нельзя помиловать";
 
 const Q = styled.p`
   font-weight: bold;
   &::before {
-    content: 'Театралий: ';
+    content: "Театралий: ";
   }
-`
+`;
 
-const Z = () => <b>Зайцева:</b>
-const N = () => <b>Водвуд:</b>
+const Z = () => <b>Зайцева:</b>;
+const N = () => <b>Водвуд:</b>;
 
 export class Abuse extends React.PureComponent {
   // eslint-disable-line react/prefer-stateless-function
@@ -66,14 +66,14 @@ export class Abuse extends React.PureComponent {
             партнерами мужского пола. Несмотря на эту статистику, в России в
             2017 году был принят закон о декриминализации семейного насилия, а
             РПЦ советует жертвам молчать, так как разговор о насилии
-            пропагандирует грех. Тем ценнее недавно вышедший в ЦИМе{' '}
+            пропагандирует грех. Тем ценнее недавно вышедший в ЦИМе{" "}
             <a href="http://meyerhold.ru/abyuz/">«Абьюз»</a> — редкая постановка
             на эту сложную тему, для обсуждения которой еще даже не
             сформировался словарный запас. «Театралий» пригласил иллюстраторку и
-            создательницу{' '}
+            создательницу{" "}
             <a href="https://www.youtube.com/channel/UC2GQig8tlmGFq2Wp2tj_Jbw">
               ютьюб-канала о феминизме и жизни
-            </a>{' '}
+            </a>{" "}
             Нику Водвуд посмотреть спектакль, чтобы потом обсудить его с
             Натальей Зайцевой, которая написала к нему текст.
           </P>
@@ -225,7 +225,7 @@ export class Abuse extends React.PureComponent {
             <Note>
               <a href="https://vk.com/album-57529824_215027486">
                 Мужской взгляд
-              </a>{' '}
+              </a>{" "}
               (мэйл гейз/male gaze) — социокультурная практика отображения мира
               с позиции гетеросексуального мужчины и с целью его ублажения,
               развлечения, возбуждения и удовлетворения.
@@ -346,7 +346,7 @@ export class Abuse extends React.PureComponent {
           <p>
             <Z /> На самом деле можно самоорганизовываться и делать какие-то
             DIY-проекты. Но в тот момент я уже работала в театре и уже отдала
-            свою первую пьесу на растерзание привилегированному мужчине.{' '}
+            свою первую пьесу на растерзание привилегированному мужчине.{" "}
             <i>(Смеется.)</i> Но ты видишь человека, он живой, ты испытываешь к
             нему симпатию и так далее. К чести Вани будет сказано, что он очень
             много меня слушал и с самого начала относился ко мне как к эксперту
@@ -407,7 +407,7 @@ export class Abuse extends React.PureComponent {
               здесь?»
             </p>
             <Note>
-              Следующие показы спектакля «Абьюз»{' '}
+              Следующие показы спектакля «Абьюз»{" "}
               <a href="http://meyerhold.ru/abyuz/">пройдут в ЦИМе</a> 23, 24
               января и 6 февраля.
             </Note>
@@ -785,7 +785,7 @@ export class Abuse extends React.PureComponent {
           <Q>Оскорбление чувств немцев.</Q>
           <NoteWrapper>
             <p>
-              <Z /> Но при этом в книге Урсулы Виртц{' '}
+              <Z /> Но при этом в книге Урсулы Виртц{" "}
               <NotedWord>«Убийство души. Инцест и терапия»</NotedWord> сказано,
               что жертвы холокоста и жертвы сексуальных травм в детстве
               испытывают одинаковые симптомы и транслируют их в своих семьях.
@@ -796,10 +796,10 @@ export class Abuse extends React.PureComponent {
                 marginTop="1rem"
                 src="https://cv9.litres.ru/static/bookimages/12/63/43/12634394.bin.dir/12634394.cover_330.jpg"
               />
-              В книге{' '}
+              В книге{" "}
               <a href="https://bookz.ru/authors/ursula-virtc/ubiistvo_975/1-ubiistvo_975.html">
                 «Убийство души. Инцест и терапия»
-              </a>{' '}
+              </a>{" "}
               психотерапевт Урсула Виртц описывает терапию травмы инцеста и
               исследует причины, по которым жертвы часто снова оказываются в
               условиях эксплуатации.
@@ -835,10 +835,10 @@ export class Abuse extends React.PureComponent {
           </Q>
           <p>
             <Z /> Кстати, у моего знакомого Вани Соловья, который учится в
-            Берлине на гендерных исследованиях, есть{' '}
+            Берлине на гендерных исследованиях, есть{" "}
             <a href="https://www.youtube.com/watch?v=2Spiz_bc7Hk&feature=youtu.be">
               работа
-            </a>{' '}
+            </a>{" "}
             о том, как российские феминистки воспринимают Запад. В частности,
             они считают, что там-то уже все обговорено, а мы в России отсталые.
             Это такая колониальная проблематика, которая напоминает то, как
@@ -898,8 +898,8 @@ export class Abuse extends React.PureComponent {
         <Share url={url} />
         <Other url={url} />
       </div>
-    )
+    );
   }
 }
 
-export default Abuse
+export default Abuse;

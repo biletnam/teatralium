@@ -1,56 +1,56 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import Link from 'gatsby-link'
-import styled from 'styled-components'
+import React from "react";
+import Helmet from "react-helmet";
+import Link from "gatsby-link";
+import styled from "styled-components";
 
-import { phone } from '../../utils/media'
-import H1, { H1small } from '../../components/H1'
-import ArticleHelmet from '../../components/ArticleHelmet'
-import Img from '../../components/Img'
-import H2 from '../../components/H2'
-import H3 from '../../components/H3'
-import Video from '../../components/Video'
-import Small from '../../components/Small'
-import Note, { NoteWrapper, NotedWord } from '../../components/Note'
-import Section from '../../components/Section'
-import P from '../../components/P'
-import Date from '../../components/Date'
-import Share from '../../components/Share'
-import Other from '../../components/Other'
-import Gallery from '../../components/Gallery'
+import { phone } from "../../utils/media";
+import H1, { H1small } from "../../components/H1";
+import ArticleHelmet from "../../components/ArticleHelmet";
+import Img from "../../components/Img";
+import H2 from "../../components/H2";
+import H3 from "../../components/H3";
+import Video from "../../components/Video";
+import Small from "../../components/Small";
+import Note, { NoteWrapper, NotedWord } from "../../components/Note";
+import Section from "../../components/Section";
+import P from "../../components/P";
+import Date from "../../components/Date";
+import Share from "../../components/Share";
+import Other from "../../components/Other";
+import Gallery from "../../components/Gallery";
 
-import img1 from '../images/pomosh_zala/1.jpg'
-import img2 from '../images/pomosh_zala/2.jpg'
-import img3 from '../images/pomosh_zala/3.jpg'
-import img4 from '../images/pomosh_zala/4.jpg'
-import img5 from '../images/pomosh_zala/5.jpg'
+import img1 from "../images/pomosh_zala/1.jpg";
+import img2 from "../images/pomosh_zala/2.jpg";
+import img3 from "../images/pomosh_zala/3.jpg";
+import img4 from "../images/pomosh_zala/4.jpg";
+import img5 from "../images/pomosh_zala/5.jpg";
 
-import cover from '../images/pomosh_zala/cover.jpg'
+import cover from "../images/pomosh_zala/cover.jpg";
 
-const url = 'https://teatralium.com/articles/pomosh_zala'
+const url = "https://teatralium.com/articles/pomosh_zala";
 const title =
-  'Помощь зала: социальный театр от Боба Уилсона до Бориса Павловича'
+  "Помощь зала: социальный театр от Боба Уилсона до Бориса Павловича";
 
 const H2Styled = styled(H2)`
   font-size: 1.713em;
   margin-bottom: 3rem;
-`
+`;
 
 const H1Styled = styled(H1small)`
   margin-top: 7rem;
-`
+`;
 
 const ImgStyled = styled(Img)`
   margin-top: 5rem;
   margin-bottom: 5rem;
-`
+`;
 
 const H3Styled = styled(H3)`
   margin-top: 5rem;
   margin-bottom: 5rem;
-`
+`;
 
-const images = [img1, img2, img3]
+const images = [img1, img2, img3];
 
 export class Pomosh extends React.PureComponent {
   // eslint-disable-line react/prefer-stateless-function
@@ -74,8 +74,8 @@ export class Pomosh extends React.PureComponent {
             социальный театр от Боба Уилсона до Бориса Павловича
           </H1small>
           <P>
-            В новом социокультурном пространстве{' '}
-            <a href="https://www.facebook.com/apartment.talks/">«Квартира»</a>{' '}
+            В новом социокультурном пространстве{" "}
+            <a href="https://www.facebook.com/apartment.talks/">«Квартира»</a>{" "}
             на набережной Мойки в Петербурге 16-17 декабря состоится премьера
             спектакля «Разговоры». В постановке Бориса Павловича, основанной на
             диалогах петербургских литераторов начала прошлого века, вместе с
@@ -103,7 +103,7 @@ export class Pomosh extends React.PureComponent {
             чтобы не помереть. Боб предложил ей принять участие в его спектакле
             в роли королевы Виктории, она с большой радостью согласилась,
             переживая только о том, что ей следует говорить на сцене. Уилсон
-            сказал, что тирада про таблетки будет в самый раз.{' '}
+            сказал, что тирада про таблетки будет в самый раз.{" "}
           </p>
           <Img
             src={cover}
@@ -128,7 +128,7 @@ export class Pomosh extends React.PureComponent {
             спектакль, а для того, чтобы людям, в нем играющим, значительно
             полегчало — каждому по-своему. Это называется театр-терапия, и это,
             кажется, одно из самых перспективных направлений немедикаментозной
-            помощи при подобных проблемах.{' '}
+            помощи при подобных проблемах.{" "}
           </p>
           <H1Styled>Арт-терапия, психодрама и Театр угнетенных</H1Styled>
           <p>
@@ -213,7 +213,7 @@ export class Pomosh extends React.PureComponent {
             том, что разыгрывание ролей и пародирование является составной
             частью процесса выучивания социальных навыков в бихевиористской
             психотерапии, в социальных науках игра вообще занимает место одного
-            из важнейших способов социализации.{' '}
+            из важнейших способов социализации.{" "}
           </p>
           <p>
             Другой заметный деятель театра на стыке с психотерапией —
@@ -250,7 +250,7 @@ export class Pomosh extends React.PureComponent {
             Коротко продолжая разговор о теоретиках театротерапии и учитывая,
             что в театре до сих пор присутствует разделение на перформера и
             наблюдателя, нельзя оставить без внимания имя русско-французского
-            драматурга Николая Евреинова (1879–1953), который также{' '}
+            драматурга Николая Евреинова (1879–1953), который также{" "}
             <a href="https://moluch.ru/archive/62/9351/">разрабатывал</a> свою
             теорию лечения театром — обращенную как раз не только к
             исполнителям, но и непосредственно к публике. Театр, по его мнению,
@@ -333,7 +333,7 @@ export class Pomosh extends React.PureComponent {
             различных групп людей. Это становится особенно очевидным, если
             учесть синтез искусств в современном театре. В арт-терапии же до сих
             пор принято разделение на рисуночную терапию, музыкотерапию,
-            танцевальную и так далее.{' '}
+            танцевальную и так далее.{" "}
           </p>
           <p>
             Следует понимать, что, как и психотерапия вообще, терапия театром
@@ -355,7 +355,7 @@ export class Pomosh extends React.PureComponent {
             Проигрывая типичные социальные ситуации, люди могут разрабатывать
             техники действия в опасных ситуациях, а люди с зависимостями,
             например, имеют шанс глубже понять негативные последствия для
-            собственной личности и здоровья употребления тех или иных веществ.{' '}
+            собственной личности и здоровья употребления тех или иных веществ.{" "}
           </p>
           <p>
             Вторая группа имеет отношение к максимально широкому спектру работы,
@@ -397,14 +397,14 @@ export class Pomosh extends React.PureComponent {
             неудовлетворенные своим способом социального существования. Однако
             же наиболее часто используемой театротерапия стала в работе с людьми
             с расстройствами аутистического спектра. В этом смысле большой
-            интерес вызывает кейс, описанный в{' '}
+            интерес вызывает кейс, описанный в{" "}
             <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3055998/">
               этом исследовании
-            </a>{' '}
+            </a>{" "}
             2010 года.
           </p>
           <p>
-            Для проекта{' '}
+            Для проекта{" "}
             <a href="http://vkc.mc.vanderbilt.edu/senselab/">SENSE</a> (Social
             Emotional NeuroScience Endocrinology) Theatre была собрана группа из
             восьми детей (одна девочка и семь мальчиков) с расстройствами
@@ -439,7 +439,7 @@ export class Pomosh extends React.PureComponent {
               месяца. После этого уровень снижался, но уже незначительно.
               Улучшение в распознавании эмоций на лице было почти незаметным,
               однако память на лица в тест-группе после занятий была очевидно
-              лучше, чем вначале.{' '}
+              лучше, чем вначале.{" "}
             </p>
             <Note top="-120px">
               Спектакль покажут 16 и 17 декабря в рамках Первого фестиваля
@@ -452,7 +452,7 @@ export class Pomosh extends React.PureComponent {
             социальных навыков, нераспознавание эмоций и интонаций,
             невозможность реализации эффективного социального контакта. С 2008
             года в Кировской областной психиатрической больнице им. Бехтерева
-            работает театральная студия «Белый ветер».{' '}
+            работает театральная студия «Белый ветер».{" "}
             <a href="https://cyberleninka.ru/article/n/teatr-terapiya-kak-metod-reabilitatsii-bolnyh-shizofreniey">
               В исследовании
             </a>, в котором данная студия присутствует в качестве примера,
@@ -464,7 +464,7 @@ export class Pomosh extends React.PureComponent {
             пациентов, поэтому выяснить его изолированную эффективность не
             представляется возможным. Как уточняется в тексте работы, «основным
             критерием эффективности проводимой работы является субъективная
-            удовлетворенность пациентов».{' '}
+            удовлетворенность пациентов».{" "}
           </p>
           <p>
             В 2009 году в США была основана театральная компания Theater of War
@@ -475,10 +475,10 @@ export class Pomosh extends React.PureComponent {
             стрессового расстройства и связанных с ним жестокостью, агрессией и
             другими последствиями. Поскольку компания занимается практической
             деятельностью, а не исследовательской, о результатах говорить
-            сложно. Однако в{' '}
+            сложно. Однако в{" "}
             <a href="https://www.newyorker.com/culture/culture-desk/theatre-of-war-sophocles-message-for-american-veterans">
               тексте
-            </a>{' '}
+            </a>{" "}
             The New Yorker об этой организации люди, работающие там, приводят
             несколько примеров того, с каких глубин отчаяния эти читки доставали
             солдат. Начиная с тривиального признания молодого рядового, что
@@ -489,7 +489,7 @@ export class Pomosh extends React.PureComponent {
             Трагедийные тексты странным образом пробуждают в людях с
             посттравматическим стрессовым расстройством желание говорить о самых
             чудовищных вещах, которые их мучают. Это, конечно, не может не иметь
-            терапевтического эффекта.{' '}
+            терапевтического эффекта.{" "}
           </p>
           <Video id="Hkhm3mnJ19A" desc="«Theater of War»" />
           <p>
@@ -506,13 +506,13 @@ export class Pomosh extends React.PureComponent {
             зависимостью, жертвами сексуального насилия. Судя по доступным
             видео, с художественной точки зрения все это выглядит так же
             чудовищно, как и весь американский театр целиком, но главное ведь не
-            это, а то, что такая работа действительно помогает.{' '}
+            это, а то, что такая работа действительно помогает.{" "}
           </p>
           <p>
-            В городе Фолл-Ривер штата Массачусетс{' '}
+            В городе Фолл-Ривер штата Массачусетс{" "}
             <a href="https://www.statnews.com/2016/08/23/theater-trauma-teenagers/">
               действует
-            </a>{' '}
+            </a>{" "}
             театральная группа Trauma Drama. Она предназначена для «трудных
             подростков» с девиантным поведением или подвергшихся разным видам
             насилия: травле, сексуальному насилию, насилию в семье. Арсенал
@@ -542,7 +542,7 @@ export class Pomosh extends React.PureComponent {
             театральных компаний. Хотя бы то, что спектакль Бориса Павловича
             «Язык птиц» в прошедшем сезоне был номинирован на «Золотую маску» в
             разделе «Эксперимент», уже о многом говорит, как и вообще творческая
-            биография Павловича, который, к слову,{' '}
+            биография Павловича, который, к слову,{" "}
             <a href="http://expert.ru/russian_reporter/2017/05/ya-adept-vremeni-nevelikoj-rezhissuryi/">
               говорил
             </a>, что не очень хочет, чтобы то, что он делает, ассоциировалось с
@@ -558,8 +558,8 @@ export class Pomosh extends React.PureComponent {
         <Share url={url} />
         <Other url={url} />
       </div>
-    )
+    );
   }
 }
 
-export default Pomosh
+export default Pomosh;

@@ -1,41 +1,42 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import Link from 'gatsby-link'
-import styled, { keyframes } from 'styled-components'
+import React from "react";
+import Helmet from "react-helmet";
+import Link from "gatsby-link";
+import styled, { keyframes } from "styled-components";
 
-import { phone } from '../../utils/media'
-import H1, { H1small } from '../../components/H1'
-import ArticleHelmet from '../../components/ArticleHelmet'
-import Img from '../../components/ImgG'
-import ImgOld from '../../components/Img'
-import H2 from '../../components/H2'
-import Gallery from '../../components/Gallery'
-import Video from '../../components/Video'
+import { phone } from "../../utils/media";
+import H1, { H1small } from "../../components/H1";
+import ArticleHelmet from "../../components/ArticleHelmet";
+import Img from "../../components/ImgG";
+import ImgOld from "../../components/Img";
+import H2 from "../../components/H2";
+import Gallery from "../../components/Gallery";
+import Video from "../../components/Video";
 
-import Small from '../../components/Small'
-import Note, { NoteWrapper, NotedWord } from '../../components/Note'
-import Section from '../../components/Section'
-import P from '../../components/P'
-import Date from '../../components/Date'
-import Share from '../../components/Share'
-import Other from '../../components/Other'
+import Small from "../../components/Small";
+import Note, { NoteWrapper, NotedWord } from "../../components/Note";
+import Section from "../../components/Section";
+import P from "../../components/P";
+import Date from "../../components/Date";
+import Share from "../../components/Share";
+import Other from "../../components/Other";
 
-import kiss from '../images/kiss.gif'
+import kiss from "../images/kiss.gif";
 
-import FillCover, { TopCover } from '../../components/FillCover'
+import FillCover, { TopCover } from "../../components/FillCover";
 
-const url = 'https://teatralium.com/articles/nespyashie_v_teatre/'
-const title = 'Неспящие в театре: типы зрителей на основе индуистской философии'
+const url = "https://teatralium.com/articles/nespyashie_v_teatre/";
+const title =
+  "Неспящие в театре: типы зрителей на основе индуистской философии";
 
 const ImgKiss = () => (
   <ImgOld src={kiss} noBorder width="70px" marginTop="5rem" />
-)
+);
 
 const StyledDate = styled(Date)`
   ${phone(`
     color: grey;
   `)};
-`
+`;
 
 const H1Styled = styled(H1)`
   padding: 6rem 2rem 0;
@@ -43,20 +44,20 @@ const H1Styled = styled(H1)`
     font-size: 1em;
     line-height: normal;
   `)};
-`
+`;
 
 const H1smallStyled = styled(H1small)`
   padding: 3rem 1rem 0;
-`
+`;
 
 const ImgStyled = styled(Img)`
   max-width: 100%;
-`
+`;
 
 const H1Shadow = styled(H1)`
   text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
     1px 1px 0 #fff;
-`
+`;
 
 const List = styled.ul`
   max-width: 400px;
@@ -64,11 +65,11 @@ const List = styled.ul`
   color: purple;
   font-size: 1.2rem;
   line-height: 2;
-`
+`;
 export class Article extends React.PureComponent {
   // eslint-disable-line react/prefer-stateless-function
   render() {
-    const { data } = this.props
+    const { data } = this.props;
     return (
       <div>
         <ArticleHelmet
@@ -132,8 +133,8 @@ export class Article extends React.PureComponent {
               Кстати, с точки зрения классических «Йога-сутр» Патанджали
               невозможно понять методы концентрации и сосредоточения, то есть
               самадхи, если прежде не уяснить тройную природу «материала»
-              психики. Наверное, мы и зрителей распределили в три особых{' '}
-              <NotedWord>варны</NotedWord>, чтобы соответствовать трем{' '}
+              психики. Наверное, мы и зрителей распределили в три особых{" "}
+              <NotedWord>варны</NotedWord>, чтобы соответствовать трем{" "}
               <NotedWord>гунам</NotedWord>. Если человек спокоен,
               доброжелателен, сосредоточен, живет мыслью, терпим, пребывает в
               равновесии и мире со всеми, то он находится в состоянии саттвы.
@@ -383,7 +384,7 @@ export class Article extends React.PureComponent {
             учению Патанджали и примкнувшего к нему Гротовского, невозможно
             думать, не выйдя из состояний тамас и раджас. А то, что мы обычно
             называем мыслью, — лишь ассоциативная эмоция или готовая рассудочная
-            схема, скопированная из книжки или телепередачки.{' '}
+            схема, скопированная из книжки или телепередачки.{" "}
           </p>
 
           <p>
@@ -520,10 +521,10 @@ export class Article extends React.PureComponent {
             В том же Театре им. Станиславского параллельно с «Хлестаковым» шло
             не менее странное действо, впервые включившее московских любителей
             рок-концертов в страту театральных зрителей. Петр Мамонов сделал
-            это, сыграв череду спектаклей-концертов в течение 13 лет:{' '}
+            это, сыграв череду спектаклей-концертов в течение 13 лет:{" "}
             <a href="https://www.youtube.com/watch?v=SIHXkKj_13A">
               «Лысый брюнет»
-            </a>{' '}
+            </a>{" "}
             (1992) и «Полковнику никто не пишет» (1994) у режиссера Олега
             Бабицкого, в собственных постановках «Есть ли жизнь на Марсе?»
             (1997–2001), «Шоколадный Пушкин» (2001–2004) и «Мыши, мальчик Кай и
@@ -575,7 +576,7 @@ export class Article extends React.PureComponent {
               гносеологического подхода Эрики Фишер-Лихте. В «Эстетике
               перформативности» она изначально исходит из неявной, но
               главенствующей роли зрителей. Основными терминами этой ее работы
-              являются{' '}
+              являются{" "}
               <NotedWord>
                 автопоэтическая петля ответной реакции, эмерджентность и
                 ситуация лиминальности
@@ -655,10 +656,10 @@ export class Article extends React.PureComponent {
             <p>
               Невозможно обойти стороной Яна Фабра и его влияние на зрителей.
               Когда была возможность посмотреть непрерывную запись суточного шоу
-              «Гора Олимп»,{' '}
+              «Гора Олимп»,{" "}
               <NotedWord>
                 театроведы, наверное, объелись, сидя за экранами гаджетов.
-              </NotedWord>{' '}
+              </NotedWord>{" "}
               В кинотеатре можно лопнуть от попкорна, а дома — по-разному,
               по-дионисийски. Допустим, некоторые занялись сексом, некоторые —
               спортом. Но это типичный бодрийяровский симулякр, вещи Фабра надо
@@ -773,11 +774,11 @@ export class Article extends React.PureComponent {
         <Share url={url} />
         <Other url={url} />
       </div>
-    )
+    );
   }
 }
 
-export default Article
+export default Article;
 
 export const pageQuery = graphql`
   query ImageQuery {
@@ -847,4 +848,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

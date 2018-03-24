@@ -417,12 +417,12 @@ export class HomePage extends React.PureComponent {
         <Nespyashie sizes={data.zritel8.sizes} />
         <Elutin sizes={data.elutin.sizes} />
         <Sonet sizes={data.sonet.sizes} />
+        <Social />
         <Rostov sizes={data.rostov.sizes} />
         <Sebastian />
         <Naryady sizes={data.naryady.sizes} />
         <Avdeev sizes={data.avdeev.sizes} />
         <Abuse sizes={data.abuse.sizes} />
-        <Social />
         <Vyrypaev sizes={data.vyrypaev.sizes} />
         <Pomosh sizes={data.pomosh.sizes} />
         <Lisovsky sizes={data.lisovsky.sizes} />

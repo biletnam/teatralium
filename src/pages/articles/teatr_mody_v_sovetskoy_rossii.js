@@ -1,38 +1,38 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import Link from 'gatsby-link'
-import styled from 'styled-components'
+import React from "react";
+import Helmet from "react-helmet";
+import Link from "gatsby-link";
+import styled from "styled-components";
 
-import { phone } from '../../utils/media'
-import H1, { H1small } from '../../components/H1'
-import ArticleHelmet from '../../components/ArticleHelmet'
-import Img from '../../components/Img'
-import H2 from '../../components/H2'
-import H3 from '../../components/H3'
-import Rest from '../../components/Rest'
-import Small from '../../components/Small'
-import Section from '../../components/Section'
-import Gallery from '../../components/Gallery'
-import P from '../../components/P'
-import Date from '../../components/Date'
-import Video from '../../components/Video'
-import Share from '../../components/Share'
-import Note, { NoteWrapper, NotedWord } from '../../components/Note'
-import Other from '../../components/Other'
-import Attention from '../../components/Attention'
+import { phone } from "../../utils/media";
+import H1, { H1small } from "../../components/H1";
+import ArticleHelmet from "../../components/ArticleHelmet";
+import Img from "../../components/Img";
+import H2 from "../../components/H2";
+import H3 from "../../components/H3";
+import Rest from "../../components/Rest";
+import Small from "../../components/Small";
+import Section from "../../components/Section";
+import Gallery from "../../components/Gallery";
+import P from "../../components/P";
+import Date from "../../components/Date";
+import Video from "../../components/Video";
+import Share from "../../components/Share";
+import Note, { NoteWrapper, NotedWord } from "../../components/Note";
+import Other from "../../components/Other";
+import Attention from "../../components/Attention";
 
-import { TopCover } from '../../components/FillCover'
+import { TopCover } from "../../components/FillCover";
 
-import img43 from '../images/naryady/043.jpg'
-import img44 from '../images/naryady/044.jpg'
-import img45 from '../images/naryady/045.jpg'
-import img46 from '../images/naryady/046.jpg'
-import img47 from '../images/naryady/047.jpg'
-import img48 from '../images/naryady/048.jpg'
-import img49 from '../images/naryady/049.jpg'
+import img43 from "../images/naryady/043.jpg";
+import img44 from "../images/naryady/044.jpg";
+import img45 from "../images/naryady/045.jpg";
+import img46 from "../images/naryady/046.jpg";
+import img47 from "../images/naryady/047.jpg";
+import img48 from "../images/naryady/048.jpg";
+import img49 from "../images/naryady/049.jpg";
 
-const url = 'https://teatralium.com/articles/teatr_mody_v_sovetskoy_rossii'
-const title = 'Иммерсивный фэшн 20-х, или театр моды в советской России'
+const url = "https://teatralium.com/articles/teatr_mody_v_sovetskoy_rossii";
+const title = "Иммерсивный фэшн 20-х, или театр моды в советской России";
 
 export class TeatrMody extends React.PureComponent {
   // eslint-disable-line react/prefer-stateless-function
@@ -60,10 +60,10 @@ export class TeatrMody extends React.PureComponent {
         </TopCover>
         <Section>
           <P>
-            Действия первое и второе трехчастной{' '}
+            Действия первое и второе трехчастной{" "}
             <a href="http://electrotheatre.ru/repertoire/spectacle.htm?id=51">
               «Чайки» в Электротеатре «Станиславский»
-            </a>{' '}
+            </a>{" "}
             по форме представляют из себя показ мод. Оттолкнувшись от реплики
             «Отчего вы всегда ходите в черном?», с которой начинается пьеса,
             режиссер Юрий Муравицкий буквально надел на героев текст, характер
@@ -71,10 +71,10 @@ export class TeatrMody extends React.PureComponent {
             театрализованные показы были маркетинговым инструментом,
             привлекающим богатых модников Европы. «Театралий» возвращается к
             истокам этого явления в России и публикует отрывок из книги
-            искусствоведа Ольги Хорошиловой{' '}
+            искусствоведа Ольги Хорошиловой{" "}
             <a href="https://www.ozon.ru/context/detail/id/136897193/">
               «Молодые и красивые. Мода двадцатых годов»
-            </a>{' '}
+            </a>{" "}
             об истории московского Ателье мод, театрализованное открытие
             которого продолжило традицию, незадолго до этого начатую в Париже.
           </P>
@@ -203,7 +203,7 @@ export class TeatrMody extends React.PureComponent {
             нью-йоркском стиле, рекламы Ателье, Надежде Ламановой, Ольге
             Сеничевой или, быть может, ее заместителю и будущему мужу Борису
             Кащенко. Но идея проста и гениальна. Придумали талантливый рекламный
-            трюк с легкой ноткой скандала.{' '}
+            трюк с легкой ноткой скандала.{" "}
           </p>
           <NoteWrapper>
             <p>
@@ -334,7 +334,7 @@ export class TeatrMody extends React.PureComponent {
             Эдуард Тиссэ, в будущем известный советский оператор. В кадре
             появлялась актриса Антонина Васильевна Нежданова, медленно, с
             достоинством дамы Прекрасной Эпохи, ходила и плавно поворачивалась,
-            демонстрируя все прелести и ракурсы новых нарядов от Ателье мод.{' '}
+            демонстрируя все прелести и ракурсы новых нарядов от Ателье мод.{" "}
             <Rest />
           </p>
           <Img
@@ -347,8 +347,8 @@ export class TeatrMody extends React.PureComponent {
           images={[img47, img48]}
           maxWidth="400px"
           descs={[
-            'Артистка Антонина Васильевна Нежданова демонстрирует шляпу и ансамбль «Ателье мод» для первой «Кинохроники мод». 1923 год. Коллекция Ольги Хорошиловой',
-            'Обложка журнала «Ателье». 1923 год',
+            "Артистка Антонина Васильевна Нежданова демонстрирует шляпу и ансамбль «Ателье мод» для первой «Кинохроники мод». 1923 год. Коллекция Ольги Хорошиловой",
+            "Обложка журнала «Ателье». 1923 год"
           ]}
         />
         <Section>
@@ -369,8 +369,8 @@ export class TeatrMody extends React.PureComponent {
         <Share url={url} />
         <Other url={url} />
       </div>
-    )
+    );
   }
 }
 
-export default TeatrMody
+export default TeatrMody;

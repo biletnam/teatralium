@@ -1,50 +1,50 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import Link from 'gatsby-link'
-import styled from 'styled-components'
+import React from "react";
+import Helmet from "react-helmet";
+import Link from "gatsby-link";
+import styled from "styled-components";
 
-import { phone } from '../../utils/media'
-import H1, { H1small } from '../../components/H1'
-import ArticleHelmet from '../../components/ArticleHelmet'
-import Img from '../../components/Img'
-import H2 from '../../components/H2'
-import H3 from '../../components/H3'
-import Video from '../../components/Video'
-import Small from '../../components/Small'
-import Note, { NoteWrapper, NotedWord } from '../../components/Note'
-import Section from '../../components/Section'
-import P from '../../components/P'
-import Date from '../../components/Date'
-import Share from '../../components/Share'
-import Other from '../../components/Other'
+import { phone } from "../../utils/media";
+import H1, { H1small } from "../../components/H1";
+import ArticleHelmet from "../../components/ArticleHelmet";
+import Img from "../../components/Img";
+import H2 from "../../components/H2";
+import H3 from "../../components/H3";
+import Video from "../../components/Video";
+import Small from "../../components/Small";
+import Note, { NoteWrapper, NotedWord } from "../../components/Note";
+import Section from "../../components/Section";
+import P from "../../components/P";
+import Date from "../../components/Date";
+import Share from "../../components/Share";
+import Other from "../../components/Other";
 
-import img1 from '../images/davydova/1.jpg'
-import img2 from '../images/davydova/2.jpg'
+import img1 from "../images/davydova/1.jpg";
+import img2 from "../images/davydova/2.jpg";
 
-import mask from '../images/davydova/mask.gif'
+import mask from "../images/davydova/mask.gif";
 
-const url = 'https://teatralium.com/articles/velikoe_raznoobrazie'
+const url = "https://teatralium.com/articles/velikoe_raznoobrazie";
 const title =
-  'Великое разнообразие: Марина Давыдова о том, что нужно знать о современном театре'
+  "Великое разнообразие: Марина Давыдова о том, что нужно знать о современном театре";
 
 const H2Styled = styled(H2)`
   font-size: 1.713em;
   margin-bottom: 3rem;
-`
+`;
 
 const H1Styled = styled(H1small)`
   margin-top: 7rem;
-`
+`;
 
 const ImgStyled = styled(Img)`
   margin-top: 5rem;
   margin-bottom: 5rem;
-`
+`;
 
 const H3Styled = styled(H3)`
   margin-top: 5rem;
   margin-bottom: 5rem;
-`
+`;
 
 export class Raznoobrazie extends React.PureComponent {
   // eslint-disable-line react/prefer-stateless-function
@@ -77,10 +77,10 @@ export class Raznoobrazie extends React.PureComponent {
               Давыдова, а «Театралий» записал основные тезисы.
             </P>
             <Note top="0px">
-              Лекция «Границы театра в условиях современности» была прочитана в{' '}
+              Лекция «Границы театра в условиях современности» была прочитана в{" "}
               <a href="http://www.ncca.ru/events.text?filial=2&id=3855&date=1.12.2016">
                 ГЦСИ
-              </a>{' '}
+              </a>{" "}
               в рамках исследовательского проекта «Контексты перформативности».
             </Note>
           </NoteWrapper>
@@ -264,7 +264,7 @@ export class Raznoobrazie extends React.PureComponent {
             «Wunschkonzert» — это концерт по заявкам. Мы слышим сопровождение ее
             жизни. Заканчивается все тем, что считывается как суицид. Это уход
             из жизни от абсолютной безысходности. Не потому, что что-то
-            произошло, а потому, что не происходит абсолютно ничего.{' '}
+            произошло, а потому, что не происходит абсолютно ничего.{" "}
           </p>
           <p>
             Режиссер поставила спектакль таким образом: в зале стоял помост, на
@@ -299,7 +299,7 @@ export class Raznoobrazie extends React.PureComponent {
             называться у вас будет?» — «<a href="http://signa.dk/projects?pid=94111">
               Us Dogs
             </a>». — «Окей, а что там будет происходить?» — «Ну, там будут
-            люди-собаки».{' '}
+            люди-собаки».{" "}
           </p>
           <p>
             Итак, это три этажа заброшенного здания в центре Вены, недалеко от
@@ -315,7 +315,7 @@ export class Raznoobrazie extends React.PureComponent {
             тебе, что у некоторых из них идентичность собак. Они люди, но они
             люди-собаки. У них есть история их жизни, исходя из которой они с
             тобой беседуют. Конечно, там есть перформеры, но все остальные — это
-            волонтеры. Это жители Вены, у каждого из которых есть своя история.{' '}
+            волонтеры. Это жители Вены, у каждого из которых есть своя история.{" "}
           </p>
           <Video id="0S8BZdfLIj4" />
           <p>
@@ -356,11 +356,11 @@ export class Raznoobrazie extends React.PureComponent {
           </p>
           <NoteWrapper>
             <p>
-              В спектакле{' '}
+              В спектакле{" "}
               <a href="https://avercomasmaos.blogspot.ru/2015/03/by-heart-de-tiago-rodrigues.html">
                 «Наизусть»
-              </a>{' '}
-              Тьяго Родригеса, португальского режиссера, хедлайнера{' '}
+              </a>{" "}
+              Тьяго Родригеса, португальского режиссера, хедлайнера{" "}
               <NotedWord>многих фестивалей сейчас</NotedWord>, действие
               заключается в том, что Тьяго сначала рассказывает какую-то историю
               своей жизни, а потом приглашает зрителей из зала и разучивает с
@@ -388,8 +388,8 @@ export class Raznoobrazie extends React.PureComponent {
         <Share url={url} />
         <Other url={url} />
       </div>
-    )
+    );
   }
 }
 
-export default Raznoobrazie
+export default Raznoobrazie;

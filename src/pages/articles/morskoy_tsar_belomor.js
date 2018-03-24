@@ -1,50 +1,50 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import Link from 'gatsby-link'
-import styled, { keyframes } from 'styled-components'
+import React from "react";
+import Helmet from "react-helmet";
+import Link from "gatsby-link";
+import styled, { keyframes } from "styled-components";
 
-import { phone } from '../../utils/media'
-import H1, { H1small } from '../../components/H1'
-import ArticleHelmet from '../../components/ArticleHelmet'
-import Img from '../../components/Img'
-import H2 from '../../components/H2'
-import H3 from '../../components/H3'
-import Small from '../../components/Small'
-import Note, { NoteWrapper, NotedWord } from '../../components/Note'
-import Section from '../../components/Section'
-import P from '../../components/P'
-import Date from '../../components/Date'
-import Share from '../../components/Share'
-import Video from '../../components/Video'
-import Rest from '../../components/Rest'
-import Other from '../../components/Other'
-import Poem from '../../components/Poem'
+import { phone } from "../../utils/media";
+import H1, { H1small } from "../../components/H1";
+import ArticleHelmet from "../../components/ArticleHelmet";
+import Img from "../../components/Img";
+import H2 from "../../components/H2";
+import H3 from "../../components/H3";
+import Small from "../../components/Small";
+import Note, { NoteWrapper, NotedWord } from "../../components/Note";
+import Section from "../../components/Section";
+import P from "../../components/P";
+import Date from "../../components/Date";
+import Share from "../../components/Share";
+import Video from "../../components/Video";
+import Rest from "../../components/Rest";
+import Other from "../../components/Other";
+import Poem from "../../components/Poem";
 
-import lead from '../images/belomor/1.jpg'
+import lead from "../images/belomor/1.jpg";
 
-import img2 from '../images/belomor/2.jpg'
-import img3 from '../images/belomor/3.jpg'
-import img4 from '../images/belomor/4.jpg'
-import img5 from '../images/belomor/5.jpg'
+import img2 from "../images/belomor/2.jpg";
+import img3 from "../images/belomor/3.jpg";
+import img4 from "../images/belomor/4.jpg";
+import img5 from "../images/belomor/5.jpg";
 
-import gal1 from '../images/belomor/gal1.jpg'
-import gal2 from '../images/belomor/gal2.jpg'
-import gal3 from '../images/belomor/gal3.jpg'
+import gal1 from "../images/belomor/gal1.jpg";
+import gal2 from "../images/belomor/gal2.jpg";
+import gal3 from "../images/belomor/gal3.jpg";
 
-import idavarp from '../images/belomor/idavarp.jpg'
+import idavarp from "../images/belomor/idavarp.jpg";
 
-const shadow = `0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25)`
-const shadow2 = `0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35)`
-const shadow3 = `0 0 100px rgba(255, 255, 255, 0.1)`
-const noShadow = `text-shadow: none;`
-const op = (val = '1') => `opacity: ${val};`
+const shadow = `0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25)`;
+const shadow2 = `0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35)`;
+const shadow3 = `0 0 100px rgba(255, 255, 255, 0.1)`;
+const noShadow = `text-shadow: none;`;
+const op = (val = "1") => `opacity: ${val};`;
 
 const flicker = keyframes`
   0% {
-    ${op('0')}
+    ${op("0")}
   }
   10% {
-    ${op('0')}
+    ${op("0")}
     ${noShadow}
   }
   10.1% {
@@ -52,11 +52,11 @@ const flicker = keyframes`
     ${noShadow}
   }
   10.2% {
-    ${op('0')}
+    ${op("0")}
     ${noShadow}
   }
   20% {
-    ${op('0')}
+    ${op("0")}
     ${noShadow}
   }
   20.1% {
@@ -64,11 +64,11 @@ const flicker = keyframes`
     text-shadow: 0 0 30px rgba(255, 255, 255, 0.25);
   }
   20.6% {
-    ${op('0')}
+    ${op("0")}
     ${noShadow}
   }
   30% {
-    ${op('0')}
+    ${op("0")}
     ${noShadow}
   }
   30.1% {
@@ -80,11 +80,11 @@ const flicker = keyframes`
     text-shadow: ${shadow};
   }
   30.6% {
-    ${op('0')}
+    ${op("0")}
     ${noShadow}
   }
   45% {
-    ${op('0')}
+    ${op("0")}
     ${noShadow}
   }
   45.1% {
@@ -100,11 +100,11 @@ const flicker = keyframes`
     text-shadow: ${shadow};
   }
   55.1% {
-    ${op('0')}
+    ${op("0")}
     ${noShadow}
   }
   57% {
-    ${op('0')}
+    ${op("0")}
     ${noShadow}
   }
   57.1% {
@@ -116,11 +116,11 @@ const flicker = keyframes`
     text-shadow: ${shadow2};
   }
   60.1% {
-    ${op('0')}
+    ${op("0")}
     ${noShadow}
   }
   65% {
-    ${op('0')}
+    ${op("0")}
     ${noShadow}
   }
   65.1% {
@@ -132,11 +132,11 @@ const flicker = keyframes`
     text-shadow: ${shadow2}, ${shadow3};
   }
   75.1% {
-    ${op('0')}
+    ${op("0")}
     ${noShadow}
   }
   77% {
-    ${op('0')}
+    ${op("0")}
     ${noShadow}
   }
   77.1% {
@@ -148,11 +148,11 @@ const flicker = keyframes`
     text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.4), 0 0 110px rgba(255, 255, 255, 0.2), ${shadow3};
   }
   85.1% {
-    ${op('0')}
+    ${op("0")}
     ${noShadow}
   }
   86% {
-    ${op('0')}
+    ${op("0")}
     ${noShadow}
   }
   86.1% {
@@ -163,23 +163,23 @@ const flicker = keyframes`
     ${op()}
     text-shadow: 0 0 30px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.45), 0 0 110px rgba(255, 255, 255, 0.25), ${shadow3};
   }
-`
+`;
 
-const url = 'https://teatralium.com/articles/morskoy_tsar_belomor'
-const title = '«Морской царь Беломор»: как и кем создавались театры ГУЛАГа'
+const url = "https://teatralium.com/articles/morskoy_tsar_belomor";
+const title = "«Морской царь Беломор»: как и кем создавались театры ГУЛАГа";
 
 const H2Styled = styled(H2)`
   font-size: 1.713em;
   margin-top: 4rem;
   margin-bottom: 2rem;
-`
+`;
 
 const H1Styled = styled(H1)`
   animation: ${flicker} 5s linear;
-`
+`;
 
 const Wrapper = styled.div`
-}`
+}`;
 
 export class Belomor extends React.PureComponent {
   // eslint-disable-line react/prefer-stateless-function
@@ -214,10 +214,10 @@ export class Belomor extends React.PureComponent {
           <NoteWrapper>
             <p>
               Чтобы написать этот материал, автору пришлось прочитать много
-              страшных текстов, но один из них страшнее прочих —{' '}
+              страшных текстов, но один из них страшнее прочих —{" "}
               <a href="http://www.kolyma.ru/magadan/index.php?newsid=387">
                 воспоминания
-              </a>{' '}
+              </a>{" "}
               Иды Гекдишман, в первом замужестве Зискиной, во втором —
               Варпаховской. Родилась в 1911 году в Одессе, в сентябре
               1937&#8209;го забрали мужа Давида, обвиненного в связи с
@@ -228,7 +228,7 @@ export class Belomor extends React.PureComponent {
               колымский; наконец — в 1943&#8209;м — в Магадан, где Зискина
               становится членом культбригады. Главный эпизод ее тогдашней
               биографии — одновременно самое страшное место воспоминаний: в
-              1944&#8209;м, после знакомства с будущим мужем{' '}
+              1944&#8209;м, после знакомства с будущим мужем{" "}
               <NotedWord>Леонидом Варпаховским</NotedWord>, тоже зэком, она
               начинает репетиции партии Виолетты из «Травиаты», которую решили
               поставить на сцене драматического театра Управления
@@ -263,7 +263,7 @@ export class Belomor extends React.PureComponent {
               магаданского театра, созданного и поддерживаемого заключенными,
               которые пели, сами шили себе костюмы и выстраивали декорации.
               Варпаховская пишет: «Когда обнаружилось, что у нас не хватает
-              мужских голосов для хора, Л. В. обратился к{' '}
+              мужских голосов для хора, Л. В. обратился к{" "}
               <NotedWord>Александре Романовне</NotedWord>. Она его утешила: „Не
               волнуйся, Варпаховский, к нам вот-вот прибывает из Томска
               эстонская капелла в полном составе“». В августе 1944&#8209;го в
@@ -284,7 +284,7 @@ export class Belomor extends React.PureComponent {
             процессуальное и перформативное. Ну, в самом деле, не рисовать же
             там картины, чтоб вешать их потом на стены барака, не писать же
             партитуры. Почти нулевые возможности архивирования делают возможным
-            только арт-деятельность, осуществляющуюся здесь и сейчас.{' '}
+            только арт-деятельность, осуществляющуюся здесь и сейчас.{" "}
           </p>
           <H2Styled>Культурно-воспитательный отдел</H2Styled>
           <p>
@@ -320,7 +320,7 @@ export class Belomor extends React.PureComponent {
             это только одна из причин. Среди прочего кадры, ответственные за
             обеспечение культурной деятельности в местах лишения свободы, были
             малообразованны для поставленных целей, хотя чаще всего их просто
-            критически не хватало количественно.{' '}
+            критически не хватало количественно.{" "}
           </p>
           <p>
             Во-вторых, заключенные, которые принимали участие в художественных
@@ -409,7 +409,7 @@ export class Belomor extends React.PureComponent {
             начальники лагерей набирали труппы и хоры из заключенных и даже
             ставили их не только на исполнительские позиции в гражданских
             театрах: некоторые зэки, например, режиссировали постановки,
-            руководили кружками и занимались преподавательской деятельностью.{' '}
+            руководили кружками и занимались преподавательской деятельностью.{" "}
           </p>
           <H2Styled>«Актеры остаются актерами пока живы»</H2Styled>
           <p>
@@ -459,11 +459,11 @@ export class Belomor extends React.PureComponent {
             <p>
               Иначе произошло с первой мужской ролью. Заключенный Рутковский
               много раз в прошлом играл красавца Эдвина. Но годы в лагере взяли
-              свое. Он уже не подходил на амплуа героя-любовника. Мордвинов{' '}
+              свое. Он уже не подходил на амплуа героя-любовника. Мордвинов{" "}
               <i>
                 (Борис Аркадьевич, театральный режиссер, осужденный за шпионаж.
                 — Прим. ред.)
-              </i>{' '}
+              </i>{" "}
               поручил эту роль зэку Дейнеке, обладателю сочного баса-баритона,
               сохранившему и фигуру, и внешность. Но Дейнека был певцом, а не
               актером. Мордвинов решил сделать из него Эдвина и добился этого,
@@ -488,7 +488,7 @@ export class Belomor extends React.PureComponent {
               пользовались неизменным успехом».
             </p>
             <Small>
-              Из книги{' '}
+              Из книги{" "}
               <a href="https://www.sakharov-center.ru/asfcd/auth/?t=page&num=11048">
                 Котляр Э. «Фауст» в ИТЛ // Театр ГУЛАГа / сост. М. М. Кораллов.
                 — М.: «Мемориал», 1995.
@@ -521,7 +521,7 @@ export class Belomor extends React.PureComponent {
           <p>
             <a href="http://dkmurmashi.ru/o-nas/istoriya-doma-kultury-energetik/apage,5/">
               Из воспоминаний
-            </a>{' '}
+            </a>{" "}
             Вацлава Дворжецкого:
           </p>
           <blockquote>
@@ -558,10 +558,10 @@ export class Belomor extends React.PureComponent {
             однако же тематика и качество тех постановок были обусловлены
             людьми, которые этот театр делали: попросту говоря, каторжанами
             совсем из народа. Этот театр принято называть тюремно-фольклорным.
-            Театровед Наталья Кузякина в своем{' '}
+            Театровед Наталья Кузякина в своем{" "}
             <a href="http://www.ruthenia.ru/folktee/CYBERSTOL/GULAG/Kuzyakina.html">
               исследовании
-            </a>{' '}
+            </a>{" "}
             пересказывает зафиксированное криминологом Михаилом Гернетом
             описание одного из таких зрелищ, которое к концу приобретало почти
             оргиастический характер. Во второй же трети XX века лагеря
@@ -602,7 +602,7 @@ export class Belomor extends React.PureComponent {
           </blockquote>
           <p>
             О разделении мужского контингента и женского писатель Геннадий
-            Андреев (Хомяков) вспоминал:{' '}
+            Андреев (Хомяков) вспоминал:{" "}
           </p>
           <blockquote>
             <p>
@@ -688,7 +688,7 @@ export class Belomor extends React.PureComponent {
               1989&#8209;го.
             </p>
             <Note>
-              Список репрессированных театральных деятелей есть на сайте проекта{' '}
+              Список репрессированных театральных деятелей есть на сайте проекта{" "}
               <a href="https://bessmertnybarak.ru/article/teatr_gulaga/">
                 «Бессмертный барак».
               </a>
@@ -712,7 +712,7 @@ export class Belomor extends React.PureComponent {
             Островского. На сайте театра в верхнем меню есть пункт «История»,
             внутри которого, кроме пунктов «Архив спектаклей» и «Люди театра»,
             есть еще «История театра». Кликая на этот пункт, попадаешь на ошибку
-            404 — «Page not found».{' '}
+            404 — «Page not found».{" "}
           </p>
           <p>
             Воркутинский драматический театр появился в 1943 году (то есть
@@ -739,7 +739,7 @@ export class Belomor extends React.PureComponent {
             из заключенных. Почему пример занятный? В разделе «Жанр и репертуар»
             читаем: «Основной жанр театра — современная сатира в жесткой
             гротескной форме, для театра очень важна тема борьбы современного
-            человека с различными проявлениями несвободы».{' '}
+            человека с различными проявлениями несвободы».{" "}
           </p>
           <p>
             У Иды и Леонида Варпаховских, которые ставили «Травиату» в
@@ -766,8 +766,8 @@ export class Belomor extends React.PureComponent {
         <Share url={url} />
         <Other url={url} />
       </Wrapper>
-    )
+    );
   }
 }
 
-export default Belomor
+export default Belomor;

@@ -1,40 +1,40 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import Link from 'gatsby-link'
-import styled, { keyframes } from 'styled-components'
+import React from "react";
+import Helmet from "react-helmet";
+import Link from "gatsby-link";
+import styled, { keyframes } from "styled-components";
 
-import Note, { NoteWrapper, NotedWord } from '../../components/Note'
+import Note, { NoteWrapper, NotedWord } from "../../components/Note";
 
-import { phone } from '../../utils/media'
-import { REVOLUTION } from '../../utils/const'
-import H1, { H1small } from '../../components/H1'
-import ArticleHelmet from '../../components/ArticleHelmet'
-import Img from '../../components/Img'
-import H2 from '../../components/H2'
-import H3 from '../../components/H3'
-import H4 from '../../components/H4'
-import Small from '../../components/Small'
-import Section from '../../components/Section'
-import P from '../../components/P'
-import Date from '../../components/Date'
-import Share from '../../components/Share'
-import Other from '../../components/Other'
+import { phone } from "../../utils/media";
+import { REVOLUTION } from "../../utils/const";
+import H1, { H1small } from "../../components/H1";
+import ArticleHelmet from "../../components/ArticleHelmet";
+import Img from "../../components/Img";
+import H2 from "../../components/H2";
+import H3 from "../../components/H3";
+import H4 from "../../components/H4";
+import Small from "../../components/Small";
+import Section from "../../components/Section";
+import P from "../../components/P";
+import Date from "../../components/Date";
+import Share from "../../components/Share";
+import Other from "../../components/Other";
 
-import img1 from '../images/vyrypaev/1.jpg'
-import img2 from '../images/vyrypaev/2.jpg'
-import img3 from '../images/vyrypaev/3.jpg'
-import img4 from '../images/vyrypaev/4.jpg'
-import img5 from '../images/vyrypaev/5.jpg'
-import img6 from '../images/vyrypaev/6.jpg'
-import gif from '../images/vyrypaev/gif.gif'
+import img1 from "../images/vyrypaev/1.jpg";
+import img2 from "../images/vyrypaev/2.jpg";
+import img3 from "../images/vyrypaev/3.jpg";
+import img4 from "../images/vyrypaev/4.jpg";
+import img5 from "../images/vyrypaev/5.jpg";
+import img6 from "../images/vyrypaev/6.jpg";
+import gif from "../images/vyrypaev/gif.gif";
 
-const url = 'https://teatralium.com/articles/ivan_vyrypaev_protiv_kritikov'
+const url = "https://teatralium.com/articles/ivan_vyrypaev_protiv_kritikov";
 const title =
-  '«Я абсолютно против критиков сегодня»: Иван Вырыпаев о театре без микрофонов и рецензий'
+  "«Я абсолютно против критиков сегодня»: Иван Вырыпаев о театре без микрофонов и рецензий";
 
 const Q = styled.p`
   font-weight: bold;
-`
+`;
 
 export class Vyrypaev extends React.PureComponent {
   // eslint-disable-line react/prefer-stateless-function
@@ -72,7 +72,7 @@ export class Vyrypaev extends React.PureComponent {
             Выходит, я уже больше десяти лет связан с этой страной; можно
             сказать, что местная публика считает меня своим. Зачастую о том, что
             я русский, вспоминают, только когда я ставлю здесь какую-нибудь
-            русскую пьесу вроде «Дяди Вани» или «Бориса Годунова»{' '}
+            русскую пьесу вроде «Дяди Вани» или «Бориса Годунова»{" "}
             <i>
               (имеется в виду опера, поставленная в городе Познань в 2015 году.
               — Прим. ред.).
@@ -97,7 +97,7 @@ export class Vyrypaev extends React.PureComponent {
             так, потому что в России есть примеры успешных частных театров вроде
             Гришковца или «Практики». Последняя зарабатывает достаточно много,
             несмотря на маленький зал. При этом там играют то, что считают
-            нужным.{' '}
+            нужным.{" "}
             <i>
               (Театр «Практика» был учрежден Комитетом по культуре города
               Москвы; у театра несколько источников финансирования: 30 % —
@@ -225,7 +225,7 @@ export class Vyrypaev extends React.PureComponent {
             абсолютно против критиков сегодня. Мне кажется совершенно
             недопустимым то, что какие-то люди приходят, смотрят один спектакль
             и потом на основании этого пишут рецензию, которая потом имеет
-            влияние на продажи билетов. Я считаю, что они точно должны их{' '}
+            влияние на продажи билетов. Я считаю, что они точно должны их{" "}
             <i>(билеты. — Прим. ред.)</i> покупать, а не приходить бесплатно.
             Театральная режиссура должна когда-нибудь уже выступить против и
             сказать, что это большое неуважение к художнику. Тем более что, к
@@ -271,7 +271,7 @@ export class Vyrypaev extends React.PureComponent {
           <p>
             — Нет. Я ни против интернета, ни за, мне просто жаль своего времени
             и энергии. Интернет засасывает: сидишь читаешь пост своего коллеги
-            или сам какую-нибудь глупость пишешь. У нашей компании есть{' '}
+            или сам какую-нибудь глупость пишешь. У нашей компании есть{" "}
             <a href="https://www.facebook.com/WEDAprodukcje">
               страница в фейсбуке
             </a>, где в случае необходимости можно видеть все реакции и
@@ -299,7 +299,7 @@ export class Vyrypaev extends React.PureComponent {
               линию»?
             </Q>
             <Note top="-25px">
-              Ближайший показ спектакля —{' '}
+              Ближайший показ спектакля —{" "}
               <a href="http://meyerhold.ru/solnechnaya-liniya/">9 января</a>.
             </Note>
           </NoteWrapper>
@@ -333,8 +333,8 @@ export class Vyrypaev extends React.PureComponent {
         <Share url={url} />
         <Other url={url} />
       </div>
-    )
+    );
   }
 }
 
-export default Vyrypaev
+export default Vyrypaev;
