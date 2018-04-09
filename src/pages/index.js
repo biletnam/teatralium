@@ -15,7 +15,9 @@ import FillCover, { TopCover } from "../components/FillCover";
 import Button from "../components/Button/StyledButton";
 import Social from "../components/Social";
 
-import { GovnoCover } from "./articles/aktyora_nado_mordoy_v_govno.js";
+import { GovnoCover } from "./articles/aktyora_nado_mordoy_v_govno";
+
+import { BlokCover } from "./articles/aktyory_truppy_na_otlyote";
 
 import mask from "./images/davydova/mask.gif";
 import rus from "./images/ppp.gif";
@@ -424,6 +426,9 @@ export class HomePage extends React.PureComponent {
     const { data } = this.props;
     return (
       <div>
+        <StyledLink to="/articles/aktyory_truppy_na_otlyote/">
+          <BlokCover />
+        </StyledLink>
         <StyledLink to="/articles/aktyora_nado_mordoy_v_govno/">
           <GovnoStyled sizes={data.govno.sizes} />
         </StyledLink>

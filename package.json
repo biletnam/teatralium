@@ -34,7 +34,8 @@
     "deploy:prod": "ssh trr 'cp -r /var/www/admin/* /var/www/tr/'",
     "deploy:dev": "yarn clear && gatsby build && rsync -r public/ tr:/var/www/deploy_tr && ssh trr 'rm -rf /var/www/admin/*; mv /var/www/deploy_tr/* /var/www/admin'",
     "d": "yarn deploy:dev",
-    "p": "yarn deploy:prod"
+    "p": "yarn deploy:prod",
+    "deploy": "yarn d && yarn p"
   },
   "devDependencies": {
     "eslint-config-airbnb": "^16.1.0",
