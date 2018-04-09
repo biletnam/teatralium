@@ -173,7 +173,7 @@ export class Abuse extends React.PureComponent {
           </p>
         </Section>
         <Gallery images={[img1, img2]} />
-        <Section>
+        <Section withHomepageLink>
           <Img src={img3} marginTop="1rem" desc="Фото: Екатерина Краева" />
           <p>
             <N /> Как раз про это я хотела спросить. Несколько раз мне

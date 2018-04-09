@@ -63,7 +63,7 @@ export class Derevo extends React.PureComponent {
             </H1small>
           </Section>
         </TopCover>
-        <Section>
+        <Section withHomepageLink>
           <P>
             «За музыку в спектакле отвечает» — от этой фразы, которую критики
             очень любят использовать в рецензиях, у нормальных читателей

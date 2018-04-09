@@ -33,7 +33,7 @@ export class Bol extends React.PureComponent {
           description="Кто еще согласен со Львом Николаичем?"
           title={`${title} | Театралий`}
         />
-        <Section>
+        <Section withHomepageLink>
           <Date>
             23 октября 2017, текст:&nbsp;<b>Настя Николаева</b>, иллюстрации:{" "}
             <b>Алексей Сухов</b>

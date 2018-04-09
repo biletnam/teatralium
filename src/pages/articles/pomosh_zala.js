@@ -322,7 +322,7 @@ export class Pomosh extends React.PureComponent {
           title="robertwilson.com/lqv"
           url="http://robertwilson.com/lqv"
         />
-        <Section>
+        <Section withHomepageLink>
           <p>
             Как правило, терапевтические театры-студии и студии драматерапии
             являются носителями стереотипа о театре как о пространстве диалога,

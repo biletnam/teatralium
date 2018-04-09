@@ -1,8 +1,8 @@
-import React from 'react'
-import styled from 'styled-components'
-import { phone } from '../../utils/media'
+import React from "react";
+import styled from "styled-components";
+import { phone } from "../../utils/media";
 
-import Section from '../Section'
+import Section from "../Section";
 
 const Social = styled(Section)`
   text-transform: uppercase;
@@ -18,8 +18,8 @@ const Social = styled(Section)`
     color: purple;
   }
 
-  ${phone('flex-direction: column;')};
-`
+  ${phone("flex-direction: column;")};
+`;
 
 const S = () => (
   <Social>
@@ -29,10 +29,10 @@ const S = () => (
     <a href="https://www.facebook.com/teatralium/" target="_blank">
       Facebook
     </a>
-    <a href="https://telegram.me/theatre_msk" target="_blank">
+    <a href="https://t.me/teatralium" target="_blank">
       Telegram
     </a>
   </Social>
-)
+);
 
-export default S
+export default S;

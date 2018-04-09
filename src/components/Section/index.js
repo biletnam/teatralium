@@ -1,4 +1,6 @@
+import React from "react";
 import styled, { keyframes } from "styled-components";
+import HomepageLink from "../HomepageLink";
 
 import { phone } from "../../utils/media";
 
@@ -7,7 +9,7 @@ const fadein = keyframes`
   to   { opacity: 1; }
 `;
 
-const Section = styled.section`
+const StyledSection = styled.section`
   max-width: calc(752px + 16px * 2);
   margin: ${p => p.margin || "3em auto"};
   margin-bottom: 0;
@@ -35,4 +37,10 @@ const Section = styled.section`
   ${phone("margin: 0 auto; padding: 1rem;")};
 `;
 
+const Section = props => (
+  <StyledSection {...props}>
+    {props.children}
+    {props.withHomepageLink && <HomepageLink />}
+  </StyledSection>
+);
 export default Section;

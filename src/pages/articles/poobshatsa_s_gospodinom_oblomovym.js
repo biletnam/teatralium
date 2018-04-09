@@ -81,7 +81,7 @@ export class Abuse extends React.PureComponent {
             </Date>
           </Section>
         </TopCover>
-        <Section>
+        <Section withHomepageLink>
           <NoteWrapper>
             <P>
               В январском номере немецкого журнала Theater der Zeit бывший

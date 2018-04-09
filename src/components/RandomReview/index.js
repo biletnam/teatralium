@@ -1,8 +1,11 @@
+import React from "react";
 import styled from "styled-components";
 import { phone } from "../../utils/media";
-import FillCover from "../FillCover";
+// import FillCover from "../FillCover";
 
-const Attention = styled(FillCover)`
+const Review = props => <div>{props.children}</div>;
+
+const RandomReviewStyled = styled(Review)`
   margin: 5rem 0;
   padding: 2rem;
   font-size: 1.5rem;
@@ -10,4 +13,4 @@ const Attention = styled(FillCover)`
   ${phone(`font-size: 1.2rem; margin-top: 2rem;`)};
 `;
 
-export default Attention;
+export default RandomReviewStyled;

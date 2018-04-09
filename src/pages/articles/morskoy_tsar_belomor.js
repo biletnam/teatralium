@@ -210,7 +210,7 @@ export class Belomor extends React.PureComponent {
         <Small outside>
           Ансамбль баянистов при КВЧ. Инта, Коми АССР. Фото начала 1950&#8209;х
         </Small>
-        <Section>
+        <Section withHomepageLink>
           <NoteWrapper>
             <p>
               Чтобы написать этот материал, автору пришлось прочитать много

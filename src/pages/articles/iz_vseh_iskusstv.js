@@ -84,7 +84,7 @@ export class Bol extends React.PureComponent {
           </P>
         </Section>
         <Img maxWidth="100%" src={cover} noBorder />
-        <Section>
+        <Section withHomepageLink>
           <H1Styled center>Варлам Шаламов</H1Styled>
           <H2Styled>
             «Мир меняется невероятно медленно и, может быть, в основе своей не

@@ -86,7 +86,7 @@ export class Article extends React.PureComponent {
             </Date>
           </Section>
         </TopCover>
-        <Section>
+        <Section withHomepageLink>
           <P>
             «18+» носит гордое звание первого независимого театра современной
             драматургии в Ростове-на-Дону. Городу безусловно повезло: частных

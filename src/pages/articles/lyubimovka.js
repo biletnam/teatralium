@@ -58,7 +58,7 @@ export class Lyubimovka extends React.PureComponent {
         </Section>
         <Img maxWidth="100%" src={lub} />
         <Small outside>Фото: Андрей Хиловский</Small>
-        <Section paddingTop="2rem">
+        <Section paddingTop="2rem" withHomepageLink>
           <p>
             Каждый год мы получаем по несколько сотен текстов – наши отборщики,
             а это критики, драматурги, режиссеры выбрали для фестиваля 2017 года

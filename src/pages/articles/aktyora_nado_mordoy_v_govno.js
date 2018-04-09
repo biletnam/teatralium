@@ -5,10 +5,11 @@ import styled, { keyframes } from "styled-components";
 
 import { phone } from "../../utils/media";
 import H1, { H1small } from "../../components/H1";
-import H3 from "../../components/H3";
 import ArticleHelmet from "../../components/ArticleHelmet";
 import Img from "../../components/ImgG";
+import ImgOld from "../../components/Img";
 import H2 from "../../components/H2";
+import Attention from "../../components/Attention";
 import Gallery from "../../components/Gallery";
 import Video from "../../components/Video";
 
@@ -18,38 +19,105 @@ import Section from "../../components/Section";
 import P from "../../components/P";
 import Date from "../../components/Date";
 import Share from "../../components/Share";
+import HomepageLink from "../../components/HomepageLink";
 import Other from "../../components/Other";
 
 import FillCover, { TopCover } from "../../components/FillCover";
 
+import zipper from "../images/govno/zipper.svg";
+import shut from "../images/govno/shut.svg";
+
 const url = "https://teatralium.com/articles/aktyora_nado_mordoy_v_govno/";
-const title =
-  "Неспящие в театре: типы зрителей на основе индуистской философии";
+const title = "«Актера надо мордой в говно, и тогда он начинает жечь»";
 
 const StyledDate = styled(Date)`
   color: white;
+  padding: 0;
   ${phone(`
     color: grey;
   `)};
 `;
 
-const H1Styled = styled(H1)`
-  padding: 6rem 2rem 0;
-  ${phone(`
-    font-size: 1em;
-    line-height: normal;
-  `)};
-`;
-
 const H1Shadow = styled(H1)`
+  line-height: 1.5;
   -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
   text-shadow: -10px 0 rgba(0, 255, 255, 0.4), 10px 0 rgba(255, 0, 255, 0.4);
+`;
+
+const Brown = styled.span`
+  color: brown;
 `;
 
 const Red = styled.span`
   color: red;
 `;
+const Bg = styled.span`
+  background: purple;
+  padding: 0.1rem;
+`;
 
+const H = styled(H1Shadow)`
+  font-size: 2rem !important;
+  line-height: 1.5;
+  padding: 4rem 1rem 0;
+  ${phone(`font-size: 1.2rem !important;`)};
+`;
+
+const Author = styled.div`
+  font-style: italic;
+  padding-top: 1rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: gray;
+`;
+
+const Wrapper = styled.div`
+  margin: 6rem 0 0;
+  ${phone(`margin: 2rem 0;`)};
+`;
+
+const Person = props => (
+  <Wrapper>
+    <FillCover color="lavender">
+      <Section>
+        <H color="black">{props.quote}</H>
+        {props.sizes && (
+          <Img sizes={props.sizes} round maxWidth="200px" marginBottom="1rem" />
+        )}
+        {props.svg && (
+          <ImgOld
+            src={props.svg}
+            maxWidth="200px"
+            noBorder
+            marginBottom="1rem"
+          />
+        )}
+        <Author>{props.name}</Author>
+      </Section>
+    </FillCover>
+  </Wrapper>
+);
+
+export const GovnoCover = ({ sizes, ...props }) => (
+  <TopCover sizes={sizes} bordered borderColor="purple" {...props}>
+    <Section margin="0" align="right">
+      <H1Shadow size="3.2rem" color="purple">
+        «Актера надо мордой в <Brown>говно</Brown>, и тогда он начинает{" "}
+        <Red>жечь</Red>»
+      </H1Shadow>
+      <H1small center color="white">
+        <Bg>
+          Обесценивание, унижение и домогательства в театральных вузах страны
+        </Bg>
+      </H1small>
+      <StyledDate>
+        24 марта 2018, текст:&nbsp;<b>Антон Хитров</b>, иллюстрация:&nbsp;<b>
+          Алексей Сухов
+        </b>
+      </StyledDate>
+    </Section>
+  </TopCover>
+);
 export class Article extends React.PureComponent {
   // eslint-disable-line react/prefer-stateless-function
   render() {
@@ -59,39 +127,27 @@ export class Article extends React.PureComponent {
         <ArticleHelmet
           url={url}
           image={data.cover.sizes.src}
-          description="Дмитрий Лисин проецирует древнеиндийские варны на зрительный зал."
+          description="Обесценивание, унижение и домогательства в театральных вузах страны."
           title={`${title} | Театралий`}
         />
-        <TopCover sizes={data.cover.sizes}>
-          <Section margin="0">
-            <H1Shadow size="4rem" color="purple">
-              «Актера надо мордой в говно, и тогда он начинает <Red>жечь</Red>»
-            </H1Shadow>
-            <H1small center color="brown">
-              Обесценивание, унижение и домогательства в театральных вузах
-              страны
-            </H1small>
-            <StyledDate>
-              24 марта 2018, текст:&nbsp;<b>Антон Хитров</b>, иллюстрация:&nbsp;<b
-              >
-                Алексей Сухов
-              </b>
-            </StyledDate>
-          </Section>
-        </TopCover>
-        <Section>
+        <GovnoCover sizes={data.cover.sizes} />
+        <Section withHomepageLink>
           <P>
             Споры о театральной педагогике чаще посвящены тому, как учебная
             программа высших заведений соотносится с сегодняшним театром
             (спойлер: обычно туго). Но мало кого из профессионалов заботит, как
             образование влияет на психику будущих артистов, режиссеров и
-            художников. Бывшие студентки театральных вузов России и Белоруссии
-            рассказали Антону Хитрову, почему творческое образование обернулось
-            для них травматичным опытом.
+            художников. Бывшие студентки и студент театральных вузов России и
+            Белоруссии рассказали Антону Хитрову, почему творческое образование
+            обернулось для них травматичным опытом.
           </P>
 
-          <H3>«Мне понадобился не один год, чтобы собрать себя заново»</H3>
-          <H1small>Екатерина Строгова, актриса, окончила ГИТИС</H1small>
+          <Person
+            name="Екатерина Строгова, актриса, окончила ГИТИС"
+            quote="«Мне понадобился не один год, чтобы собрать себя заново»"
+            sizes={data.govno1.sizes}
+          />
+
           <p>
             «Я вышла из ГИТИСа неуверенным в себе человеком, страшно боялась
             сцены, потому что меня приучили к мысли: что бы я ни делала — все
@@ -170,14 +226,13 @@ export class Article extends React.PureComponent {
             все равно, пройду я его или нет. Я больше не пытаюсь казаться
             хорошей, удобной и правильной, но шла я к этому долго».
           </p>
-          <H3>
-            «Если ты придешь на просмотр в красном платье или розовой мини-юбке,
-            он пройдет не так успешно»
-          </H3>
-          <H1small>
-            Александра (имя изменено по просьбе героини), художница по костюмам,
-            окончила Школу-студию МХАТ
-          </H1small>
+          <Person
+            name="Александра (имя изменено по просьбе героини), художница по костюмам,
+            окончила Школу-студию МХАТ"
+            quote="«Если ты придешь на просмотр в красном платье или розовой мини-юбке,
+            он пройдет не так успешно»"
+            svg={zipper}
+          />
           <p>
             «У нас на кафедре сценического костюма был эстетический
             тоталитаризм. Мы работали только с историческим костюмом: никаких
@@ -255,10 +310,11 @@ export class Article extends React.PureComponent {
             говорить: „Вот здесь я не понимаю, как это работает“. За год
             магистратуры я так и не узнала, какие у него предпочтения».
           </p>
-          <H3>«Это было похлеще раунда Гнойного против Оксимирона»</H3>
-          <H1small>
-            Олег Кармунин, журналист, окончил театроведческий факультет СПбГАТИ
-          </H1small>
+          <Person
+            name="Олег Кармунин, журналист, окончил театроведческий факультет СПбГАТИ"
+            quote="«Это было похлеще раунда Гнойного против Оксимирона»"
+            sizes={data.govno2.sizes}
+          />
           <p>
             «Все было нормально до тех пор, пока я не начал публиковаться. С
             этого момента преподаватели стали пытаться меня всячески затроллить:
@@ -270,11 +326,13 @@ export class Article extends React.PureComponent {
             газеты „Известия“. Казалось бы, что тут такого? Но любимый вуз
             почему-то воспринимал мою деятельность как осквернение профессии. По
             мнению преподавателей, профессия — это когда ты пишешь рецензию на
-            спектакль длиной в авторский лист (40 000 знаков, то есть примерно в
-            два раза больше, чем этот материал. — Прим. авт.). Они не уточняли,
-            что такой текст можно в лучшем случае распечатать и засунуть себе в
-            задницу, потому что пять тысяч знаков — это максимум, который нужен
-            сегодня для описания чего угодно.
+            спектакль длиной в авторский лист{" "}
+            <i>
+              (40 000 знаков, то есть примерно в два раза больше, чем этот
+              материал. — Прим. авт.)
+            </i>. Они не уточняли, что такой текст можно в лучшем случае
+            распечатать и засунуть себе в задницу, потому что пять тысяч знаков
+            — это максимум, который нужен сегодня для описания чего угодно.
           </p>
           <p>
             Самый запоминающийся случай был на уроке стилистики. Педагог
@@ -294,14 +352,13 @@ export class Article extends React.PureComponent {
             факультет — вредное место. Здесь калечат психику детей и превращают
             студентов в конченых лузеров».
           </p>
-          <H3>
-            «Мы в Малом театре делаем великое искусство, а все вокруг — х****»
-          </H3>
-          <H1small>
-            Марина (имя изменено по просьбе героини), режиссер, окончила
+          <Person
+            name="Марина (имя изменено по просьбе героини), режиссер, окончила
             театральное училище им. М. С. Щепкина по специальности «актерское
-            искусство» и ГИТИС по специальности «режиссура театра»
-          </H1small>
+            искусство» и ГИТИС по специальности «режиссура театра»"
+            quote="«Мы в Малом театре делаем великое искусство, а все вокруг — ху**я»"
+            svg={shut}
+          />
           <p>
             «Для меня театральный вуз стал продолжением ужасного советского
             детсада и интерната. Из интерната я сбежала в киношколу с абсолютно
@@ -387,15 +444,14 @@ export class Article extends React.PureComponent {
             и ценят. Но учиться все равно было непросто: не хотелось подводить
             педагогов».
           </p>
-          <H3>
-            «После театральной среды психологическое сообщество кажется
-            санаторием»{" "}
-          </H3>
-          <H1small>
-            Виолетта Никитик, психолог, училась на режиссера в Белорусском
+          <Person
+            name="Виолетта Никитик, психолог, училась на режиссера в Белорусском
             государственном университете культуры и искусств, ушла с третьего
-            курса
-          </H1small>
+            курса"
+            quote="«После театральной среды психологическое сообщество кажется
+            санаторием»"
+            sizes={data.govno3.sizes}
+          />
           <p>
             «Когда вы критикуете действие, это стимулирует человека к развитию.
             А когда оцениваете личность, как принято в театральных вузах
@@ -467,6 +523,16 @@ export class Article extends React.PureComponent {
             заявлять о себе как о достойном, талантливом актере. В этом нет
             ничего стыдного».
           </p>
+          <Attention fontColor="#a669c8">
+            Не все герои, давшие интервью для этого материала, в итоге
+            согласились на публикацию, и их истории в текст не вошли. Есть
+            основания полагать, что таких случаев гораздо больше, но из-за
+            сложности темы и специфики общественных устоев говорить про это пока
+            решаются единицы. Если вы готовы рассказать свою историю,
+            пожалуйста, напишите нам на{" "}
+            <a href="mailto:meow@teatralium.com">meow@teatralium.com</a>. Так
+            быть не должно.
+          </Attention>
         </Section>
         <Share url={url} />
         <Other url={url} />
@@ -480,21 +546,21 @@ export default Article;
 export const pageQuery = graphql`
   query GovnoImageQuery {
     govno1: imageSharp(id: { regex: "/govno/1.jpg/" }) {
-      sizes(maxWidth: 1280) {
+      sizes(maxWidth: 400) {
         ...GatsbyImageSharpSizes
       }
     }
     govno2: imageSharp(id: { regex: "/govno/2.jpg/" }) {
-      sizes(maxWidth: 1280) {
+      sizes(maxWidth: 400) {
         ...GatsbyImageSharpSizes
       }
     }
     govno3: imageSharp(id: { regex: "/govno/3.jpg/" }) {
-      sizes(maxWidth: 1280) {
+      sizes(maxWidth: 400) {
         ...GatsbyImageSharpSizes
       }
     }
-    cover: imageSharp(id: { regex: "/govno/cover.png/" }) {
+    cover: imageSharp(id: { regex: "/govno/cover.jpg/" }) {
       sizes(maxWidth: 1280) {
         ...GatsbyImageSharpSizes
       }

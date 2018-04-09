@@ -80,7 +80,7 @@ export class Bol extends React.PureComponent {
           description="Приятные люди размышляют об интересных вещах"
           title={`${title} | Театралий`}
         />
-        <Section>
+        <Section withHomepageLink>
           <Date>
             22 октября 2017, текст:&nbsp;<b>Настя Николаева</b>
           </Date>
@@ -113,7 +113,7 @@ export class Bol extends React.PureComponent {
           </P>
         </Section>
         <Img maxWidth="100%" src={lead} />
-        <Section>
+        <Section withHomepageLink>
           <p style={{ paddingTop: "7rem" }}>
             <b>Настя Николаева</b>: Во-первых, спасибо за то, что не забыли про
             айн цвай полицай. Во-вторых, расскажите про процесс сборки тучи

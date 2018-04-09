@@ -32,7 +32,7 @@ export class Ezhen extends React.PureComponent {
           description="Почему все решили, что автор должен иметь мнение по поводу всего?"
           title={`${title} | Театралий`}
         />
-        <Section>
+        <Section withHomepageLink>
           <H1>Что хотел сказать автор?</H1>
           <H1small>Отвечает Эжен Ионеско</H1small>
           <Date>

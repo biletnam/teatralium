@@ -86,7 +86,7 @@ export class Raznoobrazie extends React.PureComponent {
           </NoteWrapper>
         </Section>
         <Img src={mask} noBorder maxWidth="100%" />
-        <Section>
+        <Section withHomepageLink>
           <H1Styled center>Выход в город</H1Styled>
           <NoteWrapper>
             <p>

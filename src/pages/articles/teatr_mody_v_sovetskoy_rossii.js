@@ -58,7 +58,7 @@ export class TeatrMody extends React.PureComponent {
             </H1>
           </Section>
         </TopCover>
-        <Section>
+        <Section withHomepageLink>
           <P>
             Действия первое и второе трехчастной{" "}
             <a href="http://electrotheatre.ru/repertoire/spectacle.htm?id=51">
@@ -351,7 +351,7 @@ export class TeatrMody extends React.PureComponent {
             "Обложка журнала «Ателье». 1923 год"
           ]}
         />
-        <Section>
+        <Section withHomepageLink>
           <p>
             Спрос на платья, особенно театральные и вечерние, рос, гриф «Ателье
             мод Москвошвей» признали модным, и щеголихи спешили им похвастаться,

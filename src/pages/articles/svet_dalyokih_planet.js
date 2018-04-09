@@ -35,7 +35,7 @@ export class Svet extends React.PureComponent {
           description="Куда ехать, что смотреть."
           title={`${title} | Театралий`}
         />
-        <Section>
+        <Section withHomepageLink>
           <H1>Свет далеких планет</H1>
           <H1small>обзор европейских премьер нового сезона</H1small>
           <Date>

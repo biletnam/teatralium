@@ -391,7 +391,7 @@ export class Article extends React.PureComponent {
             </StyledPoem>
           </Section>
         </FillCover>
-        <Section>
+        <Section withHomepageLink>
           <Video id="RIxEZTIA9bQ" desc="«Наизусть», трейлер спектакля" />
         </Section>
         <Share url={url} />

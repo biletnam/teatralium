@@ -51,7 +51,7 @@ export class Raznoobrazie extends React.PureComponent {
           description="Слушайте нашу новую рубрику «За музыку отвечает»."
           title={`${title} | Театралий`}
         />
-        <Section>
+        <Section withHomepageLink>
           <Date>
             30 ноября, <b>«За музыку отвечает»</b>
           </Date>

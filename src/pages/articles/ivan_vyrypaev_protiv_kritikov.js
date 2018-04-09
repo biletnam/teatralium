@@ -47,7 +47,7 @@ export class Vyrypaev extends React.PureComponent {
           description="«Театр в Европе — это менее эмоциональная и более интеллектуальная вещь»."
           title={`${title} | Театралий`}
         />
-        <Section>
+        <Section withHomepageLink>
           <Date>16 декабря 2017</Date>
           <H1 size="4rem">«Я абсолютно против критиков сегодня»</H1>
           <H1small>Иван Вырыпаев о театре без микрофонов и рецензий</H1small>

@@ -15,6 +15,8 @@ import FillCover, { TopCover } from "../components/FillCover";
 import Button from "../components/Button/StyledButton";
 import Social from "../components/Social";
 
+import { GovnoCover } from "./articles/aktyora_nado_mordoy_v_govno.js";
+
 import mask from "./images/davydova/mask.gif";
 import rus from "./images/ppp.gif";
 
@@ -408,12 +410,23 @@ const Svet = ({ sizes }) => (
   </FillCover>
 );
 
+const GovnoStyled = styled(GovnoCover)`
+  transition: border 5s;
+  &:hover {
+    transition: border 5s;
+    border: solid 9px yellow;
+  }
+`;
+
 export class HomePage extends React.PureComponent {
   // eslint-disable-line react/prefer-stateless-function
   render() {
     const { data } = this.props;
     return (
       <div>
+        <StyledLink to="/articles/aktyora_nado_mordoy_v_govno/">
+          <GovnoStyled sizes={data.govno.sizes} />
+        </StyledLink>
         <Nespyashie sizes={data.zritel8.sizes} />
         <Elutin sizes={data.elutin.sizes} />
         <Sonet sizes={data.sonet.sizes} />
@@ -476,7 +489,7 @@ export const pageQuery = graphql`
       }
     }
     annenkov: imageSharp(id: { regex: "/annenkov/home.jpg/" }) {
-      sizes(maxWidth: 500) {
+      sizes(maxWidth: 1280) {
         ...GatsbyImageSharpSizes
       }
     }
@@ -499,6 +512,11 @@ export const pageQuery = graphql`
     }
     avdeev: imageSharp(id: { regex: "/otvechaet/avdeev_cover.jpg/" }) {
       sizes(maxWidth: 100) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    govno: imageSharp(id: { regex: "/govno/cover-main.jpg/" }) {
+      sizes(maxWidth: 800) {
         ...GatsbyImageSharpSizes
       }
     }

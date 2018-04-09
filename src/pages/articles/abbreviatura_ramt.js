@@ -344,7 +344,7 @@ export class Raznoobrazie extends React.PureComponent {
           marginBottom="4rem"
           maxWidth="100%"
         />
-        <Section>
+        <Section withHomepageLink>
           <p>
             За студенческим, гитисовским спектаклем «Наш городок» я поставил
             оперу «Отелло» в Московском музыкальном театре имени Станиславского

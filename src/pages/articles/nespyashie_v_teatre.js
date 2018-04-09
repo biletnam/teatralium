@@ -97,7 +97,7 @@ export class Article extends React.PureComponent {
             </StyledDate>
           </Section>
         </TopCover>
-        <Section>
+        <Section withHomepageLink>
           <P>
             Иногда кажется, что люди в зале делятся на умных и не особо, а еще
             на богатых и бедных. Одни выдают себя громким смехом где ни попадя и

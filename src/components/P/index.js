@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import { phone } from '../../utils/media'
+import styled from "styled-components";
+import { phone } from "../../utils/media";
 
 const P = styled.p`
   &:first-letter {
@@ -9,13 +9,14 @@ const P = styled.p`
     font-weight: bold;
     padding: 1.2rem;
     padding-top: 1.8rem;
-    color: ${p => p.color || '#ff93e8'};
+    color: ${p => p.color || "#ff93e8"};
     padding-right: 1.2rem;
     float: left;
   }
   margin-top: 3rem;
   font-size: 1.4rem;
+  padding-bottom: 2rem;
   ${phone(`font-size: 1rem; margin-top: 2rem;`)};
-`
+`;
 
-export default P
+export default P;

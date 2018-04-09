@@ -6,7 +6,7 @@ import Img from "gatsby-image";
 const FillCover = styled.div`
   color: ${p => p.fontColor};
   ${p => !p.sizes && p.color && `background-color: ${p.color};`}
-  background-image: url(${p => p.bg || "none"});
+  ${p => (p.bg ? `background-image: url(${p.bg});` : "")}
   ${p => (p.repeat ? "background-repeat: repeat" : "background-size: cover")};
   min-height: ${p => p.height || "400px"};
   height: auto;
@@ -44,15 +44,21 @@ const Bg = styled(Img)`
   left: 0;
   top: 0;
   width: 100%;
-  height: ${props => props.height || "auto"};
+  height: ${p => p.height || "auto"};
 
   & > img {
-    object-fit: ${props => props.fit || "cover"} !important;
-    object-position: ${props => props.bgPosition || "top"} !important;
-    font-family: 'object-fit: ${props =>
-      props.fit || "cover"} !important; object-position: ${props =>
-  props.position || "50% 50%"} !important;'
+    object-fit: ${p => p.fit || "cover"} !important;
+    object-position: ${p => p.bgPosition || "top"} !important;
+    font-family: 'object-fit: ${p =>
+      p.fit || "cover"} !important; object-position: ${p =>
+  p.bgPosition || "50% 50%"} !important;'
   }
+
+  ${p =>
+    p.height &&
+    `.gatsby-image-wrapper {
+    height: ${p.height};
+  }`}
 `;
 
 const Wrapper = styled.div`
@@ -82,6 +88,7 @@ const FillCoverWithBg = props => {
               fadeIn
               backgroundColor={props.color || "lavender"}
               sizes={props.sizes}
+              {...props}
             />
           </Wrapper>
         )}
@@ -97,6 +104,6 @@ export const TopCover = styled(FillCoverWithBg)`
   height: calc(100vh - 110px);
   ${phone(`
     min-height: auto;
-    height: calc(100vh + 200px);
+    height: calc(100vh - 45px);
   `)};
 `;
