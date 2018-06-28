@@ -1,8 +1,9 @@
-import React from 'react'
-import styled from 'styled-components'
-import play from './play.svg'
-import Small from '../Small'
-import Description from '../Img'
+import React from "react";
+import styled from "styled-components";
+import play from "./play.svg";
+import Small from "../Small";
+import Description from "../Img";
+import { phone } from "../../utils/media";
 
 const absolute = `
   position: absolute;
@@ -10,12 +11,12 @@ const absolute = `
   left: 0;
   width: 100%;
   height: 100%;
-`
+`;
 const Wrapper = styled.div`
   position: relative;
   padding-bottom: 56.25%; /* 16:9 */
   padding-top: 25px;
-  margin-bottom: ${p => p.marginBottom || '1rem'};
+  margin-bottom: ${p => p.marginBottom || "1rem"};
   height: 0;
   > iframe {
     ${absolute};
@@ -23,13 +24,13 @@ const Wrapper = styled.div`
   &:hover {
     cursor: pointer;
   }
-`
+`;
 
-const Preview = styled.div``
+const Preview = styled.div``;
 
 const Img = styled.img`
   ${absolute};
-`
+`;
 
 const Button = styled.div`
   ${p =>
@@ -42,25 +43,26 @@ const Button = styled.div`
     background-image: url("${play}");
     width: 6rem;
     height: 6rem;
+    ${phone("width: 2rem; height: 2rem;")}
 `};
-`
+`;
 
 class Video extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      enabled: false,
-    }
+      enabled: false
+    };
   }
 
   render() {
-    const { props, state } = this
+    const { props, state } = this;
     if (props.url) {
       return (
         <Wrapper {...props}>
           <iframe src={props.url} frameBorder="0" allowFullScreen />
         </Wrapper>
-      )
+      );
     }
 
     return (
@@ -73,9 +75,9 @@ class Video extends React.Component {
           {state.enabled ? (
             <iframe
               src={
-                'https://www.youtube.com/embed/' +
+                "https://www.youtube.com/embed/" +
                   props.id +
-                  '?autoplay=1&start=' +
+                  "?autoplay=1&start=" +
                   props.start || 0
               }
               frameBorder="0"
@@ -93,8 +95,8 @@ class Video extends React.Component {
         </Wrapper>
         {props.desc && <Description {...props} marginTop="0" />}
       </div>
-    )
+    );
   }
 }
 
-export default Video
+export default Video;

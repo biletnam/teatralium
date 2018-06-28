@@ -18,6 +18,8 @@ import Social from "../components/Social";
 import { GovnoCover } from "./articles/aktyora_nado_mordoy_v_govno";
 
 import { BlokCover } from "./articles/aktyory_truppy_na_otlyote";
+import { DidenkoCover } from "./articles/vsyo_vidno_yasno";
+import { NogiCover } from "./articles/nogi_zatekayut";
 
 import mask from "./images/davydova/mask.gif";
 import rus from "./images/ppp.gif";
@@ -300,7 +302,7 @@ const Annenkov = ({ sizes }) => (
           noBorder
           sizes={sizes}
           width="280px"
-          customBorder={`
+          custom={`
         border-style: inset;
         border-color: ${REVOLUTION};
         border-width: 10px;
@@ -426,6 +428,12 @@ export class HomePage extends React.PureComponent {
     const { data } = this.props;
     return (
       <div>
+        <StyledLink to="/articles/nogi_zatekayut/">
+          <NogiCover sizes={data.nogi.sizes} />
+        </StyledLink>
+        <StyledLink to="/articles/vsyo_vidno_yasno/">
+          <DidenkoCover sizes={data.didenko.sizes} />
+        </StyledLink>
         <StyledLink to="/articles/aktyory_truppy_na_otlyote/">
           <BlokCover />
         </StyledLink>
@@ -556,6 +564,16 @@ export const pageQuery = graphql`
       }
     }
     zritel8: imageSharp(id: { regex: "/nespyashie/zriteli/zritel-8.jpg/" }) {
+      sizes(maxWidth: 1280) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    didenko: imageSharp(id: { regex: "/didenko/didenko.jpg/" }) {
+      sizes(maxWidth: 1280) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    nogi: imageSharp(id: { regex: "/nogi/cover.jpg/" }) {
       sizes(maxWidth: 1280) {
         ...GatsbyImageSharpSizes
       }

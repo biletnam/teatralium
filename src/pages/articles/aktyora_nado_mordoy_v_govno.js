@@ -60,7 +60,12 @@ const H = styled(H1Shadow)`
   font-size: 2rem !important;
   line-height: 1.5;
   padding: 4rem 1rem 0;
-  ${phone(`font-size: 1.2rem !important;`)};
+  ${p =>
+    p.noShadow &&
+    `
+  -webkit-text-stroke: none;
+  text-shadow: none;
+  `} ${phone(`font-size: 1.2rem !important;`)};
 `;
 
 const Author = styled.div`
@@ -76,13 +81,22 @@ const Wrapper = styled.div`
   ${phone(`margin: 2rem 0;`)};
 `;
 
-const Person = props => (
+export const Person = props => (
   <Wrapper>
-    <FillCover color="lavender">
+    <FillCover color={props.bg || "lavender"}>
       <Section>
-        <H color="black">{props.quote}</H>
+        <H noShadow={props.noShadow} color={props.color || "black"}>
+          {props.quote}
+        </H>
         {props.sizes && (
-          <Img sizes={props.sizes} round maxWidth="200px" marginBottom="1rem" />
+          <Img
+            sizes={props.sizes}
+            round
+            maxWidth="200px"
+            marginBottom="1rem"
+            shadow="box-shadow: inset -2px -4px 96px 13px rgba(255,0,0,0.69);"
+            bg="red"
+          />
         )}
         {props.svg && (
           <ImgOld

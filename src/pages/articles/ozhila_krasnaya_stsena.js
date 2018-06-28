@@ -66,7 +66,7 @@ const revolutionBorder = `
   box-shadow: 1px -4px 45px -5px ${REVOLUTION};
 `;
 const ImgStyled = props => (
-  <Img {...props} noBorder customBorder={revolutionBorder} />
+  <Img {...props} noBorder custom={revolutionBorder} />
 );
 
 const H4Styled = styled(H4)`
@@ -77,7 +77,7 @@ const StyledGallery = props => (
   <Gallery
     {...props}
     imgProps={{
-      customBorder: revolutionBorder,
+      custom: revolutionBorder,
       noBorder: true
     }}
   />
