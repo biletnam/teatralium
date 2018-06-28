@@ -75,7 +75,7 @@ const Wrapper = styled.div`
   ${phone(`margin: 2rem 0;`)};
 `;
 
-export const BlokCover = ({ sizes, ...props }) => (
+export const BlokCover = ({ sizes, showDate = true, ...props }) => (
   <TopCover sizes={sizes} bordered borderColor="black" {...props}>
     <Section margin="0" align="left">
       <H1Shadow size="3.2rem" color="white">
@@ -84,9 +84,9 @@ export const BlokCover = ({ sizes, ...props }) => (
       <H1small center color="white">
         <Bg>Александр Блок о репертуаре государственных театров</Bg>
       </H1small>
-      <StyledDate>
+      {showDate && <StyledDate>
         9 апреля 2018
-      </StyledDate>
+      </StyledDate>}
     </Section>
   </TopCover>
 );

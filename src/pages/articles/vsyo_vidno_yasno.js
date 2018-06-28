@@ -102,16 +102,16 @@ const NoMobile = styled.div`
   ${phone("display: none;")};
 `;
 
-export const DidenkoCover = ({ sizes, ...props }) => (
+export const DidenkoCover = ({ sizes, showDate = true, ...props }) => (
   <TopCover bordered borderColor="#ff93e8" {...props}>
     <Section margin="0" align={props.align || "right"}>
       <H1Shadow color="black">Все видно ясно, но не заблудитесь!</H1Shadow>
       <H1small center color="black">
         Что не так со спектаклем Максима Диденко «Беги, Алиса, беги»
       </H1small>
-      <StyledDate>
+      {showDate && <StyledDate>
         25 апреля 2018, текст: <b>Антон Хитров</b>
-      </StyledDate>
+      </StyledDate>}
     </Section>
     {sizes && <Img sizes={sizes} maxWidth="700px" noMobile />}
   </TopCover>

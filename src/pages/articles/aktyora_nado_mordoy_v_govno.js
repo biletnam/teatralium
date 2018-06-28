@@ -112,7 +112,7 @@ export const Person = props => (
   </Wrapper>
 );
 
-export const GovnoCover = ({ sizes, ...props }) => (
+export const GovnoCover = ({ sizes, showDate = true, ...props }) => (
   <TopCover sizes={sizes} bordered borderColor="purple" {...props}>
     <Section margin="0" align="right">
       <H1Shadow size="3.2rem" color="purple">
@@ -124,11 +124,11 @@ export const GovnoCover = ({ sizes, ...props }) => (
           Обесценивание, унижение и домогательства в театральных вузах страны
         </Bg>
       </H1small>
-      <StyledDate>
+      {showDate && <StyledDate>
         24 марта 2018, текст:&nbsp;<b>Антон Хитров</b>, иллюстрация:&nbsp;<b>
           Алексей Сухов
         </b>
-      </StyledDate>
+      </StyledDate>}
     </Section>
   </TopCover>
 );

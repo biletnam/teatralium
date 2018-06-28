@@ -1,15 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import Link, { navigateTo } from "gatsby-link";
+import Link from "gatsby-link";
 
 import { phone } from "../utils/media";
 import H1, { H1small } from "../components/H1";
 import Img from "../components/Img";
 import ImgG from "../components/ImgG";
-import Image from "gatsby-image";
 
 import H3 from "../components/H3";
-import H4 from "../components/H4";
 import H2 from "../components/H2";
 import FillCover, { TopCover } from "../components/FillCover";
 import Button from "../components/Button/StyledButton";
@@ -20,6 +18,7 @@ import { GovnoCover } from "./articles/aktyora_nado_mordoy_v_govno";
 import { BlokCover } from "./articles/aktyory_truppy_na_otlyote";
 import { DidenkoCover } from "./articles/vsyo_vidno_yasno";
 import { NogiCover } from "./articles/nogi_zatekayut";
+import { DokCover } from "./articles/dokumentalnaya_horeografiya";
 
 import mask from "./images/davydova/mask.gif";
 import rus from "./images/ppp.gif";
@@ -428,17 +427,20 @@ export class HomePage extends React.PureComponent {
     const { data } = this.props;
     return (
       <div>
+        <StyledLink to="/articles/dokumentalnaya_horeografiya/">
+          <DokCover showDate={false} sizes={data.dok.sizes} />
+        </StyledLink>
         <StyledLink to="/articles/nogi_zatekayut/">
-          <NogiCover sizes={data.nogi.sizes} />
+          <NogiCover showDate={false} sizes={data.nogi.sizes} />
         </StyledLink>
         <StyledLink to="/articles/vsyo_vidno_yasno/">
-          <DidenkoCover sizes={data.didenko.sizes} />
+          <DidenkoCover showDate={false} sizes={data.didenko.sizes} />
         </StyledLink>
         <StyledLink to="/articles/aktyory_truppy_na_otlyote/">
-          <BlokCover />
+          <BlokCover showDate={false} />
         </StyledLink>
         <StyledLink to="/articles/aktyora_nado_mordoy_v_govno/">
-          <GovnoStyled sizes={data.govno.sizes} />
+          <GovnoStyled showDate={false} sizes={data.govno.sizes} />
         </StyledLink>
         <Nespyashie sizes={data.zritel8.sizes} />
         <Elutin sizes={data.elutin.sizes} />
@@ -574,6 +576,11 @@ export const pageQuery = graphql`
       }
     }
     nogi: imageSharp(id: { regex: "/nogi/cover.jpg/" }) {
+      sizes(maxWidth: 1280) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    dok: imageSharp(id: { regex: "/dok_hor/cover.jpg/" }) {
       sizes(maxWidth: 1280) {
         ...GatsbyImageSharpSizes
       }

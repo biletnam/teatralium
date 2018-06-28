@@ -1,31 +1,21 @@
 import React from "react";
-import Helmet from "react-helmet";
 import Link from "gatsby-link";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
 import { phone } from "../../utils/media";
 import H1, { H1small } from "../../components/H1";
 import ArticleHelmet from "../../components/ArticleHelmet";
 import Img from "../../components/ImgG";
 import H2 from "../../components/H2";
-import H4 from "../../components/H4";
-import Attention from "../../components/Attention";
-import Gallery from "../../components/Gallery";
-
-import Small from "../../components/Small";
-import Note, { NoteWrapper, NotedWord } from "../../components/Note";
 import Section from "../../components/Section";
 import P from "../../components/P";
 import Date from "../../components/Date";
 import Share from "../../components/Share";
-import HomepageLink from "../../components/HomepageLink";
 import Other from "../../components/Other";
 import { Person } from "./aktyora_nado_mordoy_v_govno";
 
-import FillCover, { TopCover } from "../../components/FillCover";
+import { TopCover } from "../../components/FillCover";
 
-import zipper from "../images/govno/zipper.svg";
-import shut from "../images/govno/shut.svg";
 
 const url = "https://teatralium.com/articles/nogi_zatekayut/";
 const title = "«Ноги затекают, а вообще это сплошное удовольствие»";
@@ -46,56 +36,7 @@ const Bg = styled.span`
   padding: 0.1rem;
 `;
 
-const H = styled(H2)`
-  margin-top: 4rem;
-`;
-
-const Author = styled.div`
-  font-style: italic;
-  padding-top: 1rem;
-  text-align: center;
-  font-size: 0.8rem;
-  color: gray;
-`;
-
-const Wrapper = styled.div`
-  margin: 6rem 0 0;
-  ${phone(`margin: 2rem 0;`)};
-`;
-
-const StyledGallery = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: center;
-  > div {
-    padding: 22px;
-    width: ${p => p.width || "150px"};
-    margin: 0 0.2rem;
-    max-height: ${p => p.maxHeight || "280px"};
-    padding-bottom: 0;
-    padding-right: 0;
-    ${phone("padding: 0; margin: 0;")};
-  }
-  > div img {
-    max-width: ${p => p.maxWidth || "600px"};
-    max-height: ${p => p.maxHeight || "auto"};
-    ${phone("max-width: 100%;")};
-  }
-`;
-
-const S = styled.div`
-  font-size: 0.8rem;
-  max-width: 400px;
-  margin: 0 auto;
-  margin-top: 2rem;
-`;
-
-const ArticlesSection = styled(Section)`
-  display: flex;
-`;
-
-export const NogiCover = ({ sizes, ...props }) => (
+export const NogiCover = ({ sizes, showDate = true, ...props }) => (
   <TopCover color="red" sizes={sizes} bordered borderColor="red" {...props}>
     <Section margin="0" align={props.align || "center"}>
       <H1Shadow color="red" size="3.2rem">
@@ -107,9 +48,9 @@ export const NogiCover = ({ sizes, ...props }) => (
           дает
         </Bg>
       </H1small>
-      <StyledDate>
+      {showDate && <StyledDate>
         26 апреля 2018, текст: <b>Татьяна Тенькова, Арина Бойко</b>
-      </StyledDate>
+      </StyledDate>}
     </Section>
   </TopCover>
 );
