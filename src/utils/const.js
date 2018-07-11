@@ -2,6 +2,11 @@ const base = "/articles/";
 
 export const articles = [
   {
+    url: base + "protokol_povsednevnost/",
+    title:
+      "«Никому не рассказывайте, чем вы тут занимались»: почему всем нужно пройти через кружок «Протокол» в ЦИМе"
+  },
+  {
     url: base + "dokumentalnaya_horeografiya/",
     title:
       "Документальная хореография: Существует ли она и как станцевать Декларацию независимости"

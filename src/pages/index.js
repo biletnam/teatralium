@@ -92,6 +92,24 @@ const PurpleButton = styled(Button)`
   }
 `;
 
+
+const Protokol = ({ sizes }) => (
+  <FillCoverMaxHeight sizes={sizes} height="350px">
+    <ArticlesSection padding="1" size="14px" />
+  </FillCoverMaxHeight>
+);
+
+const ProtokolSub = () => (
+  <FillCover color="white" height="250px" padding="1rem">
+    <ArticlesSection align="right" margin="0rem" padding="3rem">
+      <H3 align="right" fontStyle="normal">
+        «Никому не рассказывайте, чем вы тут занимались»
+      </H3>
+      <H1small>Почему всем нужно пройти через кружок «Протокол» в ЦИМе</H1small>
+    </ArticlesSection>
+  </FillCover>
+);
+
 const Nespyashie = ({ sizes }) => (
   <StyledLink to="/articles/nespyashie_v_teatre/">
     <TopCover bg={sizes.src} bgSize="300px" bgPosition="90% 70%" noBgMobile>
@@ -423,6 +441,12 @@ export class HomePage extends React.PureComponent {
     const { data } = this.props;
     return (
       <div>
+        <Border>
+          <StyledLink to="/articles/protokol_povsednevnost/">
+            <Protokol sizes={data.protokol.sizes} />
+            <ProtokolSub />
+          </StyledLink>
+        </Border>
         <StyledLink to="/articles/dokumentalnaya_horeografiya/">
           <DokCover showDate={false} sizes={data.dokkk.sizes} />
         </StyledLink>
@@ -474,6 +498,11 @@ export default HomePage;
 
 export const pageQuery = graphql`
   query TestImageQuery {
+    protokol: imageSharp(id: { regex: "/protokol/protokol1.jpg/" }) {
+      sizes(maxWidth: 1280) {
+        ...GatsbyImageSharpSizes
+      }
+    }
     abuse: imageSharp(id: { regex: "/abuse/cover.jpg/" }) {
       sizes(maxWidth: 1280) {
         ...GatsbyImageSharpSizes
