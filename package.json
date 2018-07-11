@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "author": "Maxim Matyunin",
   "dependencies": {
-    "gatsby": "^1.9.214",
+    "gatsby": "^1.9.23",
     "gatsby-image": "^1.0.42",
     "gatsby-link": "^1.6.22",
     "gatsby-plugin-google-analytics": "^1.0.10",
@@ -31,6 +31,7 @@
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy:prod": "ssh trr 'cp -r /var/www/admin/* /var/www/tr/'",
+    "patch": "sed -i -e 's/if(c\\.initial) return;/if(!c||c.initial) return;/g' ./node_modules/extract-text-webpack-plugin/index.js",
     "deploy:dev": "yarn clear && gatsby build && rsync -r public/ tr:/var/www/deploy_tr && ssh trr 'rm -rf /var/www/admin/*; mv /var/www/deploy_tr/* /var/www/admin'",
     "d": "yarn deploy:dev",
     "p": "yarn deploy:prod",

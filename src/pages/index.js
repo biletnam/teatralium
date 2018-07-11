@@ -61,10 +61,6 @@ const FillCoverMaxHeight = styled(FillCover)`
   ${phone(`height: 300px !important;`)};
 `;
 
-const ImgWrapper = styled.div`
-  ${phone("display: none;")} padding: 2rem;
-`;
-
 const Lead = styled.div`
   font-size: ${p => p.size || "1.2rem"};
   color: ${p => p.color || "inherit"};
@@ -428,7 +424,7 @@ export class HomePage extends React.PureComponent {
     return (
       <div>
         <StyledLink to="/articles/dokumentalnaya_horeografiya/">
-          <DokCover showDate={false} sizes={data.dok.sizes} />
+          <DokCover showDate={false} sizes={data.dokkk.sizes} />
         </StyledLink>
         <StyledLink to="/articles/nogi_zatekayut/">
           <NogiCover showDate={false} sizes={data.nogi.sizes} />
@@ -580,7 +576,7 @@ export const pageQuery = graphql`
         ...GatsbyImageSharpSizes
       }
     }
-    dok: imageSharp(id: { regex: "/dok_hor/cover.jpg/" }) {
+    dokkk: imageSharp(id: { regex: "/dok_hor/cover.jpg/" }) {
       sizes(maxWidth: 1280) {
         ...GatsbyImageSharpSizes
       }
