@@ -19,6 +19,7 @@ import { BlokCover } from "./articles/aktyory_truppy_na_otlyote";
 import { DidenkoCover } from "./articles/vsyo_vidno_yasno";
 import { NogiCover } from "./articles/nogi_zatekayut";
 import { DokCover } from "./articles/dokumentalnaya_horeografiya";
+import { BogomolovCover } from "./articles/poteryanniy_kray";
 
 import mask from "./images/davydova/mask.gif";
 import rus from "./images/ppp.gif";
@@ -441,6 +442,9 @@ export class HomePage extends React.PureComponent {
     const { data } = this.props;
     return (
       <div>
+        <StyledLink to="/articles/poteryanniy_kray/">
+          <BogomolovCover cover={data.bogomolov.sizes.src} />
+        </StyledLink>
         <Border>
           <StyledLink to="/articles/protokol_povsednevnost/">
             <Protokol sizes={data.protokol.sizes} />
@@ -607,6 +611,11 @@ export const pageQuery = graphql`
     }
     dokkk: imageSharp(id: { regex: "/dok_hor/cover.jpg/" }) {
       sizes(maxWidth: 1280) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    bogomolov: imageSharp(id: { regex: "/bogomolov/bogomolov_cover.jpg/" }) {
+      sizes(maxWidth: 100) {
         ...GatsbyImageSharpSizes
       }
     }
