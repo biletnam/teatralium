@@ -81,7 +81,6 @@ export class Article extends React.PureComponent {
   // eslint-disable-line react/prefer-stateless-function
   render() {
     const { data } = this.props;
-    console.log(data);
     return (
       <div>
         <ArticleHelmet

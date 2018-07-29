@@ -20,6 +20,7 @@ import { DidenkoCover } from "./articles/vsyo_vidno_yasno";
 import { NogiCover } from "./articles/nogi_zatekayut";
 import { DokCover } from "./articles/dokumentalnaya_horeografiya";
 import { BogomolovCover } from "./articles/poteryanniy_kray";
+import { TelegramCover } from "./articles/telegram_kanaly";
 
 import mask from "./images/davydova/mask.gif";
 import rus from "./images/ppp.gif";
@@ -442,6 +443,9 @@ export class HomePage extends React.PureComponent {
     const { data } = this.props;
     return (
       <div>
+        <StyledLink to="/articles/telegram_kanaly/">
+          <TelegramCover sizes={data.telegram.sizes} />
+        </StyledLink>
         <StyledLink to="/articles/poteryanniy_kray/">
           <BogomolovCover cover={data.bogomolov.sizes.src} />
         </StyledLink>
@@ -616,6 +620,11 @@ export const pageQuery = graphql`
     }
     bogomolov: imageSharp(id: { regex: "/bogomolov/bogomolov_cover.jpg/" }) {
       sizes(maxWidth: 100) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    telegram: imageSharp(id: { regex: "/telegram_kanaly/cover.jpg/" }) {
+      sizes(maxWidth: 1280) {
         ...GatsbyImageSharpSizes
       }
     }
