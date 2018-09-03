@@ -15,14 +15,19 @@ const Social = styled(Section)`
     letter-spacing: 0.4rem;
     margin: auto;
     display: block;
-    color: purple;
+    color: ${p => p.color || 'purple'};
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   ${phone("flex-direction: column;")};
 `;
 
-const S = () => (
-  <Social>
+const S = ({ color }) => (
+  <Social color={color}>
     <a href="https://vk.com/teatralium" target="_blank">
       вконтакте
     </a>

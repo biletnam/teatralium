@@ -12,6 +12,7 @@ const P = styled.p`
     color: ${p => p.color || "#ff93e8"};
     padding-right: 1.2rem;
     float: left;
+    text-shadow: 2px 2px black;
   }
   margin-top: 3rem;
   font-size: 1.4rem;

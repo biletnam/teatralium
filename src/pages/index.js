@@ -447,7 +447,9 @@ export class HomePage extends React.PureComponent {
           <TelegramCover sizes={data.telegram.sizes} />
         </StyledLink>
         <StyledLink to="/articles/poteryanniy_kray/">
-          <BogomolovCover cover={data.bogomolov.sizes.src} />
+          <BogomolovCover
+            cover={data.bogomolov.sizes.src}
+          />
         </StyledLink>
         <Border>
           <StyledLink to="/articles/protokol_povsednevnost/">

@@ -10,7 +10,7 @@ import Date from "../../components/Date";
 import Share from "../../components/Share";
 import Other from "../../components/Other";
 
-import { TopCover } from "../../components/FillCover";
+import FillCover from "../../components/FillCover";
 
 import { Playlist } from "../../components/Poem";
 
@@ -25,20 +25,20 @@ const List = styled.ul`
   list-style-type: square;
 `;
 
-export const BogomolovCover = ({ cover }) => (
-  <TopCover bg={cover} repeat bordered borderColor="purple">
+export const BogomolovCover = ({ cover, size = '3.424em', showDate = true, lineHeight }) => (
+  <FillCover bg={cover} repeat bordered borderColor="purple">
     <Section background="rgba(255,255,255,0.7)">
-      <Date>
+      {showDate && <Date>
         14 июля, <b>«За музыку отвечает»</b>
-      </Date>
-      <H1 size="3.4124em" center color="purple">
+      </Date>}
+      <H1 size={size} lineHeight={lineHeight} center color="purple">
         Выпью за потерянный людьми (к)рай
             </H1>
       <H1small center color="black">
         Песни из спектаклей Константина Богомолова
             </H1small>
     </Section>
-  </TopCover>
+  </FillCover>
 );
 
 export class Article extends React.PureComponent {

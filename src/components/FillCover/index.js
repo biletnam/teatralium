@@ -16,6 +16,11 @@ const FillCover = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  ${p => p.withHover && `
+    &:hover {
+      background-size: cover;
+    }
+  `}
   ${p => p.contain && "background-size: contain;"}
   ${p => p.contain && p.center && "background-position: center;"}
   ${p => p.bgPosition && `background-position: ${p.bgPosition};`}
@@ -24,7 +29,7 @@ const FillCover = styled.div`
   ${p => p.shadow && "box-shadow: inset 1px 4px 90px -6px #000000;"}
   ${p =>
     p.bordered &&
-    `border: solid ${p.borderSize || 9}px ${p.borderColor || `#f2639e`};`}
+    `border: inset ${p.borderSize || 9}px ${p.borderColor || `#f2639e`};`}
   ${p =>
     p.pointer &&
     `&:hover {
@@ -50,8 +55,8 @@ const Bg = styled(Img)`
     object-fit: ${p => p.fit || "cover"} !important;
     object-position: ${p => p.bgPosition || "top"} !important;
     font-family: 'object-fit: ${p =>
-      p.fit || "cover"} !important; object-position: ${p =>
-  p.bgPosition || "50% 50%"} !important;'
+    p.fit || "cover"} !important; object-position: ${p =>
+      p.bgPosition || "50% 50%"} !important;'
   }
 
   ${p =>
@@ -73,7 +78,7 @@ const Wrapper = styled.div`
     width: 200%;
     min-height: auto;
   `)} ${p =>
-      `${phone(`
+    `${phone(`
     ${p.noBgMobile && `display: none;`}
   `)}`};
 `;

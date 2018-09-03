@@ -1,7 +1,7 @@
 const media = (children, min, max) =>
   `@media (min-width: ${min}px) and (max-width: ${max}px) { ${children} }`
 
-// export const large = (children) => media(children, 979, 5000);
+export const large = (children) => media(children, 1200, 5000);
 
 // export const desktop = (children) => media(children, 768, 979);
 
