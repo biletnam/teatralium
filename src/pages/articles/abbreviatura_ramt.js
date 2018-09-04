@@ -1,15 +1,11 @@
 import React from "react";
-import Helmet from "react-helmet";
-import Link from "gatsby-link";
 import styled from "styled-components";
 
-import { phone } from "../../utils/media";
 import H1, { H1small } from "../../components/H1";
 import ArticleHelmet from "../../components/ArticleHelmet";
 import Img from "../../components/Img";
 import H2 from "../../components/H2";
 import H3 from "../../components/H3";
-import Small from "../../components/Small";
 import Note, { NoteWrapper, NotedWord } from "../../components/Note";
 import Section from "../../components/Section";
 import P from "../../components/P";
@@ -23,8 +19,6 @@ import cover from "../images/ramt/cover.jpg";
 import borodin from "../images/ramt/borodin.jpg";
 
 import Poem from "../../components/Poem";
-
-import mask from "../images/davydova/mask.gif";
 
 const url = "https://teatralium.com/articles/abbreviatura_ramt";
 const title =

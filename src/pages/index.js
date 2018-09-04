@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Link from "gatsby-link";
 
 import { phone } from "../utils/media";
@@ -8,29 +8,40 @@ import Img from "../components/Img";
 import ImgG from "../components/ImgG";
 
 import H3 from "../components/H3";
-import H2 from "../components/H2";
-import FillCover, { TopCover } from "../components/FillCover";
+import FillCover from "../components/FillCover";
 import Button from "../components/Button/StyledButton";
 import Social from "../components/Social";
+import AboutUsLink from "../components/AboutUsLink";
 
 import { GovnoCover } from "./articles/aktyora_nado_mordoy_v_govno";
 
-import { BlokCover } from "./articles/aktyory_truppy_na_otlyote";
-import { DidenkoCover } from "./articles/vsyo_vidno_yasno";
-import { NogiCover } from "./articles/nogi_zatekayut";
-import { DokCover } from "./articles/dokumentalnaya_horeografiya";
-import { BogomolovCover } from "./articles/poteryanniy_kray";
 import { TelegramCover } from "./articles/telegram_kanaly";
 
 import mask from "./images/davydova/mask.gif";
-import rus from "./images/ppp.gif";
 
-import { REVOLUTION } from "../utils/const";
+import kiss from "./images/kiss.gif";
+
+export function gradientColor(index) {
+  if (index === 0) {
+    return "#333399";
+  }
+  return "#ff93e8";
+}
 
 const StyledLink = styled(Link)`
+  letter-spacing: inherit;
+  transition: letter-spacing 2s;
   text-decoration: none;
   &:hover {
     cursor: hand;
+    transition: letter-spacing 20s;
+    letter-spacing: 1px;
+    background: ${p => gradientColor(0)};
+    background: linear-gradient(
+      to bottom,
+      ${p => gradientColor(0)},
+      ${p => gradientColor(1)}
+    );
   }
 `;
 
@@ -59,19 +70,18 @@ const NoImageCover = styled.div`
   padding-bottom: 2rem;
 `;
 
-const FillCoverMaxHeight = styled(FillCover)`
-  ${phone(`height: 300px !important;`)};
-`;
-
 const Lead = styled.div`
   font-size: ${p => p.size || "1.2rem"};
   color: ${p => p.color || "inherit"};
   background: ${p => p.background || "none"};
-  padding: ${p => p.padding || "auto"};
+  padding: ${p => p.padding || "0.2rem"};
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   font-family: "Bodoni";
-  margin-bottom: ${p => p.marginBottom || "2"}rem;
+  text-shadow:1px -1px 0 rgb(181,179,206),2px -2px 0 rgb(151,149,171),3px -3px 0 rgb(121,119,137),4px -4px 0 rgb(90,90,103),5px -5px 0 rgb(60,60,69),6px -6px 0 rgb(30,30,34),7px -7px 1px rgba(0,0,0,0.56);
+  -webkit-text-shadow:1px -1px 0 rgb(181,179,206),2px -2px 0 rgb(151,149,171),3px -3px 0 rgb(121,119,137),4px -4px 0 rgb(90,90,103),5px -5px 0 rgb(60,60,69),6px -6px 0 rgb(30,30,34),7px -7px 1px rgba(0,0,0,0.56);
+  -moz-text-shadow:1px -1px 0 rgb(181,179,206),2px -2px 0 rgb(151,149,171),3px -3px 0 rgb(121,119,137),4px -4px 0 rgb(90,90,103),5px -5px 0 rgb(60,60,69),6px -6px 0 rgb(30,30,34),7px -7px 1px rgba(0,0,0,0.56);
+
   ${phone(`
     font-size: 0.9em;
     letter-spacing: normal;
@@ -80,331 +90,102 @@ const Lead = styled.div`
   `)};
 `;
 
-const Border = styled.div`
-  border-top: solid 14px black;
-  border-bottom: solid 14px black;
-`;
-
-const PurpleButton = styled(Button)`
-  color: white;
-  border: 3px solid #f2639e;
-
-  &:hover {
-    background: #f2639e;
+const MusicSection = styled(FillCover)`
+  height: 500px;
+  & > a:hover {
   }
-`;
+`
 
+const MusicLink = styled(StyledLink)`
+  width: 25%;
+ }`
+const Title = styled(H1)`
+  text-shadow:1px -1px 0 rgb(181,179,206),2px -2px 0 rgb(151,149,171),3px -3px 0 rgb(121,119,137),4px -4px 0 rgb(90,90,103),5px -5px 0 rgb(60,60,69),6px -6px 0 rgb(30,30,34),7px -7px 1px rgba(0,0,0,0.56);
+  -webkit-text-shadow:1px -1px 0 rgb(181,179,206),2px -2px 0 rgb(151,149,171),3px -3px 0 rgb(121,119,137),4px -4px 0 rgb(90,90,103),5px -5px 0 rgb(60,60,69),6px -6px 0 rgb(30,30,34),7px -7px 1px rgba(0,0,0,0.56);
+  -moz-text-shadow:1px -1px 0 rgb(181,179,206),2px -2px 0 rgb(151,149,171),3px -3px 0 rgb(121,119,137),4px -4px 0 rgb(90,90,103),5px -5px 0 rgb(60,60,69),6px -6px 0 rgb(30,30,34),7px -7px 1px rgba(0,0,0,0.56);
+`
 
-const Protokol = ({ sizes }) => (
-  <FillCoverMaxHeight sizes={sizes} height="350px">
-    <ArticlesSection padding="1" size="14px" />
-  </FillCoverMaxHeight>
-);
-
-const ProtokolSub = () => (
-  <FillCover color="white" height="250px" padding="1rem">
-    <ArticlesSection align="right" margin="0rem" padding="3rem">
-      <H3 align="right" fontStyle="normal">
-        «Никому не рассказывайте, чем вы тут занимались»
-      </H3>
-      <H1small>Почему всем нужно пройти через кружок «Протокол» в ЦИМе</H1small>
-    </ArticlesSection>
-  </FillCover>
-);
-
-const Nespyashie = ({ sizes }) => (
-  <StyledLink to="/articles/nespyashie_v_teatre/">
-    <TopCover bg={sizes.src} bgSize="300px" bgPosition="90% 70%" noBgMobile>
-      <ArticlesSection margin="1rem" marginTop="2rem">
-        <H1 center size="3.2124em">
-          Неспящие в театре
-        </H1>
-        <H1small center>Типы зрителей на основе индуистской философии</H1small>
-      </ArticlesSection>
-    </TopCover>
-  </StyledLink>
-);
-
-const Elutin = ({ sizes }) => (
-  <StyledLink to="/articles/i_bratva_za_slova_otvechaet/">
-    <FillCover bg={sizes.src} repeat bordered borderColor="#f300f3">
-      <ArticlesSection background="rgba(255,255,255,0.6)">
-        <H1 size="3.4124em" center color="purple">
-          И братва за&nbsp;слова отвечает как в&nbsp;лучшие дни
-        </H1>
-        <H1small center color="black">
-          Плейлист импресарио Федора Елютина
-        </H1small>
-      </ArticlesSection>
-    </FillCover>
-  </StyledLink>
-);
-
-const Sonet = ({ sizes }) => (
-  <StyledLink to="/articles/net_amnezii/">
-    <FillCover height="600px" pointer sizes={sizes}>
-      <ArticlesSection margin="0" marginTop="0">
-        <H1 center size="3.2124em">
-          Нет амнезии
-        </H1>
-        <H1small center>
-          Вспоминаем спектакль «Наизусть» Тьяго Родригеса и заучиваем тридцатый
-          сонет Шекспира
-        </H1small>
-      </ArticlesSection>
-    </FillCover>
-  </StyledLink>
-);
-
-const Rostov = ({ sizes }) => (
-  <StyledLink to="/articles/v_moskve_naprimer_analogov_net/">
-    <FillCover pointer sizes={sizes}>
-      <ArticlesSection align="center" padding="6rem 0">
-        <H1 center size="3.2124em" color="white">
-          В Москве, например, аналогов нет
-        </H1>
-        <H1small center color="white">
-          Пять лет ростовскому «Театру 18+» с современными пьесами и казачим
-          рэпом, но без государственных денег
-        </H1small>
-      </ArticlesSection>
-    </FillCover>
-  </StyledLink>
-);
-
-const Sebastian = () => (
-  <StyledLink to="/articles/poobshatsa_s_gospodinom_oblomovym/">
-    <FillCover pointer>
-      <ArticlesSection align="center" margin="0">
-        <H1small>Себастьян Кайзер:</H1small>
-        <H1 size="3.2124em">
-          «Нам всем нужно пообщаться с&nbsp;господином Обломовым»
-        </H1>
-      </ArticlesSection>
-    </FillCover>
-  </StyledLink>
-);
-
-const Naryady = ({ sizes }) => (
-  <StyledLink to="/articles/teatr_mody_v_sovetskoy_rossii/">
-    <FillCover
-      sizes={sizes}
-      bordered
-      borderColor="black"
-      borderSize="7"
+const MusicCover = (props) => (
+  <MusicLink to={props.url}>
+    <MusicSection
       pointer
-    >
-      <ArticlesSection margin="1rem">
-        <H1 size="3.8124em" align="left">
-          Иммерсивный фэшн 20-х,<br />
-          <small>или</small> театр моды в советской России
-        </H1>
-      </ArticlesSection>
-    </FillCover>
-  </StyledLink>
-);
-
-const Avdeev = ({ sizes }) => (
-  <StyledLink to="/articles/ya_posadil_derevo/">
-    <FillCover pointer bg={sizes.src} repeat bordered borderColor="#d54051">
+      bg={props.sizes.src}
+      repeat
+      bordered
+      borderColor="yellow"
+      withHover>
       <ArticlesSection
-        padding="1"
         size="22px"
-        background="rgba(255,255,255,0.8)"
       >
-        <H1 color="#d54051">Я посадил дерево</H1>
-        <Lead color="#d54051">плейлист актера Филиппа Авдеева</Lead>
+        <Title size="2rem" lineHeight="1.2" color="yellow">{props.title}</Title>
+        <Lead color="white">{props.lead}</Lead>
       </ArticlesSection>
-    </FillCover>
-  </StyledLink>
-);
+    </MusicSection>
+  </MusicLink>)
 
-const Abuse = ({ sizes }) => (
-  <StyledLink to="/articles/abyuz_nelzya_pomilovat/">
-    <FillCover sizes={sizes} pointer height="600px">
-      <ArticlesSection
-        padding="3"
-        align="right"
-        background="rgba(97,59,123,0.6)"
-      >
-        <H1 color="white">Абьюз нельзя помиловать</H1>
-      </ArticlesSection>
-    </FillCover>
-  </StyledLink>
-);
-
-const Vyrypaev = ({ sizes }) => (
-  <StyledLink to="/articles/ivan_vyrypaev_protiv_kritikov/">
-    <FillCover sizes={sizes} pointer height="600px">
-      <ArticlesSection padding="1" size="22px" align="center">
-        <H1 size="3rem" color="white">
-          «Я абсолютно против критиков сегодня»
-        </H1>
-        <Lead color="white">
-          Иван Вырыпаев о театре без микрофонов и рецензий
-        </Lead>
-      </ArticlesSection>
-    </FillCover>
-  </StyledLink>
-);
-
-const Pomosh = ({ sizes }) => (
-  <StyledLink to="/articles/pomosh_zala/">
-    <FillCover sizes={sizes} pointer height="400px">
-      <ArticlesSection padding="1" size="22px" align="center">
-        <H1 color="white">Помощь зала</H1>
-        <Lead color="white">
-          Социальный театр от Боба Уилсона до Бориса Павловича
-        </Lead>
-      </ArticlesSection>
-    </FillCover>
-  </StyledLink>
+const Bogomolov = ({ sizes }) => (
+  <MusicCover
+    url="/articles/poteryanniy_kray/"
+    title="Выпью за потерянный людьми (к)рай"
+    lead="Песни из спектаклей Константина Богомолова"
+    sizes={sizes}
+  />
 );
 
 const Lisovsky = ({ sizes }) => (
-  <StyledLink to="/articles/playlist_komissara_vsevoloda_lisovskogo/">
-    <FillCover pointer bg={sizes.src} repeat bordered borderColor="yellow">
-      <ArticlesSection
-        padding="1"
-        size="22px"
-        background="rgba(118,189,187,0.67)"
-      >
-        <H1 color="yellow">Миражи — это наша жизнь?</H1>
-        <Lead color="black">Плейлист комиссара Всеволода Лисовского</Lead>
-      </ArticlesSection>
-    </FillCover>
-  </StyledLink>
+  <MusicCover
+    url="/articles/playlist_komissara_vsevoloda_lisovskogo/"
+    title="Миражи — это наша жизнь?"
+    lead="Плейлист комиссара Всеволода Лисовского"
+    sizes={sizes}
+  />
 );
 
-const Borodin = ({ sizes }) => (
-  <StyledLink to="/articles/abbreviatura_ramt/">
-    <FillCover sizes={sizes} height="600px">
-      <ArticlesSection padding="1" align="right">
-        <H1 size="3.2124em" color="#ec71c8">
-          «Аббревиатуру РАМТ мы не придумывали»
-        </H1>
-        <Lead color="lavender">
-          Алексей Бородин об истории своего театра в начале 90-х
-        </Lead>
-      </ArticlesSection>
-    </FillCover>
-  </StyledLink>
+const Elutin = ({ sizes }) => (
+  <MusicCover
+    url="/articles/i_bratva_za_slova_otvechaet/"
+    title="И братва за&nbsp;слова отвечает как в&nbsp;лучшие дни"
+    lead="Плейлист импресарио Федора Елютина"
+    sizes={sizes}
+  />
 );
 
-const Davydova = () => (
-  <StyledLink to="/articles/velikoe_raznoobrazie/">
-    <FillCover pointer color="#FDF06f" bg={mask}>
-      <ArticlesSection marginTop="4rem">
-        <H1small marginTop="0">
-          Марина Давыдова о том, что нужно знать о современном театре
-        </H1small>
-        <H1>Великое разнообразие</H1>
-      </ArticlesSection>
-    </FillCover>
-  </StyledLink>
+const Avdeev = ({ sizes }) => (
+  <MusicCover
+    url="/articles/ya_posadil_derevo/"
+    title="Я посадил дерево"
+    lead="плейлист актера Филиппа Авдеева"
+    sizes={sizes}
+  />
 );
 
-const Annenkov = ({ sizes }) => (
-  <StyledLink to="/articles/ozhila_krasnaya_stsena/">
-    <FillCover pointer color="#FDF06f" bordered borderColor={REVOLUTION}>
-      <ArticlesSection padding="2">
-        <H2>Ожила красная сцена</H2>
-        <Lead marginBottom="2">
-          Как художник Юрий Анненков стал «модельером» революции
-        </Lead>
-        <ImgG
-          round
-          noBorder
-          sizes={sizes}
-          width="280px"
-          custom={`
-        border-style: inset;
-        border-color: ${REVOLUTION};
-        border-width: 10px;
-      `}
-        />
-      </ArticlesSection>
-    </FillCover>
-  </StyledLink>
-);
+const FillCoverStyled = styled(FillCover)`
+  margin-bottom: 4rem;
+`
 
-const IzVsehIskusstv = ({ sizes }) => (
-  <StyledLink to="/articles/iz_vseh_iskusstv/">
-    <FillCover
-      shadow
-      pointer
-      color="black"
-      fontColor="#9bda9e"
-      height="400px"
-      sizes={sizes}
-    >
-      <ArticlesSection padding="1" background="rgba(97,59,123,0.6)">
-        <Lead padding="0.5rem" color="#9bda9e">
-          Набоков, Хармс и другие классики рассуждают о театре
-        </Lead>
-        <H1>Из всех искусств</H1>
-      </ArticlesSection>
-    </FillCover>
-  </StyledLink>
-);
-
-const YellowButton = styled(Button)`
-  color: yellow;
-  border: 3px solid yellow;
-  background: rgba(0, 0, 0, 0.5);
-`;
-
-const Belomor = ({ sizes }) => (
-  <FillCover bordered borderColor="yellow" sizes={sizes} height="700px">
-    <ArticlesSection padding="1" size="22px" align="left">
-      <Lead color="yellow">Как и кем создавались театры ГУЛАГа</Lead>
-      <H1 color="yellow">«Морской царь Беломор»</H1>
-      <YellowButton to="/articles/morskoy_tsar_belomor">Читать</YellowButton>
+const text = "«В МХТ есть два прекрасных молодых актера, но и их пожрал театр Карабаса-Барабаса имени ЭГО г-на Бутусова. ПРОВАЛ»";
+const author = "Сергей о спектакле «Человек из рыбы» Юрия Бутусова в МХТ";
+const Review = ({ text, author }) => (
+  <FillCoverStyled pointer bg={mask}>
+    <ArticlesSection marginTop="4rem">
+      <H3 marginTop="0">
+        {text}
+      </H3>
+      <div>{author}</div>
     </ArticlesSection>
-  </FillCover>
+  </FillCoverStyled>
 );
 
 const Bol = ({ sizes }) => (
-  <ArticlesSection>
+  <ArticlesSection color="white" background="black">
     <NoImageCover>
       <H1small>«МНЕ ПЛОХО, МНЕ СКУЧНО»</H1small>
       <H1>почему люди не ходят в театр</H1>
-      <Button to="/articles/mne_ploho_mne_skuchno/">Читать</Button>
+      <Button
+        color="#DA70D6"
+        to="/articles/mne_ploho_mne_skuchno/">Читать</Button>
     </NoImageCover>
   </ArticlesSection>
-);
-
-const Nadryv = ({ sizes }) => (
-  <FillCoverMaxHeight sizes={sizes} height="400px">
-    <ArticlesSection padding="3" size="14px" />
-  </FillCoverMaxHeight>
-);
-
-const NadryvSub = () => (
-  <FillCover color="white" height="300px">
-    <ArticlesSection align="right" margin="1rem">
-      <H3 align="right" fontStyle="normal">
-        Непереводимый русский надрыв
-      </H3>
-      <H1small>Юрий Муравицкий и Валерий Печейкин о любви и хаосе</H1small>
-    </ArticlesSection>
-  </FillCover>
-);
-
-const Lyub = ({ sizes }) => (
-  <StyledLink to="/articles/lyubimovka/">
-    <FillCover pointer color="#e6ceff">
-      <ArticlesSection padding="1">
-        <H3>
-          <i>«Меня волнует вся х**ня»</i>
-        </H3>
-        <Lead>
-          Ридер «Любимовки» Анна Банасюкевич о стране, в которой мы живем
-        </Lead>
-        <Img src={rus} width="300px" round />
-      </ArticlesSection>
-    </FillCover>
-  </StyledLink>
 );
 
 const Ezhen = ({ sizes }) => (
@@ -419,16 +200,6 @@ const Ezhen = ({ sizes }) => (
   </FillCover>
 );
 
-const Svet = ({ sizes }) => (
-  <FillCover bordered sizes={sizes} height="600px">
-    <ArticlesSection padding="3">
-      <H1 color="white">Свет далеких планет</H1>
-      <Lead color="white">Обзор европейских премьер нового сезона</Lead>
-      <PurpleButton to="/articles/svet_dalyokih_planet/">Читать</PurpleButton>
-    </ArticlesSection>
-  </FillCover>
-);
-
 const GovnoStyled = styled(GovnoCover)`
   transition: border 5s;
   &:hover {
@@ -436,6 +207,107 @@ const GovnoStyled = styled(GovnoCover)`
     border: solid 9px yellow;
   }
 `;
+
+const MusicWrapper = styled.div`
+  display: flex;
+  max-width: 1600px;
+  background: black;
+  ${phone(`display: block;`)}
+`
+
+const fadeStrong = keyframes`
+0% {
+  box-shadow: inset 0 0 0px black;
+}
+
+to {
+  box-shadow: inset 0 0 50px black;
+}
+`
+
+const MusicHeader = styled.div`
+  border-top: 1px solid red;
+  padding: 2rem 1rem;
+  background: ${p => p.bg || 'lavender'};
+  color: white;
+  font-size: 2rem;
+
+  box-shadow: inset 0 0 0px black;
+  animation: ${fadeStrong} 10s;
+  transition: box-shadow 10s;
+  animation-fill-mode: both;
+`
+
+const Sec = styled.div`
+  max-width: calc(752px + 16px * 2);
+  margin: 0 auto;
+  text-align: center;
+`
+
+const Recent = styled.ul`
+  font-size: 2rem;
+  padding: 2rem;
+  line-height: 2rem;
+  list-style:none;
+  position: relative;
+`
+const animateColor = keyframes`
+0% {
+  color: rgba(0, 255, 255, 1);
+}
+
+50% {
+  color: rgba(255, 0, 255, 1);
+}
+
+0% {
+  color: rgba(0, 255, 255, 1);
+}
+`
+
+const L = styled.li`
+  margin-bottom: 1.4rem;
+  font-weight: bold;
+  transition: font-size 0.4s;
+  &:hover::before {
+    font-size: 5rem;
+    transition: font-size 1s;
+  }
+  &:before {
+    content: "♦";
+    text-align: center;
+    color: rgba(0, 255, 255, 1);
+    animation: ${animateColor} 1s infinite;
+    animation-delay: ${p => p.i * 0.1}s;
+    position: absolute;
+    width: 100%;
+    left: -50%;
+  }
+`
+
+const SLink = styled(StyledLink)`
+  &:hover {
+    text-decoration: underline;
+  }
+`
+
+const Li = ({ children, to, i }) => <SLink to={`/articles/${to}`}>
+  <L i={i}>{children}</L>
+</SLink>
+
+const Smaller = styled.div`
+  padding-top: 0.7rem;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: normal;
+`
+
+const Soc = styled(Social)`
+  border-bottom: 1px solid red;
+`
+const SocialStyled = (props) => <Soc {...props} color="white" />
+
+const Kiss = () => <Img src={kiss} noBorder width="70px" marginTop="2rem" marginBottom="3rem" />
 
 export class HomePage extends React.PureComponent {
   // eslint-disable-line react/prefer-stateless-function
@@ -446,59 +318,181 @@ export class HomePage extends React.PureComponent {
         <StyledLink to="/articles/telegram_kanaly/">
           <TelegramCover sizes={data.telegram.sizes} />
         </StyledLink>
-        <StyledLink to="/articles/poteryanniy_kray/">
-          <BogomolovCover
-            cover={data.bogomolov.sizes.src}
-          />
-        </StyledLink>
-        <Border>
-          <StyledLink to="/articles/protokol_povsednevnost/">
-            <Protokol sizes={data.protokol.sizes} />
-            <ProtokolSub />
-          </StyledLink>
-        </Border>
-        <StyledLink to="/articles/dokumentalnaya_horeografiya/">
-          <DokCover showDate={false} sizes={data.dokkk.sizes} />
-        </StyledLink>
-        <StyledLink to="/articles/nogi_zatekayut/">
-          <NogiCover showDate={false} sizes={data.nogi.sizes} />
-        </StyledLink>
-        <StyledLink to="/articles/vsyo_vidno_yasno/">
-          <DidenkoCover showDate={false} sizes={data.didenko.sizes} />
-        </StyledLink>
-        <StyledLink to="/articles/aktyory_truppy_na_otlyote/">
-          <BlokCover showDate={false} />
-        </StyledLink>
+
+        <Section>
+          <Kiss />
+          <Recent>
+            <Li i={1} to="/">
+              <b>«В театре конь не валялся»</b>
+              <Smaller>
+                Начало сезона в дневниках Вахтангова, Прокофьева, Золотухина и других
+              </Smaller>
+            </Li>
+            <Li i={2} to="/">
+              <b>«Зачем-то мне это надо»</b>
+              <Smaller>
+                Кто ведет театральные блоги и может ли телеграм-канал о театре быть популярным
+              </Smaller>
+            </Li>
+            <Li i={3} to="protokol_povsednevnost/">
+              <b>«Никому не рассказывайте, чем вы тут занимались»</b>
+              <Smaller>Почему всем нужно пройти через кружок «Протокол» в ЦИМе</Smaller>
+            </Li>
+            <Li i={4} to="dokumentalnaya_horeografiya/">
+              <b>Документальная хореография</b>
+              <Smaller>Существует ли она и как станцевать Декларацию независимости</Smaller>
+            </Li>
+            <Li i={5} to="nogi_zatekayut/">
+              <b>«Ноги затекают, а вообще это сплошное удовольствие»</b>
+              <Smaller>Участницы спектакля «Родина» — о том, как стать перформером и что это дает</Smaller>
+            </Li>
+            <Li i={6} to="vsyo_vidno_yasno/">
+              <b>Все видно ясно, но не заблудитесь!</b>
+              <Smaller>Что не так со спектаклем Максима Диденко «Беги, Алиса, беги»</Smaller>
+            </Li>
+          </Recent>
+        </Section>
+
+        <Review
+          text={text}
+          author={author}
+        />
+
+        <MusicHeader bg="#7851A9">
+          <Sec>
+            <i>«За музыку отвечает...»</i>
+          </Sec>
+        </MusicHeader>
+        <MusicWrapper>
+          <Bogomolov sizes={data.bogomolov.sizes} />
+          <Lisovsky sizes={data.lisovsky.sizes} />
+          <Elutin sizes={data.elutin.sizes} />
+          <Avdeev sizes={data.avdeev.sizes} />
+        </MusicWrapper>
+        <MusicHeader bg="#BF00FF">
+          <SocialStyled />
+        </MusicHeader>
+        <Section>
+          <Img src={kiss} noBorder width="70px" marginTop="1rem" />
+          <Recent>
+            <Li i={1} to="aktyory_truppy_na_otlyote/">
+              <b>Актеры труппы на отлете</b>
+              <Smaller>
+                Александр Блок о репертуаре государственных театров
+              </Smaller>
+            </Li>
+
+            <Li i={2} to="nespyashie_v_teatre/">
+              <b>Неспящие в театре</b>
+              <Smaller>
+                Типы зрителей на основе индуистской философии
+              </Smaller>
+            </Li>
+            <Li i={3} to="net_amnezii/">
+              <b>Нет амнезии</b>
+              <Smaller>
+                Вспоминаем спектакль «Наизусть» Тьяго Родригеса и заучиваем тридцатый сонет Шекспира
+              </Smaller>
+            </Li>
+            <Li i={4} to="v_moskve_naprimer_analogov_net/">
+              <b>В Москве, например, аналогов нет</b>
+              <Smaller>
+                Пять лет ростовскому «Театру 18+» с современными пьесами и казачим рэпом, но без государственных денег
+              </Smaller>
+            </Li>
+            <Li i={5} to="poobshatsa_s_gospodinom_oblomovym/">
+              <b>«Нам всем нужно пообщаться с господином Обломовым»</b>
+              <Smaller>
+                Драматург Евгений Казачков расспрашивает Себастьяна Кайзера о десяти годах работы в легендарном «Фольксбюне»
+              </Smaller>
+            </Li>
+          </Recent>
+        </Section>
+
         <StyledLink to="/articles/aktyora_nado_mordoy_v_govno/">
           <GovnoStyled showDate={false} sizes={data.govno.sizes} />
         </StyledLink>
-        <Nespyashie sizes={data.zritel8.sizes} />
-        <Elutin sizes={data.elutin.sizes} />
-        <Sonet sizes={data.sonet.sizes} />
-        <Social />
-        <Rostov sizes={data.rostov.sizes} />
-        <Sebastian />
-        <Naryady sizes={data.naryady.sizes} />
-        <Avdeev sizes={data.avdeev.sizes} />
-        <Abuse sizes={data.abuse.sizes} />
-        <Vyrypaev sizes={data.vyrypaev.sizes} />
-        <Pomosh sizes={data.pomosh.sizes} />
-        <Lisovsky sizes={data.lisovsky.sizes} />
-        <Borodin sizes={data.borodin.sizes} />
-        <Annenkov sizes={data.annenkov.sizes} />
-        <IzVsehIskusstv sizes={data.iz_vseh_iskusstv.sizes} />
-        <Davydova />
-        <Belomor sizes={data.belomor.sizes} />
-        <Bol />
-        <Border>
-          <StyledLink to="/articles/neperevodimiy_russkiy_nadryv/">
-            <Nadryv sizes={data.nadryv.sizes} />
-            <NadryvSub />
-          </StyledLink>
-        </Border>
-        <Lyub />
+
+        <Section>
+          <Recent>
+            <Li i={1} to="teatr_mody_v_sovetskoy_rossii/">
+              <b>Иммерсивный фэшн 20-х</b>
+              <Smaller>Или театр моды в советской России</Smaller>
+            </Li>
+            <Li i={2} to="abyuz_nelzya_pomilovat/">
+              <b>Абьюз нельзя помиловать</b>
+              <Smaller>Большой разговор о насилии в театре и жизни с драматургом Натальей Зайцевой и блогеркой Никой Водвуд</Smaller>
+            </Li>
+            <Li i={3} to="ivan_vyrypaev_protiv_kritikov/">
+              <b>«Я абсолютно против критиков сегодня»</b>
+              <Smaller>Иван Вырыпаев о театре без микрофонов и рецензий</Smaller>
+            </Li>
+            <Li i={4} to="pomosh_zala/">
+              <b>Помощь зала</b>
+              <Smaller>Социальный театр от Боба Уилсона до Бориса Павловича</Smaller>
+            </Li>
+            <Li i={5} to="abbreviatura_ramt/">
+              <b>«Аббревиатуру РАМТ мы не придумывали»</b>
+              <Smaller>Алексей Бородин об истории своего театра в начале 90-х</Smaller>
+            </Li>
+          </Recent>
+        </Section>
+
+        <Review
+          text="«Нет. Нет нет нет. Мы поняли, что наш КВН даже очень ничего...»"
+          author="Светлана о спектакле «Сказки Пушкина» в Театре наций"
+        />
+        <MusicHeader bg="#DA70D6">
+          <SocialStyled />
+        </MusicHeader>
+
+        <Kiss />
         <Ezhen sizes={data.ezhen.sizes} />
-        <Svet sizes={data.mycene.sizes} />
+        <Kiss />
+
+        <Section>
+          <Recent>
+            <Li i={1} to="ozhila_krasnaya_stsena/">
+              <b>Ожила красная сцена</b>
+              <Smaller>Как художник Юрий Анненков стал «модельером» революции</Smaller>
+            </Li>
+            <Li i={2} to="iz_vseh_iskusstv/">
+              <b>Из всех искусств</b>
+              <Smaller>Набоков, Хармс и другие классики рассуждают о театре</Smaller>
+            </Li>
+            <Li i={3} to="velikoe_raznoobrazie/">
+              <b>Великое разнообразие</b>
+              <Smaller>Марина Давыдова о том, что нужно знать о современном театре</Smaller>
+            </Li>
+            <Li i={4} to="morskoy_tsar_belomor/">
+              <b>«Морской царь Беломор»</b>
+              <Smaller>Как и кем создавались театры ГУЛАГа</Smaller>
+            </Li>
+            <Li i={5} to="neperevodimiy_russkiy_nadryv/">
+              <b>Непереводимый русский надрыв</b>
+              <Smaller>Юрий Муравицкий и Валерий Печейкин о любви и хаосе</Smaller>
+            </Li>
+            <Li i={6} to="lyubimovka/">
+              <b>«Меня волнует вся х**ня»</b>
+              <Smaller>Организатор Любимовки Анна Банасюкевич о стране, в которой мы живем</Smaller>
+            </Li>
+          </Recent>
+        </Section>
+
+        <MusicWrapper>
+          <Bol />
+        </MusicWrapper>
+        <MusicHeader bg="#DF00FF">
+          <SocialStyled />
+        </MusicHeader>
+        <AboutUsLink i={1} />
+        <AboutUsLink i={2} />
+        <AboutUsLink i={3} />
+        <AboutUsLink i={4} />
+        <AboutUsLink i={5} />
+        <AboutUsLink i={6} />
+        <AboutUsLink i={7} />
+        <AboutUsLink i={8} />
       </div>
     );
   }
@@ -507,7 +501,7 @@ export class HomePage extends React.PureComponent {
 export default HomePage;
 
 export const pageQuery = graphql`
-  query TestImageQuery {
+  query TestttImageQuery {
     protokol: imageSharp(id: { regex: "/protokol/protokol1.jpg/" }) {
       sizes(maxWidth: 1280) {
         ...GatsbyImageSharpSizes

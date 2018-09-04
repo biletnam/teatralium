@@ -1,17 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 
-import { phone } from "../../utils/media";
-import H1, { H1small } from "../../components/H1";
-import ArticleHelmet from "../../components/ArticleHelmet";
-import Section from "../../components/Section";
-import Button from "../../components/Button";
-import P from "../../components/P";
-import Share from "../../components/Share";
-import Other from "../../components/Other";
-import Img from "../../components/ImgG";
+import H1 from "../../../components/H1";
+import ArticleHelmet from "../../../components/ArticleHelmet";
+import Section from "../../../components/Section";
+import P from "../../../components/P";
+import Share from "../../../components/Share";
+import Other from "../../../components/Other";
+import Img from "../../../components/ImgG";
 
-import { TopCover } from "../../components/FillCover";
+import { TopCover } from "../../../components/FillCover";
 
 const url = "https://teatralium.com/articles/idite_na/";
 const title = "«Актера надо мордой в говно, и тогда он начинает жечь»";
@@ -108,29 +106,74 @@ const text = (i, j) => replies[i].find(a => a.index === j).text;
 
 const getAnswer = (i, j) => replies[i].find(a => a.index === j).answer;
 
-const Test = ({i, confirm, select, checked }) => (<div>
-  <div><b>{headers[i]}</b></div>
+const getImg = (i, j) => replies[i].find(a => a.index === j).img;
+
+const Label = styled.label`
+  padding-left: 0.7rem;
+  &:hover {
+    cursor: pointer;
+  }
+`
+
+const TestHeader = styled.div`
+  font-weight: bold;
+  padding-bottom: 0.8rem;
+`
+
+const Test = ({i, select, checked }) => (<div>
+  <TestHeader>{headers[i]}</TestHeader>
   <div>
     <input checked={checked} type="radio" id="one" name="answer" onChange={() => select(getAnswer(i, 1))} />
-    <label htmlFor="one">{text(i, 1)}</label>
+    <Label htmlFor="one">{text(i, 1)}</Label>
   </div>
   <div>
     <input checked={checked} type="radio" id="two" name="answer" onChange={() => select(getAnswer(i, 2))} />
-    <label htmlFor="two">{text(i, 2)}</label>
+    <Label htmlFor="two">{text(i, 2)}</Label>
   </div>
   <div>
     <input checked={checked} type="radio" id="three" name="answer" onChange={() => select(getAnswer(i, 3))} />
-    <label htmlFor="three">{text(i, 3)}</label>
+    <Label htmlFor="three">{text(i, 3)}</Label>
   </div>
   <div>
     <input checked={checked} type="radio" id="four" name="answer" onChange={() => select(getAnswer(i, 4))} />
-    <label htmlFor="four">{text(i, 4)}</label>
+    <Label htmlFor="four">{text(i, 4)}</Label>
   </div>
   <div>
     <input checked={checked} type="radio" id="five" name="answer" onChange={() => select(getAnswer(i, 5))} />
-    <label htmlFor="five">{text(i, 5)}</label>
+    <Label htmlFor="five">{text(i, 5)}</Label>
   </div>
-  <Button onClick={confirm}>Дальше</Button>
+</div>)
+
+const Answer = styled.div`
+  display: flex;
+  align-items: center;
+  &:hover {
+    cursor: pointer;
+  }
+`
+
+const TestImages = ({ i, select, checked, images }) => (<div>
+  <TestHeader>{headers[i]}</TestHeader>
+  <Answer>
+    <input checked={checked} type="radio" id="one" name="answer" onChange={() => select(getAnswer(i, 1))} />
+    <Img marginBottom="0" marginTop="10px" maxWidth="320px" sizes={images.grecha.sizes} onClick={() => select(getAnswer(i, 1))} />
+  </Answer>
+  <Answer>
+    <input checked={checked} type="radio" id="two" name="answer" onChange={() => select(getAnswer(i, 2))} />
+    <Img marginBottom="0" marginTop="10px" maxWidth="320px" sizes={images.salad.sizes} onClick={() => select(getAnswer(i, 1))} />
+  </Answer>
+  <Answer>
+    <input checked={checked} type="radio" id="three" name="answer" onChange={() => select(getAnswer(i, 3))} />
+    <Img marginBottom="0" marginTop="10px" maxWidth="320px" sizes={images.pizza.sizes} onClick={() => select(getAnswer(i, 1))} />
+  </Answer>
+  <Answer>
+    <input checked={checked} type="radio" id="four" name="answer" onChange={() => select(getAnswer(i, 4))} />
+    <Img marginBottom="0" marginTop="10px" maxWidth="320px" sizes={images.steak.sizes} onClick={() => select(getAnswer(i, 1))} />
+  </Answer>
+  <Answer>
+    <input checked={checked} type="radio" id="five" name="answer" onChange={() => select(getAnswer(i, 5))} />
+    <Img marginBottom="0" marginTop="10px" maxWidth="320px" sizes={images.shaurma.sizes} onClick={() => select(getAnswer(i, 1))} />
+  </Answer>
 </div>)
 
 export class Article extends React.PureComponent {
@@ -150,9 +193,21 @@ export class Article extends React.PureComponent {
       key: Date.now(),
     };
   }
+  calculateFinal(answers) {
+    const result = Object
+      .keys(answers)
+      .reduce((a, b) => answers[a] > answers[b] ? a : b);
+
+    this.props.history.push(`/articles/idite_na/${result}?result`);
+  }
   confirm() {
     const { answers } = this.state;
     answers[this.state.selected] += 1;
+
+    if (this.state.i === 7) {
+      this.calculateFinal(answers);
+      return;
+    }
 
     this.setState({
       answers,
@@ -162,10 +217,24 @@ export class Article extends React.PureComponent {
   }
   select(i) {
     this.setState({ selected: i });
+    setTimeout(() => this.confirm(), 200);
   }
   // eslint-disable-line react/prefer-stateless-function
   render() {
-    const { data } = this.props;
+    const {
+      data,
+    } = this.props;
+
+    const {
+      grecha,
+      pizza,
+      salad,
+      shaurma,
+      steak,
+    } = data;
+
+    const { i } = this.state;
+
     return (
       <div>
         <ArticleHelmet
@@ -179,8 +248,21 @@ export class Article extends React.PureComponent {
         <GovnoCover />
         <Section withHomepageLink>
           <P>И снова здравствуйте. В России, несмотря ни на что, стартует новый театральный сезон. Ответьте на вопросы и узнайте, с какого спектакля начать его будет приятнее всего.</P>
-          {this.state.answers.a} {this.state.answers.b} {this.state.answers.c} {this.state.answers.d} {this.state.answers.e}
-          <Test key={this.state.key} i={this.state.i} confirm={() => this.confirm()} select={(i) => this.select(i)} />
+          {i !== 5 && <Test key={this.state.key} i={this.state.i} confirm={() => this.confirm()} select={(i) => this.select(i)} />}
+          {i === 5 &&
+            <TestImages
+              key={this.state.key}
+              i={this.state.i}
+              confirm={() => this.confirm()}
+              select={(i) => this.select(i)}
+              images={{
+                grecha,
+                pizza,
+                salad,
+                shaurma,
+                steak,
+              }}
+            />}
         </Section>
         <Share url={url} />
         <Other url={url} />
@@ -205,6 +287,31 @@ export const pageQuery = graphql`
     }
     curtain1: imageSharp(id: { regex: "/idite_na/curtain-right.png/" }) {
       sizes(maxWidth: 800) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    grecha: imageSharp(id: { regex: "/idite_na/grecha.jpg/" }) {
+      sizes(maxWidth: 200) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    pizza: imageSharp(id: { regex: "/idite_na/pizza.jpg/" }) {
+      sizes(maxWidth: 200) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    salad: imageSharp(id: { regex: "/idite_na/salad.jpg/" }) {
+      sizes(maxWidth: 200) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    shaurma: imageSharp(id: { regex: "/idite_na/shaurma.jpg/" }) {
+      sizes(maxWidth: 200) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    steak: imageSharp(id: { regex: "/idite_na/steak.jpg/" }) {
+      sizes(maxWidth: 200) {
         ...GatsbyImageSharpSizes
       }
     }

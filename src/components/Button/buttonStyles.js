@@ -19,6 +19,7 @@ const buttonStyles = css`
   transition: all 0.2s ease-out;
   font-weight: bold;
   border: 2px solid ${p => p.color || 'black'};
+  max-width: 100%;
 
   &:hover {
     background: ${p => p.color || 'black'};

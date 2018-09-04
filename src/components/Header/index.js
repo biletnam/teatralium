@@ -6,9 +6,6 @@ import H1 from "../H1";
 import { phone } from "../../utils/media";
 
 export function gradientColor({ pathname }, index) {
-  if (pathname === "/articles/ozhila_krasnaya_stsena") {
-    return "#d43f34";
-  }
   if (index === 0) {
     return "#333399";
   }
@@ -49,20 +46,27 @@ const H = ({ pathname }) => (
   </Title>
 );
 
+const HeaderWrapper = styled.div`
+  ${p => p.pathname && p.pathname.includes('/articles/idite_na/')
+    && 'display: none;'}
+`
+
 class Header extends React.Component {
   // eslint-disable-line react/prefer-stateless-function
   render() {
     const { pathname } = this.props;
+    console.log(pathname);
+    console.log(this.props);
     return (
-      <div>
+      <HeaderWrapper pathname={pathname}>
         {pathname === "/" ? (
           <H />
         ) : (
-          <A to="/">
-            <H pathname={pathname} />
-          </A>
-        )}
-      </div>
+            <A to="/">
+              <H pathname={pathname} />
+            </A>
+          )}
+      </HeaderWrapper>
     );
   }
 }

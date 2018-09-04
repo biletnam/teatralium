@@ -107,8 +107,10 @@ export default FillCoverWithBg;
 export const TopCover = styled(FillCoverWithBg)`
   min-height: 650px;
   height: calc(100vh - 110px);
+  ${p => p.pathname && p.pathname.includes('result') && 'height: 100vh;'}
   ${phone(`
     min-height: auto;
     height: calc(100vh - 45px);
+    ${p => p.pathname && p.pathname.includes('result') && 'height: 100vh;'}
   `)};
 `;
