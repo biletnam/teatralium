@@ -15,7 +15,7 @@ import AboutUsLink from "../components/AboutUsLink";
 
 import { GovnoCover } from "./articles/aktyora_nado_mordoy_v_govno";
 
-import { TelegramCover } from "./articles/telegram_kanaly";
+import { IditeNaCover } from "./articles/idite_na";
 
 import mask from "./images/davydova/mask.gif";
 
@@ -161,6 +161,7 @@ const Avdeev = ({ sizes }) => (
 
 const FillCoverStyled = styled(FillCover)`
   margin-bottom: 4rem;
+  ${phone('margin-bottom: 1rem;')}
 `
 
 const text = "«В МХТ есть два прекрасных молодых актера, но и их пожрал театр Карабаса-Барабаса имени ЭГО г-на Бутусова. ПРОВАЛ»";
@@ -182,7 +183,8 @@ const Bol = ({ sizes }) => (
       <H1small>«МНЕ ПЛОХО, МНЕ СКУЧНО»</H1small>
       <H1>почему люди не ходят в театр</H1>
       <Button
-        color="#DA70D6"
+        color="white"
+        border="white"
         to="/articles/mne_ploho_mne_skuchno/">Читать</Button>
     </NoImageCover>
   </ArticlesSection>
@@ -250,6 +252,7 @@ const Recent = styled.ul`
   line-height: 2rem;
   list-style:none;
   position: relative;
+  ${phone('padding: 1rem;')}
 `
 const animateColor = keyframes`
 0% {
@@ -282,6 +285,7 @@ const L = styled.li`
     position: absolute;
     width: 100%;
     left: -50%;
+    ${phone(`left: -47%; font-size: 1.2rem;`)}
   }
 `
 
@@ -300,6 +304,7 @@ const Smaller = styled.div`
   font-size: 1.4rem;
   font-style: normal;
   font-weight: normal;
+  ${phone('font-size: 1rem;')}
 `
 
 const Soc = styled(Social)`
@@ -309,26 +314,28 @@ const SocialStyled = (props) => <Soc {...props} color="white" />
 
 const Kiss = () => <Img src={kiss} noBorder width="70px" marginTop="2rem" marginBottom="3rem" />
 
+const Spacer = styled.div`margin-top: 4rem;`
+
 export class HomePage extends React.PureComponent {
   // eslint-disable-line react/prefer-stateless-function
   render() {
     const { data } = this.props;
     return (
       <div>
-        <StyledLink to="/articles/telegram_kanaly/">
-          <TelegramCover sizes={data.telegram.sizes} />
+        <StyledLink to="/articles/idite_na/">
+          <IditeNaCover sizes={data.idite_na.sizes} />
         </StyledLink>
 
         <Section>
           <Kiss />
           <Recent>
-            <Li i={1} to="/">
+            <Li i={1} to="kon_ne_valyalsya/">
               <b>«В театре конь не валялся»</b>
               <Smaller>
                 Начало сезона в дневниках Вахтангова, Прокофьева, Золотухина и других
               </Smaller>
             </Li>
-            <Li i={2} to="/">
+            <Li i={2} to="telegram_kanaly/">
               <b>«Зачем-то мне это надо»</b>
               <Smaller>
                 Кто ведет театральные блоги и может ли телеграм-канал о театре быть популярным
@@ -360,7 +367,7 @@ export class HomePage extends React.PureComponent {
 
         <MusicHeader bg="#7851A9">
           <Sec>
-            <i>«За музыку отвечает...»</i>
+            «За музыку отвечает...»
           </Sec>
         </MusicHeader>
         <MusicWrapper>
@@ -446,7 +453,6 @@ export class HomePage extends React.PureComponent {
           <SocialStyled />
         </MusicHeader>
 
-        <Kiss />
         <Ezhen sizes={data.ezhen.sizes} />
         <Kiss />
 
@@ -485,14 +491,11 @@ export class HomePage extends React.PureComponent {
         <MusicHeader bg="#DF00FF">
           <SocialStyled />
         </MusicHeader>
+        <Spacer />
         <AboutUsLink i={1} />
         <AboutUsLink i={2} />
         <AboutUsLink i={3} />
         <AboutUsLink i={4} />
-        <AboutUsLink i={5} />
-        <AboutUsLink i={6} />
-        <AboutUsLink i={7} />
-        <AboutUsLink i={8} />
       </div>
     );
   }
@@ -502,45 +505,8 @@ export default HomePage;
 
 export const pageQuery = graphql`
   query TestttImageQuery {
-    protokol: imageSharp(id: { regex: "/protokol/protokol1.jpg/" }) {
-      sizes(maxWidth: 1280) {
-        ...GatsbyImageSharpSizes
-      }
-    }
-    abuse: imageSharp(id: { regex: "/abuse/cover.jpg/" }) {
-      sizes(maxWidth: 1280) {
-        ...GatsbyImageSharpSizes
-      }
-    }
     ezhen: imageSharp(id: { regex: "/ezhen/" }) {
       sizes(maxWidth: 400) {
-        ...GatsbyImageSharpSizes
-      }
-    }
-    borodin: imageSharp(id: { regex: "/ramt/borodin.jpg/" }) {
-      sizes(maxWidth: 1280) {
-        ...GatsbyImageSharpSizes
-      }
-    }
-    nadryv: imageSharp(id: { regex: "/np1.jpg/" }) {
-      sizes(maxWidth: 1280) {
-        ...GatsbyImageSharpSizes
-      }
-    }
-    belomor: imageSharp(id: { regex: "/belomor/1test.jpg/" }) {
-      sizes(maxWidth: 1280) {
-        ...GatsbyImageSharpSizes
-      }
-    }
-    annenkov: imageSharp(id: { regex: "/annenkov/home.jpg/" }) {
-      sizes(maxWidth: 1280) {
-        ...GatsbyImageSharpSizes
-      }
-    }
-    iz_vseh_iskusstv: imageSharp(
-      id: { regex: "/iz_vseh_iskusstv/cover.jpg/" }
-    ) {
-      sizes(maxWidth: 1280) {
         ...GatsbyImageSharpSizes
       }
     }
@@ -564,63 +530,13 @@ export const pageQuery = graphql`
         ...GatsbyImageSharpSizes
       }
     }
-    vyrypaev: imageSharp(id: { regex: "/vyrypaev/1.jpg/" }) {
-      sizes(maxWidth: 1280) {
-        ...GatsbyImageSharpSizes
-      }
-    }
-    pomosh: imageSharp(id: { regex: "/pomosh_zala/cover_main.jpg/" }) {
-      sizes(maxWidth: 1280) {
-        ...GatsbyImageSharpSizes
-      }
-    }
-    naryady: imageSharp(id: { regex: "/naryady/044.jpg/" }) {
-      sizes(maxWidth: 1280) {
-        ...GatsbyImageSharpSizes
-      }
-    }
-    mycene: imageSharp(id: { regex: "/myc.jpg/" }) {
-      sizes(maxWidth: 1280) {
-        ...GatsbyImageSharpSizes
-      }
-    }
-    rostov: imageSharp(id: { regex: "/naprimer/cover.jpg/" }) {
-      sizes(maxWidth: 1280) {
-        ...GatsbyImageSharpSizes
-      }
-    }
-    sonet: imageSharp(id: { regex: "/sonet/4.jpg/" }) {
-      sizes(maxWidth: 1280) {
-        ...GatsbyImageSharpSizes
-      }
-    }
-    zritel8: imageSharp(id: { regex: "/nespyashie/zriteli/zritel-8.jpg/" }) {
-      sizes(maxWidth: 1280) {
-        ...GatsbyImageSharpSizes
-      }
-    }
-    didenko: imageSharp(id: { regex: "/didenko/didenko.jpg/" }) {
-      sizes(maxWidth: 1280) {
-        ...GatsbyImageSharpSizes
-      }
-    }
-    nogi: imageSharp(id: { regex: "/nogi/cover.jpg/" }) {
-      sizes(maxWidth: 1280) {
-        ...GatsbyImageSharpSizes
-      }
-    }
-    dokkk: imageSharp(id: { regex: "/dok_hor/cover.jpg/" }) {
-      sizes(maxWidth: 1280) {
-        ...GatsbyImageSharpSizes
-      }
-    }
     bogomolov: imageSharp(id: { regex: "/bogomolov/bogomolov_cover.jpg/" }) {
       sizes(maxWidth: 100) {
         ...GatsbyImageSharpSizes
       }
     }
-    telegram: imageSharp(id: { regex: "/telegram_kanaly/cover.jpg/" }) {
-      sizes(maxWidth: 1280) {
+    idite_na: imageSharp(id: { regex: "/idite_na/cover.jpg/" }) {
+      sizes(maxWidth: 1200) {
         ...GatsbyImageSharpSizes
       }
     }

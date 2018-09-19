@@ -34,7 +34,7 @@ const S = ({ color }) => (
     <a href="https://www.facebook.com/teatralium/" target="_blank">
       Facebook
     </a>
-    <a href="https://telegram.dog/teatralium" target="_blank">
+    <a href="http://tele.click/teatralium" target="_blank">
       Telegram
     </a>
   </Social>

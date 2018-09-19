@@ -24,7 +24,7 @@ const Share = styled.div`
   text-align: center;
   padding-bottom: 1rem;
   padding-top: 1rem;
-  ${phone('display: none;')}
+  ${phone('font-size: 1rem;')}
 `
 
 const ButtonWrapper = styled.div`
@@ -33,7 +33,7 @@ const ButtonWrapper = styled.div`
 `
 
 const StyledButton = styled(Button)`
-  filter: blur(0.5px);
+  
 `
 
 const StyledFillCover = styled(FillCover)`
@@ -50,7 +50,7 @@ const StyledH1 = styled(H1)`
 `;
 
 const GovnoCover = ({ sizes, ...props }) => (
-  <Bg bg="rgba(255,0,0,0.2)">
+  <Bg bg="rgba(50,0,0,0.5)">
     <StyledFillCover contain pathname={props.pathname} sizes={sizes} {...props}>
       <Section margin="0" align="left" color="white" size="1.5rem">
         <StyledH1 lineHeight="1.2" size="2rem">Идите на «Идиотов» Кирилла Серебренникова</StyledH1>
@@ -65,13 +65,13 @@ const GovnoCover = ({ sizes, ...props }) => (
               hover="#FF69B4"
               color="white"
               border="white"
-              href={`https://www.facebook.com/sharer/sharer.php?u=${url}`}>facebook</StyledButton>
+              href={`https://www.facebook.com/sharer/sharer.php?u=${url}`}>Facebook</StyledButton>
             <StyledButton
               margin="0"
               hover="#FF69B4"
               color="white"
               border="white"
-              href={`http://vkontakte.ru/share.php?url=${url}`}>vkontakte</StyledButton>
+              href={`http://vkontakte.ru/share.php?url=${url}`}>ВКонтакте</StyledButton>
           </ButtonWrapper>
         </div>
       </Section>

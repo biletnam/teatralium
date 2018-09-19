@@ -9,7 +9,7 @@ export function gradientColor({ pathname }, index) {
   if (index === 0) {
     return "#333399";
   }
-  return "#ff93e8";
+  return "";
 }
 export const titleStyles = `
   color: black;
@@ -31,14 +31,23 @@ export const Title = styled(H1)`
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.23em;
-  background: ${p => gradientColor(p, 0)};
+  background: #333399;
   background: linear-gradient(
     to bottom,
-    ${p => gradientColor(p, 0)},
-    ${p => gradientColor(p, 1)}
+    #333399, #ff93e8
   );
   ${titleStyles};
 `;
+
+// ${
+//   p => p.pathname && p.pathname.includes('/articles/idite_na/')
+//     && p.pathname !== '/articles/idite_na/' && `
+//       -webkit-background-clip: none;
+//       -webkit-text-fill-color: white;
+//       background: transparent;
+//       color: white;
+
+//   `}
 
 const H = ({ pathname }) => (
   <Title pathname={pathname}>
@@ -47,16 +56,13 @@ const H = ({ pathname }) => (
 );
 
 const HeaderWrapper = styled.div`
-  ${p => p.pathname && p.pathname.includes('/articles/idite_na/')
-    && 'display: none;'}
 `
 
 class Header extends React.Component {
   // eslint-disable-line react/prefer-stateless-function
   render() {
     const { pathname } = this.props;
-    console.log(pathname);
-    console.log(this.props);
+    console.log(pathname)
     return (
       <HeaderWrapper pathname={pathname}>
         {pathname === "/" ? (

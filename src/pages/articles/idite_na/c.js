@@ -24,7 +24,7 @@ const Share = styled.div`
   text-align: center;
   padding-bottom: 1rem;
   padding-top: 1rem;
-  ${phone('display: none;')}
+  ${phone('font-size: 1rem;')}
 `
 
 const ButtonWrapper = styled.div`
@@ -33,7 +33,7 @@ const ButtonWrapper = styled.div`
 `
 
 const StyledButton = styled(Button)`
-  filter: blur(0.5px);
+  
 `
 
 const StyledFillCover = styled(FillCover)`
@@ -65,13 +65,13 @@ const GovnoCover = ({ sizes, ...props }) => (
               hover="#FF69B4"
               color="white"
               border="white"
-              href={`https://www.facebook.com/sharer/sharer.php?u=${url}`}>facebook</StyledButton>
+              href={`https://www.facebook.com/sharer/sharer.php?u=${url}`}>Facebook</StyledButton>
             <StyledButton
               margin="0"
               hover="#FF69B4"
               color="white"
               border="white"
-              href={`http://vkontakte.ru/share.php?url=${url}`}>vkontakte</StyledButton>
+              href={`http://vkontakte.ru/share.php?url=${url}`}>ВКонтакте</StyledButton>
           </ButtonWrapper>
         </div>
       </Section>

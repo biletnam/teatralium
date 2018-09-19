@@ -1,32 +1,21 @@
 import React from "react";
-import Helmet from "react-helmet";
-import Link from "gatsby-link";
-import styled, { keyframes } from "styled-components";
 
-import { phone } from "../../utils/media";
+import styled from "styled-components";
+
 import H1, { H1small } from "../../components/H1";
 import ArticleHelmet from "../../components/ArticleHelmet";
 import Img from "../../components/ImgG";
-import ImgOld from "../../components/Img";
-import H2 from "../../components/H2";
 import H3 from "../../components/H3";
-import Attention from "../../components/Attention";
-import Gallery from "../../components/Gallery";
+
 import Video from "../../components/Video";
 
-import Small from "../../components/Small";
-import Note, { NoteWrapper, NotedWord } from "../../components/Note";
 import Section from "../../components/Section";
 import P from "../../components/P";
 import Date from "../../components/Date";
 import Share from "../../components/Share";
-import HomepageLink from "../../components/HomepageLink";
 import Other from "../../components/Other";
 
-import FillCover, { TopCover } from "../../components/FillCover";
-
-import zipper from "../images/govno/zipper.svg";
-import shut from "../images/govno/shut.svg";
+import { TopCover } from "../../components/FillCover";
 
 const url = "https://teatralium.com/articles/aktyory_truppy_na_otlyote/";
 const title = "Александр Блок о репертуаре государственных театров";
@@ -43,36 +32,9 @@ const H1Shadow = styled(H1)`
   line-height: 1.5;
 `;
 
-const Brown = styled.span`
-  color: brown;
-`;
-
-const Red = styled.span`
-  color: red;
-`;
 const Bg = styled.span`
   background: black;
   padding: 0.1rem;
-`;
-
-const H = styled(H1Shadow)`
-  font-size: 2rem !important;
-  line-height: 1.5;
-  padding: 4rem 1rem 0;
-  ${phone(`font-size: 1.2rem !important;`)};
-`;
-
-const Author = styled.div`
-  font-style: italic;
-  padding-top: 1rem;
-  text-align: center;
-  font-size: 0.8rem;
-  color: gray;
-`;
-
-const Wrapper = styled.div`
-  margin: 6rem 0 0;
-  ${phone(`margin: 2rem 0;`)};
 `;
 
 export const BlokCover = ({ sizes, showDate = true, ...props }) => (

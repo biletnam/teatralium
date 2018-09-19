@@ -24,7 +24,7 @@ const Share = styled.div`
   text-align: center;
   padding-bottom: 1rem;
   padding-top: 1rem;
-  ${phone('display: none;')}
+  ${phone('font-size: 1rem;')}
 `
 
 const ButtonWrapper = styled.div`
@@ -33,7 +33,7 @@ const ButtonWrapper = styled.div`
 `
 
 const StyledButton = styled(Button)`
-  filter: blur(0.5px);
+  
 `
 
 const StyledFillCover = styled(FillCover)`
@@ -55,7 +55,7 @@ const GovnoCover = ({ sizes, ...props }) => (
       <Section margin="0" align="left" color="white" size="1.5rem">
         <StyledH1 lineHeight="1.2" size="2rem">Идите на «Сквозь / Скольжение по возможностям» Всеволода Лисовского</StyledH1>
         <hr />
-        Кажется, вам осточертело все, что связано с так называемым классическим театром. Он никуда не денется, покуда существует эта планета, а вы отправляйтесь в <A href="https://www.facebook.com/events/682276468777274/" target="_blank">двухдневное жд-путешествие</A> по родине с Всеволодом Лисовским, пятью актрисами и книгой Вернера Гейзенберга «Физика и философия». Не забудьте потом рассказать.
+        Кажется, вам осточертело все, что связано с так называемым классическим театром. Он никуда не денется, покуда существует эта планета, а вы отправляйтесь в <A href="https://www.facebook.com/events/682276468777274/" target="_blank">двухдневное жд&#8209;путешествие</A> по родине с Всеволодом Лисовским, пятью актрисами и книгой Вернера Гейзенберга «Физика и философия». Не забудьте потом рассказать.
         <hr />
         <div>
           <Share>поделиться результатом:</Share>{' '}
@@ -65,13 +65,13 @@ const GovnoCover = ({ sizes, ...props }) => (
               hover="#FF69B4"
               color="white"
               border="white"
-              href={`https://www.facebook.com/sharer/sharer.php?u=${url}`}>facebook</StyledButton>
+              href={`https://www.facebook.com/sharer/sharer.php?u=${url}`}>Facebook</StyledButton>
             <StyledButton
               margin="0"
               hover="#FF69B4"
               color="white"
               border="white"
-              href={`http://vkontakte.ru/share.php?url=${url}`}>vkontakte</StyledButton>
+              href={`http://vkontakte.ru/share.php?url=${url}`}>ВКонтакте</StyledButton>
           </ButtonWrapper>
         </div>
       </Section>

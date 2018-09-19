@@ -25,6 +25,7 @@ const FillCover = styled.div`
   ${p => p.contain && p.center && "background-position: center;"}
   ${p => p.bgPosition && `background-position: ${p.bgPosition};`}
   ${p => p.bgSize && `background-size: ${p.bgSize};`}
+  ${p => p.custom ? p.custom : ''}
 
   ${p => p.shadow && "box-shadow: inset 1px 4px 90px -6px #000000;"}
   ${p =>
@@ -111,6 +112,5 @@ export const TopCover = styled(FillCoverWithBg)`
   ${phone(`
     min-height: auto;
     height: calc(100vh - 45px);
-    ${p => p.pathname && p.pathname.includes('result') && 'height: 100vh;'}
   `)};
 `;
