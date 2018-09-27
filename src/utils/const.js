@@ -2,9 +2,18 @@ const base = "/articles/";
 
 export const articles = [
   {
-    url: base + "idite_na/",
+    url: base + "contemporary_artists/",
     title:
-      "Идите на: с какого спектакля вам начать сезон"
+      "«У меня прям живот болит»: художники объясняют, за что они (не) любят театр"
+  },
+  {
+    url: base + "ya_rabotayu_v_teatre_zaytseva/",
+    title:
+      "«Все постоянно репетируют и уносят твои чашки»: как я работала в театре пресс-секретарем и драматургом одновременно"
+  },
+  {
+    url: base + "idite_na/",
+    title: "Идите на: с какого спектакля вам начать сезон"
   },
   {
     url: base + "kon_ne_valyalsya/",
@@ -66,10 +75,7 @@ export const articles = [
     url: base + "ya_posadil_derevo/",
     title: "Я посадил дерево: плейлист актера Филиппа Авдеева"
   },
-  {
-    url: base + "abyuz_nelzya_pomilovat/",
-    title: "Абьюз нельзя помиловать"
-  },
+  { url: base + "abyuz_nelzya_pomilovat/", title: "Абьюз нельзя помиловать" },
   {
     url: base + "ivan_vyrypaev_protiv_kritikov/",
     title:

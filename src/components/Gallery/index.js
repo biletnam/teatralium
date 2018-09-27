@@ -28,6 +28,8 @@ const StyledGallery = styled.div`
 const Wrapper = styled.div`
   margin-top: ${p => p.margin || '0'};
   margin-bottom: ${p => p.margin || '0'};
+  margin: 0 auto;
+  max-width: 1200px;
 `
 
 const Gallery = ({ images, alt, desc, margin, imgProps, ...props }) => (

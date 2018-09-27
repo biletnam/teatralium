@@ -14,8 +14,7 @@ import Social from "../components/Social";
 import AboutUsLink from "../components/AboutUsLink";
 
 import { GovnoCover } from "./articles/aktyora_nado_mordoy_v_govno";
-
-import { IditeNaCover } from "./articles/idite_na";
+import { ContemporaryArtistsCover } from "./articles/contemporary_artists";
 
 import mask from "./images/davydova/mask.gif";
 
@@ -78,9 +77,18 @@ const Lead = styled.div`
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   font-family: "Bodoni";
-  text-shadow:1px -1px 0 rgb(181,179,206),2px -2px 0 rgb(151,149,171),3px -3px 0 rgb(121,119,137),4px -4px 0 rgb(90,90,103),5px -5px 0 rgb(60,60,69),6px -6px 0 rgb(30,30,34),7px -7px 1px rgba(0,0,0,0.56);
-  -webkit-text-shadow:1px -1px 0 rgb(181,179,206),2px -2px 0 rgb(151,149,171),3px -3px 0 rgb(121,119,137),4px -4px 0 rgb(90,90,103),5px -5px 0 rgb(60,60,69),6px -6px 0 rgb(30,30,34),7px -7px 1px rgba(0,0,0,0.56);
-  -moz-text-shadow:1px -1px 0 rgb(181,179,206),2px -2px 0 rgb(151,149,171),3px -3px 0 rgb(121,119,137),4px -4px 0 rgb(90,90,103),5px -5px 0 rgb(60,60,69),6px -6px 0 rgb(30,30,34),7px -7px 1px rgba(0,0,0,0.56);
+  text-shadow: 1px -1px 0 rgb(181, 179, 206), 2px -2px 0 rgb(151, 149, 171),
+    3px -3px 0 rgb(121, 119, 137), 4px -4px 0 rgb(90, 90, 103),
+    5px -5px 0 rgb(60, 60, 69), 6px -6px 0 rgb(30, 30, 34),
+    7px -7px 1px rgba(0, 0, 0, 0.56);
+  -webkit-text-shadow: 1px -1px 0 rgb(181, 179, 206),
+    2px -2px 0 rgb(151, 149, 171), 3px -3px 0 rgb(121, 119, 137),
+    4px -4px 0 rgb(90, 90, 103), 5px -5px 0 rgb(60, 60, 69),
+    6px -6px 0 rgb(30, 30, 34), 7px -7px 1px rgba(0, 0, 0, 0.56);
+  -moz-text-shadow: 1px -1px 0 rgb(181, 179, 206), 2px -2px 0 rgb(151, 149, 171),
+    3px -3px 0 rgb(121, 119, 137), 4px -4px 0 rgb(90, 90, 103),
+    5px -5px 0 rgb(60, 60, 69), 6px -6px 0 rgb(30, 30, 34),
+    7px -7px 1px rgba(0, 0, 0, 0.56);
 
   ${phone(`
     font-size: 0.9em;
@@ -94,18 +102,27 @@ const MusicSection = styled(FillCover)`
   height: 500px;
   & > a:hover {
   }
-`
+`;
 
 const MusicLink = styled(StyledLink)`
   width: 25%;
- }`
+ }`;
 const Title = styled(H1)`
-  text-shadow:1px -1px 0 rgb(181,179,206),2px -2px 0 rgb(151,149,171),3px -3px 0 rgb(121,119,137),4px -4px 0 rgb(90,90,103),5px -5px 0 rgb(60,60,69),6px -6px 0 rgb(30,30,34),7px -7px 1px rgba(0,0,0,0.56);
-  -webkit-text-shadow:1px -1px 0 rgb(181,179,206),2px -2px 0 rgb(151,149,171),3px -3px 0 rgb(121,119,137),4px -4px 0 rgb(90,90,103),5px -5px 0 rgb(60,60,69),6px -6px 0 rgb(30,30,34),7px -7px 1px rgba(0,0,0,0.56);
-  -moz-text-shadow:1px -1px 0 rgb(181,179,206),2px -2px 0 rgb(151,149,171),3px -3px 0 rgb(121,119,137),4px -4px 0 rgb(90,90,103),5px -5px 0 rgb(60,60,69),6px -6px 0 rgb(30,30,34),7px -7px 1px rgba(0,0,0,0.56);
-`
+  text-shadow: 1px -1px 0 rgb(181, 179, 206), 2px -2px 0 rgb(151, 149, 171),
+    3px -3px 0 rgb(121, 119, 137), 4px -4px 0 rgb(90, 90, 103),
+    5px -5px 0 rgb(60, 60, 69), 6px -6px 0 rgb(30, 30, 34),
+    7px -7px 1px rgba(0, 0, 0, 0.56);
+  -webkit-text-shadow: 1px -1px 0 rgb(181, 179, 206),
+    2px -2px 0 rgb(151, 149, 171), 3px -3px 0 rgb(121, 119, 137),
+    4px -4px 0 rgb(90, 90, 103), 5px -5px 0 rgb(60, 60, 69),
+    6px -6px 0 rgb(30, 30, 34), 7px -7px 1px rgba(0, 0, 0, 0.56);
+  -moz-text-shadow: 1px -1px 0 rgb(181, 179, 206), 2px -2px 0 rgb(151, 149, 171),
+    3px -3px 0 rgb(121, 119, 137), 4px -4px 0 rgb(90, 90, 103),
+    5px -5px 0 rgb(60, 60, 69), 6px -6px 0 rgb(30, 30, 34),
+    7px -7px 1px rgba(0, 0, 0, 0.56);
+`;
 
-const MusicCover = (props) => (
+const MusicCover = props => (
   <MusicLink to={props.url}>
     <MusicSection
       pointer
@@ -113,15 +130,17 @@ const MusicCover = (props) => (
       repeat
       bordered
       borderColor="yellow"
-      withHover>
-      <ArticlesSection
-        size="22px"
-      >
-        <Title size="2rem" lineHeight="1.2" color="yellow">{props.title}</Title>
+      withHover
+    >
+      <ArticlesSection size="22px">
+        <Title size="2rem" lineHeight="1.2" color="yellow">
+          {props.title}
+        </Title>
         <Lead color="white">{props.lead}</Lead>
       </ArticlesSection>
     </MusicSection>
-  </MusicLink>)
+  </MusicLink>
+);
 
 const Bogomolov = ({ sizes }) => (
   <MusicCover
@@ -161,17 +180,16 @@ const Avdeev = ({ sizes }) => (
 
 const FillCoverStyled = styled(FillCover)`
   margin-bottom: 4rem;
-  ${phone('margin-bottom: 1rem;')}
-`
+  ${phone("margin-bottom: 1rem;")};
+`;
 
-const text = "«В МХТ есть два прекрасных молодых актера, но и их пожрал театр Карабаса-Барабаса имени ЭГО г-на Бутусова. ПРОВАЛ»";
+const text =
+  "«В МХТ есть два прекрасных молодых актера, но и их пожрал театр Карабаса-Барабаса имени ЭГО г-на Бутусова. ПРОВАЛ»";
 const author = "Сергей о спектакле «Человек из рыбы» Юрия Бутусова в МХТ";
 const Review = ({ text, author }) => (
   <FillCoverStyled pointer bg={mask}>
     <ArticlesSection marginTop="4rem">
-      <H3 marginTop="0">
-        {text}
-      </H3>
+      <H3 marginTop="0">{text}</H3>
       <div>{author}</div>
     </ArticlesSection>
   </FillCoverStyled>
@@ -185,7 +203,10 @@ const Bol = ({ sizes }) => (
       <Button
         color="white"
         border="white"
-        to="/articles/mne_ploho_mne_skuchno/">Читать</Button>
+        to="/articles/mne_ploho_mne_skuchno/"
+      >
+        Читать
+      </Button>
     </NoImageCover>
   </ArticlesSection>
 );
@@ -214,8 +235,8 @@ const MusicWrapper = styled.div`
   display: flex;
   max-width: 1600px;
   background: black;
-  ${phone(`display: block;`)}
-`
+  ${phone(`display: block;`)};
+`;
 
 const fadeStrong = keyframes`
 0% {
@@ -225,12 +246,12 @@ const fadeStrong = keyframes`
 to {
   box-shadow: inset 0 0 50px black;
 }
-`
+`;
 
 const MusicHeader = styled.div`
   border-top: 1px solid red;
   padding: 2rem 1rem;
-  background: ${p => p.bg || 'lavender'};
+  background: ${p => p.bg || "lavender"};
   color: white;
   font-size: 2rem;
 
@@ -238,22 +259,22 @@ const MusicHeader = styled.div`
   animation: ${fadeStrong} 10s;
   transition: box-shadow 10s;
   animation-fill-mode: both;
-`
+`;
 
 const Sec = styled.div`
   max-width: calc(752px + 16px * 2);
   margin: 0 auto;
   text-align: center;
-`
+`;
 
 const Recent = styled.ul`
   font-size: 2rem;
   padding: 2rem;
   line-height: 2rem;
-  list-style:none;
+  list-style: none;
   position: relative;
-  ${phone('padding: 1rem;')}
-`
+  ${phone("padding: 1rem;")};
+`;
 const animateColor = keyframes`
 0% {
   color: rgba(0, 255, 255, 1);
@@ -266,7 +287,7 @@ const animateColor = keyframes`
 0% {
   color: rgba(0, 255, 255, 1);
 }
-`
+`;
 
 const L = styled.li`
   margin-bottom: 1.4rem;
@@ -285,36 +306,42 @@ const L = styled.li`
     position: absolute;
     width: 100%;
     left: -50%;
-    ${phone(`left: -47%; font-size: 1.2rem;`)}
+    ${phone(`left: -47%; font-size: 1.2rem;`)};
   }
-`
+`;
 
 const SLink = styled(StyledLink)`
   &:hover {
     text-decoration: underline;
   }
-`
+`;
 
-const Li = ({ children, to, i }) => <SLink to={`/articles/${to}`}>
-  <L i={i}>{children}</L>
-</SLink>
+const Li = ({ children, to, i }) => (
+  <SLink to={`/articles/${to}`}>
+    <L i={i}>{children}</L>
+  </SLink>
+);
 
 const Smaller = styled.div`
   padding-top: 0.7rem;
   font-size: 1.4rem;
   font-style: normal;
   font-weight: normal;
-  ${phone('font-size: 1rem;')}
-`
+  ${phone("font-size: 1rem;")};
+`;
 
 const Soc = styled(Social)`
   border-bottom: 1px solid red;
-`
-const SocialStyled = (props) => <Soc {...props} color="white" />
+`;
+const SocialStyled = props => <Soc {...props} color="white" />;
 
-const Kiss = () => <Img src={kiss} noBorder width="70px" marginTop="2rem" marginBottom="3rem" />
+const Kiss = () => (
+  <Img src={kiss} noBorder width="70px" marginTop="2rem" marginBottom="3rem" />
+);
 
-const Spacer = styled.div`margin-top: 4rem;`
+const Spacer = styled.div`
+  margin-top: 4rem;
+`;
 
 export class HomePage extends React.PureComponent {
   // eslint-disable-line react/prefer-stateless-function
@@ -322,53 +349,57 @@ export class HomePage extends React.PureComponent {
     const { data } = this.props;
     return (
       <div>
-        <StyledLink to="/articles/idite_na/">
-          <IditeNaCover sizes={data.idite_na.sizes} />
+        <StyledLink to="/articles/contemporary_artists/">
+          <ContemporaryArtistsCover sizes={data.artists.sizes} />
         </StyledLink>
 
         <Section>
           <Kiss />
           <Recent>
-            <Li i={1} to="kon_ne_valyalsya/">
+            <Li i={1} to="ya_rabotayu_v_teatre_zaytseva/">
+              <b>«Все постоянно репетируют и уносят твои чашки»</b>
+              <Smaller>
+                Как я работала в театре пресс&#8209;секретарем и драматургом
+                одновременно
+              </Smaller>
+            </Li>
+            <Li i={2} to="idite_na/">
+              <b>Идите на</b>
+              <Smaller>С какого спектакля вам начать сезон</Smaller>
+            </Li>
+            <Li i={3} to="kon_ne_valyalsya/">
               <b>«В театре конь не валялся»</b>
               <Smaller>
-                Начало сезона в дневниках Вахтангова, Прокофьева, Золотухина и других
+                Начало сезона в дневниках Вахтангова, Прокофьева, Золотухина и
+                других
               </Smaller>
             </Li>
-            <Li i={2} to="telegram_kanaly/">
+            <Li i={4} to="telegram_kanaly/">
               <b>«Зачем-то мне это надо»</b>
               <Smaller>
-                Кто ведет театральные блоги и может ли телеграм-канал о театре быть популярным
+                Кто ведет театральные блоги и может ли телеграм-канал о театре
+                быть популярным
               </Smaller>
             </Li>
-            <Li i={3} to="protokol_povsednevnost/">
+            <Li i={5} to="protokol_povsednevnost/">
               <b>«Никому не рассказывайте, чем вы тут занимались»</b>
-              <Smaller>Почему всем нужно пройти через кружок «Протокол» в ЦИМе</Smaller>
+              <Smaller>
+                Почему всем нужно пройти через кружок «Протокол» в ЦИМе
+              </Smaller>
             </Li>
-            <Li i={4} to="dokumentalnaya_horeografiya/">
+            <Li i={6} to="dokumentalnaya_horeografiya/">
               <b>Документальная хореография</b>
-              <Smaller>Существует ли она и как станцевать Декларацию независимости</Smaller>
-            </Li>
-            <Li i={5} to="nogi_zatekayut/">
-              <b>«Ноги затекают, а вообще это сплошное удовольствие»</b>
-              <Smaller>Участницы спектакля «Родина» — о том, как стать перформером и что это дает</Smaller>
-            </Li>
-            <Li i={6} to="vsyo_vidno_yasno/">
-              <b>Все видно ясно, но не заблудитесь!</b>
-              <Smaller>Что не так со спектаклем Максима Диденко «Беги, Алиса, беги»</Smaller>
+              <Smaller>
+                Существует ли она и как станцевать Декларацию независимости
+              </Smaller>
             </Li>
           </Recent>
         </Section>
 
-        <Review
-          text={text}
-          author={author}
-        />
+        <Review text={text} author={author} />
 
         <MusicHeader bg="#7851A9">
-          <Sec>
-            «За музыку отвечает...»
-          </Sec>
+          <Sec>«За музыку отвечает...»</Sec>
         </MusicHeader>
         <MusicWrapper>
           <Bogomolov sizes={data.bogomolov.sizes} />
@@ -382,35 +413,50 @@ export class HomePage extends React.PureComponent {
         <Section>
           <Img src={kiss} noBorder width="70px" marginTop="1rem" />
           <Recent>
-            <Li i={1} to="aktyory_truppy_na_otlyote/">
+            <Li i={1} to="nogi_zatekayut/">
+              <b>«Ноги затекают, а вообще это сплошное удовольствие»</b>
+              <Smaller>
+                Участницы спектакля «Родина» — о том, как стать перформером и
+                что это дает
+              </Smaller>
+            </Li>
+            <Li i={2} to="vsyo_vidno_yasno/">
+              <b>Все видно ясно, но не заблудитесь!</b>
+              <Smaller>
+                Что не так со спектаклем Максима Диденко «Беги, Алиса, беги»
+              </Smaller>
+            </Li>
+
+            <Li i={3} to="aktyory_truppy_na_otlyote/">
               <b>Актеры труппы на отлете</b>
               <Smaller>
                 Александр Блок о репертуаре государственных театров
               </Smaller>
             </Li>
 
-            <Li i={2} to="nespyashie_v_teatre/">
+            <Li i={4} to="nespyashie_v_teatre/">
               <b>Неспящие в театре</b>
-              <Smaller>
-                Типы зрителей на основе индуистской философии
-              </Smaller>
+              <Smaller>Типы зрителей на основе индуистской философии</Smaller>
             </Li>
-            <Li i={3} to="net_amnezii/">
+            <Li i={5} to="net_amnezii/">
               <b>Нет амнезии</b>
               <Smaller>
-                Вспоминаем спектакль «Наизусть» Тьяго Родригеса и заучиваем тридцатый сонет Шекспира
+                Вспоминаем спектакль «Наизусть» Тьяго Родригеса и заучиваем
+                тридцатый сонет Шекспира
               </Smaller>
             </Li>
-            <Li i={4} to="v_moskve_naprimer_analogov_net/">
+            <Li i={6} to="v_moskve_naprimer_analogov_net/">
               <b>В Москве, например, аналогов нет</b>
               <Smaller>
-                Пять лет ростовскому «Театру 18+» с современными пьесами и казачим рэпом, но без государственных денег
+                Пять лет ростовскому «Театру 18+» с современными пьесами и
+                казачим рэпом, но без государственных денег
               </Smaller>
             </Li>
-            <Li i={5} to="poobshatsa_s_gospodinom_oblomovym/">
+            <Li i={7} to="poobshatsa_s_gospodinom_oblomovym/">
               <b>«Нам всем нужно пообщаться с господином Обломовым»</b>
               <Smaller>
-                Драматург Евгений Казачков расспрашивает Себастьяна Кайзера о десяти годах работы в легендарном «Фольксбюне»
+                Драматург Евгений Казачков расспрашивает Себастьяна Кайзера о
+                десяти годах работы в легендарном «Фольксбюне»
               </Smaller>
             </Li>
           </Recent>
@@ -428,19 +474,28 @@ export class HomePage extends React.PureComponent {
             </Li>
             <Li i={2} to="abyuz_nelzya_pomilovat/">
               <b>Абьюз нельзя помиловать</b>
-              <Smaller>Большой разговор о насилии в театре и жизни с драматургом Натальей Зайцевой и блогеркой Никой Водвуд</Smaller>
+              <Smaller>
+                Большой разговор о насилии в театре и жизни с драматургом
+                Натальей Зайцевой и блогеркой Никой Водвуд
+              </Smaller>
             </Li>
             <Li i={3} to="ivan_vyrypaev_protiv_kritikov/">
               <b>«Я абсолютно против критиков сегодня»</b>
-              <Smaller>Иван Вырыпаев о театре без микрофонов и рецензий</Smaller>
+              <Smaller>
+                Иван Вырыпаев о театре без микрофонов и рецензий
+              </Smaller>
             </Li>
             <Li i={4} to="pomosh_zala/">
               <b>Помощь зала</b>
-              <Smaller>Социальный театр от Боба Уилсона до Бориса Павловича</Smaller>
+              <Smaller>
+                Социальный театр от Боба Уилсона до Бориса Павловича
+              </Smaller>
             </Li>
             <Li i={5} to="abbreviatura_ramt/">
               <b>«Аббревиатуру РАМТ мы не придумывали»</b>
-              <Smaller>Алексей Бородин об истории своего театра в начале 90-х</Smaller>
+              <Smaller>
+                Алексей Бородин об истории своего театра в начале 90-х
+              </Smaller>
             </Li>
           </Recent>
         </Section>
@@ -460,15 +515,21 @@ export class HomePage extends React.PureComponent {
           <Recent>
             <Li i={1} to="ozhila_krasnaya_stsena/">
               <b>Ожила красная сцена</b>
-              <Smaller>Как художник Юрий Анненков стал «модельером» революции</Smaller>
+              <Smaller>
+                Как художник Юрий Анненков стал «модельером» революции
+              </Smaller>
             </Li>
             <Li i={2} to="iz_vseh_iskusstv/">
               <b>Из всех искусств</b>
-              <Smaller>Набоков, Хармс и другие классики рассуждают о театре</Smaller>
+              <Smaller>
+                Набоков, Хармс и другие классики рассуждают о театре
+              </Smaller>
             </Li>
             <Li i={3} to="velikoe_raznoobrazie/">
               <b>Великое разнообразие</b>
-              <Smaller>Марина Давыдова о том, что нужно знать о современном театре</Smaller>
+              <Smaller>
+                Марина Давыдова о том, что нужно знать о современном театре
+              </Smaller>
             </Li>
             <Li i={4} to="morskoy_tsar_belomor/">
               <b>«Морской царь Беломор»</b>
@@ -476,11 +537,16 @@ export class HomePage extends React.PureComponent {
             </Li>
             <Li i={5} to="neperevodimiy_russkiy_nadryv/">
               <b>Непереводимый русский надрыв</b>
-              <Smaller>Юрий Муравицкий и Валерий Печейкин о любви и хаосе</Smaller>
+              <Smaller>
+                Юрий Муравицкий и Валерий Печейкин о любви и хаосе
+              </Smaller>
             </Li>
             <Li i={6} to="lyubimovka/">
               <b>«Меня волнует вся х**ня»</b>
-              <Smaller>Организатор Любимовки Анна Банасюкевич о стране, в которой мы живем</Smaller>
+              <Smaller>
+                Организатор Любимовки Анна Банасюкевич о стране, в которой мы
+                живем
+              </Smaller>
             </Li>
           </Recent>
         </Section>
@@ -535,7 +601,7 @@ export const pageQuery = graphql`
         ...GatsbyImageSharpSizes
       }
     }
-    idite_na: imageSharp(id: { regex: "/idite_na/cover.jpg/" }) {
+    artists: imageSharp(id: { regex: "/contemporary_artists/cover.jpg/" }) {
       sizes(maxWidth: 1200) {
         ...GatsbyImageSharpSizes
       }

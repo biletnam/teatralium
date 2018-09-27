@@ -1,6 +1,7 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 import HomepageLink from "../HomepageLink";
+import Share from "../Share";
 
 import { phone } from "../../utils/media";
 
@@ -40,6 +41,7 @@ const StyledSection = styled.section`
 const Section = props => (
   <StyledSection {...props}>
     {props.children}
+    {props.url && <Share url={props.url} />}
     {props.withHomepageLink && <HomepageLink />}
   </StyledSection>
 );

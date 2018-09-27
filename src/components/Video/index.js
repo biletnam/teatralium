@@ -74,22 +74,22 @@ class Video extends React.Component {
             <iframe
               src={
                 "https://www.youtube.com/embed/" +
-                props.id +
-                "?autoplay=1&start=" +
-                props.start || 0
+                  props.id +
+                  "?autoplay=1&start=" +
+                  props.start || 0
               }
               frameBorder="0"
               allowFullScreen
             />
           ) : (
-              <span>
-                <Img
-                  src={`https://img.youtube.com/vi/${props.id}/0.jpg`}
-                  alt="preview"
-                />
-                <Button />
-              </span>
-            )}
+            <span>
+              <Img
+                src={`https://img.youtube.com/vi/${props.id}/0.jpg`}
+                alt="preview"
+              />
+              <Button />
+            </span>
+          )}
         </Wrapper>
         {props.desc && <Description {...props} marginTop="0" />}
       </div>

@@ -32,10 +32,7 @@ export const Title = styled(H1)`
   text-transform: uppercase;
   letter-spacing: 0.23em;
   background: #333399;
-  background: linear-gradient(
-    to bottom,
-    #333399, #ff93e8
-  );
+  background: linear-gradient(to bottom, #333399, #ff93e8);
   ${titleStyles};
 `;
 
@@ -55,23 +52,21 @@ const H = ({ pathname }) => (
   </Title>
 );
 
-const HeaderWrapper = styled.div`
-`
+const HeaderWrapper = styled.div``;
 
 class Header extends React.Component {
   // eslint-disable-line react/prefer-stateless-function
   render() {
     const { pathname } = this.props;
-    console.log(pathname)
     return (
       <HeaderWrapper pathname={pathname}>
         {pathname === "/" ? (
           <H />
         ) : (
-            <A to="/">
-              <H pathname={pathname} />
-            </A>
-          )}
+          <A to="/">
+            <H pathname={pathname} />
+          </A>
+        )}
       </HeaderWrapper>
     );
   }

@@ -3,6 +3,9 @@
   "description": "Teatralium",
   "version": "1.0.0",
   "author": "Maxim Matyunin",
+  "engines": {
+    "node": "9.11.1"
+  },
   "dependencies": {
     "gatsby": "^1.9.27",
     "gatsby-image": "^1.0.42",
