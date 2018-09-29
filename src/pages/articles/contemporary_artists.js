@@ -10,7 +10,6 @@ import Note, { NoteWrapper, NotedWord } from "../../components/Note";
 import Section from "../../components/Section";
 import P from "../../components/P";
 import Date from "../../components/Date";
-import Share from "../../components/Share";
 import Video from "../../components/Video";
 import Other from "../../components/Other";
 
@@ -503,7 +502,7 @@ export class Article extends React.PureComponent {
           <p>
             <NoteWrapper>
               <p>
-                Я пока не представляю, как работать театром как форматом. Если
+                Я пока не представляю, как работать c театром как форматом. Если
                 говорить про участие живого человека в постановке, я скорее вижу
                 это как перформанс в стенах галереи или концерт, лекцию — что-то
                 более простое и интегрированное в повседневную жизнь. Я
@@ -583,7 +582,7 @@ export const pageQuery = graphql`
         ...GatsbyImageSharpSizes
       }
     }
-    fb: imageSharp(id: { regex: "/contemporary_artists/fb.png/" }) {
+    fb: imageSharp(id: { regex: "/contemporary_artists/fb.jpg/" }) {
       sizes(maxWidth: 1280) {
         ...GatsbyImageSharpSizes
       }
