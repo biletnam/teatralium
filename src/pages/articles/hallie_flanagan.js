@@ -49,12 +49,12 @@ export class Article extends React.PureComponent {
       <div>
         <ArticleHelmet
           url={url}
-          image={data.fb.sizes.src}
+          image="/share/hallie.jpg"
           description="Отрывок из книги Ивана Куриллы."
           title={`${title} | Театралий`}
         />
         <HallieFlanaganCover sizes={data.cover.sizes} />
-        <Section>
+        <Section withHomepageLink url={url}>
           <P>
             Новость про отмену крепостного права в России в феврале 1861 года
             аболиционисты и сам президент Линкольн использовали как аргумент в
@@ -65,7 +65,7 @@ export class Article extends React.PureComponent {
             <a href="https://www.nlobooks.ru/books/chto_takoe_rossiya/1301/">
               «Заклятые друзья. История мнений, фантазий, контактов,
               взаимо(не)понимания России и США»
-            </a>
+            </a>{" "}
             историк Иван Курилла описывает случаи, когда Россия становилась
             привлекательным примером для американских реформаторов. Как ни
             странно, один из них касается театра.
@@ -494,11 +494,6 @@ export const pageQuery = graphql`
       }
     }
     macbeth: imageSharp(id: { regex: "/hallie_flanagan/Macbeth.jpg/" }) {
-      sizes(maxWidth: 1280) {
-        ...GatsbyImageSharpSizes
-      }
-    }
-    fb: imageSharp(id: { regex: "/hallie_flanagan/fb.jpg/" }) {
       sizes(maxWidth: 1280) {
         ...GatsbyImageSharpSizes
       }
