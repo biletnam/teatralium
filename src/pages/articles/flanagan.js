@@ -14,7 +14,7 @@ import Other from "../../components/Other";
 
 import { TopCover } from "../../components/FillCover";
 
-const url = "https://teatralium.com/articles/hallie_flanagan";
+const url = "https://teatralium.com/articles/flanagan";
 const title =
   "«Русские — очень талантливый народ»: как американцы создавали свой театр на советском примере";
 
@@ -49,7 +49,7 @@ export class Article extends React.PureComponent {
       <div>
         <ArticleHelmet
           url={url}
-          image="/share/hallie.jpg"
+          image="/share/hallie111.jpg"
           description="Отрывок из книги Ивана Куриллы."
           title={`${title} | Театралий`}
         />

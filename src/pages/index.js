@@ -14,7 +14,7 @@ import Social from "../components/Social";
 import AboutUsLink from "../components/AboutUsLink";
 
 import { GovnoCover } from "./articles/aktyora_nado_mordoy_v_govno";
-import { HallieFlanaganCover } from "./articles/hallie_flanagan";
+import { HallieFlanaganCover } from "./articles/flanagan";
 
 import mask from "./images/davydova/mask.gif";
 
@@ -349,7 +349,7 @@ export class HomePage extends React.PureComponent {
     const { data } = this.props;
     return (
       <div>
-        <StyledLink to="/articles/hallie_flanagan/">
+        <StyledLink to="/articles/flanagan/">
           <HallieFlanaganCover sizes={data.top.sizes} />
         </StyledLink>
 

@@ -2,7 +2,7 @@ const base = "/articles/";
 
 export const articles = [
   {
-    url: base + "hallie_flanagan/",
+    url: base + "flanagan/",
     title:
       "«Русские — очень талантливый народ»: как американцы создавали свой театр на советском примере"
   },
