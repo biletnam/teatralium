@@ -2,6 +2,11 @@ const base = "/articles/";
 
 export const articles = [
   {
+    url: base + "hallie_flanagan/",
+    title:
+      "«Русские — очень талантливый народ»: как американцы создавали свой театр на советском примере"
+  },
+  {
     url: base + "contemporary_artists/",
     title:
       "«У меня прям живот болит»: художники объясняют, за что они (не) любят театр"
