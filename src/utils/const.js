@@ -2,6 +2,10 @@ const base = "/articles/";
 
 export const articles = [
   {
+    url: base + "vsyo_dvizhetsya/",
+    title: "Все движется, если я с тобой: плейлист актрисы Варвары Шмыковой"
+  },
+  {
     url: base + "flanagan/",
     title:
       "«Русские — очень талантливый народ»: как американцы создавали свой театр на советском примере"

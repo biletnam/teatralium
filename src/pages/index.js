@@ -15,6 +15,7 @@ import AboutUsLink from "../components/AboutUsLink";
 
 import { GovnoCover } from "./articles/aktyora_nado_mordoy_v_govno";
 import { HallieFlanaganCover } from "./articles/flanagan";
+import { ShmykovaCover } from "./articles/vsyo_dvizhetsya";
 
 import mask from "./images/davydova/mask.gif";
 
@@ -349,51 +350,61 @@ export class HomePage extends React.PureComponent {
     const { data } = this.props;
     return (
       <div>
-        <StyledLink to="/articles/flanagan/">
-          <HallieFlanaganCover sizes={data.top.sizes} />
+        <StyledLink to="/articles/vsyo_dvizhetsya/">
+          <ShmykovaCover sizes={data.top.sizes} />
         </StyledLink>
 
         <Section>
           <Kiss />
           <Recent>
-            <Li i={1} to="contemporary_artists/">
+            <Li i={1} to="ugadayte_kto_eto_napisal/">
+              <b>«Спектакль, завораживающий с первой секунды»</b>
+              <Smaller>Угадайте, кто это написал: критик или блогер</Smaller>
+            </Li>
+            <Li i={2} to="flanagan/">
+              <b>«Русские — очень талантливый народ»</b>
+              <Smaller>
+                Как американцы создавали свой театр на советском примере
+              </Smaller>
+            </Li>
+            <Li i={3} to="contemporary_artists/">
               <b>«У меня прям живот болит»</b>
               <Smaller>
                 Художники объясняют, за что они (не) любят театр
               </Smaller>
             </Li>
-            <Li i={2} to="ya_rabotayu_v_teatre_zaytseva/">
+            <Li i={4} to="ya_rabotayu_v_teatre_zaytseva/">
               <b>«Все постоянно репетируют и уносят твои чашки»</b>
               <Smaller>
                 Как я работала в театре пресс&#8209;секретарем и драматургом
                 одновременно
               </Smaller>
             </Li>
-            <Li i={3} to="idite_na/">
+            <Li i={5} to="idite_na/">
               <b>Идите на</b>
               <Smaller>С какого спектакля вам начать сезон</Smaller>
             </Li>
-            <Li i={4} to="kon_ne_valyalsya/">
+            <Li i={6} to="kon_ne_valyalsya/">
               <b>«В театре конь не валялся»</b>
               <Smaller>
                 Начало сезона в дневниках Вахтангова, Прокофьева, Золотухина и
                 других
               </Smaller>
             </Li>
-            <Li i={5} to="telegram_kanaly/">
+            <Li i={7} to="telegram_kanaly/">
               <b>«Зачем-то мне это надо»</b>
               <Smaller>
                 Кто ведет театральные блоги и может ли телеграм-канал о театре
                 быть популярным
               </Smaller>
             </Li>
-            <Li i={6} to="protokol_povsednevnost/">
+            <Li i={8} to="protokol_povsednevnost/">
               <b>«Никому не рассказывайте, чем вы тут занимались»</b>
               <Smaller>
                 Почему всем нужно пройти через кружок «Протокол» в ЦИМе
               </Smaller>
             </Li>
-            <Li i={7} to="dokumentalnaya_horeografiya/">
+            <Li i={9} to="dokumentalnaya_horeografiya/">
               <b>Документальная хореография</b>
               <Smaller>
                 Существует ли она и как станцевать Декларацию независимости
@@ -607,8 +618,8 @@ export const pageQuery = graphql`
         ...GatsbyImageSharpSizes
       }
     }
-    top: imageSharp(id: { regex: "/hallie_flanagan/cover.jpg/" }) {
-      sizes(maxWidth: 1200) {
+    top: imageSharp(id: { regex: "/shmykova/cover.jpg/" }) {
+      sizes(maxWidth: 600) {
         ...GatsbyImageSharpSizes
       }
     }
